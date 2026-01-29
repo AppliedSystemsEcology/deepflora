@@ -147,7 +147,7 @@ if isinstance(args.area, str):
 
 ### Run `Download_GBIF_Data.py
 
-```{}
+```
 
 # make the target directories
 mkdir /storage/group/hlc30/default/data/deepflora/{OCCS,SHPFILES,MODELS,IMAGES,RASTERS,BASELINES,RESULTS,MISC,DOCS,SCRATCH,RUNS}
@@ -243,14 +243,23 @@ Wherever `SummaryWriter` is used, change `SummaryWriter(...)` to  `_get_summary_
 
 #### Pre-load gadm data
 
-The code assumes the gadm3.6 geographic boundaries dataset is already loaded into the `SHP/` data folder. This needs to be done manually.
+The code assumes the [gadm3.6 geographic boundaries dataset](https://gadm.org/download_country36.html) is already loaded into the `SHP/` data folder. This needs to be done manually.
 
+```
+cd /storage/group/hlc30/default/data/deepflora/SHPFILES/
+wget https://geodata.ucdavis.edu/gadm/gadm3.6/shp/gadm36_USA_shp.zip
+unzip gadm36_USA_shp.zip
 
+```
 
 ### Run `Build_data.py`:
 
-```{}
+In home directory:
 
-python src/deepbiosphere/src/deepbiosphere/Build_Data.py --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2015_2025_USA_39_1_acq2026_1_27.csv --daset_id plants_pa --sep '\t' --year 2017 --state pa --threshold 500 --idCol gbifID --parallel 0
+```
+
+# run with 26 cores:
+
+python src/deepbiosphere/src/deepbiosphere/Build_Data.py --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2015_2025_USA_39_1_acq2026_1_27.csv --daset_id plants_pa --sep '\t' --year 2017 --state pa --threshold 500 --idCol gbifID --parallel 26
 
 ```
