@@ -248,7 +248,38 @@ The code assumes the [gadm3.6 geographic boundaries dataset](https://gadm.org/do
 ```
 cd /storage/group/hlc30/default/data/deepflora/SHPFILES/
 wget https://geodata.ucdavis.edu/gadm/gadm3.6/shp/gadm36_USA_shp.zip
-unzip gadm36_USA_shp.zip
+unzip gadm36_USA_shp.zip -d gadm36_USA
+
+```
+
+#### Pre-load bioclim data
+
+The code assumes the [bioclim dataset](https://www.worldclim.org/data/worldclim21.html) is already loaded. This has to be added manually (30s)
+
+```
+cd /storage/group/hlc30/default/data/deepflora/RASTERS/
+wget https://geodata.ucdavis.edu/climate/worldclim/2_1/base/wc2.1_30s_bio.zip
+unzip wc2.1_30s_bio.zip -d wc_30s_current
+
+```
+
+#### Pre-load EPA l3 ecoregion data and clip PA
+
+Code assumes [EPA ecoregion dataset]() (level 3) exists in the SHAPEFILES folder. Add this manually.
+
+```
+mkdir -p /storage/group/hlc30/default/data/deepflora/SHPFILES/ecoregions/raw
+cd /storage/group/hlc30/default/data/deepflora/SHPFILES/ecoregions/raw
+
+wget https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/us_eco_l3_state_boundaries.zip
+unzip us_eco_l3_state_boundaries.zip
+
+```
+
+Files are available for entire US, so clip to PA.
+
+```python
+
 
 ```
 
@@ -258,8 +289,11 @@ In home directory:
 
 ```
 
-# run with 26 cores:
+# run with 26 cores using sbatch script at /storage/home/kbl5733/work/github/deepflora/scripts/build_data_parallel.sh
 
+sbatch work/github/deepflora/scripts/build_data_parallel.sh
+
+# this is equivalent of:
 python src/deepbiosphere/src/deepbiosphere/Build_Data.py --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2015_2025_USA_39_1_acq2026_1_27.csv --daset_id plants_pa --sep '\t' --year 2017 --state pa --threshold 500 --idCol gbifID --parallel 26
 
 ```
