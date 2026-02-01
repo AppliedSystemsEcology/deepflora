@@ -278,8 +278,9 @@ unzip us_eco_l3_state_boundaries.zip
 
 Files are available for entire US, so clip to PA.
 
-```python
+```r
 
+R -f /storage/home/kbl5733/work/github/deepflora/scripts/ecoregions_pa.R
 
 ```
 
