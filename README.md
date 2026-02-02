@@ -276,12 +276,26 @@ unzip us_eco_l3_state_boundaries.zip
 
 ```
 
-Files are available for entire US, so clip to PA.
+Files are available for entire US, so clip to PA. This is run in R so use a separate `env` set up for R geoprocessing since I couldn't get the install to work on `deepflora`
 
 ```r
 
 R -f /storage/home/kbl5733/work/github/deepflora/scripts/ecoregions_pa.R
 
+```
+
+#### Pre-load NAIP imagery
+
+NAIP imagery is not downloaded in the repo code. It has to be done independently.
+
+Download NAIP footprints
+
+```    
+mkdir -p /storage/group/hlc30/default/data/deepflora/SHPFILES/naip_tiffs/pa_shpfl_2017
+
+wget -qO- https://naipeuwest.blob.core.windows.net/naip/v002/pa/2017/pa_shpfl_2017/index.html \
+| grep -o '(?<=<a href=')(.*?)(?='>)' \
+| wget -i -P /storage/group/hlc30/default/data/deepflora/SHPFILES/naip_tiffs/pa_shpfl_2017
 ```
 
 ### Run `Build_data.py`:
