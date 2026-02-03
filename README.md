@@ -299,6 +299,16 @@ chmod +x /storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh
 
 ```
 
+#### State lat-lon max and min
+
+Looking into the `Build_Dataset.py` code, it looks like the function `make_spatial_split` makes some assumptions about lat-long max and mins based on California. It doesn't look like these can be changed without changing the function defaults because the `make_dataset` that calls it and actually takes in the arguments from the user doesn't pass these options on.
+
+Change the code in `build_dataset` to draw the max/min from the state shapefile. This is added immediately before the call to `make_spatial_split` in the definition of `make_dataset`. Then add argument definitions for `latmin`, `lonmin`, `latmax`, and `lonmax`.
+
+```python
+    minx, miny, maxx, maxy = shps.total_bounds
+    daset = make_spatial_split(daset, latname, latmin = miny, latmax = maxy, lonmin = minx, lonmax = maxx)
+```
 ### Run `Build_data.py`:
 
 In home directory:

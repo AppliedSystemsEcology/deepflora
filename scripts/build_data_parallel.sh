@@ -16,7 +16,7 @@ source activate deepflora
 python src/deepbiosphere/src/deepbiosphere/Build_Data.py \
   --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2015_2025_USA_39_1_acq2026_1_27.csv \
   --daset_id plants_pa \
-  --sep $'\t' \
+  --sep '\t' \
   --year 2017 \
   --state pa \
   --threshold 500 \
