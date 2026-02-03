@@ -103,7 +103,7 @@ paths = SimpleNamespace(
   DOCS = '/storage/group/hlc30/default/data/deepflora/DOCS/',
   SCRATCH = '/storage/group/hlc30/default/data/deepflora/SCRATCH/',
   RUNS = '/storage/group/hlc30/default/data/deepflora/RUNS/',
-  MEANS='metadata/', # this is a relative path to files in the github repo
+  MEANS='/storage/group/hlc30/default/data/deepflora/MEANS/',
   BLOB_ROOT = 'https://naipblobs.blob.core.windows.net/')
 ```
 
@@ -295,9 +295,11 @@ chmod +x /storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh
 
 /storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh \
 -b https://naipeuwest.blob.core.windows.net/naip/v002/pa/2017/pa_shpfl_2017 \
--o /storage/group/hlc30/default/data/deepflora/SHPFILES//naip_tiffs/pa_shpfl_2017
+-o /storage/group/hlc30/default/data/deepflora/SHPFILES/naip_tiffs/pa_shpfl_2017
 
 ```
+
+Download NAIP imagery
 
 #### State lat-lon max and min
 
@@ -309,6 +311,44 @@ Change the code in `build_dataset` to draw the max/min from the state shapefile.
     minx, miny, maxx, maxy = shps.total_bounds
     daset = make_spatial_split(daset, latname, latmin = miny, latmax = maxy, lonmin = minx, lonmax = maxx)
 ```
+
+Also, change `make_spatial_split` function so that it ensures the calculated `strtlat` and `endlat` values are integers.
+
+Change the lines defining `strtlat` and `endlat` to:
+
+```python
+strtlat = int(max(math.floor(latmin), math.floor(daset[latCol].min())))
+endlat = int(min(math.floor(latmax), math.ceil(daset[latCol].max())))
+```
+
+#### Change `compute_means` function in `Build_Dataset.py` to be more robust
+
+The function `compute_means` assumes that `dataset_means.json` already exists. I changed it so that it will create a json file in the `MEANS/` folder it it's not there.
+
+Replace top of function:
+
+```python
+f = f"{paths.MEANS}dataset_means.json"
+
+if os.path.exists(f):
+    with open(f, 'r') as fp:
+        daset_means = json.load(fp)
+else:
+    daset_means = {}
+
+key = f"{state}_naip_{year}"
+if key not in daset_means:
+    daset_means[key] = {}
+```
+
+at the end of function, replace the part defining `daset_means` contents with:
+
+```python
+daset_means[key]['means'] = mean
+daset_means[key]['stds'] = std
+```
+
+
 ### Run `Build_data.py`:
 
 In home directory:
