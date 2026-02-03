@@ -288,14 +288,15 @@ R -f /storage/home/kbl5733/work/github/deepflora/scripts/ecoregions_pa.R
 
 NAIP imagery is not downloaded in the repo code. It has to be done independently.
 
-Download NAIP footprints
+Download NAIP footprints using shell script `azure_from_index.sh`
 
 ```    
-mkdir -p /storage/group/hlc30/default/data/deepflora/SHPFILES/naip_tiffs/pa_shpfl_2017
+chmod +x /storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh # allow execution
 
-wget -qO- https://naipeuwest.blob.core.windows.net/naip/v002/pa/2017/pa_shpfl_2017/index.html \
-| grep -o '(?<=<a href=')(.*?)(?='>)' \
-| wget -i -P /storage/group/hlc30/default/data/deepflora/SHPFILES/naip_tiffs/pa_shpfl_2017
+/storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh \
+-b https://naipeuwest.blob.core.windows.net/naip/v002/pa/2017/pa_shpfl_2017 \
+-o /storage/group/hlc30/default/data/deepflora/SHPFILES//naip_tiffs/pa_shpfl_2017
+
 ```
 
 ### Run `Build_data.py`:
