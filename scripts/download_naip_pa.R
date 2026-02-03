@@ -1,6 +1,6 @@
 # script to download the PA naip imagery (2017) to heather's shared data allocation
 
-source("scripts/azure_from_index.r")
+source("scripts/azure_from_index.R")
 
 scratch_dir <- "/storage/group/hlc30/default/data/deepflora/SCRATCH/"
 index_html <- "https://naipeuwest.blob.core.windows.net/naip/v002/pa/2017/pa_100cm_2017/index.html"
