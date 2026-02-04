@@ -19,6 +19,7 @@ python src/deepbiosphere/src/deepbiosphere/Build_Data.py \
   --sep '\t' \
   --year 2017 \
   --state pa \
+  --calculate_means \
   --threshold 500 \
   --idCol gbifID \
   --parallel 26

@@ -158,14 +158,16 @@ python src/deepbiosphere/src/deepbiosphere/Download_GBIF_Data.py --gbif_user nei
 
 ```
 
-## [Build training and testing dataset](https://github.com/moiexpositoalonsolab/Deepbiosphere?tab=readme-ov-file#building-the-training-and-testing-dataset-for-deepbiosphere)
+## Build training and testing dataset
+
+https://github.com/moiexpositoalonsolab/Deepbiosphere?tab=readme-ov-file#building-the-training-and-testing-dataset-for-deepbiosphere
 
 ### Debug
 
 #### A circular import error
 
-> `Build_Data.py`
-> 
+In  `Build_Data.py`:
+
 > ```python
 > import deepbiosphere.NAIP_Utils as naip
 > ```
@@ -276,7 +278,7 @@ unzip us_eco_l3_state_boundaries.zip
 
 ```
 
-Files are available for entire US, so clip to PA. This is run in R so use a separate `env` set up for R geoprocessing since I couldn't get the install to work on `deepflora`
+The shapefile is for the entire US, so clip to PA. This is run in R so use a separate `env` set up for R geoprocessing since I couldn't install `terra` on `deepflora`
 
 ```r
 
@@ -288,7 +290,9 @@ R -f /storage/home/kbl5733/work/github/deepflora/scripts/ecoregions_pa.R
 
 NAIP imagery is not downloaded in the repo code. It has to be done independently.
 
-Download NAIP footprints using shell script `azure_from_index.sh`
+There are scripts to extract the data links from the index files within the server hosting NAIP imagery. There's a `sh` version and an `R` version. The `sh` version actually downloads the files in the link while the `R` version returns the links as strings in the index.html. The `R` version is useful for looping through directories on the server, where the provided index.html is listing directories rather than data.
+
+##### Download NAIP footprints using shell script `azure_from_index.sh`
 
 ```    
 chmod +x /storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh # allow execution
@@ -299,11 +303,18 @@ chmod +x /storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh
 
 ```
 
-Download NAIP imagery
+##### Download NAIP imagery
+
+Here I use an R script to loop through a list of directories.
+
+```
+Rscript scripts/download_naip_pa.R
+
+```
 
 #### State lat-lon max and min
 
-Looking into the `Build_Dataset.py` code, it looks like the function `make_spatial_split` makes some assumptions about lat-long max and mins based on California. It doesn't look like these can be changed without changing the function defaults because the `make_dataset` that calls it and actually takes in the arguments from the user doesn't pass these options on.
+In `Build_Dataset.py` the function `make_spatial_split` makes some assumptions about lat-long max and mins based on California. It doesn't look like these can be changed without changing the function defaults because the `make_dataset` that calls it and actually takes in the arguments from the user doesn't pass these options on.
 
 Change the code in `build_dataset` to draw the max/min from the state shapefile. This is added immediately before the call to `make_spatial_split` in the definition of `make_dataset`. Then add argument definitions for `latmin`, `lonmin`, `latmax`, and `lonmax`.
 
@@ -346,6 +357,15 @@ at the end of function, replace the part defining `daset_means` contents with:
 ```python
 daset_means[key]['means'] = mean
 daset_means[key]['stds'] = std
+```
+
+#### Add 2017 to exceptions in definition of `tiff_dset_name` in `make_dataset`
+
+The PA 2017 dataset is 100cm resolution and so 2017 should be added in the line defining it in `make_dataset`
+
+```python
+tiff_dset_name = f"{state}_100cm_{year}" if str(year) in ['2012', '2014', '2017'] else f"{state}_060cm_{year}"
+
 ```
 
 
