@@ -414,7 +414,13 @@ Inside of `Dataset.py` for class definition of `DeebioDataset`, change reference
 
 ```
 
+Inside `Run.py`, `train_model` function, add another `.datetime` to the call:
+
+```python
+    log_dir = f"{paths.RUNS}/{datetime.datetime.now().strftime('%Y_%m_%d_%H-%M-%S')}_{socket.gethostname()}_"
 ```
+
+Also do this in the `train_and_test_model`.
 
 # run with p100 gpu and 26 cores using sbatch script at /storage/home/kbl5733/work/github/deepflora/scripts/run_deepbiosphere.sh
 
