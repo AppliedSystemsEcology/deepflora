@@ -403,6 +403,16 @@ sbatch work/github/deepflora/scripts/build_data_parallel.sh
 
 ### Run Deepbiosphere
 
+#### Debug
+
+Inside of `Dataset.py` for class definition of `DeebioDataset`, change reference to `f"naip_{year}"` to `f"{state}_naip_{year}"` to be consistent with how the metadata is actually saved.
+
+```python
+        if metadata.dataset_means[f"{state}_naip_{year}"] is not None:    # added `{state}_` here
+            self.mean = metadata.dataset_means[f"{state}_naip_{year}"]['means']
+            self.std = metadata.dataset_means[f"{state}_naip_{year}"]['stds']
+
+```
 
 ```
 
