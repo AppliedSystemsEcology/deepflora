@@ -3,6 +3,8 @@ Adapting deepbiosphere for mapping pollinator floral resources
 
 For linux install on Roar Collab.
 
+## Setup
+
 ### Make the `conda` env with python packages included
 
 As many as possible with the `conda create` command. `inplace_abn` cannot be installed like this.
@@ -323,14 +325,13 @@ Change the code in `build_dataset` to draw the max/min from the state shapefile.
     daset = make_spatial_split(daset, latname, latmin = miny, latmax = maxy, lonmin = minx, lonmax = maxx)
 ```
 
-Also, change `make_spatial_split` function so that it ensures the calculated `strtlat` and `endlat` values are integers.
+#### Change `make_spatial_split`
 
-Change the lines defining `strtlat` and `endlat` to:
+The function `make_spatial_split` divides the state into cross validation sections but it assumes a long state like CA, so it is hard coded to use latitudinal bands at 1 degree intervals.
 
-```python
-strtlat = int(max(math.floor(latmin), math.floor(daset[latCol].min())))
-endlat = int(min(math.floor(latmax), math.ceil(daset[latCol].max())))
-```
+I need to change this function so that it: 1) defines the bands based on the size of the state, and 2) has the option to use longitudinal bands for wide states like PA. This also changes the `generate_split_polygons` function, which isn't necessary for making data, but is useful for visualization. The new functions are in `scripts/cv_polygons.py` in this repository.
+
+Because I wanted this to be an option exposed in the `Build_Data.py` arguments, I added `cvaxis` flag with option `lat` or `lon` (default `lon`).
 
 #### Change `compute_means` function in `Build_Dataset.py` to be more robust
 
@@ -359,6 +360,20 @@ daset_means[key]['means'] = mean
 daset_means[key]['stds'] = std
 ```
 
+Replace these lines:
+
+```python
+mean = torch.mean(torch.stack(torch.tensor(means)), dim=0)
+std = torch.mean(torch.stack(torch.tensor(stds)), dim=0)
+```
+
+with
+
+```python
+mean = torch.stack([torch.tensor(m) for m in means]).mean(dim=0)
+std  = torch.stack([torch.tensor(s) for s in stds]).mean(dim=0)
+```
+
 #### Add 2017 to exceptions in definition of `tiff_dset_name` in `make_dataset`
 
 The PA 2017 dataset is 100cm resolution and so 2017 should be added in the line defining it in `make_dataset`
@@ -380,6 +395,6 @@ In home directory:
 sbatch work/github/deepflora/scripts/build_data_parallel.sh
 
 # this is equivalent of:
-python src/deepbiosphere/src/deepbiosphere/Build_Data.py --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2015_2025_USA_39_1_acq2026_1_27.csv --daset_id plants_pa --sep '\t' --year 2017 --state pa --threshold 500 --idCol gbifID --parallel 26
+python src/deepbiosphere/src/deepbiosphere/Build_Data.py --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2015_2025_USA_39_1_acq2026_1_27.csv --daset_id plants_pa --sep '\t' --year 2017 --state pa --calculate_means --threshold 500 --idCol gbifID --parallel 26
 
 ```
