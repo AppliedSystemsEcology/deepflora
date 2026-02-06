@@ -76,23 +76,33 @@ pip install inplace-abn
 pip install -e git+https://github.com/moiexpositoalonsolab/Deepbiosphere.git#egg=deepbiosphere
 ```
 
-### Downgrade `setuptools`
+### Circumvent `distutils.version`
 
-PyTorch 1.10.x expects `distutils.version.LooseVersion` to exist. But the `deepflora` environment has a newer Python packaging stack where `distutils` is partially removed / stubbed and `setuptools` has taken over.
+PyTorch 1.10.x expects `distutils.version.LooseVersion` to exist. But the `deepflora` environment has a newer Python packaging stack where `distutils` is partially removed / stubbed.
 
-Downgrading `setuptools` is a standard fix for torch ≤ 1.12 (according to chatgpt).
+At the top of `Run.py` add:
 
-```         
+```python     
+# --- distutils compatibility shim for PyTorch 1.10 + TensorBoard ---
+import types
+import packaging.version
 
-pip install "setuptools<68"
-
-conda install python-distutils -c conda-forge   # may not be necessary; it didn't change anything
+try:
+    import distutils
+    if not hasattr(distutils, "version"):
+        distutils.version = types.SimpleNamespace(
+            LooseVersion=packaging.version.Version
+        )
+except Exception:
+    pass
+# -------------------------------------------------------------------
 ```
+
+## Set up directories
 
 In `src/deepbiosphere/Utils.py`, replace the `paths` definition with
 
 ```         
-
 paths = SimpleNamespace(
   OCCS = '/storage/group/hlc30/default/data/deepflora/OCCS/',
   SHPFILES = '/storage/group/hlc30/default/data/deepflora/SHPFILES/',
