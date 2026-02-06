@@ -394,7 +394,15 @@ In home directory:
 
 sbatch work/github/deepflora/scripts/build_data_parallel.sh
 
-# this is equivalent of:
-python src/deepbiosphere/src/deepbiosphere/Build_Data.py --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2015_2025_USA_39_1_acq2026_1_27.csv --daset_id plants_pa --sep '\t' --year 2017 --state pa --calculate_means --threshold 500 --idCol gbifID --parallel 26
+```
+
+### Run Deepbiosphere
+
+
+```
+
+# run with p100 gpu and 26 cores using sbatch script at /storage/home/kbl5733/work/github/deepflora/scripts/run_deepbiosphere.sh
+
+sbatch work/github/deepflora/scripts/run_deepbiosphere.sh
 
 ```

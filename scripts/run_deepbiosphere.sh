@@ -18,7 +18,7 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Run.py \
   --year 2017 \
   --state pa \
   --dataset_name plants_pa \
-  --datatype JOINT_NAIP_BIOCLI \
+  --datatype JOINT_NAIP_BIOCLIM \
   --band -1 \
   --lr .00001 \
   --epochs 12 \
