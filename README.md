@@ -358,6 +358,16 @@ at the end of function, replace the part defining `daset_means` contents with:
 ```python
 daset_means[key]['means'] = mean
 daset_means[key]['stds'] = std
+# write out means in json
+os.makedirs(paths.MEANS, exist_ok=True)
+with open(f, 'w') as fp:
+    json.dump(daset_means, fp, indent=2)
+```
+
+Then write it out:
+```python
+
+
 ```
 
 Replace these lines:
