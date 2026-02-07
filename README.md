@@ -76,12 +76,13 @@ pip install inplace-abn
 pip install -e git+https://github.com/moiexpositoalonsolab/Deepbiosphere.git#egg=deepbiosphere
 ```
 
-### Downgrade `setuptools`
+### Circumvent `distutils.version`
 
-PyTorch 1.10.x expects `distutils.version.LooseVersion` to exist. But the `deepflora` environment has a newer Python packaging stack where `distutils` is partially removed / stubbed and `setuptools` has taken over.
+PyTorch 1.10.x expects `distutils.version.LooseVersion` to exist. But the `deepflora` environment has a newer Python packaging stack where `distutils` is partially removed / stubbed.
 
-Downgrading `setuptools` is a standard fix for torch ≤ 1.12 (according to chatgpt).
+At the top of `Run.py` add:
 
+<<<<<<< HEAD
 ```
 pip uninstall -y setuptools
 pip install setuptools==59.8.0
@@ -118,12 +119,29 @@ Import them explicitly when needed.
 
 ```
 
+=======
+```python     
+# --- distutils compatibility shim for PyTorch 1.10 + TensorBoard ---
+import types
+import packaging.version
+
+try:
+    import distutils
+    if not hasattr(distutils, "version"):
+        distutils.version = types.SimpleNamespace(
+            LooseVersion=packaging.version.Version
+        )
+except Exception:
+    pass
+# -------------------------------------------------------------------
+```
+
+>>>>>>> 4ed5aae75cb4bc1d4dcda20df86b9254a16f221d
 ## Set up directories
 
 In `src/deepbiosphere/Utils.py`, replace the `paths` definition with
 
 ```         
-
 paths = SimpleNamespace(
   OCCS = '/storage/group/hlc30/default/data/deepflora/OCCS/',
   SHPFILES = '/storage/group/hlc30/default/data/deepflora/SHPFILES/',
@@ -426,7 +444,13 @@ Inside of `Dataset.py` for class definition of `DeebioDataset`, change reference
 
 ```
 
+Inside `Run.py`, `train_model` function, add another `.datetime` to the call:
+
+```python
+    log_dir = f"{paths.RUNS}/{datetime.datetime.now().strftime('%Y_%m_%d_%H-%M-%S')}_{socket.gethostname()}_"
 ```
+
+Also do this in the `train_and_test_model`.
 
 # run with p100 gpu and 26 cores using sbatch script at /storage/home/kbl5733/work/github/deepflora/scripts/run_deepbiosphere.sh
 
