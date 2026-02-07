@@ -36,7 +36,7 @@ for (i in seq_along(state_index_links)){
     download.file(files.i,
                   destfile = outputfiles.i,
                   method="libcurl"),
-    error = function(e) message(e)
+    error = function(e) cat(message(e),"\n")
   )
 }
 sink(type="message")
