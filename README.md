@@ -76,13 +76,8 @@ pip install inplace-abn
 pip install -e git+https://github.com/moiexpositoalonsolab/Deepbiosphere.git#egg=deepbiosphere
 ```
 
-### Circumvent `distutils.version`
+### NOT SURE IF THESE CHANGES WERE NECESSARY
 
-PyTorch 1.10.x expects `distutils.version.LooseVersion` to exist. But the `deepflora` environment has a newer Python packaging stack where `distutils` is partially removed / stubbed.
-
-At the top of `Run.py` add:
-
-<<<<<<< HEAD
 ```
 pip uninstall -y setuptools
 pip install setuptools==59.8.0
@@ -119,7 +114,12 @@ Import them explicitly when needed.
 
 ```
 
-=======
+### Circumvent `distutils.version`
+
+PyTorch 1.10.x expects `distutils.version.LooseVersion` to exist. But the `deepflora` environment has a newer Python packaging stack where `distutils` is partially removed / stubbed.
+
+At the top of `Run.py` add:
+
 ```python     
 # --- distutils compatibility shim for PyTorch 1.10 + TensorBoard ---
 import types
@@ -136,7 +136,6 @@ except Exception:
 # -------------------------------------------------------------------
 ```
 
->>>>>>> 4ed5aae75cb4bc1d4dcda20df86b9254a16f221d
 ## Set up directories
 
 In `src/deepbiosphere/Utils.py`, replace the `paths` definition with
