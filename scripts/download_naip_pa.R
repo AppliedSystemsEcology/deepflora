@@ -10,9 +10,9 @@ state_index_links <- azure_from_index(index_html)
 state_outdir <- basename(dirname(index_html))
 
 # logging
-zz <- file("all.Rout", open="wt")
-sink(zz, type="message", append = TRUE)
-sink(zz, type = "output", append = TRUE)
+# zz <- file("all.Rout", open="wt")
+# sink(zz, type="message", append = TRUE)
+# sink(zz, type = "output", append = TRUE)
 
 # loop over each index file
 for (i in seq_along(state_index_links)){
@@ -23,7 +23,7 @@ for (i in seq_along(state_index_links)){
   if(!dir.exists(outputdir.i)){dir.create(outputdir.i, recursive = TRUE)}
   # get the data files in index.i
   files.i <- azure_from_index(index.i)
-  cat("trying", basename(files.i),"\n")
+  cat("trying", basename(index.i),"\n")
   # build output filepaths
   outputfiles.i <- file.path(outputdir.i,basename(files.i))
   # check for existing files
@@ -36,8 +36,9 @@ for (i in seq_along(state_index_links)){
     download.file(files.i,
                   destfile = outputfiles.i,
                   method="libcurl"),
-    error = function(e) cat(message(e),"\n")
+    error = function(e) cat(message(e),"\n"),
+    finally = cat("Finished", basename(index.i),"\n")
   )
 }
-sink(type="message")
-sink(type = "output")
+# sink(type="message")
+# sink(type = "output")
