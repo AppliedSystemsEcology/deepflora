@@ -13,4 +13,4 @@
 module load anaconda
 source activate r-gis
 
-Rscript work/github/deepflora/scripts/download_naip_pa.R
+Rscript scripts/download_naip_pa.R

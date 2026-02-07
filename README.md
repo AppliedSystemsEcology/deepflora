@@ -339,7 +339,7 @@ chmod +x /storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh
 Here I use an R script to loop through a list of directories.
 
 ```
-Rscript scripts/download_naip_pa.R
+sbatch /storage/home/kbl5733/work/github/deepflora/scripts/download_naip_sbatch.sh
 
 ```
 
