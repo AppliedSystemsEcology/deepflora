@@ -8,7 +8,7 @@
 #SBATCH --mem=224G
 #SBATCH --time=06:00:00
 #SBATCH --output=dlnaip_%j.out
-#SBATCH --error=dl_%j.err
+#SBATCH --error=dlnaip_%j.err
 
 module load anaconda
 source activate r-gis
