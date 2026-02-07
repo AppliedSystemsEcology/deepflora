@@ -82,12 +82,43 @@ PyTorch 1.10.x expects `distutils.version.LooseVersion` to exist. But the `deepf
 
 Downgrading `setuptools` is a standard fix for torch ≤ 1.12 (according to chatgpt).
 
-```         
-
-pip install "setuptools<68"
+```
+pip uninstall -y setuptools
+pip install setuptools==59.8.0
 
 conda install python-distutils -c conda-forge   # may not be necessary; it didn't change anything
 ```
+
+### Downgrade TensorBoard to a version compatible with `torch 1.10`
+
+`torch 1.10.2` + `tensorboard 2.20.0` is incompatible
+
+https://github.com/pytorch/pytorch/issues/69894
+
+```
+pip uninstall tensorboard -y
+pip install "tensorboard<2.11"
+```
+
+### make a change to `__init__.py`
+
+Make a backup first: `cp __init__.py __init__.py.bak`
+
+Replace entirety of `src/deepbiosphere/__init__.py` with:
+
+```python
+
+"""
+DeepBiosphere package.
+
+Heavy submodules (torch, NAIP processing, training code)
+are intentionally not imported at package import time.
+Import them explicitly when needed.
+"""
+
+```
+
+## Set up directories
 
 In `src/deepbiosphere/Utils.py`, replace the `paths` definition with
 
@@ -107,25 +138,6 @@ paths = SimpleNamespace(
   RUNS = '/storage/group/hlc30/default/data/deepflora/RUNS/',
   MEANS='/storage/group/hlc30/default/data/deepflora/MEANS/',
   BLOB_ROOT = 'https://naipblobs.blob.core.windows.net/')
-```
-
-### make a change to `__init__.py`
-
-Make a backup first: `cp __init__.py __init__.py.bak`
-
-Replace entirety of `src/deepbiosphere/__init__.py` with:
-
-```python
-
-"""
-DeepBiosphere package.
-
-Heavy submodules (torch, NAIP processing, training code)
-are intentionally not imported at package import time.
-Import them explicitly when needed.
-"""
-
-
 ```
 
 ## Download GBIF data
