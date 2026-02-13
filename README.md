@@ -428,6 +428,9 @@ In home directory:
 
 sbatch work/github/deepflora/scripts/build_data_parallel.sh
 
+# if problem with different projections across state. Try:
+
+sbatch work/github/deepflora/scripts/build_data_serial.sh
 ```
 
 ### Run Deepbiosphere
