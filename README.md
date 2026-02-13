@@ -428,7 +428,7 @@ In home directory:
 
 sbatch work/github/deepflora/scripts/build_data_parallel.sh
 
-# problem with different projections across state. Try:
+# if problem with different projections across state. Try:
 
 sbatch work/github/deepflora/scripts/build_data_serial.sh
 ```
