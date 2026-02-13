@@ -451,8 +451,9 @@ Inside `Run.py`, `train_model` function, add another `.datetime` to the call:
 
 Also do this in the `train_and_test_model`.
 
-# run with p100 gpu and 26 cores using sbatch script at /storage/home/kbl5733/work/github/deepflora/scripts/run_deepbiosphere.sh
+#### run with p100 gpu and 26 cores using sbatch script
 
+```
 sbatch work/github/deepflora/scripts/run_deepbiosphere.sh
 
 ```
