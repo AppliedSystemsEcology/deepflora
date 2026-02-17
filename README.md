@@ -467,6 +467,6 @@ sbatch work/github/deepflora/scripts/run_deepbiosphere.sh
 # for help
 # python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py --help
 
-sbatch work/github/deepflora/scripts/run_deepbiosphere.sh
+sbatch work/github/deepflora/scripts/run_inference.sh
 
 ```
