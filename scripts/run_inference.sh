@@ -8,8 +8,8 @@
 #SBATCH --cpus-per-task=26
 #SBATCH --mem=224G
 #SBATCH --time=48:00:00
-#SBATCH --output=rundb_%j.out
-#SBATCH --error=rundb_%j.err
+#SBATCH --output=inference_%j.out
+#SBATCH --error=inference_%j.err
 
 module load anaconda
 source activate deepflora

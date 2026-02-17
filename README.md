@@ -460,3 +460,13 @@ Also do this in the `train_and_test_model`.
 sbatch work/github/deepflora/scripts/run_deepbiosphere.sh
 
 ```
+
+### Inference
+
+```
+# for help
+# python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py --help
+
+sbatch work/github/deepflora/scripts/run_deepbiosphere.sh
+
+```
