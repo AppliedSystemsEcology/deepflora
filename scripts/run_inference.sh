@@ -17,7 +17,7 @@ source activate deepflora
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --band -1 \
   --model DEEPBIOSPHERE \
-  --exp_id initial \
+  --exp_id 2026_02_13_22-23-14_p-gc-3156_ \
   --loss SAMPLE_AWARE_BCE \
   --earlystopping mean_ROC_AUC \
   --batch_size 50 \
