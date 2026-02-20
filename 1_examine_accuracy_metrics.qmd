@@ -1,0 +1,45 @@
+---
+title: "Initial Deepflora results"
+format: html
+editor: visual
+---
+
+## Accuracy Metrics
+
+```{r}
+library(tidyverse)
+
+beeplants <- readRDS("data/beeplants.rds")
+
+overall <- read.csv("results/accuracy_metrics/initial_db_overall_results_band-1.csv")
+perobs <- read.csv("results/accuracy_metrics/initial_db_per_observations_results_band-1.csv")
+persp <- read.csv("results/accuracy_metrics/initial_db_per_species_results_band-1.csv")
+
+persp.metrics <- persp$metric
+
+persp.l <- persp |> dplyr::select(-dset_name,-model,-loss,-exp_id,-pretrained,-metric,-date, -batch_size,-epoch,-thres,-band) |>
+  t() |> as.data.frame() |> setNames(persp.metrics) |>
+  rownames_to_column("scientificName") |> 
+  mutate(scientificName = gsub("\\."," ",scientificName)) %>%
+  separate_wider_delim(scientificName, delim=" ",
+                       names=c("genus","sp"),
+                       too_few = "align_start",
+                       too_many = "merge",
+                       cols_remove = FALSE)
+
+# all bee floral resource sp (Grozinger + Fowler)
+persp.fr <- persp.l %>%
+  filter(genus %in% beeplants$genus$genus |
+           scientificName %in% beeplants$species$scientificName)
+
+# all PA bee floral resource sp (Grozinger list)
+persp.fr.g <- persp.l %>%
+  filter(genus %in% beeplants$genus$genus |
+           scientificName %in% (beeplants$species %>% 
+                                  dplyr::filter(source == "Grozinger") %>% 
+                                  pull(scientificName)))
+
+# 50+ support subset
+persp.fr.g50 <- persp.fr.g %>% arrange(support) %>% top_n(50)
+
+```
