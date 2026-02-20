@@ -39,7 +39,7 @@ persp.fr.g <- persp.l %>%
                                   dplyr::filter(source == "Grozinger") %>% 
                                   pull(scientificName)))
 
-# 50+ support subset
+# above 50 support subset
 persp.fr.g50 <- persp.fr.g %>% arrange(support) %>% top_n(50)
 
 ```
