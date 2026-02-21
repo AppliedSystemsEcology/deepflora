@@ -9,7 +9,7 @@ band = -1
 loss = 'SAMPLE_AWARE_BCE'
 model = 'DEEPBIOSPHERE'
 epoch = 11
-save_dir = "gstorage/data/deepflora/deepflora_predictions/"
+save_dir = "gstorage/data/deepflora_predictions/"
 save_name = "initial_state_college"
 
 raster = rasterio.open(raster_path)
