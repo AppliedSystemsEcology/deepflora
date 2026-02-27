@@ -96,6 +96,12 @@ pip uninstall tensorboard -y
 pip install "tensorboard<2.11"
 ```
 
+### Install reticulate
+
+```
+conda install conda-forge::r-reticulate
+```
+
 ### make a change to `__init__.py`
 
 Make a backup first: `cp __init__.py __init__.py.bak`
