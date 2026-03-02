@@ -1,4 +1,4 @@
-name: deepflora_v2
+name: deepflora_r
 channels:
   - conda-forge
   - defaults
@@ -12,5 +12,23 @@ dependencies:
   - gcc_linux-64
   - gxx_linux-64
   - libstdcxx-ng
+  - r-biomod2
+  - r-dismo
+  - r-randomforest
+  - r-rgeos
+  - r-pryr
+  - r-usethis
+  - r-iterators
+  - r-devtools
+  - r-rjava
+  - r-raster
+  - r-progress
+  - r-foreach
+  - r-doparallel
+  - r-sp
+  - r-optparse
+  - r-filelock
+  - r-plyr
+  - r-here
   - pip:
     - -r requirements.txt

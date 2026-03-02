@@ -5,4 +5,4 @@ torchaudio==0.10.2
 numpy<2.0
 tensorboard<2.11
 inplace-abn
-deepbiosphere @ git+https://github.com/moiexpositoalonsolab/Deepbiosphere.git
+-e /storage/home/kbl5733/src/deepbiosphere
