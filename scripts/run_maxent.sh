@@ -16,18 +16,18 @@ source activate deepflora_r
 
 # uniform test / train split
 echo "Processing uniform train-test random forest"
-Rscript src/deepbiosphere/src/deepbiosphere/scripts/Maxent_RF_bioclim.R --band unif_train_test --sdm rf --ncpu 26
+Rscript src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R --band unif_train_test --sdm rf --ncpu 26
 
 echo "Processing uniform train-test maxent"
-Rscript src/deepbiosphere/src/deepbiosphere/scripts/Maxent_RF_bioclim.R --dset_name  --band unif_train_test --sdm maxent --ncpu 26
+Rscript src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R --dset_name  --band unif_train_test --sdm maxent --ncpu 26
 
 # spatial cross-validation band example
 for band in $(seq 0 11); do
   echo "Processing band ${band} of 11 for random forest..."
-  Rscript src/deepbiosphere/src/deepbiosphere/scripts/Maxent_RF_bioclim.R --band band_${band} --sdm rf --ncpu 26
+  Rscript src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R --band band_${band} --sdm rf --ncpu 26
 done
 
 for band in $(seq 0 11); do
   echo "Processing band ${band} of 11 for maxent..."
-  Rscript src/deepbiosphere/src/deepbiosphere/scripts/Maxent_RF_bioclim.R --band band_${band} --sdm maxent --ncpu 26
+  Rscript src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R --band band_${band} --sdm maxent --ncpu 26
 done
