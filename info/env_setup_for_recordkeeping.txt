@@ -1,0 +1,100 @@
+## Problematic Manual Setup
+
+This was for troubleshooting. The recommended way to set up the env is to use the environment.yml file in scripts/ and the associated requirements.txt
+
+### Make the `conda` env with python packages included
+
+As many as possible with the `conda create` command. `inplace_abn` cannot be installed like this.
+
+```
+
+# Start gpu
+
+salloc -A hlc30_p100_default -p sla-prio --gres=gpu:p100:1
+
+# check CUDA version
+nvidia-smi   # for p100 CUDA version 13.0 (this is highest but for deepbiosphere need something like 11.5.0)
+
+# make conda env NEED python >3.7  but <3.10
+
+conda create -n deepflora python=3.9 pip=22.3 setuptools=65 -y
+
+# Note: how to remove env (after deactivating)
+conda remove -n <envname> --all
+```
+
+### Install pytorch
+
+```
+
+conda activate deepflora
+
+pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio==0.10.2 --extra-index-url https://download.pytorch.org/whl/cu113 --no-cache-dir
+
+pip install "numpy<2.0"
+
+conda install \
+  r-base=4.3 \
+  rpy2 \
+  gcc_linux-64 \
+  gxx_linux-64 \
+  libstdcxx-ng \
+  -c conda-forge -y
+
+# load cuda module (different from torch cuda, they do not need to be the same minor version per chatgpt)
+
+module avail cuda
+module load cuda/11.5.0  # load CUDA version compatible with inplace-abn?
+```
+
+### test if pytorch is installed IN PYTHON
+
+```python
+
+import torch
+torch.cuda.is_available()
+
+```
+
+### Install inplace_abn
+
+`inplace_abn` requires pytorch to be installed but a recent change causes installation to be in an isolated environment. [Turn this off.](https://stackoverflow.com/questions/79285272/modulenotfounderror-no-module-named-torch-but-torch-is-installed)
+
+```
+
+# install inplace_abn
+pip install inplace-abn
+```
+
+### Install *deepbiosphere*
+
+```
+
+pip install -e git+https://github.com/moiexpositoalonsolab/Deepbiosphere.git#egg=deepbiosphere
+```
+
+### NOT SURE IF THESE CHANGES WERE NECESSARY
+
+```
+pip uninstall -y setuptools
+pip install setuptools==59.8.0
+
+conda install python-distutils -c conda-forge   # may not be necessary; it didn't change anything
+```
+
+### Downgrade TensorBoard to a version compatible with `torch 1.10`
+
+`torch 1.10.2` + `tensorboard 2.20.0` is incompatible
+
+https://github.com/pytorch/pytorch/issues/69894
+
+```
+pip uninstall tensorboard -y
+pip install "tensorboard<2.11"
+```
+
+### Install reticulate
+
+```
+conda install conda-forge::r-reticulate
+```
