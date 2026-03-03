@@ -9,6 +9,7 @@ dependencies:
   - r-base=4.3
   - r-reticulate
   - rpy2
+  - r-gam
   - gcc_linux-64
   - gxx_linux-64
   - libstdcxx-ng
