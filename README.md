@@ -43,6 +43,15 @@ paths = SimpleNamespace(
   BLOB_ROOT = 'https://naipblobs.blob.core.windows.net/')
 ```
 
+### make the target directories
+```
+mkdir /storage/group/hlc30/default/data/deepflora/{OCCS,SHPFILES,MODELS,IMAGES,RASTERS,BASELINES,RESULTS,MISC,DOCS,SCRATCH,RUNS}
+```
+
+## Build training and testing dataset
+
+https://github.com/moiexpositoalonsolab/Deepbiosphere?tab=readme-ov-file#building-the-training-and-testing-dataset-for-deepbiosphere
+
 #### Pre-load gadm data
 
 The code assumes the [gadm3.6 geographic boundaries dataset](https://gadm.org/download_country36.html) is already loaded into the `SHP/` data folder. This needs to be done manually.
@@ -112,82 +121,22 @@ sbatch scripts/download_naip_sbatch.sh
 
 ```
 
-#### State lat-lon max and min
+### Download GBIF data
 
-In `Build_Dataset.py` the function `make_spatial_split` makes some assumptions about lat-long max and mins based on California. It doesn't look like these can be changed without changing the function defaults because the `make_dataset` that calls it and actually takes in the arguments from the user doesn't pass these options on.
+#### Set up GBIF
 
-Change the code in `build_dataset` to draw the max/min from the state shapefile. This is added immediately before the call to `make_spatial_split` in the definition of `make_dataset`. Then add argument definitions for `latmin`, `lonmin`, `latmax`, and `lonmax`.
+Set up a `.netrc` file, instructions in [the repository](https://github.com/moiexpositoalonsolab/deepbiosphere?tab=readme-ov-file#setting-up-access-on-gbif).
 
-```python
-    minx, miny, maxx, maxy = shps.total_bounds
-    daset = make_spatial_split(daset, latname, latmin = miny, latmax = maxy, lonmin = minx, lonmax = maxx)
+#### Run `Download_GBIF_Data.py
+
 ```
+# python src/deepbiosphere/Download_GBIF_Data.py --gbif_user [your_username] --gbif_email [your_gbif_email] --organism plant --start_date 2015 --end_date 2022
 
-#### Change `make_spatial_split`
-
-The function `make_spatial_split` divides the state into cross validation sections but it assumes a long state like CA, so it is hard coded to use latitudinal bands at 1 degree intervals.
-
-I need to change this function so that it: 1) defines the bands based on the size of the state, and 2) has the option to use longitudinal bands for wide states like PA. This also changes the `generate_split_polygons` function, which isn't necessary for making data, but is useful for visualization. The new functions are in `scripts/cv_polygons.py` in this repository.
-
-Because I wanted this to be an option exposed in the `Build_Data.py` arguments, I added `cvaxis` flag with option `lat` or `lon` (default `lon`).
-
-#### Change `compute_means` function in `Build_Dataset.py` to be more robust
-
-The function `compute_means` assumes that `dataset_means.json` already exists. I changed it so that it will create a json file in the `MEANS/` folder it it's not there.
-
-Replace top of function:
-
-```python
-f = f"{paths.MEANS}dataset_means.json"
-
-if os.path.exists(f):
-    with open(f, 'r') as fp:
-        daset_means = json.load(fp)
-else:
-    daset_means = {}
-
-key = f"{state}_naip_{year}"
-if key not in daset_means:
-    daset_means[key] = {}
-```
-
-at the end of function, replace the part defining `daset_means` contents with:
-
-```python
-daset_means[key]['means'] = mean
-daset_means[key]['stds'] = std
-
-# write out means in json
-os.makedirs(paths.MEANS, exist_ok=True)
-with open(f, 'w') as fp:
-    json.dump(daset_means, fp, indent=2)
-```
-
-Replace these lines:
-
-```python
-mean = torch.mean(torch.stack(torch.tensor(means)), dim=0)
-std = torch.mean(torch.stack(torch.tensor(stds)), dim=0)
-```
-
-with
-
-```python
-mean = torch.stack([torch.tensor(m) for m in means]).mean(dim=0)
-std  = torch.stack([torch.tensor(s) for s in stds]).mean(dim=0)
-```
-
-#### Add 2017 to exceptions in definition of `tiff_dset_name` in `make_dataset`
-
-The PA 2017 dataset is 100cm resolution and so 2017 should be added in the line defining it in `make_dataset`
-
-```python
-tiff_dset_name = f"{state}_100cm_{year}" if str(year) in ['2012', '2014', '2017'] else f"{state}_060cm_{year}"
+python src/deepbiosphere/src/deepbiosphere/Download_GBIF_Data.py --gbif_user neivkli --gbif_email likevin@umich.edu --organism plant --start_date 2015 --end_date 2025 --area "USA.39_1"
 
 ```
 
-
-### Run `Build_data.py`:
+## Run `Build_data.py`:
 
 In home directory:
 
@@ -202,28 +151,9 @@ sbatch work/github/deepflora/scripts/build_data_parallel.sh
 sbatch work/github/deepflora/scripts/build_data_serial.sh
 ```
 
-### Run Deepbiosphere
+## Run Deepbiosphere
 
-#### Debug
-
-Inside of `Dataset.py` for class definition of `DeebioDataset`, change reference to `f"naip_{year}"` to `f"{state}_naip_{year}"` to be consistent with how the metadata is actually saved.
-
-```python
-        if metadata.dataset_means[f"{state}_naip_{year}"] is not None:    # added `{state}_` here
-            self.mean = metadata.dataset_means[f"{state}_naip_{year}"]['means']
-            self.std = metadata.dataset_means[f"{state}_naip_{year}"]['stds']
-
-```
-
-Inside `Run.py`, `train_model` function, add another `.datetime` to the call:
-
-```python
-    log_dir = f"{paths.RUNS}/{datetime.datetime.now().strftime('%Y_%m_%d_%H-%M-%S')}_{socket.gethostname()}_"
-```
-
-Also do this in the `train_and_test_model`.
-
-#### run with p100 gpu and 26 cores using sbatch script
+Run with p100 gpu and 26 cores using sbatch script
 
 ```
 sbatch work/github/deepflora/scripts/run_deepbiosphere.sh
