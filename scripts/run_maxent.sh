@@ -21,7 +21,7 @@ if [ $? -ne 0 ]; then
 fi
 
 
-for band in $(seq 0 11); do
+for band in $(seq 0 9); do
   echo "Processing band ${band} of 11 for maxent..."
   Rscript src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R --dset_name plants_pa --band band_${band} --sdm maxent --ncpu 26
   if [ $? -ne 0 ]; then
