@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=26
+#SBATCH --cpus-per-task=8
 #SBATCH --mem=224G
 #SBATCH --time=48:00:00
 #SBATCH --output=run_others_%j.out
@@ -29,7 +29,7 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Run.py \
   --dataset_type MULTI_SPECIES \
   --taxon_type spec_gen_fam \
   --device 0 \
-  --processes 26
+  --processes 8
 
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Run.py \
   --year 2017 \
@@ -46,4 +46,4 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Run.py \
   --dataset_type MULTI_SPECIES \
   --taxon_type spec_gen_fam \
   --device 0 \
-  --processes 26
+  --processes 8
