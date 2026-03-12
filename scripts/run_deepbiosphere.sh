@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=26
+#SBATCH --cpus-per-task=8
 #SBATCH --mem=224G
 #SBATCH --time=48:00:00
 #SBATCH --output=rundb_%j.out
@@ -23,10 +23,10 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Run.py \
   --lr .00001 \
   --epochs 12 \
   --model DEEPBIOSPHERE \
-  --exp_id initial \
+  --exp_id uniform \
   --loss SAMPLE_AWARE_BCE \
   --batchsize 150 \
   --dataset_type MULTI_SPECIES \
   --taxon_type spec_gen_fam \
   --device 0 \
-  --processes 26
+  --processes 8

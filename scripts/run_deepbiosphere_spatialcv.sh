@@ -26,7 +26,7 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Run.py \
   --lr .00001 \
   --epochs 12 \
   --model DEEPBIOSPHERE \
-  --exp_id initial \
+  --exp_id band_${SLURM_ARRAY_TASK_ID} \
   --loss SAMPLE_AWARE_BCE \
   --batchsize 150 \
   --dataset_type MULTI_SPECIES \
