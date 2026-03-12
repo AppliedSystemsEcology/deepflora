@@ -23,7 +23,7 @@ fi
 
 # spatial cross-validation
 for band in $(seq 0 9); do
-  echo "Processing band ${band} of 11 for random forest..."
+  echo "Processing band ${band} of 9 for random forest..."
   Rscript src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R --dset_name plants_pa --band band_${band} --sdm rf --ncpu 26 --remakebkgd
   if [ $? -ne 0 ]; then
     echo "ERROR: band ${band} random forest failed"
