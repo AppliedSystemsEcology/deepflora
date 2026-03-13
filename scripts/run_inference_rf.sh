@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --mem=4G
 #SBATCH --time=8:00:00
 #SBATCH --output=rf_inference_%j.out
 #SBATCH --error=rf_inference_%j.err
