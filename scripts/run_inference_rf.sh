@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=rf_inference
-#SBATCH --account=kbl5733
+#SBATCH --account=open
 #SBATCH --partition=basic
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
