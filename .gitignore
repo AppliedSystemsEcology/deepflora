@@ -3,5 +3,6 @@
 .RData
 .Ruserdata
 data/big
+results/rf
 .DS_Store
 rf.zip

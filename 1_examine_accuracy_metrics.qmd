@@ -71,7 +71,7 @@ writeRaster(plantifs.sum, "data/sum.tif")
 # match tif names to names from accuracy metrics
 tif50 <- names(plantifs)[which(names(plantifs) %in% top50)]
 
-# on is missing so find it
+# one is missing so find it
 top50[which(!(top50 %in% names(plantifs)))]  # "Symphyotrichum novae angliae"
 
 # it's because the name is missing a hyphen 
@@ -89,6 +89,7 @@ terra::plot(plan)
 ```
 
 # individual plants
+
 ```{r}
 
 for(i in 1:10){
