@@ -8,17 +8,24 @@ editor: visual
 
 ```{r}
 library(tidyverse)
-
+metricsdir <- "results/accuracy_metrics/"
+metricfiles <- list.files(metricsdir, full.names = TRUE)
 beeplants <- readRDS("data/beeplants.rds")
 
-overall <- read.csv("results/accuracy_metrics/initial_db_overall_results_band-1.csv")
-perobs <- read.csv("results/accuracy_metrics/initial_db_per_observations_results_band-1.csv")
-persp <- read.csv("results/accuracy_metrics/initial_db_per_species_results_band-1.csv")
+overall <- lapply(metricfiles[grep("overall_results", metricfiles)], read.csv)
+names(overall) <- strsplit(basename(metricfiles[grep("overall_results", metricfiles)]), "_") |> sapply(\(x) unlist(x)[1])
 
-persp.metrics <- persp$metric
+perobs <- lapply(metricfiles[grep("observations", metricfiles)], read.csv)
+names(perobs) <- strsplit(basename(metricfiles[grep("observations", metricfiles)]), "_") |> sapply(\(x) unlist(x)[1])
 
-persp.l <- persp |> dplyr::select(-dset_name,-model,-loss,-exp_id,-pretrained,-metric,-date, -batch_size,-epoch,-thres,-band) |>
-  t() |> as.data.frame() |> setNames(persp.metrics) |>
+persp <- lapply(metricfiles[grep("species", metricfiles)], read.csv)
+names(persp) <- strsplit(basename(metricfiles[grep("species", metricfiles)]), "_") |> sapply(\(x) unlist(x)[1])
+
+make_persp_long <- function(x) {
+  x |> 
+    dplyr::select(-dset_name, -model, -loss, -exp_id, -pretrained, -date, -batch_size, -epoch, -thres, -band) |> 
+  column_to_rownames("metric") |>
+  t() |> as.data.frame() |>
   rownames_to_column("scientificName") |> 
   mutate(scientificName = gsub("\\."," ",scientificName)) %>%
   separate_wider_delim(scientificName, delim=" ",
@@ -26,76 +33,207 @@ persp.l <- persp |> dplyr::select(-dset_name,-model,-loss,-exp_id,-pretrained,-m
                        too_few = "align_start",
                        too_many = "merge",
                        cols_remove = FALSE)
+}
+
+persp.l <- lapply(persp, make_persp_long)
 
 # all bee floral resource sp (Grozinger + Fowler)
-persp.fr <- persp.l %>%
-  filter(genus %in% beeplants$genus$genus |
-           scientificName %in% beeplants$species$scientificName)
+# persp.fr <- persp.l %>%
+#   filter(genus %in% beeplants$genus$genus |
+#            scientificName %in% beeplants$species$scientificName)
 
 # all PA bee floral resource sp (Grozinger list)
-persp.fr.g <- persp.l %>%
-  filter(genus %in% beeplants$genus$genus |
+persp.fr <- lapply(persp.l, \(x){
+    filter(x, genus %in% beeplants$genus$genus |
            scientificName %in% (beeplants$species %>% 
                                   dplyr::filter(source == "Grozinger") %>% 
                                   pull(scientificName)))
+})
 
-# above 50 support subset
-persp.fr.g50 <- persp.fr.g %>% arrange(support) %>% top_n(50)
-
-top50 <- persp.fr.g50$scientificName
-
-```
-
-## Look at sp predictions
-
-```{r}
-library(terra)
-
-plantifs <- rast("data/initial_state_college_raw.tif")
-naiptif <- rast("data-raw/m_4007710_se_18_1_20170509.tif")
-
-# define presence as > 0.5
-plantifs.yn <- plantifs > 0.5
-
-# sum of present species
-plantifs.sum <- sum(plantifs.yn)
-
-writeRaster(plantifs.sum, "data/sum.tif")
+# plotting df
+plot_persp <- list(full=bind_rows(persp.l, .id = "model"), floralres=bind_rows(persp.fr, .id = "model")) |>
+  bind_rows(.id = "subset") |>
+  pivot_longer(species_top1:support, names_to = "metric")
 
 ```
 
-## Look at 50 of the top floral resource species
-
+Plot results comparison
 ```{r}
+library(rstatix)
+library(ggsignif)
 
-# match tif names to names from accuracy metrics
-tif50 <- names(plantifs)[which(names(plantifs) %in% top50)]
+model_labels <- c(
+  "initial" = "Deepbiosphere",
+  # "bioclimmlp" = "Bioclim MLP",
+  # "tresnet" = "Remote sensing TResNet",
+  "maxent" = "Maxent",
+  "rf" = "Random Forest"
+)
 
-# one is missing so find it
-top50[which(!(top50 %in% names(plantifs)))]  # "Symphyotrichum novae angliae"
+# Map your metric column values to display labels
+metric_labels <- c(
+  "calibrated_PRC_AUC" = "calibrated~AUC[PRC]",
+  "calibrated_ROC_AUC" = "calibrated~AUC[ROC]",
+  "f1_score"           = "F1~score",
+  "PRC_AUC"            = "AUC[PRC]",
+  "precision_score"    = "Precision~score",
+  "recall_score"       = "Recall~score",
+  "ROC_AUC"            = "AUC[ROC]",
+  "species_top1"       = "Top~'1'[spp]",
+  "species_top100"     = "Top~'100'[spp]",
+  "species_top30"      = "Top~'30'[spp]",
+  "species_top5"       = "Top~'5'[spp]"
+)
 
-# it's because the name is missing a hyphen 
-tif50 <- append(tif50, "Symphyotrichum novae-angliae")
+# Desired panel order (matches reading order in the figure)
+metric_order <- c(
+  "calibrated_PRC_AUC", "calibrated_ROC_AUC",
+  "ROC_AUC",  "PRC_AUC", "precision_score",   "recall_score", "f1_score",
+  "species_top1", "species_top5","species_top30","species_top100")
 
-plantifs50 <- plantifs[[tif50]]
+df <- plot_persp %>%
+  filter(metric %in% metric_order) %>%
+  mutate(
+    model  = factor(model, levels = names(model_labels)),
+    metric = factor(metric, levels = metric_order)
+  )
 
-plantifs50.yn <- plantifs50 >0.5
-plantifs50.sum <- sum(plantifs50.yn)
+stat_results_full <- df %>% dplyr::filter(subset == "full") %>%
+  arrange(metric, scientificName, model) %>%  # same species order for every model
+  group_by(subset, metric) %>%
+  wilcox_test(
+    value ~ model,
+    ref.group   = "initial",
+    paired      = TRUE,
+    p.adjust.method = "BH"        # correct for multiple comparisons within metric
+  ) %>%
+  add_significance(
+    p.col = "p.adj",
+    cutpoints = c(0, 0.001, 0.01, 0.05, 1),
+    symbols   = c("***", "**", "*", "NS.")
+  ) %>%
+  add_xy_position(
+    x     = "model",
+    dodge = 0.8,
+    # step.increase = 0.07   # ggsignif needs y positions for bracket heights
+    scales = "fixed"
+  )
 
-writeRaster(plantifs50.sum, "data/sum50.tif")
+stat_results_fr <- df %>% dplyr::filter(subset == "floralres") %>%
+  arrange(metric, scientificName, model) %>%  # same species order for every model
+  group_by(subset, metric) %>%
+  wilcox_test(
+    value ~ model,
+    ref.group   = "initial",
+    paired      = TRUE,
+    p.adjust.method = "BH"        # correct for multiple comparisons within metric
+  ) %>%
+  add_significance(
+    p.col = "p.adj",
+    cutpoints = c(0, 0.001, 0.01, 0.05, 1),
+    symbols   = c("***", "**", "*", "NS.")
+  ) %>%
+  add_xy_position(
+    x     = "model",
+    dodge = 0.8,
+    # step.increase = 0.07   # ggsignif needs y positions for bracket heights
+    scales = "fixed"
+  )
 
-terra::plot(plan)
+medians <- df %>%
+  group_by(subset,metric, model) %>%
+  summarise(med = round(median(value, na.rm = TRUE), 3), .groups = "drop")
+means <- df %>%
+  group_by(subset,metric, model) %>%
+  summarise(mean = round(mean(value, na.rm = TRUE), 3), .groups = "drop")
 
-```
+pfull <- ggplot(df %>% dplyr::filter(subset == "full"), 
+            aes(x = model, y = value, fill = model, color = model)) +
 
-# individual plants
+  geom_violin(alpha = 0.35, trim = FALSE, scale = "width", linewidth = 0.3) +
+  geom_jitter(width = 0.08, size = 0.6, alpha = 0.25, shape = 16) +
+  geom_boxplot(width = 0.15, outlier.shape = NA, alpha = 0,
+               color = "black", linewidth = 0.4) +
+  geom_text(
+    data = means %>% filter(subset == "full"),
+    aes(x = model, y = mean, label = mean),
+    inherit.aes = FALSE,
+    size = 2.2, fontface = "bold", vjust = -0.5
+  ) +
+  # Use precomputed stats instead of computing inside geom_signif
+  ggpubr::stat_pvalue_manual(
+    stat_results_full,
+    label         = "p.adj.signif",   # uses the *** / NS. symbols
+    tip.length    = 0.01,
+    step.increase = 0.07,
+    size          = 2.5,
+    step.group.by = "metric",
+    hide.ns       = FALSE             # set TRUE to drop NS. brackets
+  ) +
+  # scale_fill_manual(values  = model_colors) +
+  # scale_color_manual(values = model_colors) +
+  scale_y_continuous(limits = c(0, 1.4),   # extra headroom for brackets
+                     breaks = c(0, 0.25, 0.50, 0.75, 1.00)) +
 
-```{r}
+  facet_wrap(~ metric,
+             labeller = as_labeller(metric_labels, label_parsed),
+             ncol = 3
+             ) +
 
-for(i in 1:10){
-  writeRaster(plantifs50[[tif50[i]]], 
-              file.path("data",paste0(gsub(" ","_",tif50[i]),".tif")))
-}
+  theme_bw(base_size = 9) +
+  theme(
+    legend.position    = "none",
+    axis.text.x        = element_text(angle = 45, hjust = 1, size = 7),
+    axis.text.y        = element_text(size = 7),
+    axis.title         = element_blank(),
+    strip.background   = element_blank(),
+    strip.text         = element_text(size = 8, face = "bold"),
+    panel.grid.minor   = element_blank(),
+    panel.grid.major.x = element_blank()
+  )
 
+pfr <- ggplot(df %>% dplyr::filter(subset == "floralres"), 
+            aes(x = model, y = value, fill = model, color = model)) +
+
+  geom_violin(alpha = 0.35, trim = FALSE, scale = "width", linewidth = 0.3) +
+  geom_jitter(width = 0.08, size = 0.6, alpha = 0.25, shape = 16) +
+  geom_boxplot(width = 0.15, outlier.shape = NA, alpha = 0,
+               color = "black", linewidth = 0.4) +
+  geom_text(
+    data = means %>% filter(subset == "floralres"),
+    aes(x = model, y = mean, label = mean),
+    inherit.aes = FALSE,
+    size = 2.2, fontface = "bold", vjust = -0.5
+  ) +
+  # Use precomputed stats instead of computing inside geom_signif
+  ggpubr::stat_pvalue_manual(
+    stat_results_fr,
+    label         = "p.adj.signif",   # uses the *** / NS. symbols
+    tip.length    = 0.01,
+    step.increase = 0.01,
+    size          = 2.5,
+    step.group.by = "metric",
+    hide.ns       = FALSE             # set TRUE to drop NS. brackets
+  ) +
+  # scale_fill_manual(values  = model_colors) +
+  # scale_color_manual(values = model_colors) +
+  scale_y_continuous(limits = c(0, 1.4),   # extra headroom for brackets
+                     breaks = c(0, 0.25, 0.50, 0.75, 1.00)) +
+  facet_wrap(~ metric,
+             labeller = as_labeller(metric_labels, label_parsed),
+             ncol = 3,
+             ) +
+
+  theme_bw(base_size = 9) +
+  theme(
+    legend.position    = "none",
+    axis.text.x        = element_text(angle = 45, hjust = 1, size = 7),
+    axis.text.y        = element_text(size = 7),
+    axis.title         = element_blank(),
+    strip.background   = element_blank(),
+    strip.text         = element_text(size = 8, face = "bold"),
+    panel.grid.minor   = element_blank(),
+    panel.grid.major.x = element_blank()
+  )
 
 ```
