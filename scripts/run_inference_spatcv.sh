@@ -34,3 +34,29 @@ if [ $? -ne 0 ]; then
   echo "ERROR: band ${SLURM_ARRAY_TASK_ID} deepbiosphere failed"
 fi
 
+echo "Inference for band ${SLURM_ARRAY_TASK_ID} of 9 for random forest..."
+python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
+  --band ${SLURM_ARRAY_TASK_ID} \
+  --model rf \
+  --dataset_name plants_pa \
+  --year 2017 \
+  --state pa \
+  --filename rf_band_${SLURM_ARRAY_TASK_ID}
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: band ${SLURM_ARRAY_TASK_ID} random forest failed"
+fi
+
+echo "Inference for band ${SLURM_ARRAY_TASK_ID} of 9 for maxent..."
+python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
+  --band ${SLURM_ARRAY_TASK_ID} \
+  --model maxent \
+  --dataset_name plants_pa \
+  --year 2017 \
+  --state pa \
+  --filename maxent_band_${SLURM_ARRAY_TASK_ID}
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: band ${SLURM_ARRAY_TASK_ID} maxent failed"
+fi
+
