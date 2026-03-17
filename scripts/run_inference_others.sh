@@ -14,22 +14,22 @@
 module load anaconda
 source activate deepflora
 
-python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
-  --band -1 \
-  --model RS_TRESNET \
-  --exp_id tresnet \
-  --loss SAMPLE_AWARE_BCE \
-  --earlystopping mean_ROC_AUC \
-  --batch_size 50 \
-  --device 0 \
-  --processes 8 \
-  --year 2017 \
-  --state pa \
-  --filename tresnet_unif
+# python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
+#   --band -1 \
+#   --model RS_TRESNET \
+#   --exp_id tresnet \
+#   --loss SAMPLE_AWARE_BCE \
+#   --earlystopping mean_ROC_AUC \
+#   --batch_size 50 \
+#   --device 0 \
+#   --processes 8 \
+#   --year 2017 \
+#   --state pa \
+#   --filename tresnet_unif
 
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --band -1 \
-  --model BIOCLIM \
+  --model BIOCLIM_MLP \
   --exp_id bioclim \
   --loss SAMPLE_AWARE_BCE \
   --earlystopping mean_ROC_AUC \
