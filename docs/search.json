@@ -4,13 +4,27 @@
     "href": "1_examine_accuracy_metrics.html",
     "title": "Accuracy metrics",
     "section": "",
-    "text": "Plot results comparison\n\n\n\nComparing uniform train-test split for full dataset\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset"
+    "text": "Comparing uniform train-test split for full dataset\n\n\n\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset"
   },
   {
-    "objectID": "1_examine_accuracy_metrics.html#uniform-train-test-split",
-    "href": "1_examine_accuracy_metrics.html#uniform-train-test-split",
+    "objectID": "1_examine_accuracy_metrics.html#uniform-train-test-split-results",
+    "href": "1_examine_accuracy_metrics.html#uniform-train-test-split-results",
     "title": "Accuracy metrics",
     "section": "",
-    "text": "Plot results comparison\n\n\n\nComparing uniform train-test split for full dataset\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset"
+    "text": "Comparing uniform train-test split for full dataset\n\n\n\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset"
+  },
+  {
+    "objectID": "1_examine_accuracy_metrics.html#list-of-floral-resource-species",
+    "href": "1_examine_accuracy_metrics.html#list-of-floral-resource-species",
+    "title": "Accuracy metrics",
+    "section": "List of floral resource species",
+    "text": "List of floral resource species\n\n\n\n\n\n\n\nSpecies support\n\n\n\n\n\nDistribution of species support (number of observations)"
+  },
+  {
+    "objectID": "1_examine_accuracy_metrics.html#accuracy-metrics-definitions",
+    "href": "1_examine_accuracy_metrics.html#accuracy-metrics-definitions",
+    "title": "Accuracy metrics",
+    "section": "Accuracy metrics definitions",
+    "text": "Accuracy metrics definitions\nText from supplemental material of Gillespie et al. 2024.\n\nBinary classification metrics\nThreshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\nPresence accuracy (Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present\nPrecision Measures how many species predicted to be present were actually present.\nRecall Measures how many of the true species present are predicted as present.\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\nDiscrimination metrics\nIn order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.\nAUC ROC Area under the receiver operating characteristic curve averaged across species\nAUC PRC Average area under the precision-recall curve averaged across species\nCalibrated AUC A model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.\n\nThis means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.\nTo correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.\n\n\n\nRanking metrics\nTop-K (top 1, 5, 30, 100) These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence)."
   }
 ]
