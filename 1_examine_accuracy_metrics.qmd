@@ -7,54 +7,7 @@ editor: visual
 ## Accuracy Metrics
 
 ```{r}
-library(tidyverse)
-metricsdir <- "results/accuracy_metrics/"
-metricfiles <- list.files(metricsdir, full.names = TRUE)
-beeplants <- readRDS("data/beeplants.rds")
-
-overall <- lapply(metricfiles[grep("overall_results", metricfiles)], read.csv)
-names(overall) <- strsplit(basename(metricfiles[grep("overall_results", metricfiles)]), "_") |> sapply(\(x) unlist(x)[1])
-
-perobs <- lapply(metricfiles[grep("observations", metricfiles)], read.csv)
-names(perobs) <- strsplit(basename(metricfiles[grep("observations", metricfiles)]), "_") |> sapply(\(x) unlist(x)[1])
-
-persp <- lapply(metricfiles[grep("species", metricfiles)], read.csv)
-names(persp) <- strsplit(basename(metricfiles[grep("species", metricfiles)]), "_") |> sapply(\(x) unlist(x)[1])
-
-make_persp_long <- function(x) {
-  x |> 
-    dplyr::select(-dset_name, -model, -loss, -exp_id, -pretrained, -date, -batch_size, -epoch, -thres, -band) |> 
-  column_to_rownames("metric") |>
-  t() |> as.data.frame() |>
-  rownames_to_column("scientificName") |> 
-  mutate(scientificName = gsub("\\."," ",scientificName)) %>%
-  separate_wider_delim(scientificName, delim=" ",
-                       names=c("genus","sp"),
-                       too_few = "align_start",
-                       too_many = "merge",
-                       cols_remove = FALSE)
-}
-
-persp.l <- lapply(persp, make_persp_long)
-
-# all bee floral resource sp (Grozinger + Fowler)
-# persp.fr <- persp.l %>%
-#   filter(genus %in% beeplants$genus$genus |
-#            scientificName %in% beeplants$species$scientificName)
-
-# all PA bee floral resource sp (Grozinger list)
-persp.fr <- lapply(persp.l, \(x){
-    filter(x, genus %in% beeplants$genus$genus |
-           scientificName %in% (beeplants$species %>% 
-                                  dplyr::filter(source == "Grozinger") %>% 
-                                  pull(scientificName)))
-})
-
-# plotting df
-plot_persp <- list(full=bind_rows(persp.l, .id = "model"), floralres=bind_rows(persp.fr, .id = "model")) |>
-  bind_rows(.id = "subset") |>
-  pivot_longer(species_top1:support, names_to = "metric")
-
+plot_persp <- read.csv("data/results/per-sp-accuracy.csv")
 ```
 
 Plot results comparison
@@ -63,11 +16,11 @@ library(rstatix)
 library(ggsignif)
 
 model_labels <- c(
-  "initial" = "Deepbiosphere",
-  # "bioclimmlp" = "Bioclim MLP",
-  # "tresnet" = "Remote sensing TResNet",
+  "initial" = "Deepbiosph.",
+  "bioclim" = "Bioclim MLP",
+  "tresnet" = "TResNet",
   "maxent" = "Maxent",
-  "rf" = "Random Forest"
+  "rf" = "Rand. Forest"
 )
 
 # Map your metric column values to display labels
@@ -85,11 +38,16 @@ metric_labels <- c(
   "species_top5"       = "Top~'5'[spp]"
 )
 
+all_labels <- append(model_labels, metric_labels)
+
 # Desired panel order (matches reading order in the figure)
 metric_order <- c(
   "calibrated_PRC_AUC", "calibrated_ROC_AUC",
-  "ROC_AUC",  "PRC_AUC", "precision_score",   "recall_score", "f1_score",
+  "PRC_AUC", "ROC_AUC",  "precision_score",   "recall_score", "f1_score",
   "species_top1", "species_top5","species_top30","species_top100")
+
+# spacing in brackets
+setspacing <- Vectorize(\(x) switch(as.character(x), bioclim = 1, tresnet = 1.1, maxent = 1.2, rf = 1.3))
 
 df <- plot_persp %>%
   filter(metric %in% metric_order) %>%
@@ -100,7 +58,7 @@ df <- plot_persp %>%
 
 stat_results_full <- df %>% dplyr::filter(subset == "full") %>%
   arrange(metric, scientificName, model) %>%  # same species order for every model
-  group_by(subset, metric) %>%
+  group_by(metric) %>%
   wilcox_test(
     value ~ model,
     ref.group   = "initial",
@@ -117,11 +75,12 @@ stat_results_full <- df %>% dplyr::filter(subset == "full") %>%
     dodge = 0.8,
     # step.increase = 0.07   # ggsignif needs y positions for bracket heights
     scales = "fixed"
-  )
+  ) %>%
+  dplyr::mutate(y.position = 1.1, empty = "")
 
 stat_results_fr <- df %>% dplyr::filter(subset == "floralres") %>%
   arrange(metric, scientificName, model) %>%  # same species order for every model
-  group_by(subset, metric) %>%
+  group_by(metric) %>%
   wilcox_test(
     value ~ model,
     ref.group   = "initial",
@@ -136,9 +95,9 @@ stat_results_fr <- df %>% dplyr::filter(subset == "floralres") %>%
   add_xy_position(
     x     = "model",
     dodge = 0.8,
-    # step.increase = 0.07   # ggsignif needs y positions for bracket heights
     scales = "fixed"
-  )
+  ) %>%
+  mutate(y.position = 1.1, empty = "")
 
 medians <- df %>%
   group_by(subset,metric, model) %>%
@@ -150,7 +109,7 @@ means <- df %>%
 pfull <- ggplot(df %>% dplyr::filter(subset == "full"), 
             aes(x = model, y = value, fill = model, color = model)) +
 
-  geom_violin(alpha = 0.35, trim = FALSE, scale = "width", linewidth = 0.3) +
+  geom_violin(alpha = 0.35, trim = TRUE, scale = "width", linewidth = 0.3) +
   geom_jitter(width = 0.08, size = 0.6, alpha = 0.25, shape = 16) +
   geom_boxplot(width = 0.15, outlier.shape = NA, alpha = 0,
                color = "black", linewidth = 0.4) +
@@ -163,18 +122,24 @@ pfull <- ggplot(df %>% dplyr::filter(subset == "full"),
   # Use precomputed stats instead of computing inside geom_signif
   ggpubr::stat_pvalue_manual(
     stat_results_full,
-    label         = "p.adj.signif",   # uses the *** / NS. symbols
-    tip.length    = 0.01,
-    step.increase = 0.07,
+    label = "empty",
+    tip.length    = 0.08,
+    step.increase = 0,
     size          = 2.5,
     step.group.by = "metric",
     hide.ns       = FALSE             # set TRUE to drop NS. brackets
   ) +
+    ggpubr::stat_pvalue_manual(
+    stat_results_full,
+    vjust = -0.5, size = 3,
+    x = "group2",
+    label         = "p.adj.signif",   # uses the *** / NS. symbols
+  ) +
   # scale_fill_manual(values  = model_colors) +
   # scale_color_manual(values = model_colors) +
-  scale_y_continuous(limits = c(0, 1.4),   # extra headroom for brackets
+  scale_y_continuous(limits = c(0, 1.25),   # extra headroom for brackets
                      breaks = c(0, 0.25, 0.50, 0.75, 1.00)) +
-
+  scale_x_discrete(labels = model_labels) +
   facet_wrap(~ metric,
              labeller = as_labeller(metric_labels, label_parsed),
              ncol = 3
@@ -195,7 +160,7 @@ pfull <- ggplot(df %>% dplyr::filter(subset == "full"),
 pfr <- ggplot(df %>% dplyr::filter(subset == "floralres"), 
             aes(x = model, y = value, fill = model, color = model)) +
 
-  geom_violin(alpha = 0.35, trim = FALSE, scale = "width", linewidth = 0.3) +
+  geom_violin(alpha = 0.35, trim = TRUE, scale = "width", linewidth = 0.3) +
   geom_jitter(width = 0.08, size = 0.6, alpha = 0.25, shape = 16) +
   geom_boxplot(width = 0.15, outlier.shape = NA, alpha = 0,
                color = "black", linewidth = 0.4) +
@@ -208,20 +173,27 @@ pfr <- ggplot(df %>% dplyr::filter(subset == "floralres"),
   # Use precomputed stats instead of computing inside geom_signif
   ggpubr::stat_pvalue_manual(
     stat_results_fr,
-    label         = "p.adj.signif",   # uses the *** / NS. symbols
-    tip.length    = 0.01,
-    step.increase = 0.01,
+    label         = "empty",   # uses the *** / NS. symbols
+    tip.length    = 0.08,
+    step.increase = 0,
     size          = 2.5,
     step.group.by = "metric",
     hide.ns       = FALSE             # set TRUE to drop NS. brackets
   ) +
+    ggpubr::stat_pvalue_manual(
+    stat_results_fr,
+    vjust = -0.5, size = 3,
+    x = "group2",
+    label         = "p.adj.signif",   # uses the *** / NS. symbols
+  ) +
   # scale_fill_manual(values  = model_colors) +
   # scale_color_manual(values = model_colors) +
-  scale_y_continuous(limits = c(0, 1.4),   # extra headroom for brackets
+  scale_y_continuous(limits = c(0, 1.25),   # extra headroom for brackets
                      breaks = c(0, 0.25, 0.50, 0.75, 1.00)) +
+  scale_x_discrete(labels = model_labels) +
   facet_wrap(~ metric,
              labeller = as_labeller(metric_labels, label_parsed),
-             ncol = 3,
+             ncol = 3
              ) +
 
   theme_bw(base_size = 9) +
@@ -235,5 +207,24 @@ pfr <- ggplot(df %>% dplyr::filter(subset == "floralres"),
     panel.grid.minor   = element_blank(),
     panel.grid.major.x = element_blank()
   )
+
+
+ggsave("plots/compare_unif_full.png", pfull, height = 8, width =6, dpi=300,bg="white")
+
+ggsave("plots/compare_unif_floral.png", pfr, height = 8, width =6, dpi=300,bg="white")
+
+```
+
+# rank
+```{r}
+persp_rank <- plot_persp %>%
+  pivot_wider(names_from = metric, values_from = value) %>%
+  pivot_longer(cols = species_top1:zero_one_accuracy, names_to = "metric") %>%
+  group_by(subset, model, metric) %>%
+  mutate(rank = rank(desc(support), ties = "first"))
+
+ggplot(persp_rank %>% filter(subset=="full"), aes(rank, value)) + 
+  geom_point() + 
+  facet_grid(metric~model)
 
 ```
