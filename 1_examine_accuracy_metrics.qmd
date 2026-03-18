@@ -125,8 +125,8 @@ pfull <- ggplot(df %>% dplyr::filter(subset == "full"),
   geom_boxplot(width = 0.15, outlier.shape = NA, alpha = 0,
                color = "black", linewidth = 0.4) +
   geom_text(
-    data = means %>% filter(subset == "full"),
-    aes(x = model, y = mean, label = mean),
+    data = medians %>% filter(subset == "full"),
+    aes(x = model, y = med, label = med),
     inherit.aes = FALSE,
     size = 2.2, fontface = "bold", vjust = -0.5
   ) +
@@ -176,8 +176,8 @@ pfr <- ggplot(df %>% dplyr::filter(subset == "floralres"),
   geom_boxplot(width = 0.15, outlier.shape = NA, alpha = 0,
                color = "black", linewidth = 0.4) +
   geom_text(
-    data = means %>% filter(subset == "floralres"),
-    aes(x = model, y = mean, label = mean),
+    data = medians %>% filter(subset == "floralres"),
+    aes(x = model, y = med, label = med),
     inherit.aes = FALSE,
     size = 2.2, fontface = "bold", vjust = -0.5
   ) +
