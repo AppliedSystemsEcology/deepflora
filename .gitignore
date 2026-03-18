@@ -6,3 +6,6 @@ data/big
 results/rf
 .DS_Store
 rf.zip
+
+/.quarto/
+**/*.quarto_ipynb

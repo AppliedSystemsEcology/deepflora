@@ -1,17 +1,23 @@
 ---
-title: "Initial Deepflora results"
+title: "Accuracy metrics"
 format: html
 editor: visual
+execute: 
+  enabled: false
 ---
 
-## Accuracy Metrics
+## Uniform train-test split
 
 ```{r}
+#| echo: false
+
 plot_persp <- read.csv("data/results/per-sp-accuracy.csv")
 ```
 
 Plot results comparison
 ```{r}
+#| echo: false
+
 library(rstatix)
 library(ggsignif)
 
@@ -215,8 +221,14 @@ ggsave("plots/compare_unif_floral.png", pfr, height = 8, width =6, dpi=300,bg="w
 
 ```
 
-# rank
+![Comparing uniform train-test split for full dataset](plots/compare_unif_full.png)
+
+![Comparing uniform train-test split for floral resource dataset](plots/compare_unif_floral.png)
+
 ```{r}
+#| echo: false
+
+# rank
 persp_rank <- plot_persp %>%
   pivot_wider(names_from = metric, values_from = value) %>%
   pivot_longer(cols = species_top1:zero_one_accuracy, names_to = "metric") %>%
