@@ -26,6 +26,6 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py \
   --loss SAMPLE_AWARE_BCE \
   --architecture DEEPBIOSPHERE \
   --epoch 7 \
-  --batch_size 50 \
+  --batch_size 25 \
   --device 0 \
   --processes 8
