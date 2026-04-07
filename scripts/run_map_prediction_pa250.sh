@@ -14,6 +14,8 @@
 module load anaconda
 source activate deepflora
 
+export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128
+
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py \
   --shape_pth states/pa.shp \
   --parent_dir pa_250 \
