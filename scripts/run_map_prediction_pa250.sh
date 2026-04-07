@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=1
 #SBATCH --mem=224G
 #SBATCH --time=48:00:00
 #SBATCH --output=pa250_%j.out
@@ -28,6 +28,6 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py \
   --loss SAMPLE_AWARE_BCE \
   --architecture DEEPBIOSPHERE \
   --epoch 7 \
-  --batch_size 10 \
+  --batch_size 50 \
   --device 0 \
   --processes 8
