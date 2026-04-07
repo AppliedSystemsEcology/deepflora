@@ -9,3 +9,4 @@ rf.zip
 
 /.quarto/
 **/*.quarto_ipynb
+/accuracy_metrics/
