@@ -18,7 +18,7 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py \
   --shape_pth /storage/home/kbl5733/gstorage/data/deepflora/SHPFILES/states/pa.shp \
   --parent_dir pa_250 \
   --pred_year 2017 \
-  --state pa
+  --state pa \
   --pred_types ALPHA \
   --loss SAMPLE_AWARE_BCE \
   --exp_id initial \
