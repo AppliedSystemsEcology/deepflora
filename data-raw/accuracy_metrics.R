@@ -1,6 +1,6 @@
 library(tidyverse)
 metricsdir <- "data-raw/results/accuracy_metrics/"
-unzip("data-raw/results/acc_metrics.zip",exdir = metricsdir, junkpaths = TRUE)
+# unzip("data-raw/results/acc_metrics.zip",exdir = metricsdir, junkpaths = TRUE)
 metricfiles <- list.files(metricsdir, full.names = TRUE)
 beeplants <- readRDS("data/beeplants.rds")
 
