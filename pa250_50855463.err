@@ -1,0 +1,4 @@
+  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 365
+    imagery_dir = paths.SCRATCH+f"cfg.state}_{scratch_res}cm_{pred_year}"
+                                                                         ^
+SyntaxError: f-string: single '}' is not allowed
