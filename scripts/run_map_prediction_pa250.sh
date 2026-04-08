@@ -21,7 +21,7 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py \
   --parent_dir pa_250 \
   --pred_year 2017 \
   --state pa \
-  --pred_types ALPHA \
+  --pred_types RAW \
   --loss SAMPLE_AWARE_BCE \
   --exp_id initial \
   --band -1 \
