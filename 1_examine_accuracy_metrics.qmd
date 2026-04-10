@@ -47,7 +47,7 @@ floralsp <- plot_persp %>% ungroup() %>%
 
 ```{r}
 
-DT::datatable(floralsp %>% mutate(across(species_top1:f1_score, \(x) round(x, 2))))
+DT::datatable(floralsp %>% mutate(across(species_top1:zero_one_accuracy, \(x) round(x, 2))))
 ```
 
 ### Species support
