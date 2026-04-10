@@ -14,6 +14,13 @@
     "text": "Comparing uniform train-test split for full dataset\n\n\n\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset"
   },
   {
+    "objectID": "1_examine_accuracy_metrics.html#spatial-cross-validation-results-full-dataset",
+    "href": "1_examine_accuracy_metrics.html#spatial-cross-validation-results-full-dataset",
+    "title": "Accuracy metrics",
+    "section": "Spatial cross validation results (full dataset)",
+    "text": "Spatial cross validation results (full dataset)\n\n\n\nComparing spatial cross validation for full dataset. Closed colored circles are individual cross validation splits and open dark circles are the results from the uniform train-test split."
+  },
+  {
     "objectID": "1_examine_accuracy_metrics.html#list-of-floral-resource-species",
     "href": "1_examine_accuracy_metrics.html#list-of-floral-resource-species",
     "title": "Accuracy metrics",
