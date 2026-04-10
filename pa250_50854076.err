@@ -1,77 +1,0 @@
-grabbing means of wc_30s_current bioclim rasters:   0%|          | 0/19 [00:00<?, ?it/s]grabbing means of wc_30s_current bioclim rasters:   5%|▌         | 1/19 [00:00<00:11,  1.58it/s]grabbing means of wc_30s_current bioclim rasters:  11%|█         | 2/19 [00:00<00:06,  2.44it/s]grabbing means of wc_30s_current bioclim rasters:  16%|█▌        | 3/19 [00:01<00:05,  2.95it/s]grabbing means of wc_30s_current bioclim rasters:  21%|██        | 4/19 [00:01<00:04,  3.37it/s]grabbing means of wc_30s_current bioclim rasters:  26%|██▋       | 5/19 [00:01<00:03,  3.82it/s]grabbing means of wc_30s_current bioclim rasters:  32%|███▏      | 6/19 [00:01<00:02,  4.35it/s]grabbing means of wc_30s_current bioclim rasters:  37%|███▋      | 7/19 [00:02<00:03,  3.92it/s]grabbing means of wc_30s_current bioclim rasters:  42%|████▏     | 8/19 [00:02<00:02,  4.05it/s]grabbing means of wc_30s_current bioclim rasters:  47%|████▋     | 9/19 [00:02<00:02,  4.30it/s]grabbing means of wc_30s_current bioclim rasters:  53%|█████▎    | 10/19 [00:02<00:02,  4.42it/s]grabbing means of wc_30s_current bioclim rasters:  58%|█████▊    | 11/19 [00:02<00:01,  4.61it/s]grabbing means of wc_30s_current bioclim rasters:  63%|██████▎   | 12/19 [00:03<00:01,  4.40it/s]grabbing means of wc_30s_current bioclim rasters:  68%|██████▊   | 13/19 [00:03<00:01,  3.94it/s]grabbing means of wc_30s_current bioclim rasters:  74%|███████▎  | 14/19 [00:03<00:01,  3.71it/s]grabbing means of wc_30s_current bioclim rasters:  79%|███████▉  | 15/19 [00:03<00:01,  3.96it/s]grabbing means of wc_30s_current bioclim rasters:  84%|████████▍ | 16/19 [00:04<00:00,  4.16it/s]grabbing means of wc_30s_current bioclim rasters:  89%|████████▉ | 17/19 [00:04<00:00,  4.28it/s]grabbing means of wc_30s_current bioclim rasters:  95%|█████████▍| 18/19 [00:04<00:00,  4.14it/s]grabbing means of wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:04<00:00,  4.00it/s]grabbing means of wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:04<00:00,  3.85it/s]
-prepping wc_30s_current bioclim rasters:   0%|          | 0/19 [00:00<?, ?it/s]prepping wc_30s_current bioclim rasters:   5%|▌         | 1/19 [00:00<00:03,  5.07it/s]prepping wc_30s_current bioclim rasters:  11%|█         | 2/19 [00:00<00:03,  5.24it/s]prepping wc_30s_current bioclim rasters:  16%|█▌        | 3/19 [00:00<00:03,  5.24it/s]prepping wc_30s_current bioclim rasters:  21%|██        | 4/19 [00:00<00:02,  5.41it/s]prepping wc_30s_current bioclim rasters:  26%|██▋       | 5/19 [00:00<00:02,  5.78it/s]prepping wc_30s_current bioclim rasters:  32%|███▏      | 6/19 [00:01<00:02,  6.33it/s]prepping wc_30s_current bioclim rasters:  37%|███▋      | 7/19 [00:01<00:02,  5.84it/s]prepping wc_30s_current bioclim rasters:  42%|████▏     | 8/19 [00:01<00:01,  5.89it/s]prepping wc_30s_current bioclim rasters:  47%|████▋     | 9/19 [00:01<00:01,  6.13it/s]prepping wc_30s_current bioclim rasters:  53%|█████▎    | 10/19 [00:01<00:01,  6.14it/s]prepping wc_30s_current bioclim rasters:  58%|█████▊    | 11/19 [00:01<00:01,  6.13it/s]/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/numpy/ma/core.py:1163: RuntimeWarning: overflow encountered in divide
-  result = self.f(da, db, *args, **kwargs)
-prepping wc_30s_current bioclim rasters:  63%|██████▎   | 12/19 [00:02<00:01,  5.74it/s]prepping wc_30s_current bioclim rasters:  68%|██████▊   | 13/19 [00:02<00:01,  5.46it/s]prepping wc_30s_current bioclim rasters:  74%|███████▎  | 14/19 [00:02<00:00,  5.37it/s]prepping wc_30s_current bioclim rasters:  79%|███████▉  | 15/19 [00:02<00:00,  5.54it/s]prepping wc_30s_current bioclim rasters:  84%|████████▍ | 16/19 [00:02<00:00,  5.70it/s]/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/numpy/ma/core.py:1163: RuntimeWarning: overflow encountered in divide
-  result = self.f(da, db, *args, **kwargs)
-prepping wc_30s_current bioclim rasters:  89%|████████▉ | 17/19 [00:02<00:00,  5.74it/s]prepping wc_30s_current bioclim rasters:  95%|█████████▍| 18/19 [00:03<00:00,  5.62it/s]prepping wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:03<00:00,  5.52it/s]prepping wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:03<00:00,  5.68it/s]
-
-
-
-
-
-
-2017 tiffs group #6:   0%|          | 0/417 [00:00<?, ? tiffs/s][A[A[A[A[A[A2017 tiffs group #6:   0%|          | 0/417 [00:00<?, ? tiffs/s]
-
-
-
-2017 tiffs group #3:   0%|          | 0/418 [00:00<?, ? tiffs/s][A[A[A
-
-
-
-
-2017 tiffs group #5:   0%|          | 0/417 [00:00<?, ? tiffs/s][A[A[A[A[A2017 tiffs group #3:   0%|          | 0/418 [00:00<?, ? tiffs/s]
-2017 tiffs group #5:   0%|          | 0/417 [00:00<?, ? tiffs/s]
-
-
-2017 tiffs group #2:   0%|          | 0/417 [00:00<?, ? tiffs/s][A[A2017 tiffs group #2:   0%|          | 0/417 [00:00<?, ? tiffs/s]
-
-
-
-
-2017 tiffs group #4:   0%|          | 0/418 [00:00<?, ? tiffs/s][A[A[A[A2017 tiffs group #4:   0%|          | 0/418 [00:00<?, ? tiffs/s]
-
-
-
-
-
-
-
-2017 tiffs group #7:   0%|          | 0/418 [00:00<?, ? tiffs/s][A[A[A[A[A[A[A
-2017 tiffs group #1:   0%|          | 0/417 [00:00<?, ? tiffs/s][A2017 tiffs group #7:   0%|          | 0/418 [00:00<?, ? tiffs/s]
-2017 tiffs group #0:   0%|          | 0/418 [00:00<?, ? tiffs/s]2017 tiffs group #1:   0%|          | 0/417 [00:00<?, ? tiffs/s]
-2017 tiffs group #0:   0%|          | 0/418 [00:00<?, ? tiffs/s]
-multiprocessing.pool.RemoteTraceback: 
-"""
-Traceback (most recent call last):
-  File "rasterio/_base.pyx", line 310, in rasterio._base.DatasetBase.__init__
-  File "rasterio/_base.pyx", line 221, in rasterio._base.open_dataset
-  File "rasterio/_err.pyx", line 359, in rasterio._err.exc_wrap_pointer
-rasterio._err.CPLE_OpenFailedError: /storage/group/hlc30/default/data/deepflora/SCRATCH/naip/2017/pa_060cm_2017/42079/m_4207942_se_17_1_20170515.tif: No such file or directory
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/multiprocessing/pool.py", line 125, in worker
-    result = (True, func(*args, **kwds))
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 306, in predict_rasters_parallel
-    raster = rasterio.open(raster)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/rasterio/env.py", line 463, in wrapper
-    return f(*args, **kwds)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/rasterio/__init__.py", line 356, in open
-    dataset = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
-  File "rasterio/_base.pyx", line 312, in rasterio._base.DatasetBase.__init__
-rasterio.errors.RasterioIOError: /storage/group/hlc30/default/data/deepflora/SCRATCH/naip/2017/pa_060cm_2017/42079/m_4207942_se_17_1_20170515.tif: No such file or directory
-"""
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 472, in <module>
-    predict_rasters_list(pred_outline = bound_shp,
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 392, in predict_rasters_list
-    res_files = [r.get() for r in res_async]
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 392, in <listcomp>
-    res_files = [r.get() for r in res_async]
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/multiprocessing/pool.py", line 771, in get
-    raise self._value
-rasterio.errors.RasterioIOError: /storage/group/hlc30/default/data/deepflora/SCRATCH/naip/2017/pa_060cm_2017/42079/m_4207942_se_17_1_20170515.tif: No such file or directory

@@ -3,10 +3,9 @@
 .RData
 .Ruserdata
 data/big
-results/rf
 .DS_Store
-rf.zip
 
 /.quarto/
 **/*.quarto_ipynb
 /data-raw/results/accuracy_metrics/
+/data-raw/results/

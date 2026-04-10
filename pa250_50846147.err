@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 467, in <module>
-    predict_rasters_list(pred_outline = bound_shp,
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 376, in predict_rasters_list
-    clim_rasters = build.get_bioclim_rasters(ras_name=cfg.clim_ras, train_dir=train_dir, timeframe=cfg.clim_time, state=cfg.state)
-AttributeError: 'types.SimpleNamespace' object has no attribute 'clim_ras'

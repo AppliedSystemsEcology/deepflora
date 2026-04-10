@@ -1,48 +1,0 @@
-grabbing means of wc_30s_current bioclim rasters:   0%|          | 0/19 [00:00<?, ?it/s]grabbing means of wc_30s_current bioclim rasters:   5%|▌         | 1/19 [00:00<00:04,  4.48it/s]grabbing means of wc_30s_current bioclim rasters:  11%|█         | 2/19 [00:00<00:03,  4.96it/s]grabbing means of wc_30s_current bioclim rasters:  16%|█▌        | 3/19 [00:00<00:03,  5.09it/s]grabbing means of wc_30s_current bioclim rasters:  21%|██        | 4/19 [00:00<00:02,  5.27it/s]grabbing means of wc_30s_current bioclim rasters:  26%|██▋       | 5/19 [00:00<00:02,  5.65it/s]grabbing means of wc_30s_current bioclim rasters:  32%|███▏      | 6/19 [00:01<00:02,  6.20it/s]grabbing means of wc_30s_current bioclim rasters:  37%|███▋      | 7/19 [00:01<00:02,  5.71it/s]grabbing means of wc_30s_current bioclim rasters:  42%|████▏     | 8/19 [00:01<00:01,  5.77it/s]grabbing means of wc_30s_current bioclim rasters:  47%|████▋     | 9/19 [00:01<00:01,  6.02it/s]grabbing means of wc_30s_current bioclim rasters:  53%|█████▎    | 10/19 [00:01<00:01,  6.03it/s]grabbing means of wc_30s_current bioclim rasters:  58%|█████▊    | 11/19 [00:01<00:01,  6.12it/s]grabbing means of wc_30s_current bioclim rasters:  63%|██████▎   | 12/19 [00:02<00:01,  5.88it/s]grabbing means of wc_30s_current bioclim rasters:  68%|██████▊   | 13/19 [00:02<00:01,  5.54it/s]grabbing means of wc_30s_current bioclim rasters:  74%|███████▎  | 14/19 [00:02<00:00,  5.42it/s]grabbing means of wc_30s_current bioclim rasters:  79%|███████▉  | 15/19 [00:02<00:00,  5.58it/s]grabbing means of wc_30s_current bioclim rasters:  84%|████████▍ | 16/19 [00:02<00:00,  5.74it/s]grabbing means of wc_30s_current bioclim rasters:  89%|████████▉ | 17/19 [00:02<00:00,  5.73it/s]grabbing means of wc_30s_current bioclim rasters:  95%|█████████▍| 18/19 [00:03<00:00,  5.58it/s]grabbing means of wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:03<00:00,  5.47it/s]grabbing means of wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:03<00:00,  5.62it/s]
-prepping wc_30s_current bioclim rasters:   0%|          | 0/19 [00:00<?, ?it/s]prepping wc_30s_current bioclim rasters:   5%|▌         | 1/19 [00:00<00:03,  5.33it/s]prepping wc_30s_current bioclim rasters:  11%|█         | 2/19 [00:00<00:03,  5.38it/s]prepping wc_30s_current bioclim rasters:  16%|█▌        | 3/19 [00:00<00:02,  5.34it/s]prepping wc_30s_current bioclim rasters:  21%|██        | 4/19 [00:00<00:02,  5.46it/s]prepping wc_30s_current bioclim rasters:  26%|██▋       | 5/19 [00:00<00:02,  5.81it/s]prepping wc_30s_current bioclim rasters:  32%|███▏      | 6/19 [00:01<00:02,  6.35it/s]prepping wc_30s_current bioclim rasters:  37%|███▋      | 7/19 [00:01<00:02,  5.85it/s]prepping wc_30s_current bioclim rasters:  42%|████▏     | 8/19 [00:01<00:01,  5.78it/s]prepping wc_30s_current bioclim rasters:  47%|████▋     | 9/19 [00:01<00:01,  6.01it/s]prepping wc_30s_current bioclim rasters:  53%|█████▎    | 10/19 [00:01<00:01,  6.04it/s]prepping wc_30s_current bioclim rasters:  58%|█████▊    | 11/19 [00:01<00:01,  6.15it/s]/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/numpy/ma/core.py:1163: RuntimeWarning: overflow encountered in divide
-  result = self.f(da, db, *args, **kwargs)
-prepping wc_30s_current bioclim rasters:  63%|██████▎   | 12/19 [00:02<00:01,  5.90it/s]prepping wc_30s_current bioclim rasters:  68%|██████▊   | 13/19 [00:02<00:01,  5.57it/s]prepping wc_30s_current bioclim rasters:  74%|███████▎  | 14/19 [00:02<00:00,  5.44it/s]prepping wc_30s_current bioclim rasters:  79%|███████▉  | 15/19 [00:02<00:00,  5.60it/s]prepping wc_30s_current bioclim rasters:  84%|████████▍ | 16/19 [00:02<00:00,  5.77it/s]/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/numpy/ma/core.py:1163: RuntimeWarning: overflow encountered in divide
-  result = self.f(da, db, *args, **kwargs)
-prepping wc_30s_current bioclim rasters:  89%|████████▉ | 17/19 [00:02<00:00,  5.80it/s]prepping wc_30s_current bioclim rasters:  95%|█████████▍| 18/19 [00:03<00:00,  5.64it/s]prepping wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:03<00:00,  5.51it/s]prepping wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:03<00:00,  5.71it/s]
-multiprocessing.pool.RemoteTraceback: 
-"""
-Traceback (most recent call last):
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/multiprocessing/pool.py", line 125, in worker
-    result = (True, func(*args, **kwds))
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 293, in predict_rasters_parallel
-    model = run.load_model(device, model_config, epoch, logging=False)
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Run.py", line 296, in load_model
-    mdict =  torch.load(model_path, map_location=device)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/serialization.py", line 607, in load
-    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/serialization.py", line 882, in _load
-    result = unpickler.load()
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/serialization.py", line 857, in persistent_load
-    load_tensor(data_type, size, key, _maybe_decode_ascii(location))
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/serialization.py", line 846, in load_tensor
-    loaded_storages[key] = restore_location(storage, location)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/serialization.py", line 827, in restore_location
-    return default_restore_location(storage, str(map_location))
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/serialization.py", line 175, in default_restore_location
-    result = fn(storage, location)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/serialization.py", line 157, in _cuda_deserialize
-    return obj.cuda(device)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/_utils.py", line 79, in _cuda
-    return new_type(self.size()).copy_(self, non_blocking)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/cuda/__init__.py", line 606, in _lazy_new
-    return super(_CudaBase, cls).__new__(cls, *args, **kwargs)
-RuntimeError: CUDA out of memory. Tried to allocate 32.00 MiB (GPU 0; 11.90 GiB total capacity; 568.05 MiB already allocated; 6.62 MiB free; 584.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
-"""
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 472, in <module>
-    predict_rasters_list(pred_outline = bound_shp,
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 392, in predict_rasters_list
-    res_files = [r.get() for r in res_async]
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 392, in <listcomp>
-    res_files = [r.get() for r in res_async]
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/multiprocessing/pool.py", line 771, in get
-    raise self._value
-RuntimeError: CUDA out of memory. Tried to allocate 32.00 MiB (GPU 0; 11.90 GiB total capacity; 568.05 MiB already allocated; 6.62 MiB free; 584.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

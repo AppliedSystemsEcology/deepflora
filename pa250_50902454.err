@@ -1,76 +1,0 @@
-grabbing means of wc_30s_current bioclim rasters:   0%|          | 0/19 [00:00<?, ?it/s]grabbing means of wc_30s_current bioclim rasters:   5%|▌         | 1/19 [00:00<00:04,  4.36it/s]grabbing means of wc_30s_current bioclim rasters:  11%|█         | 2/19 [00:00<00:03,  4.91it/s]grabbing means of wc_30s_current bioclim rasters:  16%|█▌        | 3/19 [00:00<00:03,  5.07it/s]grabbing means of wc_30s_current bioclim rasters:  21%|██        | 4/19 [00:00<00:02,  5.27it/s]grabbing means of wc_30s_current bioclim rasters:  26%|██▋       | 5/19 [00:00<00:02,  5.68it/s]grabbing means of wc_30s_current bioclim rasters:  32%|███▏      | 6/19 [00:01<00:02,  6.23it/s]grabbing means of wc_30s_current bioclim rasters:  37%|███▋      | 7/19 [00:01<00:02,  5.79it/s]grabbing means of wc_30s_current bioclim rasters:  42%|████▏     | 8/19 [00:01<00:01,  5.83it/s]grabbing means of wc_30s_current bioclim rasters:  47%|████▋     | 9/19 [00:01<00:01,  6.10it/s]grabbing means of wc_30s_current bioclim rasters:  53%|█████▎    | 10/19 [00:01<00:01,  6.09it/s]grabbing means of wc_30s_current bioclim rasters:  58%|█████▊    | 11/19 [00:01<00:01,  6.18it/s]grabbing means of wc_30s_current bioclim rasters:  63%|██████▎   | 12/19 [00:02<00:01,  5.93it/s]grabbing means of wc_30s_current bioclim rasters:  68%|██████▊   | 13/19 [00:02<00:01,  5.57it/s]grabbing means of wc_30s_current bioclim rasters:  74%|███████▎  | 14/19 [00:02<00:00,  5.43it/s]grabbing means of wc_30s_current bioclim rasters:  79%|███████▉  | 15/19 [00:02<00:00,  5.59it/s]grabbing means of wc_30s_current bioclim rasters:  84%|████████▍ | 16/19 [00:02<00:00,  5.73it/s]grabbing means of wc_30s_current bioclim rasters:  89%|████████▉ | 17/19 [00:02<00:00,  5.77it/s]grabbing means of wc_30s_current bioclim rasters:  95%|█████████▍| 18/19 [00:03<00:00,  5.59it/s]grabbing means of wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:03<00:00,  5.48it/s]grabbing means of wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:03<00:00,  5.64it/s]
-prepping wc_30s_current bioclim rasters:   0%|          | 0/19 [00:00<?, ?it/s]prepping wc_30s_current bioclim rasters:   5%|▌         | 1/19 [00:00<00:03,  5.36it/s]prepping wc_30s_current bioclim rasters:  11%|█         | 2/19 [00:00<00:03,  5.27it/s]prepping wc_30s_current bioclim rasters:  16%|█▌        | 3/19 [00:00<00:03,  5.12it/s]prepping wc_30s_current bioclim rasters:  21%|██        | 4/19 [00:00<00:02,  5.29it/s]prepping wc_30s_current bioclim rasters:  26%|██▋       | 5/19 [00:00<00:02,  5.68it/s]prepping wc_30s_current bioclim rasters:  32%|███▏      | 6/19 [00:01<00:02,  6.25it/s]prepping wc_30s_current bioclim rasters:  37%|███▋      | 7/19 [00:01<00:02,  5.78it/s]prepping wc_30s_current bioclim rasters:  42%|████▏     | 8/19 [00:01<00:01,  5.81it/s]prepping wc_30s_current bioclim rasters:  47%|████▋     | 9/19 [00:01<00:01,  6.05it/s]prepping wc_30s_current bioclim rasters:  53%|█████▎    | 10/19 [00:01<00:01,  6.08it/s]prepping wc_30s_current bioclim rasters:  58%|█████▊    | 11/19 [00:01<00:01,  6.18it/s]/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/numpy/ma/core.py:1163: RuntimeWarning: overflow encountered in divide
-  result = self.f(da, db, *args, **kwargs)
-prepping wc_30s_current bioclim rasters:  63%|██████▎   | 12/19 [00:02<00:01,  5.93it/s]prepping wc_30s_current bioclim rasters:  68%|██████▊   | 13/19 [00:02<00:01,  5.60it/s]prepping wc_30s_current bioclim rasters:  74%|███████▎  | 14/19 [00:02<00:00,  5.48it/s]prepping wc_30s_current bioclim rasters:  79%|███████▉  | 15/19 [00:02<00:00,  5.62it/s]prepping wc_30s_current bioclim rasters:  84%|████████▍ | 16/19 [00:02<00:00,  5.76it/s]/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/numpy/ma/core.py:1163: RuntimeWarning: overflow encountered in divide
-  result = self.f(da, db, *args, **kwargs)
-prepping wc_30s_current bioclim rasters:  89%|████████▉ | 17/19 [00:02<00:00,  5.76it/s]prepping wc_30s_current bioclim rasters:  95%|█████████▍| 18/19 [00:03<00:00,  5.63it/s]prepping wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:03<00:00,  5.53it/s]prepping wc_30s_current bioclim rasters: 100%|██████████| 19/19 [00:03<00:00,  5.69it/s]
-
-
-
-
-
-
-
-2017 tiffs group #7:   0%|          | 0/418 [00:00<?, ? tiffs/s][A[A[A[A[A[A[A
-
-2017 tiffs group #2:   0%|          | 0/417 [00:00<?, ? tiffs/s][A[A
-
-
-2017 tiffs group #3:   0%|          | 0/418 [00:00<?, ? tiffs/s][A[A[A
-
-
-
-
-
-2017 tiffs group #6:   0%|          | 0/417 [00:00<?, ? tiffs/s][A[A[A[A[A[A
-
-
-
-
-2017 tiffs group #5:   0%|          | 0/417 [00:00<?, ? tiffs/s][A[A[A[A[A
-2017 tiffs group #1:   0%|          | 0/417 [00:00<?, ? tiffs/s][A
-
-
-
-2017 tiffs group #4:   0%|          | 0/418 [00:00<?, ? tiffs/s][A[A[A[A2017 tiffs group #0:   0%|          | 0/418 [00:00<?, ? tiffs/s]2017 tiffs group #2:   0%|          | 0/417 [00:02<?, ? tiffs/s]
-2017 tiffs group #0:   0%|          | 0/418 [00:02<?, ? tiffs/s]
-multiprocessing.pool.RemoteTraceback: 
-"""
-Traceback (most recent call last):
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/multiprocessing/pool.py", line 125, in worker
-    result = (True, func(*args, **kwds))
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 313, in predict_rasters_parallel
-    files.append(naip.predict_raster(raster,
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/NAIP_Utils.py", line 574, in predict_raster
-    pred, pred_aff, out_res, out_bounds = predict_model(dat=raster,
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/NAIP_Utils.py", line 465, in predict_model
-    out = model(inputs)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/TResNet.py", line 472, in forward
-    x = self.body(x)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/nn/modules/container.py", line 141, in forward
-    input = module(input)
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/TResNet.py", line 637, in forward
-    return self.op(x)
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/TResNet.py", line 660, in __call__
-    x = x.permute(0, 3, 5, 1, 2, 4).contiguous()  # (N, bs, bs, C, H//bs, W//bs)
-RuntimeError: CUDA out of memory. Tried to allocate 26.00 MiB (GPU 0; 11.90 GiB total capacity; 248.29 MiB already allocated; 16.62 MiB free; 254.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
-"""
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 475, in <module>
-    predict_rasters_list(pred_outline = bound_shp,
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 395, in predict_rasters_list
-    res_files = [r.get() for r in res_async]
-  File "/storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Make_Maps.py", line 395, in <listcomp>
-    res_files = [r.get() for r in res_async]
-  File "/storage/group/hlc30/default/envs/deepflora/lib/python3.9/multiprocessing/pool.py", line 771, in get
-    raise self._value
-RuntimeError: CUDA out of memory. Tried to allocate 26.00 MiB (GPU 0; 11.90 GiB total capacity; 248.29 MiB already allocated; 16.62 MiB free; 254.00 MiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
