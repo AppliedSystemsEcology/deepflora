@@ -1,9 +1,10 @@
 # script to download the PA naip imagery (2017) to heather's shared data allocation
 
-source("scripts/azure_from_index.R")
+source("R/azure_from_index.R")
 
 scratch_dir <- "/storage/group/hlc30/default/data/deepflora/SCRATCH/"
-index_html <- "https://naipeuwest.blob.core.windows.net/naip/v002/pa/2017/pa_100cm_2017/index.html"
+# index_html <- "https://naipeuwest.blob.core.windows.net/naip/v002/pa/2017/pa_100cm_2017/index.html"
+index_html <- "https://naipeuwest.blob.core.windows.net/naip/v002/ny/2017/ny_100cm_2017/index.html"
 
 # vector of links to index.html files for PA NAIP directories
 state_index_links <- azure_from_index(index_html)
@@ -32,10 +33,8 @@ for (i in seq_along(state_index_links)){
   files.i <- files.i[!exist.outputfiles]
   outputfiles.i <- outputfiles.i[!exist.outputfiles]
   # download to file structure
-  tryCatch(
-    download.file(files.i,
-                  destfile = outputfiles.i,
-                  method="libcurl"),
+  download.return <- tryCatch(
+    download.file(files.i, destfile = outputfiles.i, method="libcurl"),
     error = function(e) cat(message(e),"\n", print(files.i),"\n")
   )
 }
