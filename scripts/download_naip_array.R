@@ -6,7 +6,7 @@
 # args = commandArgs(trailingOnly=TRUE)
 # arraynum <- as.numeric(args[1])
 
-arraynum <- Sys.getenv("SLURM_ARRAY_TASK_ID")
+arraynum <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
 
 source("R/azure_from_index.R")
 

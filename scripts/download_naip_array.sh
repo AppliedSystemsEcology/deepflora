@@ -8,7 +8,7 @@
 #SBATCH --time=48:00:00
 #SBATCH --output=dlnaip_%j.out
 #SBATCH --error=dlnaip_%j.err
-#SBATCH --array=1-32%28                ### Array index
+#SBATCH --array=1-32                ### Array index
 
 module load anaconda
 source activate r-gis
