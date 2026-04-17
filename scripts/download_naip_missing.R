@@ -11,3 +11,5 @@ for(i in seq_len(nrow(failed))){
   output.i <- failed$output[i]     # destination file
   returns[i] <- download.file(naip.i, destfile = output.i, method="libcurl")
 }
+
+# APRIL 16 2026: I RAN THIS CODE AND RETURNS WERE ALL 0 SO FAILED RETURNS FIXED
