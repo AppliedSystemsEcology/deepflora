@@ -4,12 +4,12 @@
 #SBATCH --partition=sla-prio
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=36G
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=112G
 #SBATCH --time=48:00:00
 #SBATCH --output=mosaic_%j.out
 #SBATCH --error=mosaic_%j.err
-#SBATCH --array=1-24%6                ### Array index
+#SBATCH --array=1-24%2                ### Array index
 
 module load anaconda
 source activate r-gis
