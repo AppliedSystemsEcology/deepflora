@@ -8,7 +8,7 @@ array_dir <- naipdirs[arraynum]
 
 array_tifs <- list.files(array_dir, pattern = "*raw.tif", full.names = TRUE)
 
-terraOptions(memfrac = 0.6, tempdir = "/scratch/kbl5733/tmp", threads = 8)
+terraOptions(memfrac = 0.6, tempdir = "/scratch/kbl5733/tmp", threads = 4)
 
 pa_sprc <- terra::sprc(array_tifs)
 
