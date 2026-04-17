@@ -2,7 +2,7 @@ library(terra)
 
 arraynum <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
 naipdirs <- list.dirs("/storage/home/kbl5733/gstorage/data/deepflora/RASTERS/pa_250/256m_2017_-1_initial_7/",
-                      full.names = TRUE)
+                      recursive = FALSE, full.names = TRUE)
 
 array_dir <- naipdirs[arraynum]
 
