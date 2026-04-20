@@ -11,7 +11,7 @@ array_tifs <- list.files(array_dir, pattern = "*raw.tif", full.names = TRUE)
 
 
 # make a template raster from extent for output
-naip_pa <-vect("data/extents/naip_pa_albers.geojson") # get the NAIP full PA extent vector
+naip_pa <-vect("/storage/home/kbl5733/work/github/deepflora/data/extents/naip_pa_albers.geojson") # get the NAIP full PA extent vector
 naip_extent <- ext(naip_pa) + 1
 temp <- rast(naip_extent, res = res(rast(array_tifs[1])), crs = crs(naip_pa))
 
