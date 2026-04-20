@@ -7,8 +7,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=112G
 #SBATCH --time=48:00:00
-#SBATCH --output=mosaic_%j.out
-#SBATCH --error=mosaic_%j.err
+#SBATCH --output=mosaic_%A_%a.out
+#SBATCH --error=mosaic_%A_%a.err
 #SBATCH --array=1-24%2                ### Array index
 
 module load anaconda
