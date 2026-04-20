@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name=merge_pa
+#SBATCH --account=hlc30_p100_default
+#SBATCH --partition=sla-prio
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=224G
+#SBATCH --time=48:00:00
+#SBATCH --output=mergepa_%j.out
+#SBATCH --error=mergepa_%j.err
+
+module load anaconda
+source activate r-gis
+
+Rscript /storage/home/kbl5733/work/github/deepflora/scripts/merge_sprc_pa.R
