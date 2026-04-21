@@ -45,3 +45,6 @@ for(i in 1:10){
               file.path("data",paste0(gsub(" ","_",tif50[i]),".tif")))
 }
 
+# Cercis canadensis
+writeRaster(plantifs[["Cercis canadensis"]],
+            file.path("data",paste0(gsub(" ","_","Cercis canadensis"),".tif")))

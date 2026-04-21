@@ -4,8 +4,8 @@
 #SBATCH --partition=sla-prio
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=112G
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=56G
 #SBATCH --time=48:00:00
 #SBATCH --output=mosaic_%A_%a.out
 #SBATCH --error=mosaic_%A_%a.err
