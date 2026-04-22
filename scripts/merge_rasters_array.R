@@ -19,14 +19,4 @@ temp <- rast(naip_extent, res = res(rast(array_tifs[1])), crs = crs(naip_pa))
 out.mosaic <- paste0("/storage/home/kbl5733/gstorage/data/deepflora/maps/mosaic/",basename(array_dir),".tif")
 
 # imposing on sprc (maybe uses more memory)
-# impose(sprc(array_tifs), temp, filename = out.mosaic, overwrite = TRUE)
-
-# Step 1: impose each tile to the template grid
-imposed_files <- vapply(array_tifs, function(f) {
-  out <- file.path("/scratch/kbl5733/tmp", basename(f))
-  impose(rast(f), temp, filename = out, overwrite = TRUE)
-  out
-}, character(1))
-
-# Step 2: mosaic the aligned tiles (no resampling needed since grids match)
-mosaic(sprc(imposed_files), filename = out.mosaic, overwrite = TRUE)
+impose(sprc(array_tifs), temp, filename = out.mosaic, overwrite = TRUE)
