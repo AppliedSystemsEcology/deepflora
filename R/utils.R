@@ -35,8 +35,19 @@ findsp <- function(sp, allplants = plants, startyr = 2016, endyr = 2020){
   return(thisdat)
 }
 
+# load gdd
+load("data-raw/gdd/week2016.RDS")
+load("data-raw/gdd/week2017.RDS")
+load("data-raw/gdd/week2018.RDS")
+load("data-raw/gdd/week2019.RDS")
+load("data-raw/gdd/week2020.RDS")
 
 # give a prismgrid index, get the gdd
+prismgrid <- terra::rast("data/prismgrid.grd")
+
+prismdf <- terra::values(prismgrid) %>% as.data.frame() %>%
+  rownames_to_column("index") %>% mutate(index = as.numeric(index))
+
 getgdd <- function(prismid, year, week, prism.index = prismdf){
   matrix.index <- prism.index %>% filter(id == prismid) %>% pull(index)
 

@@ -23,16 +23,6 @@ prismgrid <- raster::raster("data/prismgrid.grd")
 
 plants_pa_prismid <- terra::extract(terra::rast(prismgrid), terra::vect(plants_pa_fr))
 
-# load gdd
-load("data-raw/gdd/week2016.RDS")
-load("data-raw/gdd/week2017.RDS")
-load("data-raw/gdd/week2018.RDS")
-load("data-raw/gdd/week2019.RDS")
-load("data-raw/gdd/week2020.RDS")
-
-prismdf <- as(prismgrid, "SpatialGridDataFrame") %>% as.data.frame() %>%
-  rownames_to_column("index") %>% mutate(index = as.numeric(index))
-
 plants_pa_gdd <- plants_pa_fr %>% mutate(prismid = plants_pa_prismid$id) %>%
   mutate(gdd = getgddvec(prismid = prismid, year=year, week=week))
 
