@@ -5,11 +5,11 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=56G
+#SBATCH --mem=74G
 #SBATCH --time=72:00:00
 #SBATCH --output=mosaic_%A_%a.out
 #SBATCH --error=mosaic_%A_%a.err
-#SBATCH --array=1-24%4                ### Array index
+#SBATCH --array=1-24%3                ### Array index
 
 module load anaconda
 source activate r-gis
