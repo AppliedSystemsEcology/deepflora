@@ -12,4 +12,4 @@
 module load anaconda
 source activate r-gis
 
-Rscript /storage/home/kbl5733/work/github/deepflora/scripts/ecoregions_ny
+Rscript /storage/home/kbl5733/work/github/deepflora/scripts/ecoregions_ny.R
