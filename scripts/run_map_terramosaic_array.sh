@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=112G
+#SBATCH --mem=224G
 #SBATCH --time=72:00:00
 #SBATCH --output=mosaic_%A_%a.out
 #SBATCH --error=mosaic_%A_%a.err
