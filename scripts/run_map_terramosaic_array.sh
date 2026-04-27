@@ -9,7 +9,7 @@
 #SBATCH --time=72:00:00
 #SBATCH --output=mosaic_%A_%a.out
 #SBATCH --error=mosaic_%A_%a.err
-#SBATCH --array=1-24%2                ### Array index
+#SBATCH --array=1-24%1                ### Array index
 
 module load anaconda
 source activate r-gis
