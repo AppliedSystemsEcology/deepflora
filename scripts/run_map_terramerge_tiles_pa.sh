@@ -6,11 +6,11 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=224G
-#SBATCH --time=48:00:00
+#SBATCH --time=72:00:00
 #SBATCH --output=mergepa_%j.out
 #SBATCH --error=mergepa_%j.err
 
 module load anaconda
 source activate r-gis
 
-Rscript /storage/home/kbl5733/work/github/deepflora/scripts/merge_sprc_pa.R
+Rscript /storage/home/kbl5733/work/github/deepflora/scripts/merge_rasters.R
