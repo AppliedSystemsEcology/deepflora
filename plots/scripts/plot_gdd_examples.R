@@ -9,7 +9,9 @@ make_dists <- function(mean, sd, lambda, n, binwidth, ...) {
       },
     ...
     )
-  }
+}
+
+
 
 plants_gdd <- readRDS("data/pa_floral_gdd.rds") |> sf::st_drop_geometry()
 

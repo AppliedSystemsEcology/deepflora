@@ -132,7 +132,11 @@ Set up a `.netrc` file, instructions in [the repository](https://github.com/moie
 ```
 # python src/deepbiosphere/Download_GBIF_Data.py --gbif_user [your_username] --gbif_email [your_gbif_email] --organism plant --start_date 2015 --end_date 2022
 
+# Pennsylvania
 python src/deepbiosphere/src/deepbiosphere/Download_GBIF_Data.py --gbif_user neivkli --gbif_email likevin@umich.edu --organism plant --start_date 2015 --end_date 2025 --area "USA.39_1"
+
+# New York
+python src/deepbiosphere/src/deepbiosphere/Download_GBIF_Data.py --gbif_user neivkli --gbif_email likevin@umich.edu --organism plant --start_date 2015 --end_date 2025 --area "USA.33_1"
 
 ```
 
