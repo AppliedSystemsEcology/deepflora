@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=df_build_data
 #SBATCH --account=open
-#SBATCH --partition=standard
+#SBATCH --partition=basic
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=28
