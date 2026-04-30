@@ -1,7 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=merge_pa
-#SBATCH --account=hlc30_p100_default
-#SBATCH --partition=sla-prio
+#SBATCH --account=open
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
