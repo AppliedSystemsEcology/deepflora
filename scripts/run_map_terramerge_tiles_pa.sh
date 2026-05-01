@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=merge_pa
-#SBATCH --account=open
+#SBATCH --account=hlc30_cr_default
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
