@@ -1,2 +1,0 @@
-terra 1.8.93
-/var/spool/slurm/d/job52266452/slurm_script: line 17: 2101001 Floating point exception(core dumped) Rscript /storage/home/kbl5733/work/github/deepflora/scripts/merge_rasters_array.R

@@ -1,22 +1,0 @@
-Tile 40080 is being handled by job 13 
-Mosaicking to /scratch/kbl5733/tmp/40080_tmp.tif 
-class       : SpatRaster 
-size        : 437, 192, 1388  (nrow, ncol, nlyr)
-resolution  : 256, 256  (x, y)
-extent      : 536494.5, 585646.5, 4427690, 4539562  (xmin, xmax, ymin, ymax)
-coord. ref. : NAD83 / UTM zone 17N (EPSG:26917) 
-source      : 40080_tmp.tif 
-varname     : m_4008004_ne_17_1_20170515_2017_raw 
-names       :  Medeo~niana,  Thali~oides, Verat~iride, Ambro~folia,  Huper~idula, Physa~folia, ... 
-min values  : 0.0002660697, 0.0002444551, 0.001618175,  0.04672871, 3.100646e-08,  0.03701473, ... 
-max values  : 0.9913777113, 0.9897361994, 0.981001735,  0.99679714, 9.784845e-01,  0.96283197, ... 
-Projecting...|---------|---------|---------|---------|=========================================                                          class       : SpatRaster 
-size        : 1321, 2035, 1388  (nrow, ncol, nlyr)
-resolution  : 255.9804, 256.0498  (x, y)
-extent      : 1264406, 1785326, 1958292, 2296534  (xmin, xmax, ymin, ymax)
-coord. ref. : NAD83 / Conus Albers (EPSG:5070) 
-source      : 40080.tif 
-names       :  Medeo~niana, Thali~oides, Verat~iride, Ambro~folia,  Huper~idula, Physa~folia, ... 
-min values  : 0.0007045639, 0.001365372, 0.001778032,  0.06574558, 3.453484e-07,   0.0476433, ... 
-max values  : 0.9881218076, 0.980635881, 0.973483384,  0.99243200, 9.769608e-01,   0.8765319, ... 
-Mosaicked output to /storage/home/kbl5733/gstorage/data/deepflora/maps/mosaic/40080.tif 
