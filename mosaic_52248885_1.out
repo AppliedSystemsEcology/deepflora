@@ -1,0 +1,22 @@
+Tile 39075 is being handled by job 1 
+Mosaicking to /scratch/kbl5733/tmp/39075_tmp.tif 
+class       : SpatRaster 
+size        : 138, 337, 1388  (nrow, ncol, nlyr)
+resolution  : 256, 256  (x, y)
+extent      : 413951.5, 500223.5, 4393202, 4428530  (xmin, xmax, ymin, ymax)
+coord. ref. : NAD83 / UTM zone 18N (EPSG:26918) 
+source      : 39075_tmp.tif 
+varname     : m_3907501_ne_18_1_20170609_2017_raw 
+names       : Medeo~niana, Thali~oides,  Verat~iride, Ambro~folia, Huper~idula, Physa~folia, ... 
+min values  : 0.001683451,   0.0000000, 8.026179e-05,  0.05037424,   0.0000000,   0.0000000, ... 
+max values  : 1.000000000,   0.9864792, 1.000000e+00,  1.00000000,   0.9936945,   0.9904815, ... 
+Projecting...|---------|---------|---------|---------|=========================================                                          class       : SpatRaster 
+size        : 1321, 2035, 1388  (nrow, ncol, nlyr)
+resolution  : 255.9804, 256.0498  (x, y)
+extent      : 1264406, 1785326, 1958292, 2296534  (xmin, xmax, ymin, ymax)
+coord. ref. : NAD83 / Conus Albers (EPSG:5070) 
+source      : 39075.tif 
+names       : Medeo~niana, Thali~oides,  Verat~iride, Ambro~folia, Huper~idula, Physa~folia, ... 
+min values  : 0.002152094,   0.0000000, 0.0001483712,  0.08570909,   0.0000000,   0.0000000, ... 
+max values  : 1.000000000,   0.9820235, 1.0000000000,  1.00000000,   0.9902179,   0.9847833, ... 
+Mosaicked output to /storage/home/kbl5733/gstorage/data/deepflora/maps/mosaic/39075.tif 

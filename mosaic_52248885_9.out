@@ -1,0 +1,22 @@
+Tile 40076 is being handled by job 9 
+Mosaicking to /scratch/kbl5733/tmp/40076_tmp.tif 
+class       : SpatRaster 
+size        : 441, 341, 1388  (nrow, ncol, nlyr)
+resolution  : 256, 256  (x, y)
+extent      : 328974.5, 416270.5, 4428110, 4541006  (xmin, xmax, ymin, ymax)
+coord. ref. : NAD83 / UTM zone 18N (EPSG:26918) 
+source      : 40076_tmp.tif 
+varname     : m_4007601_ne_18_1_20170920_2017_raw 
+names       :  Medeo~niana,  Thali~oides,  Verat~iride, Ambro~folia,  Huper~idula, Physa~folia, ... 
+min values  : 0.0001192797, 0.0006128325, 0.0002295802,  0.04069721, 6.608620e-07, 0.002173769, ... 
+max values  : 0.9990713000, 0.9961418509, 0.9633470178,  0.99578506, 9.925448e-01, 0.994002223, ... 
+Projecting...|---------|---------|---------|---------|=========================================                                          class       : SpatRaster 
+size        : 1321, 2035, 1388  (nrow, ncol, nlyr)
+resolution  : 255.9804, 256.0498  (x, y)
+extent      : 1264406, 1785326, 1958292, 2296534  (xmin, xmax, ymin, ymax)
+coord. ref. : NAD83 / Conus Albers (EPSG:5070) 
+source      : 40076.tif 
+names       :  Medeo~niana, Thali~oides,  Verat~iride, Ambro~folia,  Huper~idula, Physa~folia, ... 
+min values  : 0.0004522964, 0.001675734, 0.0005547576,  0.05843683, 5.553106e-06, 0.006193388, ... 
+max values  : 0.9982025623, 0.992786288, 0.9540144205,  0.99190706, 9.904702e-01, 0.986628413, ... 
+Mosaicked output to /storage/home/kbl5733/gstorage/data/deepflora/maps/mosaic/40076.tif 
