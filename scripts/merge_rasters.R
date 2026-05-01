@@ -8,5 +8,6 @@ pa_sprc <- terra::sprc(pa_tiles)
 
 terra::mosaic(pa_sprc,
               filename = "/storage/home/kbl5733/gstorage/data/deepflora/maps/pa_mosaic.tif",
-              overwrite = TRUE
+              overwrite = TRUE,
+              gdal = c("COMPRESS=LZW", "BIGTIFF=YES")
               )
