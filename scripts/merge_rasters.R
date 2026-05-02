@@ -1,8 +1,6 @@
 library(terra)
 # final merge
 
-terraOptions(memfrac = 0.9, memmax = 220)
-
 pa_tiles <- list.files("/storage/home/kbl5733/gstorage/data/deepflora/maps/mosaic",
            pattern = "*.tif", full.names = TRUE)
 
