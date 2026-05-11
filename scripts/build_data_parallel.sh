@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=df_build_data
-#SBATCH --account=hlc30_p100_default
-#SBATCH --partition=sla-prio
+#SBATCH --account=open
+#SBATCH --partition=basic
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=28
