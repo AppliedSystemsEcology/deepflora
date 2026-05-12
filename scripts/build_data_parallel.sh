@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=pa_build_data
+#SBATCH --job-name=ny_build_data
 #SBATCH --account=open
 #SBATCH --partition=basic
 #SBATCH --nodes=1
@@ -14,11 +14,11 @@ module load anaconda
 source activate deepflora
 
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Build_Data.py \
-  --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2012_2022_USA_39_1_acq2026_5_12.csv \
-  --daset_id plants_pa_2017 \
+  --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2012_2022_USA_33_1_acq2026_5_12.csv \
+  --daset_id plants_ny_2017 \
   --sep '\t' \
   --year 2017 \
-  --state pa \
+  --state ny \
   --calculate_means \
   --threshold 500 \
   --add_images \
