@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=df_build_data
+#SBATCH --job-name=pa_build_data
 #SBATCH --account=open
 #SBATCH --partition=basic
 #SBATCH --nodes=1
@@ -18,7 +18,7 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Build_Data.py \
   --daset_id plants_pa_2017 \
   --sep '\t' \
   --year 2017 \
-  --state pa\
+  --state pa \
   --calculate_means \
   --threshold 500 \
   --add_images \
