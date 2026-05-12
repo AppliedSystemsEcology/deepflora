@@ -14,11 +14,11 @@ module load anaconda
 source activate deepflora
 
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Build_Data.py \
-  --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2015_2025_USA_33_1_acq2026_4_29.csv \
-  --daset_id plants_ny \
+  --dset_path /storage/group/hlc30/default/data/deepflora/OCCS/plant_2012_2022_USA_39_1_acq2026_5_12.csv \
+  --daset_id plants_pa_2017 \
   --sep '\t' \
   --year 2017 \
-  --state ny \
+  --state pa\
   --calculate_means \
   --threshold 500 \
   --add_images \

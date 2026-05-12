@@ -8,3 +8,4 @@ data/big
 /.quarto/
 **/*.quarto_ipynb
 /data-raw/results/accuracy_metrics/
+.positai

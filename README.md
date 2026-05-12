@@ -106,9 +106,15 @@ There are scripts to extract the data links from the index files within the serv
 ```    
 chmod +x /storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh # allow execution
 
+# PA
 /storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh \
 -b https://naipeuwest.blob.core.windows.net/naip/v002/pa/2017/pa_shpfl_2017 \
 -o /storage/group/hlc30/default/data/deepflora/SHPFILES/naip_tiffs/pa_shpfl_2017
+
+# NY
+/storage/home/kbl5733/work/github/deepflora/scripts/azure_from_index.sh \
+-b https://naipeuwest.blob.core.windows.net/naip/v002/ny/2017/ny_shpfl_2017 \
+-o /storage/group/hlc30/default/data/deepflora/SHPFILES/naip_tiffs/ny_shpfl_2017
 
 ```
 
@@ -133,10 +139,10 @@ Set up a `.netrc` file, instructions in [the repository](https://github.com/moie
 # python src/deepbiosphere/Download_GBIF_Data.py --gbif_user [your_username] --gbif_email [your_gbif_email] --organism plant --start_date 2015 --end_date 2022
 
 # Pennsylvania
-python src/deepbiosphere/src/deepbiosphere/Download_GBIF_Data.py --gbif_user neivkli --gbif_email likevin@umich.edu --organism plant --start_date 2015 --end_date 2025 --area "USA.39_1"
+python src/deepbiosphere/src/deepbiosphere/Download_GBIF_Data.py --gbif_user neivkli --gbif_email likevin@umich.edu --organism plant --start_date 2012 --end_date 2022 --area "USA.39_1"
 
 # New York
-python src/deepbiosphere/src/deepbiosphere/Download_GBIF_Data.py --gbif_user neivkli --gbif_email likevin@umich.edu --organism plant --start_date 2015 --end_date 2025 --area "USA.33_1"
+python src/deepbiosphere/src/deepbiosphere/Download_GBIF_Data.py --gbif_user neivkli --gbif_email likevin@umich.edu --organism plant --start_date 2012 --end_date 2022 --area "USA.33_1"
 
 ```
 

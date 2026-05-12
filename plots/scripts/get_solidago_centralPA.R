@@ -5,7 +5,7 @@ library(tidyverse)
 library(tidyterra)
 
 padf <- rast("data/big/pa_mosaic.tif")
-paco <- gadm("USA", level = 2, "data/counties") |> filter(NAME_1 == "Pennsylvania")
+paco <- gadm("USA", level = 2, "data/spatial") |> filter(NAME_1 == "Pennsylvania")
 
 # center of centre co
 centre <- centroids(paco |> filter(NAME_2 == "Centre"))
