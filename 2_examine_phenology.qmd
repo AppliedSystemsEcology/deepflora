@@ -10,4 +10,8 @@ execute:
 
 Fitted using mixture models
 
-![](plots/mixture_top50.png)
+![](plots/mixture_worked0-50.png)
+
+## Next 50 most reported plant groups
+
+![](plots/mixture_worked50-100.png)
