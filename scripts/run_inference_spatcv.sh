@@ -12,6 +12,15 @@
 #SBATCH --error=spatcv_inference_%A_%a.err
 #SBATCH --array=0-9%1
 
+# $1 is the first positional argument passed to the script
+# e.g.: sbatch spatcv_inference.sh ca
+STATE=${1:?"Usage: sbatch spatcv_inference.sh <state> (e.g. ca, pa)"}
+
+if [[ ! "$STATE" =~ ^(pa|ny)$ ]]; then
+  echo "ERROR: state must be one of: pa or ny"
+  exit 1
+fi
+
 module load anaconda
 source activate deepflora
 
@@ -27,36 +36,36 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --device 0 \
   --processes 8 \
   --year 2017 \
-  --state pa \
-  --filename db_band_${SLURM_ARRAY_TASK_ID}
+  --state ${STATE} \
+  --filename db_${STATE}_band_${SLURM_ARRAY_TASK_ID}
 
 if [ $? -ne 0 ]; then
   echo "ERROR: band ${SLURM_ARRAY_TASK_ID} deepbiosphere failed"
 fi
 
-# echo "Inference for band ${SLURM_ARRAY_TASK_ID} of 9 for random forest..."
-# python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
-#   --band ${SLURM_ARRAY_TASK_ID} \
-#   --model rf \
-#   --dataset_name plants_pa \
-#   --year 2017 \
-#   --state pa \
-#   --filename rf_band_${SLURM_ARRAY_TASK_ID}
-#
-# if [ $? -ne 0 ]; then
-#   echo "ERROR: band ${SLURM_ARRAY_TASK_ID} random forest failed"
-# fi
-#
-# echo "Inference for band ${SLURM_ARRAY_TASK_ID} of 9 for maxent..."
-# python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
-#   --band ${SLURM_ARRAY_TASK_ID} \
-#   --model maxent \
-#   --dataset_name plants_pa \
-#   --year 2017 \
-#   --state pa \
-#   --filename maxent_band_${SLURM_ARRAY_TASK_ID}
-#
-# if [ $? -ne 0 ]; then
-#   echo "ERROR: band ${SLURM_ARRAY_TASK_ID} maxent failed"
-# fi
+echo "Inference for band ${SLURM_ARRAY_TASK_ID} of 9 for random forest..."
+python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
+  --band ${SLURM_ARRAY_TASK_ID} \
+  --model rf \
+  --dataset_name plants_${STATE}_2017 \
+  --year 2017 \
+  --state ${STATE} \
+  --filename rf_${STATE}_band_${SLURM_ARRAY_TASK_ID}
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: band ${SLURM_ARRAY_TASK_ID} random forest failed"
+fi
+
+echo "Inference for band ${SLURM_ARRAY_TASK_ID} of 9 for maxent..."
+python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
+  --band ${SLURM_ARRAY_TASK_ID} \
+  --model maxent \
+  --dataset_name plants_${STATE}_2017 \
+  --year 2017 \
+  --state ${STATE} \
+  --filename maxent_${STATE}_band_${SLURM_ARRAY_TASK_ID}
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: band ${SLURM_ARRAY_TASK_ID} maxent failed"
+fi
 

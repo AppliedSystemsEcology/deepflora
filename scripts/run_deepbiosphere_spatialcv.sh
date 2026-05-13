@@ -12,6 +12,15 @@
 #SBATCH --error=dbspatialcv_%A_%a.err
 #SBATCH --array=0-9%1
 
+# $1 is the first positional argument passed to the script
+# e.g.: sbatch spatcv_inference.sh ca
+STATE=${1:?"Usage: sbatch spatcv_inference.sh <state> (e.g. ca, pa)"}
+
+if [[ ! "$STATE" =~ ^(pa|ny)$ ]]; then
+  echo "ERROR: state must be one of: pa or ny"
+  exit 1
+fi
+
 module load anaconda
 source activate deepflora
 
@@ -19,14 +28,14 @@ source activate deepflora
 echo "Processing band ${SLURM_ARRAY_TASK_ID} of 9 for deepbiosphere..."
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Run.py \
   --year 2017 \
-  --state pa \
-  --dataset_name plants_pa \
+  --state ${STATE} \
+  --dataset_name plants_${STATE}_2017 \
   --datatype JOINT_NAIP_BIOCLIM \
   --band ${SLURM_ARRAY_TASK_ID} \
   --lr .00001 \
   --epochs 12 \
   --model DEEPBIOSPHERE \
-  --exp_id band_${SLURM_ARRAY_TASK_ID} \
+  --exp_id db_${STATE}_band_${SLURM_ARRAY_TASK_ID} \
   --loss SAMPLE_AWARE_BCE \
   --batchsize 150 \
   --dataset_type MULTI_SPECIES \
