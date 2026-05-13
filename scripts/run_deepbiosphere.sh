@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=db_pa
-#SBATCH --account=open
+#SBATCH --account=hlc30_cr_default
 #SBATCH --partition=standard
 #SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
