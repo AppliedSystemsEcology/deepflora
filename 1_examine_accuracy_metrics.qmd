@@ -30,7 +30,6 @@ library(ggsignif)
 
 ![Comparing spatial cross validation for full dataset. Closed colored circles are individual cross validation splits and open dark circles are the results from the uniform train-test split.](plots/compare_spatial_cv_full.png)
 
-
 ## List of floral resource species
 
 ```{r}
@@ -74,14 +73,13 @@ ggplot(floralsp, aes(support)) + geom_histogram(bins=20,fill="sienna") + egg::th
 
 ```
 
-
 ## Accuracy metrics definitions
 
 Text from supplemental material of Gillespie et al. 2024.
 
 ### Binary classification metrics
 
-Threshold all probabilities ≥0.5 as present and <0.5 as absent for these metrics
+Threshold all probabilities ≥0.5 as present and \<0.5 as absent for these metrics
 
 **Presence accuracy** (Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present
 
@@ -100,10 +98,10 @@ In order to take into account the effect of thresholds, discrimination metrics m
 **AUC PRC** Average area under the precision-recall curve averaged across species
 
 **Calibrated AUC** A model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.
- 
- - This means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.
- 
- - To correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.
+
+- This means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.
+
+- To correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.
 
 ### Ranking metrics
 

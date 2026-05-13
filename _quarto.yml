@@ -8,6 +8,8 @@ website:
     left:
       - href: 1_examine_accuracy_metrics.qmd
         text: Accuracy metrics
+      - href: 2_examine_phenology.qmd
+        text: Phenology mixture models
 
 format:
   html:

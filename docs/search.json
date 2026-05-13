@@ -1,17 +1,31 @@
 [
   {
+    "objectID": "2_examine_phenology.html",
+    "href": "2_examine_phenology.html",
+    "title": "Phenology",
+    "section": "",
+    "text": "Fitted using mixture models"
+  },
+  {
+    "objectID": "2_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
+    "href": "2_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
+    "title": "Phenology",
+    "section": "",
+    "text": "Fitted using mixture models"
+  },
+  {
     "objectID": "1_examine_accuracy_metrics.html",
     "href": "1_examine_accuracy_metrics.html",
     "title": "Accuracy metrics",
     "section": "",
-    "text": "Comparing uniform train-test split for full dataset\n\n\n\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset"
+    "text": "Warning: package 'ggplot2' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2"
   },
   {
     "objectID": "1_examine_accuracy_metrics.html#uniform-train-test-split-results",
     "href": "1_examine_accuracy_metrics.html#uniform-train-test-split-results",
     "title": "Accuracy metrics",
-    "section": "",
-    "text": "Comparing uniform train-test split for full dataset\n\n\n\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset"
+    "section": "Uniform train-test split results",
+    "text": "Uniform train-test split results\n\nFull dataset\n\n\n\nComparing uniform train-test split for full dataset\n\n\n\n\nFloral resources only\n\n\n\nComparing uniform train-test split for floral resource dataset"
   },
   {
     "objectID": "1_examine_accuracy_metrics.html#spatial-cross-validation-results-full-dataset",

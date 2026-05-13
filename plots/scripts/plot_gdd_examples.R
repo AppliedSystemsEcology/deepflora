@@ -2,16 +2,7 @@ library(tidyverse)
 library(mixtools)
 # https://dozenoaks.twelvetreeslab.co.uk/2019/06/mixture-models/
 
-make_dists <- function(mean, sd, lambda, n, binwidth, ...) {
-  stat_function(
-    fun = function(x) {
-      (dnorm(x, mean = mean, sd = sd)) * n * binwidth * lambda
-      },
-    ...
-    )
-}
-
-
+source("R/mix_mods.r")
 
 plants_gdd <- readRDS("data/pa_floral_gdd.rds") |> sf::st_drop_geometry()
 
@@ -33,7 +24,7 @@ Cc_plot_gdd <- ggplot(C_canadensis, aes(gdd)) +
 Cc_plot <- ggplot(C_canadensis, aes(gdd)) +
   geom_histogram(binwidth = 50, fill = "tan1") +
   mapply(
-    make_dists,
+    ggmake_dists,
     mean = Cc_mix[["mu"]], #mean
     sd = Cc_mix[["sigma"]], #standard deviation
     lambda = Cc_mix[["lambda"]], #amplitude
@@ -67,7 +58,7 @@ Sr_plot_gdd <- ggplot(S_rugosa, aes(gdd)) +
 Sr_plot <- ggplot(S_rugosa, aes(gdd)) +
   geom_histogram(binwidth = 50, fill = "tan1") +
   mapply(
-    make_dists,
+    ggmake_dists,
     mean = Sr_mix[["mu"]], #mean
     sd = Sr_mix[["sigma"]], #standard deviation
     lambda = Sr_mix[["lambda"]], #amplitude
@@ -99,7 +90,7 @@ At_plot_gdd <- ggplot(A_tuberosa, aes(gdd)) +
 At_plot <- ggplot(A_tuberosa, aes(gdd)) +
   geom_histogram(binwidth = 50, fill = "tan1") +
   mapply(
-    make_dists,
+    ggmake_dists,
     mean = At_mix[["mu"]], #mean
     sd = At_mix[["sigma"]], #standard deviation
     lambda = At_mix[["lambda"]], #amplitude

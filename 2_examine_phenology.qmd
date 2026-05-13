@@ -1,0 +1,13 @@
+---
+title: "Phenology"
+format: html
+editor: visual
+execute: 
+  echo: false
+---
+
+## Top 50 reported flowering species phenology curves
+
+Fitted using mixture models
+
+![](plots/mixture_top50.png)
