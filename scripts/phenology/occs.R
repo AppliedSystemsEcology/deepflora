@@ -30,3 +30,7 @@ for(i in seq_along(years)){
     pa_occ[[i]][[j]] <- get_inat_plants(year = years[i], month = months[j], state = pa)
   }
 }
+
+saveRDS(pa_occ, file = "data/big/pa_occs.rds")
+
+pa_occ_df <- lapply(pa_occ, dplyr::bind_rows) |> dplyr::bind_rows()
