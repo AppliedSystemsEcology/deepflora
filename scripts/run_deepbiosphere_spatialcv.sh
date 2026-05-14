@@ -1,15 +1,15 @@
 #!/bin/bash
-#SBATCH --job-name=deepflora_spatialcv
-#SBATCH --account=hlc30_p100_default
-#SBATCH --partition=sla-prio
+#SBATCH --job-name=db_runcv
+#SBATCH --account=hlc30_cr_default
+#SBATCH --partition=standard
 #SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=224G
 #SBATCH --time=48:00:00
-#SBATCH --output=dbspatialcv_%A_%a.out
-#SBATCH --error=dbspatialcv_%A_%a.err
+#SBATCH --output=dbcv_%A_%a.out
+#SBATCH --error=dbcv_%A_%a.err
 #SBATCH --array=0-9%1
 
 # $1 is the first positional argument passed to the script
