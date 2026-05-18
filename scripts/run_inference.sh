@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=db_inf
 #SBATCH --account=hlc30_cr_default
-#SBATCH --partition=sla-standard
+#SBATCH --partition=standard
 #SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
