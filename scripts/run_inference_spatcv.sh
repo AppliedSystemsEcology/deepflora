@@ -29,7 +29,7 @@ echo "Inference for band ${SLURM_ARRAY_TASK_ID} of 9 for deepbiosphere..."
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --band ${SLURM_ARRAY_TASK_ID} \
   --model DEEPBIOSPHERE \
-  --exp_id band_${SLURM_ARRAY_TASK_ID} \
+  --exp_id db_${STATE}_band_${SLURM_ARRAY_TASK_ID} \
   --loss SAMPLE_AWARE_BCE \
   --epoch 8 \
   --batch_size 50 \
