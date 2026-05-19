@@ -7,8 +7,8 @@
 #SBATCH --cpus-per-task=26
 #SBATCH --mem=224G
 #SBATCH --time=8:00:00
-#SBATCH --output=sdm_rf_%j.out
-#SBATCH --error=sdm_rf_%j.err
+#SBATCH --output=logs/sdm_%j.out
+#SBATCH --error=logs/sdm_%j.err
 
 # $1 is the first positional argument passed to the script
 # e.g.: sbatch spatcv_inference.sh ca
