@@ -2,7 +2,6 @@
 #SBATCH --job-name=deepflora_sdm
 #SBATCH --account=open
 #SBATCH --partition=basic
-#SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=26
