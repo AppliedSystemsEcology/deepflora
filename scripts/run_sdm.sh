@@ -25,7 +25,7 @@ source activate deepflora_r
 
 # uniform test / train split
 echo "Processing uniform train-test random forest"
-Rscript src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R \
+Rscript /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R \
   --dset_name plants_${STATE}_2017 \
   --band unif_train_test \
   --sdm rf \
@@ -37,7 +37,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Processing uniform train-test maxent"
-Rscript src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R \
+Rscript /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R \
   --dset_name plants_${STATE}_2017 \
   --band unif_train_test \
   --sdm maxent \
@@ -51,7 +51,7 @@ fi
 for band in $(seq 0 9); do
 
   echo "Processing band ${band} of 9 for random forest..."
-  Rscript src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R \
+  Rscript /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R \
     --dset_name plants_${STATE}_2017 \
     --band band_${band} \
     --sdm rf \
@@ -62,7 +62,7 @@ for band in $(seq 0 9); do
   fi
 
   echo "Processing band ${band} of 9 for maxent..."
-  Rscript src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R \
+  Rscript /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Maxent_RF_bioclim.R \
     --dset_name plants_${STATE}_2017 \
     --band band_${band} \
     --sdm maxent \
