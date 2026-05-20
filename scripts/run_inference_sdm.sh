@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH --job-name=sdm_inf
-#SBATCH --account=open
+#SBATCH --account=hlc30_cr_default
 #SBATCH --partition=basic
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=4G
 #SBATCH --time=8:00:00
-#SBATCH --output=sdm_inf_%j.out
-#SBATCH --error=sdm_inf_%j.err
+#SBATCH --output=logs/sdm_inf_%j.out
+#SBATCH --error=logs/sdm_inf_%j.err
 
 # $1 is the first positional argument passed to the script
 # e.g.: sbatch spatcv_inference.sh ca

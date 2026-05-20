@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=deepflora_sdm
-#SBATCH --account=open
+#SBATCH --account=hlc30_cr_default
 #SBATCH --partition=basic
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
