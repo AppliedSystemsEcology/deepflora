@@ -1,1542 +1,0 @@
-  0%|          | 0/345 [00:00<?, ?batch/s]  0%|          | 1/345 [00:01<09:28,  1.65s/batch]  1%|          | 2/345 [00:01<04:35,  1.25batch/s]  1%|          | 3/345 [00:02<03:25,  1.66batch/s]  1%|          | 4/345 [00:02<02:53,  1.97batch/s]  1%|▏         | 5/345 [00:02<02:34,  2.20batch/s]  2%|▏         | 6/345 [00:03<02:22,  2.38batch/s]  2%|▏         | 7/345 [00:03<02:14,  2.52batch/s]  2%|▏         | 8/345 [00:03<02:08,  2.62batch/s]  3%|▎         | 9/345 [00:04<02:03,  2.71batch/s]  3%|▎         | 10/345 [00:04<02:01,  2.76batch/s]  3%|▎         | 11/345 [00:05<01:59,  2.79batch/s]  3%|▎         | 12/345 [00:05<01:58,  2.82batch/s]  4%|▍         | 13/345 [00:05<01:56,  2.84batch/s]  4%|▍         | 14/345 [00:06<01:55,  2.86batch/s]  4%|▍         | 15/345 [00:06<01:55,  2.87batch/s]  5%|▍         | 16/345 [00:06<01:54,  2.87batch/s]  5%|▍         | 17/345 [00:07<01:54,  2.88batch/s]  5%|▌         | 18/345 [00:07<01:53,  2.89batch/s]  6%|▌         | 19/345 [00:07<01:52,  2.89batch/s]  6%|▌         | 20/345 [00:08<01:52,  2.89batch/s]  6%|▌         | 21/345 [00:08<01:52,  2.89batch/s]  6%|▋         | 22/345 [00:08<01:51,  2.90batch/s]  7%|▋         | 23/345 [00:09<01:51,  2.89batch/s]  7%|▋         | 24/345 [00:09<01:50,  2.90batch/s]  7%|▋         | 25/345 [00:09<01:50,  2.91batch/s]  8%|▊         | 26/345 [00:10<01:49,  2.90batch/s]  8%|▊         | 27/345 [00:10<01:49,  2.90batch/s]  8%|▊         | 28/345 [00:10<01:48,  2.91batch/s]  8%|▊         | 29/345 [00:11<01:48,  2.91batch/s]  9%|▊         | 30/345 [00:11<01:48,  2.91batch/s]  9%|▉         | 31/345 [00:11<01:48,  2.90batch/s]  9%|▉         | 32/345 [00:12<01:48,  2.88batch/s] 10%|▉         | 33/345 [00:12<01:48,  2.89batch/s] 10%|▉         | 34/345 [00:12<01:47,  2.90batch/s] 10%|█         | 35/345 [00:13<01:46,  2.90batch/s] 10%|█         | 36/345 [00:13<01:46,  2.89batch/s] 11%|█         | 37/345 [00:14<01:46,  2.90batch/s] 11%|█         | 38/345 [00:14<01:46,  2.89batch/s] 11%|█▏        | 39/345 [00:14<01:45,  2.89batch/s] 12%|█▏        | 40/345 [00:15<01:45,  2.89batch/s] 12%|█▏        | 41/345 [00:15<01:45,  2.89batch/s] 12%|█▏        | 42/345 [00:15<01:44,  2.89batch/s] 12%|█▏        | 43/345 [00:16<01:44,  2.90batch/s] 13%|█▎        | 44/345 [00:16<01:44,  2.89batch/s] 13%|█▎        | 45/345 [00:16<01:43,  2.90batch/s] 13%|█▎        | 46/345 [00:17<01:43,  2.89batch/s] 14%|█▎        | 47/345 [00:17<01:43,  2.89batch/s] 14%|█▍        | 48/345 [00:17<01:42,  2.89batch/s] 14%|█▍        | 49/345 [00:18<01:42,  2.89batch/s] 14%|█▍        | 50/345 [00:18<01:41,  2.90batch/s] 15%|█▍        | 51/345 [00:18<01:41,  2.89batch/s] 15%|█▌        | 52/345 [00:19<01:40,  2.90batch/s] 15%|█▌        | 53/345 [00:19<01:40,  2.90batch/s] 16%|█▌        | 54/345 [00:19<01:40,  2.89batch/s] 16%|█▌        | 55/345 [00:20<01:40,  2.88batch/s] 16%|█▌        | 56/345 [00:20<01:40,  2.88batch/s] 17%|█▋        | 57/345 [00:20<01:40,  2.88batch/s] 17%|█▋        | 58/345 [00:21<01:39,  2.88batch/s] 17%|█▋        | 59/345 [00:21<01:38,  2.90batch/s] 17%|█▋        | 60/345 [00:21<01:38,  2.89batch/s] 18%|█▊        | 61/345 [00:22<01:38,  2.89batch/s] 18%|█▊        | 62/345 [00:22<01:38,  2.88batch/s] 18%|█▊        | 63/345 [00:23<01:37,  2.89batch/s] 19%|█▊        | 64/345 [00:23<01:37,  2.89batch/s] 19%|█▉        | 65/345 [00:23<01:37,  2.88batch/s] 19%|█▉        | 66/345 [00:24<01:37,  2.88batch/s] 19%|█▉        | 67/345 [00:24<01:37,  2.87batch/s] 20%|█▉        | 68/345 [00:24<01:36,  2.87batch/s] 20%|██        | 69/345 [00:25<01:36,  2.87batch/s] 20%|██        | 70/345 [00:25<01:35,  2.88batch/s] 21%|██        | 71/345 [00:25<01:35,  2.87batch/s] 21%|██        | 72/345 [00:26<01:34,  2.87batch/s] 21%|██        | 73/345 [00:26<01:34,  2.87batch/s] 21%|██▏       | 74/345 [00:26<01:33,  2.88batch/s] 22%|██▏       | 75/345 [00:27<01:33,  2.88batch/s] 22%|██▏       | 76/345 [00:27<01:32,  2.90batch/s] 22%|██▏       | 77/345 [00:27<01:32,  2.91batch/s] 23%|██▎       | 78/345 [00:28<01:32,  2.90batch/s] 23%|██▎       | 79/345 [00:28<01:31,  2.89batch/s] 23%|██▎       | 80/345 [00:28<01:31,  2.89batch/s] 23%|██▎       | 81/345 [00:29<01:31,  2.89batch/s] 24%|██▍       | 82/345 [00:29<01:31,  2.89batch/s] 24%|██▍       | 83/345 [00:29<01:30,  2.88batch/s] 24%|██▍       | 84/345 [00:30<01:30,  2.89batch/s] 25%|██▍       | 85/345 [00:30<01:30,  2.89batch/s] 25%|██▍       | 86/345 [00:30<01:29,  2.89batch/s] 25%|██▌       | 87/345 [00:31<01:29,  2.89batch/s] 26%|██▌       | 88/345 [00:31<01:29,  2.89batch/s] 26%|██▌       | 89/345 [00:32<01:28,  2.88batch/s] 26%|██▌       | 90/345 [00:32<01:28,  2.88batch/s] 26%|██▋       | 91/345 [00:32<01:28,  2.88batch/s] 27%|██▋       | 92/345 [00:33<01:27,  2.88batch/s] 27%|██▋       | 93/345 [00:33<01:27,  2.88batch/s] 27%|██▋       | 94/345 [00:33<01:27,  2.88batch/s] 28%|██▊       | 95/345 [00:34<01:26,  2.89batch/s] 28%|██▊       | 96/345 [00:34<01:26,  2.88batch/s] 28%|██▊       | 97/345 [00:34<01:25,  2.89batch/s] 28%|██▊       | 98/345 [00:35<01:25,  2.90batch/s] 29%|██▊       | 99/345 [00:35<01:24,  2.90batch/s] 29%|██▉       | 100/345 [00:35<01:24,  2.90batch/s] 29%|██▉       | 101/345 [00:36<01:23,  2.91batch/s] 30%|██▉       | 102/345 [00:36<01:23,  2.91batch/s] 30%|██▉       | 103/345 [00:36<01:23,  2.89batch/s] 30%|███       | 104/345 [00:37<01:23,  2.89batch/s] 30%|███       | 105/345 [00:37<01:22,  2.89batch/s] 31%|███       | 106/345 [00:37<01:22,  2.89batch/s] 31%|███       | 107/345 [00:38<01:22,  2.89batch/s] 31%|███▏      | 108/345 [00:38<01:22,  2.89batch/s] 32%|███▏      | 109/345 [00:38<01:21,  2.90batch/s] 32%|███▏      | 110/345 [00:39<01:21,  2.89batch/s] 32%|███▏      | 111/345 [00:39<01:21,  2.89batch/s] 32%|███▏      | 112/345 [00:39<01:20,  2.90batch/s] 33%|███▎      | 113/345 [00:40<01:20,  2.89batch/s] 33%|███▎      | 114/345 [00:40<01:19,  2.89batch/s] 33%|███▎      | 115/345 [00:41<01:19,  2.90batch/s] 34%|███▎      | 116/345 [00:41<01:19,  2.89batch/s] 34%|███▍      | 117/345 [00:41<01:18,  2.89batch/s] 34%|███▍      | 118/345 [00:42<01:18,  2.89batch/s] 34%|███▍      | 119/345 [00:42<01:18,  2.90batch/s] 35%|███▍      | 120/345 [00:42<01:17,  2.89batch/s] 35%|███▌      | 121/345 [00:43<01:17,  2.89batch/s] 35%|███▌      | 122/345 [00:43<01:17,  2.88batch/s] 36%|███▌      | 123/345 [00:43<01:16,  2.88batch/s] 36%|███▌      | 124/345 [00:44<01:16,  2.89batch/s] 36%|███▌      | 125/345 [00:44<01:16,  2.89batch/s] 37%|███▋      | 126/345 [00:44<01:15,  2.89batch/s] 37%|███▋      | 127/345 [00:45<01:15,  2.89batch/s] 37%|███▋      | 128/345 [00:45<01:15,  2.88batch/s] 37%|███▋      | 129/345 [00:45<01:14,  2.90batch/s] 38%|███▊      | 130/345 [00:46<01:14,  2.90batch/s] 38%|███▊      | 131/345 [00:46<01:14,  2.89batch/s] 38%|███▊      | 132/345 [00:46<01:13,  2.90batch/s] 39%|███▊      | 133/345 [00:47<01:13,  2.89batch/s] 39%|███▉      | 134/345 [00:47<01:13,  2.88batch/s] 39%|███▉      | 135/345 [00:47<01:12,  2.89batch/s] 39%|███▉      | 136/345 [00:48<01:12,  2.90batch/s] 40%|███▉      | 137/345 [00:48<01:11,  2.90batch/s] 40%|████      | 138/345 [00:48<01:11,  2.91batch/s] 40%|████      | 139/345 [00:49<01:11,  2.90batch/s] 41%|████      | 140/345 [00:49<01:10,  2.89batch/s] 41%|████      | 141/345 [00:50<01:10,  2.89batch/s] 41%|████      | 142/345 [00:50<01:10,  2.90batch/s] 41%|████▏     | 143/345 [00:50<01:09,  2.90batch/s] 42%|████▏     | 144/345 [00:51<01:09,  2.90batch/s] 42%|████▏     | 145/345 [00:51<01:09,  2.89batch/s] 42%|████▏     | 146/345 [00:51<01:08,  2.90batch/s] 43%|████▎     | 147/345 [00:52<01:08,  2.90batch/s] 43%|████▎     | 148/345 [00:52<01:08,  2.89batch/s] 43%|████▎     | 149/345 [00:52<01:07,  2.89batch/s] 43%|████▎     | 150/345 [00:53<01:07,  2.89batch/s] 44%|████▍     | 151/345 [00:53<01:07,  2.89batch/s] 44%|████▍     | 152/345 [00:53<01:06,  2.88batch/s] 44%|████▍     | 153/345 [00:54<01:06,  2.88batch/s] 45%|████▍     | 154/345 [00:54<01:06,  2.88batch/s] 45%|████▍     | 155/345 [00:54<01:05,  2.88batch/s] 45%|████▌     | 156/345 [00:55<01:05,  2.88batch/s] 46%|████▌     | 157/345 [00:55<01:05,  2.88batch/s] 46%|████▌     | 158/345 [00:55<01:04,  2.90batch/s] 46%|████▌     | 159/345 [00:56<01:04,  2.89batch/s] 46%|████▋     | 160/345 [00:56<01:03,  2.90batch/s] 47%|████▋     | 161/345 [00:56<01:03,  2.89batch/s] 47%|████▋     | 162/345 [00:57<01:03,  2.88batch/s] 47%|████▋     | 163/345 [00:57<01:02,  2.90batch/s] 48%|████▊     | 164/345 [00:57<01:02,  2.88batch/s] 48%|████▊     | 165/345 [00:58<01:02,  2.89batch/s] 48%|████▊     | 166/345 [00:58<01:01,  2.90batch/s] 48%|████▊     | 167/345 [00:58<01:01,  2.90batch/s] 49%|████▊     | 168/345 [00:59<01:00,  2.90batch/s] 49%|████▉     | 169/345 [00:59<01:00,  2.90batch/s] 49%|████▉     | 170/345 [01:00<01:00,  2.89batch/s] 50%|████▉     | 171/345 [01:00<01:00,  2.88batch/s] 50%|████▉     | 172/345 [01:00<00:59,  2.90batch/s] 50%|█████     | 173/345 [01:01<00:59,  2.90batch/s] 50%|█████     | 174/345 [01:01<00:58,  2.91batch/s] 51%|█████     | 175/345 [01:01<00:58,  2.90batch/s] 51%|█████     | 176/345 [01:02<00:58,  2.90batch/s] 51%|█████▏    | 177/345 [01:02<00:58,  2.89batch/s] 52%|█████▏    | 178/345 [01:02<00:57,  2.91batch/s] 52%|█████▏    | 179/345 [01:03<00:57,  2.90batch/s] 52%|█████▏    | 180/345 [01:03<00:56,  2.91batch/s] 52%|█████▏    | 181/345 [01:03<00:56,  2.91batch/s] 53%|█████▎    | 182/345 [01:04<00:56,  2.90batch/s] 53%|█████▎    | 183/345 [01:04<00:55,  2.90batch/s] 53%|█████▎    | 184/345 [01:04<00:55,  2.90batch/s] 54%|█████▎    | 185/345 [01:05<00:55,  2.90batch/s] 54%|█████▍    | 186/345 [01:05<00:54,  2.90batch/s] 54%|█████▍    | 187/345 [01:05<00:54,  2.89batch/s] 54%|█████▍    | 188/345 [01:06<00:54,  2.89batch/s] 55%|█████▍    | 189/345 [01:06<00:54,  2.89batch/s] 55%|█████▌    | 190/345 [01:06<00:53,  2.89batch/s] 55%|█████▌    | 191/345 [01:07<00:53,  2.90batch/s] 56%|█████▌    | 192/345 [01:07<00:53,  2.88batch/s] 56%|█████▌    | 193/345 [01:07<00:52,  2.89batch/s] 56%|█████▌    | 194/345 [01:08<00:52,  2.90batch/s] 57%|█████▋    | 195/345 [01:08<00:51,  2.89batch/s] 57%|█████▋    | 196/345 [01:09<00:51,  2.88batch/s] 57%|█████▋    | 197/345 [01:09<00:51,  2.88batch/s] 57%|█████▋    | 198/345 [01:09<00:50,  2.89batch/s] 58%|█████▊    | 199/345 [01:10<00:50,  2.89batch/s] 58%|█████▊    | 200/345 [01:10<00:50,  2.89batch/s] 58%|█████▊    | 201/345 [01:10<00:49,  2.89batch/s] 59%|█████▊    | 202/345 [01:11<00:49,  2.89batch/s] 59%|█████▉    | 203/345 [01:11<00:49,  2.88batch/s] 59%|█████▉    | 204/345 [01:11<00:48,  2.88batch/s] 59%|█████▉    | 205/345 [01:12<00:48,  2.88batch/s] 60%|█████▉    | 206/345 [01:12<00:48,  2.89batch/s] 60%|██████    | 207/345 [01:12<00:47,  2.89batch/s] 60%|██████    | 208/345 [01:13<00:47,  2.88batch/s] 61%|██████    | 209/345 [01:13<00:47,  2.88batch/s] 61%|██████    | 210/345 [01:13<00:46,  2.88batch/s] 61%|██████    | 211/345 [01:14<00:46,  2.89batch/s] 61%|██████▏   | 212/345 [01:14<00:46,  2.89batch/s] 62%|██████▏   | 213/345 [01:14<00:45,  2.90batch/s] 62%|██████▏   | 214/345 [01:15<00:45,  2.91batch/s] 62%|██████▏   | 215/345 [01:15<00:44,  2.90batch/s] 63%|██████▎   | 216/345 [01:15<00:44,  2.89batch/s] 63%|██████▎   | 217/345 [01:16<00:44,  2.89batch/s] 63%|██████▎   | 218/345 [01:16<00:43,  2.89batch/s] 63%|██████▎   | 219/345 [01:16<00:43,  2.89batch/s] 64%|██████▍   | 220/345 [01:17<00:43,  2.88batch/s] 64%|██████▍   | 221/345 [01:17<00:42,  2.88batch/s] 64%|██████▍   | 222/345 [01:18<00:42,  2.89batch/s] 65%|██████▍   | 223/345 [01:18<00:42,  2.88batch/s] 65%|██████▍   | 224/345 [01:18<00:42,  2.88batch/s] 65%|██████▌   | 225/345 [01:19<00:41,  2.88batch/s] 66%|██████▌   | 226/345 [01:19<00:41,  2.88batch/s] 66%|██████▌   | 227/345 [01:19<00:40,  2.88batch/s] 66%|██████▌   | 228/345 [01:20<00:40,  2.88batch/s] 66%|██████▋   | 229/345 [01:20<00:40,  2.88batch/s] 67%|██████▋   | 230/345 [01:20<00:39,  2.89batch/s] 67%|██████▋   | 231/345 [01:21<00:39,  2.88batch/s] 67%|██████▋   | 232/345 [01:21<00:39,  2.88batch/s] 68%|██████▊   | 233/345 [01:21<00:38,  2.88batch/s] 68%|██████▊   | 234/345 [01:22<00:38,  2.89batch/s] 68%|██████▊   | 235/345 [01:22<00:37,  2.89batch/s] 68%|██████▊   | 236/345 [01:22<00:37,  2.90batch/s] 69%|██████▊   | 237/345 [01:23<00:37,  2.88batch/s] 69%|██████▉   | 238/345 [01:23<00:37,  2.88batch/s] 69%|██████▉   | 239/345 [01:23<00:36,  2.88batch/s] 70%|██████▉   | 240/345 [01:24<00:36,  2.88batch/s] 70%|██████▉   | 241/345 [01:24<00:36,  2.88batch/s] 70%|███████   | 242/345 [01:24<00:35,  2.88batch/s] 70%|███████   | 243/345 [01:25<00:35,  2.89batch/s] 71%|███████   | 244/345 [01:25<00:34,  2.89batch/s] 71%|███████   | 245/345 [01:25<00:34,  2.90batch/s] 71%|███████▏  | 246/345 [01:26<00:34,  2.91batch/s] 72%|███████▏  | 247/345 [01:26<00:33,  2.91batch/s] 72%|███████▏  | 248/345 [01:27<00:33,  2.91batch/s] 72%|███████▏  | 249/345 [01:27<00:33,  2.91batch/s] 72%|███████▏  | 250/345 [01:27<00:32,  2.89batch/s] 73%|███████▎  | 251/345 [01:28<00:32,  2.89batch/s] 73%|███████▎  | 252/345 [01:28<00:32,  2.89batch/s] 73%|███████▎  | 253/345 [01:28<00:31,  2.88batch/s] 74%|███████▎  | 254/345 [01:29<00:31,  2.89batch/s] 74%|███████▍  | 255/345 [01:29<00:31,  2.90batch/s] 74%|███████▍  | 256/345 [01:29<00:30,  2.90batch/s] 74%|███████▍  | 257/345 [01:30<00:30,  2.90batch/s] 75%|███████▍  | 258/345 [01:30<00:30,  2.90batch/s] 75%|███████▌  | 259/345 [01:30<00:29,  2.88batch/s] 75%|███████▌  | 260/345 [01:31<00:29,  2.88batch/s] 76%|███████▌  | 261/345 [01:31<00:29,  2.89batch/s] 76%|███████▌  | 262/345 [01:31<00:28,  2.89batch/s] 76%|███████▌  | 263/345 [01:32<00:28,  2.89batch/s] 77%|███████▋  | 264/345 [01:32<00:27,  2.90batch/s] 77%|███████▋  | 265/345 [01:32<00:27,  2.90batch/s] 77%|███████▋  | 266/345 [01:33<00:27,  2.91batch/s] 77%|███████▋  | 267/345 [01:33<00:26,  2.90batch/s] 78%|███████▊  | 268/345 [01:33<00:26,  2.90batch/s] 78%|███████▊  | 269/345 [01:34<00:26,  2.90batch/s] 78%|███████▊  | 270/345 [01:34<00:25,  2.90batch/s] 79%|███████▊  | 271/345 [01:34<00:25,  2.90batch/s] 79%|███████▉  | 272/345 [01:35<00:25,  2.90batch/s] 79%|███████▉  | 273/345 [01:35<00:24,  2.91batch/s] 79%|███████▉  | 274/345 [01:35<00:24,  2.90batch/s] 80%|███████▉  | 275/345 [01:36<00:24,  2.91batch/s] 80%|████████  | 276/345 [01:36<00:23,  2.91batch/s] 80%|████████  | 277/345 [01:37<00:23,  2.89batch/s] 81%|████████  | 278/345 [01:37<00:23,  2.87batch/s] 81%|████████  | 279/345 [01:37<00:23,  2.87batch/s] 81%|████████  | 280/345 [01:38<00:22,  2.87batch/s] 81%|████████▏ | 281/345 [01:38<00:22,  2.88batch/s] 82%|████████▏ | 282/345 [01:38<00:21,  2.87batch/s] 82%|████████▏ | 283/345 [01:39<00:21,  2.88batch/s] 82%|████████▏ | 284/345 [01:39<00:21,  2.88batch/s] 83%|████████▎ | 285/345 [01:39<00:20,  2.88batch/s] 83%|████████▎ | 286/345 [01:40<00:20,  2.89batch/s] 83%|████████▎ | 287/345 [01:40<00:19,  2.90batch/s] 83%|████████▎ | 288/345 [01:40<00:19,  2.89batch/s] 84%|████████▍ | 289/345 [01:41<00:19,  2.89batch/s] 84%|████████▍ | 290/345 [01:41<00:18,  2.90batch/s] 84%|████████▍ | 291/345 [01:41<00:18,  2.89batch/s] 85%|████████▍ | 292/345 [01:42<00:18,  2.89batch/s] 85%|████████▍ | 293/345 [01:42<00:17,  2.90batch/s] 85%|████████▌ | 294/345 [01:42<00:17,  2.90batch/s] 86%|████████▌ | 295/345 [01:43<00:17,  2.90batch/s] 86%|████████▌ | 296/345 [01:43<00:16,  2.89batch/s] 86%|████████▌ | 297/345 [01:43<00:16,  2.89batch/s] 86%|████████▋ | 298/345 [01:44<00:16,  2.88batch/s] 87%|████████▋ | 299/345 [01:44<00:15,  2.88batch/s] 87%|████████▋ | 300/345 [01:44<00:15,  2.88batch/s] 87%|████████▋ | 301/345 [01:45<00:15,  2.88batch/s] 88%|████████▊ | 302/345 [01:45<00:14,  2.88batch/s] 88%|████████▊ | 303/345 [01:46<00:14,  2.89batch/s] 88%|████████▊ | 304/345 [01:46<00:14,  2.90batch/s] 88%|████████▊ | 305/345 [01:46<00:13,  2.91batch/s] 89%|████████▊ | 306/345 [01:47<00:13,  2.90batch/s] 89%|████████▉ | 307/345 [01:47<00:13,  2.90batch/s] 89%|████████▉ | 308/345 [01:47<00:12,  2.88batch/s] 90%|████████▉ | 309/345 [01:48<00:12,  2.88batch/s] 90%|████████▉ | 310/345 [01:48<00:12,  2.88batch/s] 90%|█████████ | 311/345 [01:48<00:11,  2.88batch/s] 90%|█████████ | 312/345 [01:49<00:11,  2.88batch/s] 91%|█████████ | 313/345 [01:49<00:11,  2.88batch/s] 91%|█████████ | 314/345 [01:49<00:10,  2.88batch/s] 91%|█████████▏| 315/345 [01:50<00:10,  2.88batch/s] 92%|█████████▏| 316/345 [01:50<00:10,  2.89batch/s] 92%|█████████▏| 317/345 [01:50<00:09,  2.89batch/s] 92%|█████████▏| 318/345 [01:51<00:09,  2.90batch/s] 92%|█████████▏| 319/345 [01:51<00:08,  2.90batch/s] 93%|█████████▎| 320/345 [01:51<00:08,  2.89batch/s] 93%|█████████▎| 321/345 [01:52<00:08,  2.89batch/s] 93%|█████████▎| 322/345 [01:52<00:07,  2.89batch/s] 94%|█████████▎| 323/345 [01:52<00:07,  2.90batch/s] 94%|█████████▍| 324/345 [01:53<00:07,  2.90batch/s] 94%|█████████▍| 325/345 [01:53<00:06,  2.88batch/s] 94%|█████████▍| 326/345 [01:54<00:06,  2.88batch/s] 95%|█████████▍| 327/345 [01:54<00:06,  2.89batch/s] 95%|█████████▌| 328/345 [01:54<00:05,  2.89batch/s] 95%|█████████▌| 329/345 [01:55<00:05,  2.90batch/s] 96%|█████████▌| 330/345 [01:55<00:05,  2.91batch/s] 96%|█████████▌| 331/345 [01:55<00:04,  2.91batch/s] 96%|█████████▌| 332/345 [01:56<00:04,  2.91batch/s] 97%|█████████▋| 333/345 [01:56<00:04,  2.92batch/s] 97%|█████████▋| 334/345 [01:56<00:03,  2.92batch/s] 97%|█████████▋| 335/345 [01:57<00:03,  2.92batch/s] 97%|█████████▋| 336/345 [01:57<00:03,  2.92batch/s] 98%|█████████▊| 337/345 [01:57<00:02,  2.92batch/s] 98%|█████████▊| 338/345 [01:58<00:02,  2.92batch/s] 98%|█████████▊| 339/345 [01:58<00:02,  2.92batch/s] 99%|█████████▊| 340/345 [01:58<00:01,  2.92batch/s] 99%|█████████▉| 341/345 [01:59<00:01,  2.92batch/s] 99%|█████████▉| 342/345 [01:59<00:01,  2.92batch/s] 99%|█████████▉| 343/345 [01:59<00:00,  2.92batch/s]100%|█████████▉| 344/345 [02:00<00:00,  2.92batch/s]100%|██████████| 345/345 [02:00<00:00,  2.92batch/s]100%|██████████| 345/345 [02:00<00:00,  2.86batch/s]
-DEEPBIOSPHERE accuracy metrics:   0%|          | 0/48 [00:00<?, ?metric/s]DEEPBIOSPHERE accuracy metrics:   2%|▏         | 1/48 [00:02<01:44,  2.23s/metric]DEEPBIOSPHERE accuracy metrics:   4%|▍         | 2/48 [00:04<01:41,  2.21s/metric]DEEPBIOSPHERE accuracy metrics:   6%|▋         | 3/48 [00:06<01:39,  2.20s/metric]DEEPBIOSPHERE accuracy metrics:   8%|▊         | 4/48 [00:08<01:36,  2.20s/metric]DEEPBIOSPHERE accuracy metrics:  10%|█         | 5/48 [00:11<01:34,  2.20s/metric]DEEPBIOSPHERE accuracy metrics:  12%|█▎        | 6/48 [00:13<01:32,  2.19s/metric]DEEPBIOSPHERE accuracy metrics:  15%|█▍        | 7/48 [00:15<01:29,  2.18s/metric]DEEPBIOSPHERE accuracy metrics:  17%|█▋        | 8/48 [00:17<01:26,  2.17s/metric]DEEPBIOSPHERE accuracy metrics:  19%|█▉        | 9/48 [00:19<01:24,  2.16s/metric]DEEPBIOSPHERE accuracy metrics:  21%|██        | 10/48 [00:21<01:22,  2.16s/metric]DEEPBIOSPHERE accuracy metrics:  23%|██▎       | 11/48 [00:23<01:19,  2.16s/metric]DEEPBIOSPHERE accuracy metrics:  25%|██▌       | 12/48 [00:26<01:17,  2.15s/metric]DEEPBIOSPHERE accuracy metrics:  27%|██▋       | 13/48 [00:28<01:15,  2.15s/metric]DEEPBIOSPHERE accuracy metrics:  29%|██▉       | 14/48 [00:30<01:13,  2.15s/metric]DEEPBIOSPHERE accuracy metrics:  31%|███▏      | 15/48 [00:32<01:10,  2.15s/metric]DEEPBIOSPHERE accuracy metrics:  33%|███▎      | 16/48 [00:34<01:08,  2.14s/metric]DEEPBIOSPHERE accuracy metrics:  35%|███▌      | 17/48 [00:40<01:39,  3.21s/metric]DEEPBIOSPHERE accuracy metrics:  42%|████▏     | 20/48 [00:40<00:40,  1.44s/metric]DEEPBIOSPHERE accuracy metrics:  46%|████▌     | 22/48 [00:40<00:25,  1.04metric/s]DEEPBIOSPHERE accuracy metrics:  50%|█████     | 24/48 [00:40<00:16,  1.48metric/s]DEEPBIOSPHERE accuracy metrics:  54%|█████▍    | 26/48 [00:41<00:11,  1.94metric/s]/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:379: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
-  warnings.warn(
-/storage/group/hlc30/default/envs/deepflora/lib/python3.9/site-packages/sklearn/metrics/_ranking.py:1033: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
-  warnings.warn(
-DEEPBIOSPHERE accuracy metrics:  58%|█████▊    | 28/48 [00:51<00:40,  2.02s/metric]DEEPBIOSPHERE accuracy metrics:  62%|██████▎   | 30/48 [01:59<03:33, 11.85s/metric]DEEPBIOSPHERE accuracy metrics:  65%|██████▍   | 31/48 [01:59<02:45,  9.72s/metric]DEEPBIOSPHERE accuracy metrics:  67%|██████▋   | 32/48 [01:59<02:04,  7.77s/metric]DEEPBIOSPHERE accuracy metrics:  69%|██████▉   | 33/48 [01:59<01:30,  6.04s/metric]DEEPBIOSPHERE accuracy metrics:  71%|███████   | 34/48 [01:59<01:04,  4.60s/metric]DEEPBIOSPHERE accuracy metrics:  92%|█████████▏| 44/48 [02:02<00:04,  1.20s/metric]DEEPBIOSPHERE accuracy metrics:  94%|█████████▍| 45/48 [02:02<00:03,  1.12s/metric]DEEPBIOSPHERE accuracy metrics:  96%|█████████▌| 46/48 [02:02<00:02,  1.01s/metric]DEEPBIOSPHERE accuracy metrics:  98%|█████████▊| 47/48 [02:03<00:00,  1.11metric/s]DEEPBIOSPHERE accuracy metrics: 100%|██████████| 48/48 [02:03<00:00,  1.26metric/s]DEEPBIOSPHERE accuracy metrics: 100%|██████████| 48/48 [02:03<00:00,  2.57s/metric]
