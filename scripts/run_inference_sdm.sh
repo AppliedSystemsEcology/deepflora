@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=sdm_inf
-#SBATCH --account=hlc30_cr_default
+#SBATCH --account=open
 #SBATCH --partition=basic
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=4G
+#SBATCH --mem=64G
 #SBATCH --time=8:00:00
 #SBATCH --output=logs/sdm_inf_%j.out
 #SBATCH --error=logs/sdm_inf_%j.err
@@ -28,12 +28,36 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --dataset_name plants_${STATE}_2017 \
   --year 2017 \
   --state pa \
-  --filename rf_unif
+  --filename rf_unif_2017
 
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --band -1 \
   --model maxent \
-  --dataset_name plants_pa \
+  --dataset_name plants_${STATE}_2017 \
   --year 2017 \
   --state pa \
-  --filename maxent_unif
+  --filename maxent_unif_2017
+
+
+# spatial cross-validation
+for band in $(seq 0 9); do
+
+  echo "Running inference on band ${band} of 9 for random forest..."
+  python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
+  --band ${band} \
+  --model rf \
+  --dataset_name plants_${STATE}_2017 \
+  --year 2017 \
+  --state ${STATE} \
+  --filename rf_2017_${band}
+
+  echo "Running inference on band ${band} of 9 for maxent..."
+  python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
+  --band ${band} \
+  --model maxent \
+  --dataset_name plants_${STATE}_2017 \
+  --year 2017 \
+  --state ${STATE} \
+  --filename maxent_2017_${band}
+
+done

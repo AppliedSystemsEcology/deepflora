@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=spatcv_inference
+#SBATCH --job-name=db_spcv_inf
 #SBATCH --account=hlc30_cr_default
 #SBATCH --partition=standard
 #SBATCH --gres=gpu:p100:1
