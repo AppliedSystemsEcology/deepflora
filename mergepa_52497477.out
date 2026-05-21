@@ -1,0 +1,10 @@
+class       : SpatRaster 
+size        : 1321, 2035, 1388  (nrow, ncol, nlyr)
+resolution  : 255.9804, 256.0498  (x, y)
+extent      : 1264406, 1785326, 1958292, 2296534  (xmin, xmax, ymin, ymax)
+coord. ref. : NAD83 / Conus Albers (EPSG:5070) 
+source      : pa_mosaic.tif 
+varname     : 39075 
+names       :  Medeo~niana, Thali~oides,  Verat~iride, Ambro~folia, Huper~idula, Physa~folia, ... 
+min values  : 0.0001644521,   0.0000000, 0.0001483712,  0.03098806,   0.0000000,   0.0000000, ... 
+max values  : 1.0000000000,   0.9980721, 1.0000000000,  1.00000000,   0.9907601,   0.9886533, ... 

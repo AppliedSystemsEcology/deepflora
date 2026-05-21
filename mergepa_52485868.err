@@ -1,0 +1,3 @@
+terra 1.8.93
+/var/spool/slurm/d/job52485868/slurm_script: line 16: 357031 Killed                  Rscript /storage/home/kbl5733/work/github/deepflora/scripts/merge_rasters.R
+slurmstepd: error: Detected 1 oom_kill event in StepId=52485868.batch. Some of the step tasks have been OOM Killed.

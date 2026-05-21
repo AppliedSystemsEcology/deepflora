@@ -1,0 +1,17 @@
+Processing band 8 of 9 for deepbiosphere...
+test dataset has 50118 points
+train dataset has 138647 points
+using device cuda:0
+Starting epoch 0
+Starting epoch 1
+Starting epoch 2
+Starting epoch 3
+Starting epoch 4
+Starting epoch 5
+Starting epoch 6
+Starting epoch 7
+Starting epoch 8
+Starting epoch 9
+Starting epoch 10
+Starting epoch 11
+took 494157.546124977 hours to run

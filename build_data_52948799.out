@@ -1,0 +1,22 @@
+adding ecoregions
+ecoregions took 5.28989288409551 minutes to add ecoregions
+building cKDTree
+querying cKDTree
+took 1.5915324767430623 minutes to load KDtree for all 448033 points
+Using cross validation along lon axis
+438787 training points, 5572 testing points,  98.729% train, 1.254% test, 1.569 kilometers between test and train
+426198 training points, 17983 testing points,  95.897% train, 4.046% test, 1.772 kilometers between test and train
+413297 training points, 30692 testing points,  92.994% train, 6.906% test, 1.564 kilometers between test and train
+427884 training points, 15261 testing points,  96.276% train, 3.434% test, 1.545 kilometers between test and train
+392366 training points, 51585 testing points,  88.284% train, 11.607% test, 1.578 kilometers between test and train
+428458 training points, 15405 testing points,  96.405% train, 3.466% test, 1.587 kilometers between test and train
+411493 training points, 31270 testing points,  92.588% train, 7.036% test, 1.545 kilometers between test and train
+198429 training points, 243910 testing points,  44.648% train, 54.881% test, 1.522 kilometers between test and train
+424188 training points, 19830 testing points,  95.445% train, 4.462% test, 1.551 kilometers between test and train
+438806 training points, 5567 testing points,  98.734% train, 1.253% test, 1.781 kilometers between test and train
+building cKDTree
+querying cKDTree
+took 1.4749071915944418 minutes to load KDtree for all 444434 points
+<class 'list'> 3880 torch.Size([4])
+3880 3880 torch.Size([4]) torch.Size([4])
+saving data!
