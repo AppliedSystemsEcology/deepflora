@@ -8,8 +8,8 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=224G
 #SBATCH --time=48:00:00
-#SBATCH --output=pa250_%j.out
-#SBATCH --error=pa250_%j.err
+#SBATCH --output=logs/pa250_%j.out
+#SBATCH --error=logs/pa250_%j.err
 
 module load anaconda
 source activate deepflora
