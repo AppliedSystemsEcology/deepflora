@@ -1,5 +1,6 @@
 library(tidyverse)
-metricsdir <- "data-raw/results/accuracy_metrics/"
+source("R/accuracy_utils.R")
+metricsdir <- "data-raw/results"
 # unzip("data-raw/results/acc_metrics.zip",exdir = metricsdir, junkpaths = TRUE)
 metricfiles <- list.files(metricsdir, full.names = TRUE)
 beeplants <- readRDS("data/beeplants.rds")
@@ -11,23 +12,37 @@ perobs <- lapply(metricfiles[grep("observations", metricfiles)], read.csv)
 names(perobs) <- strsplit(basename(metricfiles[grep("observations", metricfiles)]), "_") |> sapply(\(x) paste(unlist(x)[1:2],collapse="_"))
 
 persp <- lapply(metricfiles[grep("species", metricfiles)], read.csv)
-names(persp) <- strsplit(basename(metricfiles[grep("species", metricfiles)]), "_") |> sapply(\(x) paste(unlist(x)[1:2],collapse="_"))
+persp.nameparts <- strsplit(sub("\\.csv$", "", basename(metricfiles[grep("species", metricfiles)])), "_")
+
+names(persp) <- sapply(persp.nameparts, \(x) paste(head(x, 1), dplyr::nth(x, 2), tail(x, 1), sep="_"))
+
+test <- read.csv("data-raw/results/db_ny_2017_per_species_results_band0.csv") |> tail(20)
 
 make_persp_long <- function(x) {
-  x |>
+  x |> as.data.frame() |>
     dplyr::select(-dset_name, -model, -loss, -exp_id, -pretrained, -date, -batch_size, -epoch, -thres, -band) |>
-    column_to_rownames("metric") |>
-    t() |> as.data.frame() |>
-    rownames_to_column("scientificName") |>
-    mutate(scientificName = gsub("\\."," ",scientificName)) %>%
-    separate_wider_delim(scientificName, delim=" ",
-                         names=c("genus","sp"),
-                         too_few = "align_start",
-                         too_many = "merge",
-                         cols_remove = FALSE)
+    pivot_longer(!matches("metric"))
+    # column_to_rownames("metric") |>
+    # t() |>
+    # rownames_to_column("scientificName") |>
+    # mutate(scientificName = gsub("\\."," ",scientificName)) %>%
+    # separate_wider_delim(scientificName, delim=" ",
+    #                      names=c("genus","sp"),
+    #                      too_few = "align_start",
+    #                      too_many = "merge",
+    #                      cols_remove = FALSE)
 }
 
-persp.l <- lapply(persp[c("bioclim_unif", "initial_db", "maxent_unif", "rf_unif", "tresnet_unif")], make_persp_long)
+for(g in seq_along(persp)){
+  test <- make_persp_long(persp[[g]])
+}
+
+metricfiles[grep("species", metricfiles)][g]
+
+persp[[2]]$Medeola.virginiana
+persp[[2]]$Reynoutria.japonica
+
+persp.l <- lapply(persp, make_persp_long)
 
 # all bee floral resource sp (Grozinger + Fowler)
 # persp.fr <- persp.l %>%

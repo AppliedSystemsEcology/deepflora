@@ -10,3 +10,5 @@ data/big
 /data-raw/results/accuracy_metrics/
 .positai
 logs/
+data-raw/results
+data-raw/results-old
