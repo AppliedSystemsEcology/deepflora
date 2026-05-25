@@ -28,7 +28,7 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --dataset_name plants_${STATE}_2017 \
   --year 2017 \
   --state pa \
-  --filename rf_unif_2017
+  --filename rf_${STATE}_2017_unif
 
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --band -1 \
@@ -36,7 +36,7 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --dataset_name plants_${STATE}_2017 \
   --year 2017 \
   --state pa \
-  --filename maxent_unif_2017
+  --filename maxent_${STATE}_2017_unif
 
 
 # spatial cross-validation
@@ -49,7 +49,7 @@ for band in $(seq 0 9); do
   --dataset_name plants_${STATE}_2017 \
   --year 2017 \
   --state ${STATE} \
-  --filename rf_2017_${band}
+  --filename rf_${STATE}_2017_${band}
 
   echo "Running inference on band ${band} of 9 for maxent..."
   python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
@@ -58,6 +58,6 @@ for band in $(seq 0 9); do
   --dataset_name plants_${STATE}_2017 \
   --year 2017 \
   --state ${STATE} \
-  --filename maxent_2017_${band}
+  --filename maxent_${STATE}_2017_${band}
 
 done
