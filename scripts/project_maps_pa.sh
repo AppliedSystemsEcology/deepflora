@@ -6,9 +6,9 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=64G
-#SBATCH --time=24:00:00
-#SBATCH --output=prjpa_%A.out
-#SBATCH --error=prjpa_%A.err
+#SBATCH --time=48:00:00
+#SBATCH --output=logs/prjpa_%A.out
+#SBATCH --error=logs/prjpa_%A.err
 
 module load anaconda
 source activate r-geo

@@ -1,7 +1,8 @@
 start.t <- Sys.time()
 library(terra)
 
-state <- Sys.getenv("STATE")
+args <- commandArgs(trailingOnly = TRUE)
+state <- args[1]
 
 # get mosaic tifs
 arraytifs <- list.files(
