@@ -8,14 +8,14 @@ state <- args[1]
 # get folder for this array job
 arraydir <- list.dirs(
   paste0("/storage/home/kbl5733/gstorage/data/deepflora/RASTERS/", state, "_250_2017/256m_2017_-1_db_", state, "_2017_8"),
-  full.names = TRUE
+  full.names = TRUE, recursive = FALSE
 )
 
 thisarray <- arraydir[arraynum]
 
 # get mosaic tifs
 
-arraytifs <- list.files(thisarray, recursive = TRUE, full.names = TRUE, pattern = "*raw.tif")
+arraytifs <- list.files(thisarray, recursive = FALSE, full.names = TRUE, pattern = "*raw.tif")
 
 temp.ras <- readRDS(paste0("data/template_", state, ".rds"))
 
