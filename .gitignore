@@ -9,5 +9,4 @@ data/big
 **/*.quarto_ipynb
 .positai
 logs/
-data-raw/results
 data-raw/results-old
