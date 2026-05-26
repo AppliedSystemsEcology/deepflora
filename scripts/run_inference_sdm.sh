@@ -8,7 +8,8 @@
 #SBATCH --mem=64G
 #SBATCH --time=8:00:00
 #SBATCH --output=logs/sdm_inf_%j.out
-#SBATCH --error=logs/sdm_inf_%j.err
+#SBATCH --error=logs/sdm_inf_%A_%a.err
+#SBATCH --array=0-10
 
 # $1 is the first positional argument passed to the script
 # e.g.: sbatch spatcv_inference.sh ca
@@ -19,45 +20,31 @@ if [[ ! "$STATE" =~ ^(pa|ny)$ ]]; then
   exit 1
 fi
 
+echo "This is the state ${STATE}"
+
+BAND=${SLURM_ARRAY_TASK_ID}
+
+if [[ "$SLURM_ARRAY_TASK_ID" -eq 10 ]]; then
+  BAND=-1
+fi
+
 module load anaconda
 source activate deepflora
 
+echo "Running inference on band ${BAND} for random forest..."
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
-  --band -1 \
-  --model rf \
-  --dataset_name plants_${STATE}_2017 \
-  --year 2017 \
-  --state pa \
-  --filename rf_${STATE}_2017_unif
-
-python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
-  --band -1 \
-  --model maxent \
-  --dataset_name plants_${STATE}_2017 \
-  --year 2017 \
-  --state pa \
-  --filename maxent_${STATE}_2017_unif
-
-
-# spatial cross-validation
-for band in $(seq 0 9); do
-
-  echo "Running inference on band ${band} of 9 for random forest..."
-  python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
-  --band ${band} \
+  --band ${BAND} \
   --model rf \
   --dataset_name plants_${STATE}_2017 \
   --year 2017 \
   --state ${STATE} \
-  --filename rf_${STATE}_2017_${band}
+  --filename rf_${STATE}_2017_
 
-  echo "Running inference on band ${band} of 9 for maxent..."
-  python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
-  --band ${band} \
+echo "Running inference on band ${BAND} for maxent..."
+python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
+  --band ${BAND} \
   --model maxent \
   --dataset_name plants_${STATE}_2017 \
   --year 2017 \
   --state ${STATE} \
-  --filename maxent_${STATE}_2017_${band}
-
-done
+  --filename maxent_${STATE}_2017_
