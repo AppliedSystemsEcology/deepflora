@@ -14,4 +14,4 @@
 module load anaconda
 source activate r-geo
 
-Rscript scripts/project_rasters_loop.r ny
+Rscript scripts/project_rasters_array.r ny
