@@ -1,0 +1,8 @@
+terra 1.9.11
+Error in if (all(i)) return(x) : missing value where TRUE/FALSE needed
+Calls: rast -> rast -> .local -> .fullFilename
+Execution halted
+terra 1.9.11
+Error in if (all(i)) return(x) : missing value where TRUE/FALSE needed
+Calls: rast -> rast -> .local -> .fullFilename
+Execution halted
