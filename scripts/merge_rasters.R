@@ -1,13 +1,28 @@
 library(terra)
 # final merge
 
-pa_tiles <- list.files("/storage/home/kbl5733/gstorage/data/deepflora/maps/mosaic",
+args <- commandArgs(trailingOnly = TRUE)
+in.dir <- args[1]    # input directory
+species <- args[2]   # species band
+out.dir <- args[3]   # output directory
+
+tiles <- list.files(in.dir,
            pattern = "*.tif", full.names = TRUE)
 
-pa_sprc <- terra::sprc(pa_tiles)
+cat("Mosaicing", length(tiles), "tiles\n")
 
-terra::mosaic(pa_sprc,
-              filename = "/storage/home/kbl5733/gstorage/data/deepflora/maps/pa_mosaic.tif",
+tiles_sprc <- terra::sprc(lapply(tiles, function(x) {
+  r <- rast(x)
+  if (!species %in% names(r)) stop(paste("Species", species, "not found in", x))
+  r[[species]]
+}))
+
+out.fname <- file.path(out.dir, paste0(basename(in.dir),"_",sub(" ", "_", species),".tif"))
+
+cat("Writing out", species, "to", out.fname, "\n")
+
+terra::mosaic(tiles_sprc,
+              filename = out.fname,
               overwrite = TRUE,
               gdal = c("COMPRESS=LZW", "BIGTIFF=YES")
               )

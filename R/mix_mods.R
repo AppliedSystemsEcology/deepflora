@@ -41,3 +41,9 @@ fitmix <- function(gdd, tryk = c(2,3,4)){
   bestLogLik <- which.min(sapply(mixtry, \(x) x$loglik))
   mixtry[[bestLogLik]]
 }
+
+from_gdd <- function(gdd, mixmod){
+  mu <- mixmod[["mu"]]          #mean
+  sgma <- mixmod[["sigma"]]    # standard deviation
+  lmbda <- mixmod[["lambda"]]  # amplitude
+}
