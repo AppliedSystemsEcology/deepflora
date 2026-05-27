@@ -11,11 +11,17 @@ tiles <- list.files(in.dir,
 
 cat("Mosaicing", length(tiles), "tiles\n")
 
-tiles_sprc <- terra::sprc(lapply(tiles, function(x) {
-  r <- rast(x)
-  if (!species %in% names(r)) stop(paste("Species", species, "not found in", x))
-  r[[species]]
-}))
+# The Filter(Negate(is.null), ...) removes any NULL entries returned by failed tiles before passing to sprc.
+tiles_sprc <- terra::sprc(Filter(Negate(is.null), lapply(tiles, function(x) {
+  tryCatch({
+    r <- rast(x)
+    if (!species %in% names(r)) stop(paste("Species", species, "not found in", x))
+    r[[species]]
+  }, error = function(e) {
+    cat("Skipping:", basename(x), "-", conditionMessage(e), "\n")
+    NULL
+  })
+})))
 
 out.fname <- file.path(out.dir, paste0(basename(in.dir),"_",sub(" ", "_", species),".tif"))
 
