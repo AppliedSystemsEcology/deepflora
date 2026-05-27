@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-data/big
+data-raw/big
 .DS_Store
 
 /.quarto/

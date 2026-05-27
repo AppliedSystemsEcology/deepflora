@@ -1,0 +1,69 @@
+---
+title: "Species list"
+editor: visual
+execute:
+  echo: false
+---
+
+```{r}
+#| message: false
+#| results: false
+
+library(tidyverse)
+library(DT)
+library(rstatix)
+library(ggsignif)
+source("plots/scripts/plot_standards.R")
+
+```
+
+## List of floral resource species
+
+```{r}
+plot_persp <- read.csv("data/results/per-sp-accuracy.csv")
+
+floralsp_pa <- plot_persp %>% ungroup() %>%
+  pivot_wider(names_from = metric, values_from = value) %>%
+  filter(subset == "floralres" & model == "db" & band == "band-1" & state == "pa") %>%
+  dplyr::select(-model, -subset, -band, -state) %>%
+  relocate(support, .before = species_top1) %>%
+  distinct() %>% arrange(desc(support))
+
+floralsp_ny <- plot_persp %>% ungroup() %>%
+  pivot_wider(names_from = metric, values_from = value) %>%
+  filter(subset == "floralres" & model == "db" & band == "band-1" & state == "ny") %>%
+  dplyr::select(-model, -subset, -band, -state) %>%
+  relocate(support, .before = species_top1) %>%
+  distinct() %>% arrange(desc(support))
+
+```
+
+### Pennsylvania species
+
+```{r}
+
+DT::datatable(floralsp_pa %>% 
+                mutate(across(species_top1:zero_one_accuracy, \(x) round(x, 2))))
+
+```
+
+### New York Species
+
+```{r}
+
+DT::datatable(floralsp_ny %>% 
+                mutate(across(species_top1:zero_one_accuracy, \(x) round(x, 2))))
+
+```
+
+### Species support
+
+```{r}
+#| fig-cap: Distribution of species support (number of observations)
+
+ggplot(bind_rows(list("PA" = floralsp_pa, "NY" = floralsp_ny), .id = "State"), 
+       aes(support, fill = State)) +
+  geom_histogram(bins=20, alpha=0.2, position="identity") + egg::theme_article()
+
+```
+

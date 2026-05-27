@@ -6,16 +6,6 @@ execute:
   echo: false
 ---
 
-```{r}
-#| message: false
-#| results: false
-
-library(tidyverse)
-library(DT)
-library(rstatix)
-library(ggsignif)
-```
-
 ## Uniform train-test split results
 
 ### Full dataset
@@ -29,49 +19,6 @@ library(ggsignif)
 ## Spatial cross validation results (full dataset)
 
 ![Comparing spatial cross validation for full dataset. Closed colored circles are individual cross validation splits and open dark circles are the results from the uniform train-test split.](plots/compare_spatial_cv_full.png)
-
-## List of floral resource species
-
-```{r}
-plot_persp <- read.csv("data/results/per-sp-accuracy.csv")
-
-floralsp <- plot_persp %>% ungroup() %>%
-  pivot_wider(names_from = metric, values_from = value) %>%
-  filter(subset == "floralres" & model == "initial") %>%
-  dplyr::select(-model, -subset, zero_one_accuracy) %>%
-  relocate(support, .before = species_top1) %>%
-  distinct() %>% arrange(genus, sp)
-
-```
-
-```{r}
-
-DT::datatable(floralsp %>% mutate(across(species_top1:zero_one_accuracy, \(x) round(x, 2))))
-```
-
-### Species support
-
-```{r}
-#| fig-cap: Distribution of species support (number of observations)
-
-ggplot(floralsp, aes(support)) + geom_histogram(bins=20,fill="sienna") + egg::theme_article()
-
-```
-
-```{r}
-
-# rank
-# persp_rank <- plot_persp %>%
-#   pivot_wider(names_from = metric, values_from = value) %>%
-#   pivot_longer(cols = species_top1:zero_one_accuracy, names_to = "metric") %>%
-#   group_by(subset, model, metric) %>%
-#   mutate(rank = rank(desc(support), ties = "first"))
-
-# ggplot(persp_rank %>% filter(subset=="full"), aes(rank, value)) + 
-#   geom_point() + 
-#   facet_grid(metric~model)
-
-```
 
 ## Accuracy metrics definitions
 

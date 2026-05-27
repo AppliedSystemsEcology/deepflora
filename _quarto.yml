@@ -4,8 +4,8 @@ project:
 
 website:
   title: "Deepflora results"
-  navbar:
-    left:
+  sidebar:
+    contents:
       - href: 1_examine_accuracy_metrics.qmd
         text: Accuracy metrics
       - href: 2_examine_phenology.qmd

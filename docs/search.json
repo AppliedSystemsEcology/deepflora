@@ -4,55 +4,93 @@
     "href": "2_examine_phenology.html",
     "title": "Phenology",
     "section": "",
-    "text": "Fitted using mixture models"
+    "text": "Fitted using mixture models",
+    "crumbs": [
+      "Phenology mixture models"
+    ]
   },
   {
     "objectID": "2_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
     "href": "2_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
     "title": "Phenology",
     "section": "",
-    "text": "Fitted using mixture models"
+    "text": "Fitted using mixture models",
+    "crumbs": [
+      "Phenology mixture models"
+    ]
   },
   {
     "objectID": "2_examine_phenology.html#next-50-most-reported-plant-groups",
     "href": "2_examine_phenology.html#next-50-most-reported-plant-groups",
     "title": "Phenology",
     "section": "Next 50 most reported plant groups",
-    "text": "Next 50 most reported plant groups"
+    "text": "Next 50 most reported plant groups",
+    "crumbs": [
+      "Phenology mixture models"
+    ]
   },
   {
     "objectID": "1_examine_accuracy_metrics.html",
     "href": "1_examine_accuracy_metrics.html",
     "title": "Accuracy metrics",
     "section": "",
-    "text": "Warning: package 'ggplot2' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2"
+    "text": "Comparing uniform train-test split for full dataset\n\n\n\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset",
+    "crumbs": [
+      "Accuracy metrics"
+    ]
   },
   {
     "objectID": "1_examine_accuracy_metrics.html#uniform-train-test-split-results",
     "href": "1_examine_accuracy_metrics.html#uniform-train-test-split-results",
     "title": "Accuracy metrics",
-    "section": "Uniform train-test split results",
-    "text": "Uniform train-test split results\n\nFull dataset\n\n\n\nComparing uniform train-test split for full dataset\n\n\n\n\nFloral resources only\n\n\n\nComparing uniform train-test split for floral resource dataset"
+    "section": "",
+    "text": "Comparing uniform train-test split for full dataset\n\n\n\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset",
+    "crumbs": [
+      "Accuracy metrics"
+    ]
   },
   {
     "objectID": "1_examine_accuracy_metrics.html#spatial-cross-validation-results-full-dataset",
     "href": "1_examine_accuracy_metrics.html#spatial-cross-validation-results-full-dataset",
     "title": "Accuracy metrics",
     "section": "Spatial cross validation results (full dataset)",
-    "text": "Spatial cross validation results (full dataset)\n\n\n\nComparing spatial cross validation for full dataset. Closed colored circles are individual cross validation splits and open dark circles are the results from the uniform train-test split."
+    "text": "Spatial cross validation results (full dataset)\n\n\n\nComparing spatial cross validation for full dataset. Closed colored circles are individual cross validation splits and open dark circles are the results from the uniform train-test split.",
+    "crumbs": [
+      "Accuracy metrics"
+    ]
   },
   {
     "objectID": "1_examine_accuracy_metrics.html#list-of-floral-resource-species",
     "href": "1_examine_accuracy_metrics.html#list-of-floral-resource-species",
     "title": "Accuracy metrics",
     "section": "List of floral resource species",
-    "text": "List of floral resource species\n\n\n\n\n\n\n\nSpecies support\n\n\n\n\n\nDistribution of species support (number of observations)"
+    "text": "List of floral resource species\n\nSpecies support",
+    "crumbs": [
+      "Accuracy metrics"
+    ]
   },
   {
     "objectID": "1_examine_accuracy_metrics.html#accuracy-metrics-definitions",
     "href": "1_examine_accuracy_metrics.html#accuracy-metrics-definitions",
     "title": "Accuracy metrics",
     "section": "Accuracy metrics definitions",
-    "text": "Accuracy metrics definitions\nText from supplemental material of Gillespie et al. 2024.\n\nBinary classification metrics\nThreshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\nPresence accuracy (Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present\nPrecision Measures how many species predicted to be present were actually present.\nRecall Measures how many of the true species present are predicted as present.\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\nDiscrimination metrics\nIn order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.\nAUC ROC Area under the receiver operating characteristic curve averaged across species\nAUC PRC Average area under the precision-recall curve averaged across species\nCalibrated AUC A model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.\n\nThis means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.\nTo correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.\n\n\n\nRanking metrics\nTop-K (top 1, 5, 30, 100) These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence)."
+    "text": "Accuracy metrics definitions\nText from supplemental material of Gillespie et al. 2024.\n\nBinary classification metrics\nThreshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\nPresence accuracy (Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present\nPrecision Measures how many species predicted to be present were actually present.\nRecall Measures how many of the true species present are predicted as present.\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\nDiscrimination metrics\nIn order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.\nAUC ROC Area under the receiver operating characteristic curve averaged across species\nAUC PRC Average area under the precision-recall curve averaged across species\nCalibrated AUC A model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.\n\nThis means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.\nTo correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.\n\n\n\nRanking metrics\nTop-K (top 1, 5, 30, 100) These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence).",
+    "crumbs": [
+      "Accuracy metrics"
+    ]
+  },
+  {
+    "objectID": "1.2_sp_list.html",
+    "href": "1.2_sp_list.html",
+    "title": "Species list",
+    "section": "",
+    "text": "Warning: package 'ggplot2' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2"
+  },
+  {
+    "objectID": "1.2_sp_list.html#list-of-floral-resource-species",
+    "href": "1.2_sp_list.html#list-of-floral-resource-species",
+    "title": "Species list",
+    "section": "List of floral resource species",
+    "text": "List of floral resource species\n\nPennsylvania species\n\n\n\n\n\n\n\n\nNew York Species\n\n\n\n\n\n\n\n\nSpecies support\n\n\n\n\n\nDistribution of species support (number of observations)"
   }
 ]
