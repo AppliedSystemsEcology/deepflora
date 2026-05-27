@@ -6,10 +6,18 @@ website:
   title: "Deepflora results"
   sidebar:
     contents:
-      - href: 1_examine_accuracy_metrics.qmd
-        text: Accuracy metrics
-      - href: 2_examine_phenology.qmd
-        text: Phenology mixture models
+      - section: "Cross validation metrics"
+        contents:
+          - href: 1_accuracy_unif.qmd
+            text: Uniform train-test
+          - href: 1.2_accuracy_spatcv.qmd
+            text: Spatial cross validation
+          - href: 1.2_sp_list.qmd
+            text: Species lists
+      - section: "Phenology"
+        contents:
+          - href: 2_examine_phenology.qmd
+            text: Phenology mixture models
 
 format:
   html:

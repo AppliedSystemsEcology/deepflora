@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-data-raw/big
 .DS_Store
 
 /.quarto/
@@ -10,3 +9,4 @@ data-raw/big
 .positai
 logs/
 data-raw/results-old
+data-raw/big

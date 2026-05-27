@@ -6,6 +6,7 @@
     "section": "",
     "text": "Fitted using mixture models",
     "crumbs": [
+      "Phenology",
       "Phenology mixture models"
     ]
   },
@@ -16,6 +17,7 @@
     "section": "",
     "text": "Fitted using mixture models",
     "crumbs": [
+      "Phenology",
       "Phenology mixture models"
     ]
   },
@@ -26,57 +28,8 @@
     "section": "Next 50 most reported plant groups",
     "text": "Next 50 most reported plant groups",
     "crumbs": [
+      "Phenology",
       "Phenology mixture models"
-    ]
-  },
-  {
-    "objectID": "1_examine_accuracy_metrics.html",
-    "href": "1_examine_accuracy_metrics.html",
-    "title": "Accuracy metrics",
-    "section": "",
-    "text": "Comparing uniform train-test split for full dataset\n\n\n\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset",
-    "crumbs": [
-      "Accuracy metrics"
-    ]
-  },
-  {
-    "objectID": "1_examine_accuracy_metrics.html#uniform-train-test-split-results",
-    "href": "1_examine_accuracy_metrics.html#uniform-train-test-split-results",
-    "title": "Accuracy metrics",
-    "section": "",
-    "text": "Comparing uniform train-test split for full dataset\n\n\n\n\n\n\n\n\nComparing uniform train-test split for floral resource dataset",
-    "crumbs": [
-      "Accuracy metrics"
-    ]
-  },
-  {
-    "objectID": "1_examine_accuracy_metrics.html#spatial-cross-validation-results-full-dataset",
-    "href": "1_examine_accuracy_metrics.html#spatial-cross-validation-results-full-dataset",
-    "title": "Accuracy metrics",
-    "section": "Spatial cross validation results (full dataset)",
-    "text": "Spatial cross validation results (full dataset)\n\n\n\nComparing spatial cross validation for full dataset. Closed colored circles are individual cross validation splits and open dark circles are the results from the uniform train-test split.",
-    "crumbs": [
-      "Accuracy metrics"
-    ]
-  },
-  {
-    "objectID": "1_examine_accuracy_metrics.html#list-of-floral-resource-species",
-    "href": "1_examine_accuracy_metrics.html#list-of-floral-resource-species",
-    "title": "Accuracy metrics",
-    "section": "List of floral resource species",
-    "text": "List of floral resource species\n\nSpecies support",
-    "crumbs": [
-      "Accuracy metrics"
-    ]
-  },
-  {
-    "objectID": "1_examine_accuracy_metrics.html#accuracy-metrics-definitions",
-    "href": "1_examine_accuracy_metrics.html#accuracy-metrics-definitions",
-    "title": "Accuracy metrics",
-    "section": "Accuracy metrics definitions",
-    "text": "Accuracy metrics definitions\nText from supplemental material of Gillespie et al. 2024.\n\nBinary classification metrics\nThreshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\nPresence accuracy (Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present\nPrecision Measures how many species predicted to be present were actually present.\nRecall Measures how many of the true species present are predicted as present.\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\nDiscrimination metrics\nIn order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.\nAUC ROC Area under the receiver operating characteristic curve averaged across species\nAUC PRC Average area under the precision-recall curve averaged across species\nCalibrated AUC A model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.\n\nThis means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.\nTo correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.\n\n\n\nRanking metrics\nTop-K (top 1, 5, 30, 100) These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence).",
-    "crumbs": [
-      "Accuracy metrics"
     ]
   },
   {
@@ -84,13 +37,109 @@
     "href": "1.2_sp_list.html",
     "title": "Species list",
     "section": "",
-    "text": "Warning: package 'ggplot2' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2"
+    "text": "Distribution of species support (number of observations)",
+    "crumbs": [
+      "Cross validation metrics",
+      "Species lists"
+    ]
   },
   {
     "objectID": "1.2_sp_list.html#list-of-floral-resource-species",
     "href": "1.2_sp_list.html#list-of-floral-resource-species",
     "title": "Species list",
-    "section": "List of floral resource species",
-    "text": "List of floral resource species\n\nPennsylvania species\n\n\n\n\n\n\n\n\nNew York Species\n\n\n\n\n\n\n\n\nSpecies support\n\n\n\n\n\nDistribution of species support (number of observations)"
+    "section": "",
+    "text": "Distribution of species support (number of observations)",
+    "crumbs": [
+      "Cross validation metrics",
+      "Species lists"
+    ]
+  },
+  {
+    "objectID": "1.2_accuracy_spatcv.html",
+    "href": "1.2_accuracy_spatcv.html",
+    "title": "Accuracy metrics – spatial cross-validation",
+    "section": "",
+    "text": "Explanation text based on supplemental material of Gillespie et al. 2024.",
+    "crumbs": [
+      "Cross validation metrics",
+      "Spatial cross validation"
+    ]
+  },
+  {
+    "objectID": "1.2_accuracy_spatcv.html#binary-classification-metrics",
+    "href": "1.2_accuracy_spatcv.html#binary-classification-metrics",
+    "title": "Accuracy metrics – spatial cross-validation",
+    "section": "Binary classification metrics",
+    "text": "Binary classification metrics\nThreshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\n\nPresence accuracy\n(Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nPrecision score\nPrecision Measures how many species predicted to be present were actually present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nRecall score\nRecall Measures how many of the true species present are predicted as present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nF1 score\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
+    "crumbs": [
+      "Cross validation metrics",
+      "Spatial cross validation"
+    ]
+  },
+  {
+    "objectID": "1.2_accuracy_spatcv.html#discrimination-metrics",
+    "href": "1.2_accuracy_spatcv.html#discrimination-metrics",
+    "title": "Accuracy metrics – spatial cross-validation",
+    "section": "Discrimination metrics",
+    "text": "Discrimination metrics\nIn order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.\n\nArea under curve [ROC] – uncalibrated\nAUC ROC Area under the receiver operating characteristic curve averaged across species\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nArea under curve [PRC] – uncalibrated\nAUC PRC Average area under the precision-recall curve averaged across species\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nCalibrated area under curves\nA model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.\n\nThis means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.\nTo correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.\n\n\nCalibrated AUC [ROC]\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nCalibrated AUC [PRC]\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
+    "crumbs": [
+      "Cross validation metrics",
+      "Spatial cross validation"
+    ]
+  },
+  {
+    "objectID": "1.2_accuracy_spatcv.html#ranking-metrics",
+    "href": "1.2_accuracy_spatcv.html#ranking-metrics",
+    "title": "Accuracy metrics – spatial cross-validation",
+    "section": "Ranking metrics",
+    "text": "Ranking metrics\nTop-K (top 1, 5, 30, 100) These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence).\n\nSpecies top 1\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 5\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 30\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 100\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
+    "crumbs": [
+      "Cross validation metrics",
+      "Spatial cross validation"
+    ]
+  },
+  {
+    "objectID": "1_accuracy_unif.html",
+    "href": "1_accuracy_unif.html",
+    "title": "Accuracy metrics – uniform train-test",
+    "section": "",
+    "text": "Explanation text based on supplemental material of Gillespie et al. 2024.",
+    "crumbs": [
+      "Cross validation metrics",
+      "Uniform train-test"
+    ]
+  },
+  {
+    "objectID": "1_accuracy_unif.html#binary-classification-metrics",
+    "href": "1_accuracy_unif.html#binary-classification-metrics",
+    "title": "Accuracy metrics – uniform train-test",
+    "section": "Binary classification metrics",
+    "text": "Binary classification metrics\nThreshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\n\nPresence accuracy\n(Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nPrecision score\nPrecision Measures how many species predicted to be present were actually present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nRecall score\nRecall Measures how many of the true species present are predicted as present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nF1 score\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
+    "crumbs": [
+      "Cross validation metrics",
+      "Uniform train-test"
+    ]
+  },
+  {
+    "objectID": "1_accuracy_unif.html#discrimination-metrics",
+    "href": "1_accuracy_unif.html#discrimination-metrics",
+    "title": "Accuracy metrics – uniform train-test",
+    "section": "Discrimination metrics",
+    "text": "Discrimination metrics\nIn order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.\n\nArea under curve [ROC] – uncalibrated\nAUC ROC Area under the receiver operating characteristic curve averaged across species\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nArea under curve [PRC] – uncalibrated\nAUC PRC Average area under the precision-recall curve averaged across species\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nCalibrated area under curves\nA model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.\n\nThis means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.\nTo correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.\n\n\nCalibrated AUC [ROC]\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nCalibrated AUC [PRC]\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
+    "crumbs": [
+      "Cross validation metrics",
+      "Uniform train-test"
+    ]
+  },
+  {
+    "objectID": "1_accuracy_unif.html#ranking-metrics",
+    "href": "1_accuracy_unif.html#ranking-metrics",
+    "title": "Accuracy metrics – uniform train-test",
+    "section": "Ranking metrics",
+    "text": "Ranking metrics\nTop-K (top 1, 5, 30, 100) These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence).\n\nSpecies top 1\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 5\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 30\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 100\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
+    "crumbs": [
+      "Cross validation metrics",
+      "Uniform train-test"
+    ]
   }
 ]

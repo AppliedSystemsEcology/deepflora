@@ -4,7 +4,7 @@ library(rstatix)
 library(ggsignif)
 
 plot_persp <- read.csv("data/results/per-sp-accuracy.csv")
-source("plots/scripts/plot_standards.R")
+source("R/plot_standards.R")
 
 # spacing in brackets
 setspacing <- Vectorize(\(x) switch(as.character(x), bioclim = 1, tresnet = 1.1, maxent = 1.2, rf = 1.3))

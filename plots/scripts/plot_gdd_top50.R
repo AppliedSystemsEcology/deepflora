@@ -3,7 +3,7 @@ library(tidyverse)
 
 source("R/mix_mods.R")
 
-plants_gdd <- readRDS("data/pa_floral_gdd.rds") |> sf::st_drop_geometry()
+plants_gdd <- readRDS("data/floral_gdd.rds") |> sf::st_drop_geometry()
 
 # all plants
 fromtop <- names(sort(table(plants_gdd$scientificName), decreasing = TRUE))
@@ -63,5 +63,5 @@ mix_plot_100 <- ggplot(plants_mix %>% dplyr::filter(scientificName %in% names(mi
   egg::theme_article() +
   theme(legend.position = "none")
 
-ggsave("plots/mixture_worked0-50.png", mix_plot_50, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
-ggsave("plots/mixture_worked50-100.png", mix_plot_100, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
+ggsave("plots/mixture_worked0-50v2.png", mix_plot_50, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
+ggsave("plots/mixture_worked50-100v2.png", mix_plot_100, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)

@@ -57,6 +57,7 @@ write.csv(plot_persp, "data/results/per-sp-accuracy.csv", row.names = FALSE)
 
 ## overall results
 overall.red <- lapply(overall, \(x) dplyr::select(x, where(~!all(is.na(.x)))))  # select only columns where not NaN
-overall_df <- bind_rows(overall.red, .id = "model")
+overall_df <- bind_rows(overall.red, .id = "run") |>
+  separate_wider_delim(run, delim = "_", names = c("model.code", "state", "band.code"))
 
 write.csv(overall_df, "data/results/overall-accuracy.csv", row.names = FALSE)

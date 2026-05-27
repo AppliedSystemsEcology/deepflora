@@ -4,10 +4,12 @@ library(tidyverse)
 source("R/utils.R")
 
 # gbif data
-plants_pa <- read.csv("data/big/plants_gbif_pa.csv",sep="\t")
+plants_pa <- read.csv("data-raw/big/plants_pa_2017.csv", sep = "\t")
+plants_ny <- read.csv("data-raw/big/plants_ny_2017.csv", sep = "\t")
+
 beeplants <- readRDS("data/beeplants.rds")
 
-plants_pa_fr <- plants_pa %>%
+plants_fr <- bind_rows(list(pa=plants_pa, ny=plants_ny), .id="state") %>%
   mutate(
     eventDate = as.Date(eventDate),
     week = factor(format(eventDate, "%V"), levels = sprintf("%02d", 1:52))) %>%
@@ -21,9 +23,9 @@ plants_pa_fr <- plants_pa %>%
 # load prismgrid
 prismgrid <- raster::raster("data/prismgrid.grd")
 
-plants_pa_prismid <- terra::extract(terra::rast(prismgrid), terra::vect(plants_pa_fr))
+plants_prismid <- terra::extract(terra::rast(prismgrid), terra::vect(plants_fr))
 
-plants_pa_gdd <- plants_pa_fr %>% mutate(prismid = plants_pa_prismid$id) %>%
+plants_gdd <- plants_fr %>% mutate(prismid = plants_prismid$id) %>%
   mutate(gdd = getgddvec(prismid = prismid, year=year, week=week))
 
-saveRDS(plants_pa_gdd, "data/pa_floral_gdd.rds")
+saveRDS(plants_gdd, "data/floral_gdd.rds")

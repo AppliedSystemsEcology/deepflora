@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Phenology – Deepflora results</title>
+<title>Accuracy metrics – spatial cross-validation – Deepflora results</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2_examine_phenology.html">Phenology</a></li><li class="breadcrumb-item"><a href="./2_examine_phenology.html">Phenology mixture models</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_accuracy_unif.html">Cross validation metrics</a></li><li class="breadcrumb-item"><a href="./1.2_accuracy_spatcv.html">Spatial cross validation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -126,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1.2_accuracy_spatcv.html" class="sidebar-item-text sidebar-link">
+  <a href="./1.2_accuracy_spatcv.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Spatial cross validation</span></a>
   </div>
 </li>
@@ -149,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_examine_phenology.html" class="sidebar-item-text sidebar-link active">
+  <a href="./2_examine_phenology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Phenology mixture models</span></a>
   </div>
 </li>
@@ -165,17 +165,35 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#top-50-reported-flowering-species-phenology-curves" id="toc-top-50-reported-flowering-species-phenology-curves" class="nav-link active" data-scroll-target="#top-50-reported-flowering-species-phenology-curves">Top 50 reported flowering species phenology curves</a></li>
-  <li><a href="#next-50-most-reported-plant-groups" id="toc-next-50-most-reported-plant-groups" class="nav-link" data-scroll-target="#next-50-most-reported-plant-groups">Next 50 most reported plant groups</a></li>
+  <li><a href="#binary-classification-metrics" id="toc-binary-classification-metrics" class="nav-link active" data-scroll-target="#binary-classification-metrics">Binary classification metrics</a>
+  <ul class="collapse">
+  <li><a href="#presence-accuracy" id="toc-presence-accuracy" class="nav-link" data-scroll-target="#presence-accuracy">Presence accuracy</a></li>
+  <li><a href="#precision-score" id="toc-precision-score" class="nav-link" data-scroll-target="#precision-score">Precision score</a></li>
+  <li><a href="#recall-score" id="toc-recall-score" class="nav-link" data-scroll-target="#recall-score">Recall score</a></li>
+  <li><a href="#f1-score" id="toc-f1-score" class="nav-link" data-scroll-target="#f1-score">F1 score</a></li>
+  </ul></li>
+  <li><a href="#discrimination-metrics" id="toc-discrimination-metrics" class="nav-link" data-scroll-target="#discrimination-metrics">Discrimination metrics</a>
+  <ul class="collapse">
+  <li><a href="#area-under-curve-roc-uncalibrated" id="toc-area-under-curve-roc-uncalibrated" class="nav-link" data-scroll-target="#area-under-curve-roc-uncalibrated">Area under curve [ROC] – uncalibrated</a></li>
+  <li><a href="#area-under-curve-prc-uncalibrated" id="toc-area-under-curve-prc-uncalibrated" class="nav-link" data-scroll-target="#area-under-curve-prc-uncalibrated">Area under curve [PRC] – uncalibrated</a></li>
+  <li><a href="#calibrated-area-under-curves" id="toc-calibrated-area-under-curves" class="nav-link" data-scroll-target="#calibrated-area-under-curves">Calibrated area under curves</a></li>
+  </ul></li>
+  <li><a href="#ranking-metrics" id="toc-ranking-metrics" class="nav-link" data-scroll-target="#ranking-metrics">Ranking metrics</a>
+  <ul class="collapse">
+  <li><a href="#species-top-1" id="toc-species-top-1" class="nav-link" data-scroll-target="#species-top-1">Species top 1</a></li>
+  <li><a href="#species-top-5" id="toc-species-top-5" class="nav-link" data-scroll-target="#species-top-5">Species top 5</a></li>
+  <li><a href="#species-top-30" id="toc-species-top-30" class="nav-link" data-scroll-target="#species-top-30">Species top 30</a></li>
+  <li><a href="#species-top-100" id="toc-species-top-100" class="nav-link" data-scroll-target="#species-top-100">Species top 100</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2_examine_phenology.html">Phenology</a></li><li class="breadcrumb-item"><a href="./2_examine_phenology.html">Phenology mixture models</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_accuracy_unif.html">Cross validation metrics</a></li><li class="breadcrumb-item"><a href="./1.2_accuracy_spatcv.html">Spatial cross validation</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Phenology</h1>
+<h1 class="title">Accuracy metrics – spatial cross-validation</h1>
 </div>
 
 
@@ -192,16 +210,142 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="top-50-reported-flowering-species-phenology-curves" class="level2">
-<h2 class="anchored" data-anchor-id="top-50-reported-flowering-species-phenology-curves">Top 50 reported flowering species phenology curves</h2>
-<p>Fitted using mixture models</p>
-<p><img src="plots/mixture_worked0-50v2.png" class="img-fluid"></p>
+<p>Explanation text based on supplemental material of Gillespie et al.&nbsp;2024.</p>
+<section id="binary-classification-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="binary-classification-metrics">Binary classification metrics</h2>
+<p>Threshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics</p>
+<section id="presence-accuracy" class="level3">
+<h3 class="anchored" data-anchor-id="presence-accuracy">Presence accuracy</h3>
+<p>(Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/zero_one_accuracy.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
 </section>
-<section id="next-50-most-reported-plant-groups" class="level2">
-<h2 class="anchored" data-anchor-id="next-50-most-reported-plant-groups">Next 50 most reported plant groups</h2>
-<p><img src="plots/mixture_worked50-100v2.png" class="img-fluid"></p>
+<section id="precision-score" class="level3">
+<h3 class="anchored" data-anchor-id="precision-score">Precision score</h3>
+<p><strong>Precision</strong> Measures how many species predicted to be present were actually present.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/precision_score.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
+</section>
+<section id="recall-score" class="level3">
+<h3 class="anchored" data-anchor-id="recall-score">Recall score</h3>
+<p><strong>Recall</strong> Measures how many of the true species present are predicted as present.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/recall_score.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
+</section>
+<section id="f1-score" class="level3">
+<h3 class="anchored" data-anchor-id="f1-score">F1 score</h3>
+<p><strong>F1 score</strong> The harmonic mean of precision and recall and represents a conservative mean of the two (i.e.&nbsp;is more affected by low values).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/f1_score.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="discrimination-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="discrimination-metrics">Discrimination metrics</h2>
+<p>In order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.</p>
+<section id="area-under-curve-roc-uncalibrated" class="level3">
+<h3 class="anchored" data-anchor-id="area-under-curve-roc-uncalibrated">Area under curve [ROC] – uncalibrated</h3>
+<p><strong>AUC ROC</strong> Area under the receiver operating characteristic curve averaged across species</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/ROC_AUC.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
+</section>
+<section id="area-under-curve-prc-uncalibrated" class="level3">
+<h3 class="anchored" data-anchor-id="area-under-curve-prc-uncalibrated">Area under curve [PRC] – uncalibrated</h3>
+<p><strong>AUC PRC</strong> Average area under the precision-recall curve averaged across species</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/PRC_AUC.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
+</section>
+<section id="calibrated-area-under-curves" class="level3">
+<h3 class="anchored" data-anchor-id="calibrated-area-under-curves">Calibrated area under curves</h3>
+<p>A model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.</p>
+<ul>
+<li><p>This means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.</p></li>
+<li><p>To correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.</p></li>
+</ul>
+<section id="calibrated-auc-roc" class="level4">
+<h4 class="anchored" data-anchor-id="calibrated-auc-roc">Calibrated AUC [ROC]</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/calibrated_ROC_AUC.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
+</section>
+<section id="calibrated-auc-prc" class="level4">
+<h4 class="anchored" data-anchor-id="calibrated-auc-prc">Calibrated AUC [PRC]</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/calibrated_PRC_AUC.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</section>
+<section id="ranking-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="ranking-metrics">Ranking metrics</h2>
+<p><strong>Top-K (top 1, 5, 30, 100)</strong> These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence).</p>
+<section id="species-top-1" class="level3">
+<h3 class="anchored" data-anchor-id="species-top-1">Species top 1</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/species_top1.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
+</section>
+<section id="species-top-5" class="level3">
+<h3 class="anchored" data-anchor-id="species-top-5">Species top 5</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/species_top5.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
+</section>
+<section id="species-top-30" class="level3">
+<h3 class="anchored" data-anchor-id="species-top-30">Species top 30</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/species_top30.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
+</section>
+<section id="species-top-100" class="level3">
+<h3 class="anchored" data-anchor-id="species-top-100">Species top 100</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/accuracy-metrics/spatcv/species_top100.png" class="img-fluid figure-img"></p>
+<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+</figure>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

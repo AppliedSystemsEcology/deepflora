@@ -8,12 +8,13 @@ execute:
 ```{r}
 #| message: false
 #| results: false
+#| warning: false
 
 library(tidyverse)
 library(DT)
 library(rstatix)
 library(ggsignif)
-source("plots/scripts/plot_standards.R")
+source("R/plot_standards.R")
 
 ```
 
