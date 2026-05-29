@@ -38,7 +38,7 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --dataset_name plants_${STATE}_2017 \
   --year 2017 \
   --state ${STATE} \
-  --filename rf_${STATE}_2017_
+  --filename rf_${STATE}_2017
 
 echo "Running inference on band ${BAND} for maxent..."
 python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
@@ -47,4 +47,4 @@ python /storage/home/kbl5733/src/deepbiosphere/src/deepbiosphere/Inference.py \
   --dataset_name plants_${STATE}_2017 \
   --year 2017 \
   --state ${STATE} \
-  --filename maxent_${STATE}_2017_
+  --filename maxent_${STATE}_2017

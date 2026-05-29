@@ -2,6 +2,7 @@
 library(sf)
 library(tidyverse)
 source("R/utils.R")
+source("R/getgdd.R")
 
 # gbif data
 plants_pa <- read.csv("data-raw/big/plants_pa_2017.csv", sep = "\t")
@@ -18,14 +19,16 @@ plants_fr <- bind_rows(list(pa=plants_pa, ny=plants_ny), .id="state") %>%
                                   dplyr::filter(source == "Grozinger") %>%
                                   pull(scientificName))) %>%
   filter(year %in% 2016:2020) %>%
-  sf::st_as_sf(coords = c("decimalLongitude", "decimalLatitude"))
+  sf::st_as_sf(coords = c("decimalLongitude", "decimalLatitude"), remove = FALSE)
 
 # load prismgrid
-prismgrid <- raster::raster("data/prismgrid.grd")
+prismgrid <- raster::raster("data-raw/gdd/prismgrid.grd")
 
 plants_prismid <- terra::extract(terra::rast(prismgrid), terra::vect(plants_fr))
 
 plants_gdd <- plants_fr %>% mutate(prismid = plants_prismid$id) %>%
-  mutate(gdd = getgddvec(prismid = prismid, year=year, week=week))
+  mutate(gdd = getgddvec(prismid = prismid, year=year, week=week)) %>%
+  mutate(gdd2 = getgdd_prismid(prismid = prismid, year=year, week=week)) %>%
+  mutate(gdd3 = get_gdd(eventDate, lon = decimalLongitude, lat = decimalLatitude))
 
 saveRDS(plants_gdd, "data/floral_gdd.rds")

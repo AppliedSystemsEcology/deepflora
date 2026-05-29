@@ -179,3 +179,15 @@ sbatch work/github/deepflora/scripts/run_deepbiosphere.sh
 sbatch work/github/deepflora/scripts/run_inference.sh
 
 ```
+
+## Phenology
+
+### iNaturalist
+
+iNaturalist has info on phenology in its annotations. However, it seems like packages like `R::spocc` don't access this information.
+
+The best I found is this package: https://github.com/pjhanly/iNatTools
+
+Some more info:
+
+https://forum.inaturalist.org/t/using-r-to-extract-observations-of-a-specific-phenological-state/7007/5
