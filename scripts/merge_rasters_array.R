@@ -8,7 +8,7 @@ array.n <- as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
 
 array.dir <- read.csv("scripts/pa_dirs.csv")[array.n,"dir"]
 
-tiles <- list.files(in.dir, pattern = paste0("*",array.dir,"*.tif"), full.names = TRUE)
+tiles <- list.files(in.dir, pattern = paste0(array.dir), full.names = TRUE)
 
 cat("Mosaicing", length(tiles), "tiles in group", array.dir, "\n")
 
