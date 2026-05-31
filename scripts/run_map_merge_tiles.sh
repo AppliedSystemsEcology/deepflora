@@ -7,8 +7,8 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=120G
 #SBATCH --time=72:00:00
-#SBATCH --output=logs/mergepa_%j.out
-#SBATCH --error=logs/mergepa_%j.err
+#SBATCH --output=logs/mergepa_%A.out
+#SBATCH --error=logs/mergepa_%A.err
 #SBATCH --array=1-24
 
 module load anaconda
