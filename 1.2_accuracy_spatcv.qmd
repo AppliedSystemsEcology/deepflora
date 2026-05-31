@@ -1,7 +1,6 @@
 ---
 title: "Accuracy metrics -- spatial cross-validation"
 format: html
-editor: visual
 execute: 
   echo: false
 ---
@@ -40,13 +39,13 @@ Threshold all probabilities ≥0.5 as present and \<0.5 as absent for these metr
 
 In order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.
 
-### Area under curve [ROC] -- uncalibrated
+### Area under curve \[ROC\] -- uncalibrated
 
 **AUC ROC** Area under the receiver operating characteristic curve averaged across species
 
 ![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/ROC_AUC.png)
 
-### Area under curve [PRC] -- uncalibrated
+### Area under curve \[PRC\] -- uncalibrated
 
 **AUC PRC** Average area under the precision-recall curve averaged across species
 
@@ -60,11 +59,11 @@ A model which has extremely low predicted probabilities can still nevertheless h
 
 - To correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.
 
-#### Calibrated AUC [ROC]
+#### Calibrated AUC \[ROC\]
 
 ![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/calibrated_ROC_AUC.png)
 
-#### Calibrated AUC [PRC]
+#### Calibrated AUC \[PRC\]
 
 ![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/calibrated_PRC_AUC.png)
 
@@ -87,4 +86,3 @@ A model which has extremely low predicted probabilities can still nevertheless h
 ### Species top 100
 
 ![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/species_top100.png)
-

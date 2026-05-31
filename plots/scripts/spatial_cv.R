@@ -105,4 +105,4 @@ p <- ggplot(df %>% dplyr::filter(band > -1),
   )
 
 
-ggsave("plots/compare_spatial_cv_full.png", p, height = 8, width =6, dpi=300,bg="white")
+ggsave("plots/accuracy-metrics/spatcv/compare_spatial_cv_full.png", p, height = 8, width =6, dpi=300,bg="white")

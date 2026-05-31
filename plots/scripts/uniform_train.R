@@ -49,7 +49,7 @@ means <- df %>%
 
 for(g in seq_along(metric_labels)){
   metric.g <- plot_state_subset(names(metric_labels)[g], df, medians, stat_results)
-  ggsave(paste0("plots/accuracy-metrics/",names(metric_labels)[g],".png"),
+  ggsave(paste0("plots/accuracy-metrics/unif/",names(metric_labels)[g],".png"),
          metric.g, height = 4, width =6, dpi=300,bg="white")
 }
 

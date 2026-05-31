@@ -1,16 +1,17 @@
 #!/bin/bash
 #SBATCH --job-name=merge_pa
 #SBATCH --account=hlc30_cr_default
-#SBATCH --partition=himem
+#SBATCH --partition=basic
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=800G
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=120G
 #SBATCH --time=72:00:00
 #SBATCH --output=logs/mergepa_%j.out
 #SBATCH --error=logs/mergepa_%j.err
+#SBATCH --array=1-24
 
 module load anaconda
 source activate r-geo
 
-Rscript /storage/home/kbl5733/work/github/deepflora/scripts/merge_rasters.R /storage/home/kbl5733/gstorage/data/deepflora/maps/pa_2017_albers "Cercis canadensis" /storage/home/kbl5733/gstorage/data/deepflora/maps/pa_2017_merge
+Rscript /storage/home/kbl5733/work/github/deepflora/scripts/merge_rasters_array.R /storage/home/kbl5733/gstorage/data/deepflora/maps/pa_2017_albers /storage/home/kbl5733/gstorage/data/deepflora/maps/pa_2017_merge
