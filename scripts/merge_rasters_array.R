@@ -24,11 +24,6 @@ tiles_sprc <- terra::sprc(Filter(Negate(is.null), lapply(tiles, function(x) {
 
 out.fname <- file.path(out.dir, paste0(basename(in.dir), "_", array.dir,".tif"))
 
-if (file.exists(out.fname)) {
-  cat("Output already exists, skipping:", out.fname, "\n")
-  quit(status = 0)
-}
-
 cat("Writing out to", out.fname, "\n")
 
 terra::mosaic(tiles_sprc,
