@@ -9,7 +9,7 @@
 #SBATCH --time=72:00:00
 #SBATCH --output=logs/mergepa_%A.out
 #SBATCH --error=logs/mergepa_%A.err
-#SBATCH --array=2
+#SBATCH --array=3-24
 
 module load anaconda
 source activate r-geo
