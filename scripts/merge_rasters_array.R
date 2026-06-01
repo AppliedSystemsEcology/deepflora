@@ -29,5 +29,6 @@ cat("Writing out to", out.fname, "\n")
 terra::mosaic(tiles_sprc,
               filename = out.fname,
               overwrite = TRUE,
-              gdal = c("COMPRESS=LZW", "BIGTIFF=YES")
+              gdal = c("COMPRESS=LZW", "BIGTIFF=YES"),
+              progress = TRUE
               )

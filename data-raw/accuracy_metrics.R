@@ -51,6 +51,10 @@ plot_persp <- list(full=bind_rows(persp.l, .id = "model"), floralres=bind_rows(p
   pivot_longer(species_top1:support, names_to = "metric") |>
   separate_wider_delim(model, delim = "_", names = c("model", "state", "band"))
 
+# species accounting
+allspecies <- plot_persp |> filter(subset == "full") |> select(scientificName) |> distinct()
+flrspecies <- plot_persp |> filter(subset == "floralres") |> select(scientificName) |> distinct()
+
 dir.create("data/results/")
 write.csv(plot_persp, "data/results/per-sp-accuracy.csv", row.names = FALSE)
 
