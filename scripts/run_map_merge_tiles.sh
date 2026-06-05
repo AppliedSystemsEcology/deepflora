@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=500G
+#SBATCH --mem=400G
 #SBATCH --time=72:00:00
 #SBATCH --output=logs/mergepa_%A.out
 #SBATCH --error=logs/mergepa_%A.err
