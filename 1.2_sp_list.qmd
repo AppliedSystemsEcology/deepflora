@@ -67,4 +67,3 @@ ggplot(bind_rows(list("PA" = floralsp_pa, "NY" = floralsp_ny), .id = "State"),
   geom_histogram(bins=20, alpha=0.2, position="identity") + egg::theme_article()
 
 ```
-

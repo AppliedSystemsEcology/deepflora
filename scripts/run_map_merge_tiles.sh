@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=merge_pa
 #SBATCH --account=hlc30_cr_default
-#SBATCH --partition=standard
+#SBATCH --partition=himem
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
@@ -9,7 +9,7 @@
 #SBATCH --time=72:00:00
 #SBATCH --output=logs/mergepa_%A.out
 #SBATCH --error=logs/mergepa_%A.err
-#SBATCH --array=10-24
+#SBATCH --array=20-24
 
 module load anaconda
 source activate r-geo
