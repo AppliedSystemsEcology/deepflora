@@ -1,6 +1,7 @@
 import rasterio
 import glob
 import sys
+import os
 
 in_dir  = sys.argv[1]
 mosaic_path = sys.argv[2]
