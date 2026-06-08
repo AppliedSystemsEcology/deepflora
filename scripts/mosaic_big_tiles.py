@@ -28,6 +28,9 @@ profile.update(width=out_shape[1], height=out_shape[0],
                compress='lzw', bigtiff='YES')
 
 with rasterio.open(out_fname, 'w', **profile) as dst:
+    # Copy band descriptions from first tile
+    band_descriptions = srcs[0].descriptions  # tuple of band names
+    
     for band_idx in range(1, srcs[0].count + 1):
         sum_arr = np.zeros(out_shape, dtype=np.float64)
         count_arr = np.zeros(out_shape, dtype=np.uint8)
@@ -42,6 +45,7 @@ with rasterio.open(out_fname, 'w', **profile) as dst:
 
         mean_arr = np.where(count_arr > 0, sum_arr / count_arr, np.nan)
         dst.write(mean_arr.astype(np.float32), band_idx)
+        dst.update_tags(band_idx, name=band_descriptions[band_idx - 1])
 
         if band_idx % 100 == 0:
             print(f"Band {band_idx}/{srcs[0].count} done")
