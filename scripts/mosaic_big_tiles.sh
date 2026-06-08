@@ -13,4 +13,6 @@
 module load anaconda
 source activate py-geo
 
-python mosaic_big_tiles.py /storage/home/kbl5733/gstorage/data/deepflora/maps/pa_2017_merge_block /storage/home/kbl5733/gstorage/data/deepflora/maps/out
+python /storage/home/kbl5733/work/github/deepflora/scripts/mosaic_big_tiles.py \
+  /storage/home/kbl5733/gstorage/data/deepflora/maps/pa_2017_merge_block \
+  /storage/home/kbl5733/gstorage/data/deepflora/maps/out
