@@ -1,5 +1,7 @@
 # Quick sanity check for overlaps before running
 import sys
+import glob
+import os
 from shapely.geometry import box
 import rasterio
 
