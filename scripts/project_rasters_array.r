@@ -41,7 +41,10 @@ for(i in seq_along(arraytifs)){
 
   projtif <- project(arraytif.i, temp.ras)
 
-  writeRaster(projtif, fname.outpath)
+  writeRaster(projtif, fname.outpath,
+              gdal = c("COMPRESS=LZW", "BIGTIFF=YES",
+                       "TILED=YES", "BLOCKXSIZE=256", "BLOCKYSIZE=256",
+                       "INTERLEAVE=BAND"))
 
   i.t <- as.numeric(Sys.time() - start.t, unit = "mins")
 
