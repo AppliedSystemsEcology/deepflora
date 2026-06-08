@@ -18,8 +18,9 @@ out_fname = os.path.join(out_dir, os.path.basename(in_dir) + "_mosaic.tif")
 srcs = [rasterio.open(t) for t in tiles]
 
 # Get output extent/transform
-tmp, out_transform = merge(srcs, method='first', indexes=[1])
-out_shape = tmp.shape[1:]
+with rasterio.open(tiles[0]) as src:
+    out_shape = (src.height, src.width)
+    out_transform = src.transform
 
 profile = srcs[0].profile.copy()
 profile.update(width=out_shape[1], height=out_shape[0],
