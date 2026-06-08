@@ -35,11 +35,11 @@ with rasterio.open(out_fname, 'w', **profile) as dst:
             win = win_from_bounds(*src.bounds, out_transform, out_shape[0], out_shape[1])
             data = src.read(band_idx, window=win, out_shape=out_shape,
                             resampling=rasterio.enums.Resampling.nearest)
-            valid = data != src.nodata
+            valid = np.isfinite(data)
             sum_arr[valid] += data[valid]
             count_arr[valid] += 1
 
-        mean_arr = np.where(count_arr > 0, sum_arr / count_arr, src.nodata)
+        mean_arr = np.where(count_arr > 0, sum_arr / count_arr, np.nan)
         dst.write(mean_arr.astype(np.float32), band_idx)
 
         if band_idx % 100 == 0:
