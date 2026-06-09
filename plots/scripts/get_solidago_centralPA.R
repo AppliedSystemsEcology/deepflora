@@ -2,22 +2,8 @@
 library(terra)
 library(geodata)
 library(tidyverse)
-library(tidyterra)
 
-padf <- rast("data/big/pa_mosaic.tif")
-paco <- gadm("USA", level = 2, "data/spatial") |> filter(NAME_1 == "Pennsylvania")
-
-# center of centre co
-centre <- centroids(paco |> filter(NAME_2 == "Centre"))
-
-# buffer around centre center
-centrebuff <- buffer(centre, width = 60000)
-
-# select counties touching buffer
-near_centre <- paco[is.related(paco, centrebuff, "intersects")] |>
-  project(crs(padf))
-
-padf_centre <- terra::crop(padf, near_centre) |> terra::mask(near_centre)
+padf <- rast("data-raw/big/pa_2017_merge_block_mosaic.tif")
 
 # get solidago sp
 dfsp <- names(padf)
