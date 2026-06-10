@@ -1,0 +1,17 @@
+---
+title: "Phenology curves - thinned"
+format: html
+editor: visual
+execute: 
+  echo: false
+---
+
+## Top 50 reported flowering species
+
+Fitted using mixture models
+
+![](plots/mixture_NE0-50_thinned.png)
+
+## Next 50 most reported plant groups
+
+![](plots/mixture_NE50-100_thinned.png)

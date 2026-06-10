@@ -6,7 +6,9 @@ library(tidyterra)
 library(rnaturalearth)
 library(gganimate)
 
-pa_gdd <- rast("data/pa_gdd2017.tif")
+pa_gdd <- rast("data-raw/big/pa_gdd2017_256m.tif")
+# pa_gdd <- rast("data/pa_gdd2017.tif")
+
 names(pa_gdd) <- paste("Week", as.numeric(names(pa_gdd)))
 
 usne <- ne_states(country = "United States of America") |>
@@ -34,4 +36,6 @@ pa_gdd_anim <- ggplot() +
 
 gganimate::animate(pa_gdd_anim, duration = 12, renderer = gifski_renderer())
 
-gganimate::anim_save(filename = "plots/pa_gdd.gif")
+gganimate::anim_save(filename = "plots/pa_gdd_256m.gif",
+                     gganimate::animate(pa_gdd_anim, duration = 12, renderer = gifski_renderer())
+                     )

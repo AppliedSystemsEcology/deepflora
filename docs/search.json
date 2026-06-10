@@ -33,25 +33,14 @@
     ]
   },
   {
-    "objectID": "1.2_sp_list.html",
-    "href": "1.2_sp_list.html",
-    "title": "Species list",
-    "section": "",
-    "text": "Distribution of species support (number of observations)",
+    "objectID": "3_curvemaps.html#phenology-curve-thinned",
+    "href": "3_curvemaps.html#phenology-curve-thinned",
+    "title": "Build spatiotemporal flowering maps",
+    "section": "Phenology curve (thinned)",
+    "text": "Phenology curve (thinned)\nComparing the finite mixture model distributions to the flowering records distribution, I can guess that the first distribution (dist = 1) corresponds with flowering.\n\n\n\n\n\n\n\n\n\n\nDeepbiosphere prediction\n\n\n\n\n\n\n\n\n\n\n\nGrowing degree days in PA\n\n\n\nAnimation of growing degree days in PA\n\n\n\nUse the matching mixture model to predict probability from growing degree days\n\n# use distribution 1\ncc.d &lt;- 1\n\ncc.mu &lt;- cc.mix$mu[cc.d]\ncc.sigma &lt;- cc.mix$sigma[cc.d]\n\npa_gdd &lt;- rast(\"data-raw/big/pa_gdd2017_256m.tif\")\n\n# apply pnorm function to stack of gdd rasters\npa_gdd_cdf &lt;- terra::app(pa_gdd, pnorm, mean = cc.mu, sd = cc.sigma)\n\n# add a 0 raster at the beginning of the gdd time series to substract from\npa_gdd_0 &lt;- pa_gdd[[1]]*0\npa_gdd_0cdf &lt;- c(pa_gdd_0, pa_gdd_cdf)\n\n# find difference in cumulative probability between weeks\npa_bloompb &lt;- terra::diff(pa_gdd_0cdf, filename = \"data-raw/big/CCanadensis_bpb.tif\")\n\n\n\n\nAnimation of Cercis canadensis bloom probability in PA\n\n\n\n\nC. canadensis bloom occurence probability in space and time\nMultiply species distribution with gdd-based bloom probability\n\ncc_stbp &lt;- cc_flrpb * ccdf\n\n\n\n\nAnimation of C. canadensis spatiotemporal bloom occurence probability",
     "crumbs": [
-      "Cross validation metrics",
-      "Species lists"
-    ]
-  },
-  {
-    "objectID": "1.2_sp_list.html#list-of-floral-resource-species",
-    "href": "1.2_sp_list.html#list-of-floral-resource-species",
-    "title": "Species list",
-    "section": "",
-    "text": "Distribution of species support (number of observations)",
-    "crumbs": [
-      "Cross validation metrics",
-      "Species lists"
+      "Deepflora predictions",
+      "Cercis canadensis example"
     ]
   },
   {
@@ -96,6 +85,61 @@
     "crumbs": [
       "Cross validation metrics",
       "Spatial cross validation"
+    ]
+  },
+  {
+    "objectID": "2.2_examine_phenology_thin.html",
+    "href": "2.2_examine_phenology_thin.html",
+    "title": "Phenology curves - thinned",
+    "section": "",
+    "text": "Fitted using mixture models",
+    "crumbs": [
+      "Phenology",
+      "Phenology mixture models (with thinning)"
+    ]
+  },
+  {
+    "objectID": "2.2_examine_phenology_thin.html#top-50-reported-flowering-species",
+    "href": "2.2_examine_phenology_thin.html#top-50-reported-flowering-species",
+    "title": "Phenology curves - thinned",
+    "section": "",
+    "text": "Fitted using mixture models",
+    "crumbs": [
+      "Phenology",
+      "Phenology mixture models (with thinning)"
+    ]
+  },
+  {
+    "objectID": "2.2_examine_phenology_thin.html#next-50-most-reported-plant-groups",
+    "href": "2.2_examine_phenology_thin.html#next-50-most-reported-plant-groups",
+    "title": "Phenology curves - thinned",
+    "section": "Next 50 most reported plant groups",
+    "text": "Next 50 most reported plant groups",
+    "crumbs": [
+      "Phenology",
+      "Phenology mixture models (with thinning)"
+    ]
+  },
+  {
+    "objectID": "1.2_sp_list.html",
+    "href": "1.2_sp_list.html",
+    "title": "Species list",
+    "section": "",
+    "text": "Distribution of species support (number of observations)",
+    "crumbs": [
+      "Cross validation metrics",
+      "Species lists"
+    ]
+  },
+  {
+    "objectID": "1.2_sp_list.html#list-of-floral-resource-species",
+    "href": "1.2_sp_list.html#list-of-floral-resource-species",
+    "title": "Species list",
+    "section": "",
+    "text": "Distribution of species support (number of observations)",
+    "crumbs": [
+      "Cross validation metrics",
+      "Species lists"
     ]
   },
   {

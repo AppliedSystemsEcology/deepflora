@@ -18,6 +18,12 @@ website:
         contents:
           - href: 2_examine_phenology.qmd
             text: Phenology mixture models
+          - href: 2.2_examine_phenology_thin.qmd
+            text: Phenology mixture models (with thinning)
+      - section: "Deepflora predictions"
+        contents:
+          - href: 3_curvemaps.qmd
+            text: Cercis canadensis example
 
 format:
   html:

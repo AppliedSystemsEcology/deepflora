@@ -1,0 +1,115 @@
+---
+title: "Build spatiotemporal flowering maps"
+---
+
+## Example: _Cercis canadensis_
+
+## Phenology curve (thinned)
+
+Comparing the finite mixture model distributions to the flowering records distribution, I can guess that the first distribution (`dist = 1`) corresponds with flowering.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(tidyterra)
+library(sf)
+library(terra)
+source("R/mix_mods.R")
+
+cc <- readRDS("data/top100_gdd_thin.rds") |> filter(species == "Cercis canadensis")
+cc.mix <- readRDS("data/results/mixmods_flr100_thin.rds")[["Cercis canadensis"]]
+
+cc.dist <- make_dist_mix(cc.mix, 50)
+
+ggplot(cc, aes(gdd)) +
+  geom_histogram(binwidth = 50, fill = "yellowgreen") +
+  geom_histogram(data = cc %>% dplyr::filter(flowering),
+                 binwidth = 50, fill = "tan1") +
+  labs(x=NULL, y="Count") +
+  geom_line(data = cc.dist,
+            mapping = aes(x = x, y = y, color = dist)) +
+  geom_text(
+    data = cc |> summarize(Freq = n()),
+    mapping = aes(x = Inf, y = Inf, label = Freq),
+    hjust   = 1.1,
+    vjust   = 1.2) +
+  scale_color_manual(values = c("red3","turquoise4","burlywood4"))+
+  egg::theme_article() +
+  coord_cartesian(xlim=c(0,4000))
+
+```
+### Deepbiosphere prediction
+```{r}
+#| message: false
+#| results: false
+#| echo: false
+
+padf <- rast("data-raw/big/pa_2017_merge_block_mosaic.tif")
+
+# Cercis canadensis
+ccdf <- padf[["Cercis canadensis"]]
+
+ggplot() + geom_spatraster(data=ccdf) +
+  scale_fill_viridis_c(
+    option = "rocket",
+    na.value = "transparent"
+  ) +
+  theme_bw() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank()
+  ) +
+  labs(
+    title = "Deepbiosphere prediction of Cercis canadensis",
+    fill = ""
+  )
+
+
+```
+
+### Growing degree days in PA
+
+![Animation of growing degree days in PA](plots/pa_gdd_256m.gif)
+
+#### Use the matching mixture model to predict probability from growing degree days
+
+```{r}
+#| eval: false
+
+# use distribution 1
+cc.d <- 1
+
+cc.mu <- cc.mix$mu[cc.d]
+cc.sigma <- cc.mix$sigma[cc.d]
+
+pa_gdd <- rast("data-raw/big/pa_gdd2017_256m.tif")
+
+# apply pnorm function to stack of gdd rasters
+pa_gdd_cdf <- terra::app(pa_gdd, pnorm, mean = cc.mu, sd = cc.sigma)
+
+# add a 0 raster at the beginning of the gdd time series to substract from
+pa_gdd_0 <- pa_gdd[[1]]*0
+pa_gdd_0cdf <- c(pa_gdd_0, pa_gdd_cdf)
+
+# find difference in cumulative probability between weeks
+pa_bloompb <- terra::diff(pa_gdd_0cdf, filename = "data-raw/big/CCanadensis_bpb.tif")
+
+```
+
+![Animation of _Cercis canadensis_ bloom probability in PA](plots/flrpb_Ccanadensis.gif)
+
+#### _C. canadensis_ bloom occurence probability in space and time
+
+Multiply species distribution with gdd-based bloom probability
+
+```{r}
+#| eval: false
+
+cc_stbp <- cc_flrpb * ccdf
+
+```
+
+![Animation of _C. canadensis_ spatiotemporal bloom occurence probability](plots/stflrpb_Ccanadensis.gif)

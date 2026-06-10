@@ -28,10 +28,16 @@ event_to_week <- function(eventDate){
   factor(format(eventDate, "%V"), levels = sprintf("%02d", 1:52))
 }
 
-get_gdd <- function(eventDate, lat, lon){
+get_gdd <- function(eventDate, lat, lon, returnPrismid = FALSE){
   eventYear <- as.Date(eventDate) |> format("%Y")
   eventWeek <- event_to_week(eventDate)
   eventPrismid <- terra::extract(prismgrid, data.frame(lon,lat), cells=FALSE, xy=FALSE, ID=FALSE)[[1]]
 
-  getgdd_prismid(eventPrismid, eventYear, eventWeek)
+  gdd <- getgdd_prismid(eventPrismid, eventYear, eventWeek)
+
+  if(returnPrismid){
+    return(data.frame(prismid=eventPrismid, gdd=gdd))
+  }else{
+    return(gdd)
+  }
 }

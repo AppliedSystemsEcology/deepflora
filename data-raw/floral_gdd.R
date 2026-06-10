@@ -1,8 +1,9 @@
 # plot growing degree days (weekly resolution) against plants
 library(sf)
 library(tidyverse)
-source("R/utils.R")
+# source("R/utils.R")
 source("R/getgdd.R")
+source("R/get_occs.R")
 
 # gbif data
 plants_pa <- read.csv("data-raw/big/plants_pa_2017.csv", sep = "\t")
