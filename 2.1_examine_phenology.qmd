@@ -6,16 +6,16 @@ execute:
   echo: false
 ---
 
-Using `rgbif`, I searched for all research-grade observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee's past work. Then I fit finite mixture models to these distributions, using the `mixtools` R package.
+Using `rgbif`, I searched for all research-grade iNaturalist observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee's data and work. Then I fit finite mixture models assuming normal distributions, using the `mixtools` R package. I tested fitting from 1 to 4 distributions and I'm showing the model with the lowest log-likelihood for each species in these results.
 
-Data from GBIF includes occasional information on plant reproductive stage, if it was available from the observation. I added this in these plots to provide some reference for the finite mixture model predictions, in orange.
+Data from GBIF includes occasional information on plant reproductive stage, if it was available from the observation. I've added this in these plots to provide some reference for the finite mixture model predictions, in orange.
 
 ## Top 50 reported flowering species phenology curves
 
-Ordered by total number of observations, indicated in the upper right corner of each panel.
+Ordered by total number of observations, indicated in the upper right corner of each panel. Green histogram bars represent the distribution of the overall dataset, while orange bars represent just the records that explicitly report flowering. The curves are the finite mixture model estimates. Color of curves don't mean anything except the order based on growing degree day.
 
 ![](plots/mixture_NE0-50.png)
 
-## Next 50 most reported plant groups
+## Next 50 most reported flowering species
 
 ![](plots/mixture_NE50-100.png)

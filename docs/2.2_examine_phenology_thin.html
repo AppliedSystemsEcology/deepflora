@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Phenology curves - thinned – Deepflora results</title>
+<title>Phenology curves - thinned – Deepflora</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -87,9 +87,6 @@ ul.task-list li input[type="checkbox"] {
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2.0_Phenology_sp_list.html">Modeling bloom phenology</a></li><li class="breadcrumb-item"><a href="./2.2_examine_phenology_thin.html">Phenology mixture models (with thinning)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
@@ -99,16 +96,17 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Deepflora results</a> 
+      <a href="./">Deepflora</a> 
     </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -121,19 +119,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1.1_accuracy_unif.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Uniform train-test</span></a>
+ <span class="menu-text">Accuracy: uniform train-test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1.1.1_sp_list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Individual species accuracy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1.2_accuracy_spatcv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spatial cross validation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./1.3_sp_list.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Species lists</span></a>
+ <span class="menu-text">Accuracy: spatial cross validation</span></a>
   </div>
 </li>
       </ul>
@@ -170,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Deepflora predictions</span></a>
+ <span class="menu-text">Applying Deepflora workflow</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -195,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#top-50-reported-flowering-species" id="toc-top-50-reported-flowering-species" class="nav-link active" data-scroll-target="#top-50-reported-flowering-species">Top 50 reported flowering species</a></li>
-  <li><a href="#next-50-most-reported-plant-groups" id="toc-next-50-most-reported-plant-groups" class="nav-link" data-scroll-target="#next-50-most-reported-plant-groups">Next 50 most reported plant groups</a></li>
+  <li><a href="#next-50-most-reported-flowering-species" id="toc-next-50-most-reported-flowering-species" class="nav-link" data-scroll-target="#next-50-most-reported-flowering-species">Next 50 most reported flowering species</a></li>
   </ul>
 </nav>
     </div>
@@ -221,14 +219,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>I experimented with thinning the observations to retain only one entry per PRISM grid and week combination, in order to down-weight densely populated areas, shown in green. I also thinned the dataset of records that expressly included flowering, though these were already less redundant. The thinned flowering distribution is shown in blue, while the original dataset is shown in orange.</p>
+<p>I experimented with thinning the species observations to retain only one entry per PRISM grid and week combination, in order to down-weight densely populated areas. Once again, I tested fitting from 1 to 4 distributions and I’m showing the model with the lowest log-likelihood for each species.</p>
 <section id="top-50-reported-flowering-species" class="level2">
 <h2 class="anchored" data-anchor-id="top-50-reported-flowering-species">Top 50 reported flowering species</h2>
-<p>Ordered by total number of observations, indicated in the upper right corner of each panel.</p>
+<p>Overall distributions are shown in green. I also thinned the dataset of records that explicitly reported flowering, though these appear to be less redundant already. The thinned flowering distribution is shown in blue, while the original dataset is shown in orange. The curves are the finite mixture model estimates. Color of curves don’t mean anything except the order based on growing degree day. Ordered by total number of observations, indicated in the upper right corner of each panel.</p>
 <p><img src="plots/mixture_NE0-50_thinned.png" class="img-fluid"></p>
 </section>
-<section id="next-50-most-reported-plant-groups" class="level2">
-<h2 class="anchored" data-anchor-id="next-50-most-reported-plant-groups">Next 50 most reported plant groups</h2>
+<section id="next-50-most-reported-flowering-species" class="level2">
+<h2 class="anchored" data-anchor-id="next-50-most-reported-flowering-species">Next 50 most reported flowering species</h2>
 <p><img src="plots/mixture_NE50-100_thinned.png" class="img-fluid"></p>
 
 

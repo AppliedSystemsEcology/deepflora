@@ -11,6 +11,22 @@ ccdf <- padf[["Cercis canadensis"]]
 cc <- readRDS("data/top100_gdd_thin.rds") |> filter(species == "Cercis canadensis")
 cc.mix <- readRDS("data/results/mixmods_flr100_thin.rds")[["Cercis canadensis"]]
 
+ccplot <- ggplot() + geom_spatraster(data=ccdf) +
+  scale_fill_viridis_c(
+    option = "rocket",
+    na.value = "transparent"
+  ) +
+  theme_bw() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank()
+  ) +
+  labs(
+    fill = ""
+  )
+
+ggsave("plots/C_canadensis_db.png", ccplot, width = 4, height = 3, bg = "white", dpi = 300)
+
 # use distribution 1
 cc.d <- 1
 
@@ -24,10 +40,11 @@ cc_gdd_cdf <- terra::app(pa_gdd, pnorm, mean = cc.mu, sd = cc.sigma)
 
 # add a 0 raster at the beginning of the gdd time series to substract from
 cc_gdd_0 <- pa_gdd[[1]]*0
-cc_gdd_0cdf <- c(pa_gdd_0, pa_gdd_cdf)
+cc_gdd_0cdf <- c(cc_gdd_0, cc_gdd_cdf)
 
 # find difference in cumulative probability between weeks
 cc_flrpb <- terra::diff(cc_gdd_0cdf, filename = "data-raw/big/flrpb_Ccanadensis.tif")
+cc_flrpb <- terra::rast("data-raw/big/flrpb_Ccanadensis.tif")
 
 # plot a gif
 cc_gdd_anim <- ggplot() +
@@ -47,7 +64,7 @@ cc_gdd_anim <- ggplot() +
     fill = ""
   )
 
-gganimate::anim_save(filename = "plots/flrpb_Ccanadensis.gif",
+gganimate::anim_save(filename = "plots/flrpb_Ccanadensis.mpg",
                      gganimate::animate(cc_gdd_anim, duration = 12, renderer = gifski_renderer())
 )
 

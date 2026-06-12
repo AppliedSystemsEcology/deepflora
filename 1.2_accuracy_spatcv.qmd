@@ -15,57 +15,57 @@ These metrics threshold all probabilities ≥0.5 as present and \<0.5 as absent 
 
 The fraction of examples where the correct species observed at that location was predicted as present.
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/zero_one_accuracy.png)
+![Comparing presence accuracy from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/zero_one_accuracy.png)
 
 ### Precision score
 
 **Precision** Measures how many species predicted to be present were actually present.
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/precision_score.png)
+![Comparing precision score from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/precision_score.png)
 
 ### Recall score
 
 **Recall** Measures how many of the true species present are predicted as present.
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/recall_score.png)
+![Comparing recall score from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/recall_score.png)
 
 ### F1 score
 
 **F1 score** The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/f1_score.png)
+![Comparing F1 score from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/f1_score.png)
 
 ## Discrimination metrics
 
-In order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.
+In order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of presence thresholds and describe the relationship between threshold change and performance change.
 
 ### Area under curve \[ROC\] -- uncalibrated
 
 **AUC ROC** Area under the receiver operating characteristic curve averaged across species
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/ROC_AUC.png)
+![Comparing ROC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/ROC_AUC.png)
 
 ### Area under curve \[PRC\] -- uncalibrated
 
 **AUC PRC** Average area under the precision-recall curve averaged across species
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/PRC_AUC.png)
+![Comparing PRC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/PRC_AUC.png)
 
 ### Calibrated area under curves
 
-A model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.
+A model which has extremely low predicted probabilities can still have a high AUCROC if within its range of predicted probabilities the model has good sensitivity and specificity for that class.
 
 - This means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.
 
-- To correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.
+- To correct for this, Gillespie et al. (2024) also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.
 
 #### Calibrated AUC \[ROC\]
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/calibrated_ROC_AUC.png)
+![Comparing calibrated ROC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/calibrated_ROC_AUC.png)
 
 #### Calibrated AUC \[PRC\]
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/calibrated_PRC_AUC.png)
+![Comparing calibrated PRC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/calibrated_PRC_AUC.png)
 
 ## Ranking metrics
 
@@ -73,16 +73,16 @@ A model which has extremely low predicted probabilities can still nevertheless h
 
 ### Species top 1
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/species_top1.png)
+![Comparing top 1 from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/species_top1.png)
 
 ### Species top 5
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/species_top5.png)
+![Comparing top 5 from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/species_top5.png)
 
 ### Species top 30
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/species_top30.png)
+![Comparing top 30 from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/species_top30.png)
 
 ### Species top 100
 
-![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/spatcv/species_top100.png)
+![Comparing top 100 from spatial cross validation for Pennsylvania (left) and New York (right)](plots/accuracy-metrics/spatcv/species_top100.png)

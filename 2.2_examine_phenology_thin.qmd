@@ -6,14 +6,14 @@ execute:
   echo: false
 ---
 
-I experimented with thinning the observations to retain only one entry per PRISM grid and week combination, in order to down-weight densely populated areas, shown in green. I also thinned the dataset of records that expressly included flowering, though these were already less redundant. The thinned flowering distribution is shown in blue, while the original dataset is shown in orange.
+I experimented with thinning the species observations to retain only one entry per PRISM grid and week combination, in order to down-weight densely populated areas. Once again, I tested fitting from 1 to 4 distributions and I'm showing the model with the lowest log-likelihood for each species.
 
 ## Top 50 reported flowering species
 
-Ordered by total number of observations, indicated in the upper right corner of each panel.
+Overall distributions are shown in green. I also thinned the dataset of records that explicitly reported flowering, though these appear to be less redundant already. The thinned flowering distribution is shown in blue, while the original dataset is shown in orange. The curves are the finite mixture model estimates. Color of curves don't mean anything except the order based on growing degree day. Ordered by total number of observations, indicated in the upper right corner of each panel.
 
 ![](plots/mixture_NE0-50_thinned.png)
 
-## Next 50 most reported plant groups
+## Next 50 most reported flowering species
 
 ![](plots/mixture_NE50-100_thinned.png)

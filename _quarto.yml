@@ -3,17 +3,20 @@ project:
   output-dir: docs
 
 website:
-  title: "Deepflora results"
+  title: "Deepflora"
   sidebar:
+    search: false
     contents:
+      - href: index.qmd
+        text: Overview
       - section: "Applying Deepbiosphere"
         contents:
           - href: 1.1_accuracy_unif.qmd
-            text: Uniform train-test
+            text: "Accuracy: uniform train-test"
+          - href: 1.1.1_sp_list.qmd
+            text: Individual species accuracy
           - href: 1.2_accuracy_spatcv.qmd
-            text: Spatial cross validation
-          - href: 1.3_sp_list.qmd
-            text: Species lists
+            text: "Accuracy: spatial cross validation"
       - section: "Modeling bloom phenology"
         contents:
           - href: 2.0_Phenology_sp_list.qmd
@@ -22,7 +25,7 @@ website:
             text: Phenology mixture models
           - href: 2.2_examine_phenology_thin.qmd
             text: Phenology mixture models (with thinning)
-      - section: "Deepflora predictions"
+      - section: "Applying Deepflora workflow"
         contents:
           - href: 3_curvemaps.qmd
             text: Cercis canadensis example

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Accuracy metrics – spatial cross-validation – Deepflora results</title>
+<title>Accuracy metrics – spatial cross-validation – Deepflora</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -84,12 +84,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1.1_accuracy_unif.html">Applying Deepbiosphere</a></li><li class="breadcrumb-item"><a href="./1.2_accuracy_spatcv.html">Spatial cross validation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1.1_accuracy_unif.html">Applying Deepbiosphere</a></li><li class="breadcrumb-item"><a href="./1.2_accuracy_spatcv.html">Accuracy: spatial cross validation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
@@ -99,16 +96,17 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Deepflora results</a> 
+      <a href="./">Deepflora</a> 
     </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -121,19 +119,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1.1_accuracy_unif.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Uniform train-test</span></a>
+ <span class="menu-text">Accuracy: uniform train-test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1.1.1_sp_list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Individual species accuracy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1.2_accuracy_spatcv.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Spatial cross validation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./1.3_sp_list.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Species lists</span></a>
+ <span class="menu-text">Accuracy: spatial cross validation</span></a>
   </div>
 </li>
       </ul>
@@ -170,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Deepflora predictions</span></a>
+ <span class="menu-text">Applying Deepflora workflow</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -220,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1.1_accuracy_unif.html">Applying Deepbiosphere</a></li><li class="breadcrumb-item"><a href="./1.2_accuracy_spatcv.html">Spatial cross validation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1.1_accuracy_unif.html">Applying Deepbiosphere</a></li><li class="breadcrumb-item"><a href="./1.2_accuracy_spatcv.html">Accuracy: spatial cross validation</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Accuracy metrics – spatial cross-validation</h1>
 </div>
@@ -249,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/zero_one_accuracy.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing presence accuracy from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -259,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/precision_score.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing precision score from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -269,7 +267,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/recall_score.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing recall score from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -279,21 +277,21 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/f1_score.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing F1 score from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
 </section>
 <section id="discrimination-metrics" class="level2">
 <h2 class="anchored" data-anchor-id="discrimination-metrics">Discrimination metrics</h2>
-<p>In order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.</p>
+<p>In order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of presence thresholds and describe the relationship between threshold change and performance change.</p>
 <section id="area-under-curve-roc-uncalibrated" class="level3">
 <h3 class="anchored" data-anchor-id="area-under-curve-roc-uncalibrated">Area under curve [ROC] – uncalibrated</h3>
 <p><strong>AUC ROC</strong> Area under the receiver operating characteristic curve averaged across species</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/ROC_AUC.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing ROC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -303,23 +301,23 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/PRC_AUC.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing PRC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
 <section id="calibrated-area-under-curves" class="level3">
 <h3 class="anchored" data-anchor-id="calibrated-area-under-curves">Calibrated area under curves</h3>
-<p>A model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.</p>
+<p>A model which has extremely low predicted probabilities can still have a high AUCROC if within its range of predicted probabilities the model has good sensitivity and specificity for that class.</p>
 <ul>
 <li><p>This means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.</p></li>
-<li><p>To correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.</p></li>
+<li><p>To correct for this, Gillespie et al.&nbsp;(2024) also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.</p></li>
 </ul>
 <section id="calibrated-auc-roc" class="level4">
 <h4 class="anchored" data-anchor-id="calibrated-auc-roc">Calibrated AUC [ROC]</h4>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/calibrated_ROC_AUC.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing calibrated ROC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -328,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/calibrated_PRC_AUC.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing calibrated PRC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -342,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/species_top1.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing top 1 from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -351,7 +349,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/species_top5.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing top 5 from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -360,7 +358,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/species_top30.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing top 30 from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -369,7 +367,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plots/accuracy-metrics/spatcv/species_top100.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)</figcaption>
+<figcaption>Comparing top 100 from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
 </figure>
 </div>
 

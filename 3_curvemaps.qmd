@@ -4,13 +4,14 @@ title: "Build spatiotemporal flowering maps"
 
 ## Example: _Cercis canadensis_
 
-
+Here is an example of combining the spatial prediction from _deepbiosphere_ with the phenological prediction from the finite mixture models.
 
 ### Deepbiosphere prediction
 ```{r}
 #| message: false
 #| results: false
 #| echo: false
+#| warning: false
 
 library(tidyverse)
 library(tidyterra)
@@ -37,7 +38,6 @@ ggplot() + geom_spatraster(data=ccdf) +
     title = "Deepbiosphere prediction of Cercis canadensis",
     fill = ""
   )
-
 
 ```
 
@@ -77,7 +77,9 @@ ggplot(cc, aes(gdd)) +
 
 ![Animation of growing degree days in PA](plots/pa_gdd_256m.gif)
 
-#### Use the matching mixture model to predict probability from growing degree days
+### Apply estimated bloom curve 
+
+Use the matching finite mixture model curve for _Cercis canadensis_ bloom reports to predict bloom probability from growing degree days
 
 ```{r}
 #| eval: false
@@ -91,25 +93,31 @@ cc.sigma <- cc.mix$sigma[cc.d]
 pa_gdd <- rast("data-raw/big/pa_gdd2017_256m.tif")
 
 # apply pnorm function to stack of gdd rasters
-pa_gdd_cdf <- terra::app(pa_gdd, pnorm, mean = cc.mu, sd = cc.sigma)
+cc_gdd_cdf <- terra::app(pa_gdd, pnorm, mean = cc.mu, sd = cc.sigma)
 
 # add a 0 raster at the beginning of the gdd time series to substract from
-pa_gdd_0 <- pa_gdd[[1]]*0
-pa_gdd_0cdf <- c(pa_gdd_0, pa_gdd_cdf)
+cc_gdd_0 <- pa_gdd[[1]]*0
+cc_gdd_0cdf <- c(cc_gdd_0, cc_gdd_cdf)
 
 # find difference in cumulative probability between weeks
-pa_bloompb <- terra::diff(pa_gdd_0cdf, filename = "data-raw/big/CCanadensis_bpb.tif")
+cc_flrpb <- terra::diff(cc_gdd_0cdf, filename = "data-raw/big/flrpb_Ccanadensis.tif")
 
 ```
 
 ![Animation of _Cercis canadensis_ bloom probability in PA](plots/flrpb_Ccanadensis.gif)
 
-#### _C. canadensis_ bloom occurence probability in space and time
+### _C. canadensis_ bloom probability in space and time
 
-Multiply species distribution with gdd-based bloom probability
+Multiply species distribution from _deepbiosphere_ with gdd-based bloom probability from finite mixture model to estimate overall probability of bloom occurence in space and time.
 
 ```{r}
 #| eval: false
+
+# load deepbiosphere raster
+padf <- rast("data-raw/big/pa_2017_merge_block_mosaic.tif")
+
+# Cercis canadensis
+ccdf <- padf[["Cercis canadensis"]]
 
 cc_stbp <- cc_flrpb * ccdf
 
