@@ -6,15 +6,45 @@ execute:
   echo: false
 ---
 
-Explanation text based on supplemental material of Gillespie et al. 2024.
+These are the accuracy metrics the for uniform train/test model, which is what I'm using to make predictions for *deepflora*.
+
+## Species support
+
+The distribution of support across species. Columns of panels in the figure separate data by the two states, and rows of panel show either just bee floral resource species ("floralres") or the full species list ("full").
+
+```{r}
+#| fig-cap: Distribution of species support (number of observations)
+#| warning: false
+#| message: false
+
+library(tidyverse)
+source("R/plot_standards.R")
+
+plot_persp <- read.csv("data/results/per-sp-accuracy.csv") %>%
+  pivot_wider(names_from = metric, values_from = value) %>% 
+  filter(model=="db", band == "band-1")
+
+ggplot(plot_persp, 
+       aes(support, fill = state)) + 
+  geom_histogram(bins=20, position="identity") + 
+  facet_grid(subset~state, scales = "free_y",
+             labeller = as_labeller(c(subset_labels, state_labels))) +
+  egg::theme_article() +
+  labs(y="Number of species")
+
+```
+
+## Metrics summaries
+
+Below are the accuracy metrics reported by deepbiosphere along with explanations from the supplement of Gillespie et al. 2024. In the plots below I am showing the distributions of per-species metrics for the full species list and for bee floral resources. Significance comparisons are made between deepbiosphere and four other modeling approaches available in the deepbiosphere repository: BioclimMLP, a multilayer perceptron trained only on the Bioclim data; TResNet, a deep neural net model trained only on the NAIP imagery; Maxent, a maximum entropy modeling approach trained on bioclimatic data; and a random forest model trained on bioclimatic data.
 
 ## Binary classification metrics
 
-Threshold all probabilities ≥0.5 as present and \<0.5 as absent for these metrics
+These metrics threshold all probabilities ≥0.5 as present and \<0.5 as absent for these metrics
 
 ### Presence accuracy
 
-(Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present
+The fraction of examples where the correct species observed at a location was predicted as present. This is "zero-one accuracy" in the deepbiosphere code.
 
 ![Comparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)](plots/accuracy-metrics/unif/zero_one_accuracy.png)
 

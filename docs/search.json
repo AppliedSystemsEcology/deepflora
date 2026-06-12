@@ -1,90 +1,90 @@
 [
   {
-    "objectID": "2_examine_phenology.html",
-    "href": "2_examine_phenology.html",
-    "title": "Phenology",
+    "objectID": "1.3_sp_list.html",
+    "href": "1.3_sp_list.html",
+    "title": "Accuracy metrics for individual bee floral resources species",
     "section": "",
-    "text": "Fitted using mixture models",
+    "text": "These are the individual accuracy metrics for bee floral resources species in each state.",
     "crumbs": [
-      "Phenology",
-      "Phenology mixture models"
+      "Applying Deepbiosphere",
+      "Species lists"
     ]
   },
   {
-    "objectID": "2_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
-    "href": "2_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
-    "title": "Phenology",
+    "objectID": "1.3_sp_list.html#accuracy-metrics-of-floral-resource-species",
+    "href": "1.3_sp_list.html#accuracy-metrics-of-floral-resource-species",
+    "title": "Accuracy metrics for individual bee floral resources species",
+    "section": "Accuracy metrics of floral resource species",
+    "text": "Accuracy metrics of floral resource species\n\nPennsylvania species\n\n\n\n\n\n\n\n\nNew York Species",
+    "crumbs": [
+      "Applying Deepbiosphere",
+      "Species lists"
+    ]
+  },
+  {
+    "objectID": "2.0_Phenology_sp_list.html",
+    "href": "2.0_Phenology_sp_list.html",
+    "title": "Making a species list of bee floral resources",
     "section": "",
-    "text": "Fitted using mixture models",
+    "text": "For phenology models I started out with the 100 most common species across both PA and NY. The table below shows counts for both states and rates evenness by percent representation across states. Species with fewer than 10 observations in either state have been excluded.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\nPA count\nNY count\ntotal\n% PA\n% NY\nevenness\n\n\n\n\nArtemisia vulgaris\n1500\n11089\n12589\n11.92\n88.08\n0.24\n\n\nAsclepias syriaca\n1742\n4806\n6548\n26.60\n73.40\n0.53\n\n\nAilanthus altissima\n1319\n4421\n5740\n22.98\n77.02\n0.46\n\n\nRosa multiflora\n2082\n2893\n4975\n41.85\n58.15\n0.84\n\n\nRubus phoenicolasius\n2636\n2235\n4871\n54.12\n45.88\n0.92\n\n\nLiriodendron tulipifera\n1927\n1546\n3473\n55.49\n44.51\n0.89\n\n\nRhus typhina\n1070\n1932\n3002\n35.64\n64.36\n0.71\n\n\nTaraxacum officinale\n914\n2044\n2958\n30.90\n69.10\n0.62\n\n\nTrifolium repens\n1005\n1754\n2759\n36.43\n63.57\n0.73\n\n\nPrunus serotina\n554\n2003\n2557\n21.67\n78.33\n0.43\n\n\nAcer negundo\n964\n1554\n2518\n38.28\n61.72\n0.77\n\n\nRobinia pseudoacacia\n766\n1672\n2438\n31.42\n68.58\n0.63\n\n\nAcer platanoides\n904\n1397\n2301\n39.29\n60.71\n0.79\n\n\nAcer rubrum\n850\n1327\n2177\n39.04\n60.96\n0.78\n\n\nLonicera maackii\n1484\n569\n2053\n72.28\n27.72\n0.55\n\n\nRubus occidentalis\n860\n1177\n2037\n42.22\n57.78\n0.84\n\n\nLonicera japonica\n905\n1083\n1988\n45.52\n54.48\n0.91\n\n\nAsclepias tuberosa\n750\n1130\n1880\n39.89\n60.11\n0.80\n\n\nCercis canadensis\n948\n796\n1744\n54.36\n45.64\n0.91\n\n\nRubus odoratus\n442\n1137\n1579\n27.99\n72.01\n0.56\n\n\nAsclepias incarnata\n474\n958\n1432\n33.10\n66.90\n0.66\n\n\nViburnum acerifolium\n394\n1028\n1422\n27.71\n72.29\n0.55\n\n\nIlex opaca\n728\n691\n1419\n51.30\n48.70\n0.97\n\n\nSymphyotrichum novae-angliae\n356\n894\n1250\n28.48\n71.52\n0.57\n\n\nTilia americana\n391\n754\n1145\n34.15\n65.85\n0.68\n\n\nAcer pensylvanicum\n336\n745\n1081\n31.08\n68.92\n0.62\n\n\nAcer saccharinum\n488\n448\n936\n52.14\n47.86\n0.96\n\n\nSolidago caesia\n328\n583\n911\n36.00\n64.00\n0.72\n\n\nVerbesina alternifolia\n805\n89\n894\n90.04\n9.96\n0.20\n\n\nAcer saccharum\n355\n533\n888\n39.98\n60.02\n0.80\n\n\nSambucus canadensis\n378\n491\n869\n43.50\n56.50\n0.87\n\n\nRosa rugosa\n61\n758\n819\n7.45\n92.55\n0.15\n\n\nRhus copallina\n80\n679\n759\n10.54\n89.46\n0.21\n\n\nMelilotus albus\n221\n520\n741\n29.82\n70.18\n0.60\n\n\nCastanea dentata\n291\n362\n653\n44.56\n55.44\n0.89\n\n\nSolidago rugosa\n257\n380\n637\n40.35\n59.65\n0.81\n\n\nViburnum plicatum\n406\n229\n635\n63.94\n36.06\n0.72\n\n\nViburnum lantanoides\n87\n531\n618\n14.08\n85.92\n0.28\n\n\nViburnum prunifolium\n372\n237\n609\n61.08\n38.92\n0.78\n\n\nPlantago major\n110\n484\n594\n18.52\n81.48\n0.37\n\n\nIlex verticillata\n288\n304\n592\n48.65\n51.35\n0.97\n\n\nRhus glabra\n97\n481\n578\n16.78\n83.22\n0.34\n\n\nViburnum opulus\n177\n379\n556\n31.83\n68.17\n0.64\n\n\nMelilotus officinalis\n234\n296\n530\n44.15\n55.85\n0.88\n\n\nCatalpa speciosa\n193\n319\n512\n37.70\n62.30\n0.75\n\n\nSolidago flexicaulis\n185\n327\n512\n36.13\n63.87\n0.72\n\n\nArtemisia annua\n174\n306\n480\n36.25\n63.75\n0.72\n\n\nConvolvulus arvensis\n94\n356\n450\n20.89\n79.11\n0.42\n\n\nSambucus racemosa\n160\n284\n444\n36.04\n63.96\n0.72\n\n\nSymphyotrichum cordifolium\n141\n266\n407\n34.64\n65.36\n0.69\n\n\nViburnum dilatatum\n215\n191\n406\n52.96\n47.04\n0.94\n\n\nSymphyotrichum lateriflorum\n178\n192\n370\n48.11\n51.89\n0.96\n\n\nRhus aromatica\n91\n268\n359\n25.35\n74.65\n0.51\n\n\nAcer pseudoplatanus\n77\n276\n353\n21.81\n78.19\n0.44\n\n\nSolidago bicolor\n124\n192\n316\n39.24\n60.76\n0.78\n\n\nViburnum sieboldii\n187\n129\n316\n59.18\n40.82\n0.82\n\n\nAesculus hippocastanum\n56\n258\n314\n17.83\n82.17\n0.36\n\n\nLonicera morrowii\n125\n169\n294\n42.52\n57.48\n0.85\n\n\nPrunus virginiana\n66\n211\n277\n23.83\n76.17\n0.48\n\n\nViburnum lentago\n43\n230\n273\n15.75\n84.25\n0.32\n\n\nAcer palmatum\n70\n180\n250\n28.00\n72.00\n0.56\n\n\nPycnanthemum muticum\n97\n133\n230\n42.17\n57.83\n0.84\n\n\nSolidago altissima\n128\n95\n223\n57.40\n42.60\n0.85\n\n\nSolidago juncea\n69\n132\n201\n34.33\n65.67\n0.69\n\n\nHeliopsis helianthoides\n106\n94\n200\n53.00\n47.00\n0.94\n\n\nViburnum dentatum\n62\n131\n193\n32.12\n67.88\n0.64\n\n\nViburnum cassinoides\n10\n180\n190\n5.26\n94.74\n0.11\n\n\nAcer spicatum\n39\n140\n179\n21.79\n78.21\n0.44\n\n\nPrunus persica\n89\n84\n173\n51.45\n48.55\n0.97\n\n\nHelianthus annuus\n63\n93\n156\n40.38\n59.62\n0.81\n\n\nSolidago gigantea\n71\n84\n155\n45.81\n54.19\n0.92\n\n\nIlex glabra\n17\n134\n151\n11.26\n88.74\n0.23\n\n\nRubus laciniatus\n34\n114\n148\n22.97\n77.03\n0.46\n\n\nSymphyotrichum pilosum\n86\n62\n148\n58.11\n41.89\n0.84\n\n\nPrunus cerasifera\n62\n82\n144\n43.06\n56.94\n0.86\n\n\nSolidago canadensis\n62\n81\n143\n43.36\n56.64\n0.87\n\n\nSymphyotrichum lanceolatum\n38\n96\n134\n28.36\n71.64\n0.57\n\n\nPrunus avium\n56\n76\n132\n42.42\n57.58\n0.85\n\n\nRubus idaeus\n22\n105\n127\n17.32\n82.68\n0.35\n\n\nLonicera canadensis\n16\n104\n120\n13.33\n86.67\n0.27\n\n\nSolidago nemoralis\n45\n71\n116\n38.79\n61.21\n0.78\n\n\nRubus hispidus\n35\n76\n111\n31.53\n68.47\n0.63\n\n\nSymphyotrichum laeve\n15\n95\n110\n13.64\n86.36\n0.27\n\n\nViburnum setigerum\n31\n77\n108\n28.70\n71.30\n0.57\n\n\nRubus allegheniensis\n43\n61\n104\n41.35\n58.65\n0.83\n\n\nMalus domestica\n44\n59\n103\n42.72\n57.28\n0.85\n\n\nLonicera sempervirens\n53\n41\n94\n56.38\n43.62\n0.87\n\n\nPycnanthemum virginianum\n60\n34\n94\n63.83\n36.17\n0.72\n\n\nHelianthus divaricatus\n31\n60\n91\n34.07\n65.93\n0.68\n\n\nSymphyotrichum prenanthoides\n41\n49\n90\n45.56\n54.44\n0.91\n\n\nLonicera dioica\n21\n67\n88\n23.86\n76.14\n0.48\n\n\nSymphyotrichum puniceum\n32\n55\n87\n36.78\n63.22\n0.74\n\n\nLonicera fragrantissima\n29\n47\n76\n38.16\n61.84\n0.76\n\n\nViburnum recognitum\n28\n48\n76\n36.84\n63.16\n0.74\n\n\nAcer nigrum\n42\n26\n68\n61.76\n38.24\n0.76\n\n\nRubus flagellaris\n43\n25\n68\n63.24\n36.76\n0.74\n\n\nHelianthus tuberosus\n21\n41\n62\n33.87\n66.13\n0.68\n\n\nCucurbita pepo\n21\n39\n60\n35.00\n65.00\n0.70\n\n\nAcer campestre\n27\n32\n59\n45.76\n54.24\n0.92\n\n\nSalix discolor\n19\n39\n58\n32.76\n67.24\n0.66",
     "crumbs": [
-      "Phenology",
-      "Phenology mixture models"
+      "Modeling bloom phenology",
+      "Top 100 floral resource species"
     ]
   },
   {
-    "objectID": "2_examine_phenology.html#next-50-most-reported-plant-groups",
-    "href": "2_examine_phenology.html#next-50-most-reported-plant-groups",
-    "title": "Phenology",
-    "section": "Next 50 most reported plant groups",
-    "text": "Next 50 most reported plant groups",
-    "crumbs": [
-      "Phenology",
-      "Phenology mixture models"
-    ]
-  },
-  {
-    "objectID": "3_curvemaps.html#phenology-curve-thinned",
-    "href": "3_curvemaps.html#phenology-curve-thinned",
-    "title": "Build spatiotemporal flowering maps",
-    "section": "Phenology curve (thinned)",
-    "text": "Phenology curve (thinned)\nComparing the finite mixture model distributions to the flowering records distribution, I can guess that the first distribution (dist = 1) corresponds with flowering.\n\n\n\n\n\n\n\n\n\n\nDeepbiosphere prediction\n\n\n\n\n\n\n\n\n\n\n\nGrowing degree days in PA\n\n\n\nAnimation of growing degree days in PA\n\n\n\nUse the matching mixture model to predict probability from growing degree days\n\n# use distribution 1\ncc.d &lt;- 1\n\ncc.mu &lt;- cc.mix$mu[cc.d]\ncc.sigma &lt;- cc.mix$sigma[cc.d]\n\npa_gdd &lt;- rast(\"data-raw/big/pa_gdd2017_256m.tif\")\n\n# apply pnorm function to stack of gdd rasters\npa_gdd_cdf &lt;- terra::app(pa_gdd, pnorm, mean = cc.mu, sd = cc.sigma)\n\n# add a 0 raster at the beginning of the gdd time series to substract from\npa_gdd_0 &lt;- pa_gdd[[1]]*0\npa_gdd_0cdf &lt;- c(pa_gdd_0, pa_gdd_cdf)\n\n# find difference in cumulative probability between weeks\npa_bloompb &lt;- terra::diff(pa_gdd_0cdf, filename = \"data-raw/big/CCanadensis_bpb.tif\")\n\n\n\n\nAnimation of Cercis canadensis bloom probability in PA\n\n\n\n\nC. canadensis bloom occurence probability in space and time\nMultiply species distribution with gdd-based bloom probability\n\ncc_stbp &lt;- cc_flrpb * ccdf\n\n\n\n\nAnimation of C. canadensis spatiotemporal bloom occurence probability",
-    "crumbs": [
-      "Deepflora predictions",
-      "Cercis canadensis example"
-    ]
-  },
-  {
-    "objectID": "1.2_accuracy_spatcv.html",
-    "href": "1.2_accuracy_spatcv.html",
-    "title": "Accuracy metrics – spatial cross-validation",
+    "objectID": "1.1_accuracy_unif.html",
+    "href": "1.1_accuracy_unif.html",
+    "title": "Accuracy metrics – uniform train-test",
     "section": "",
-    "text": "Explanation text based on supplemental material of Gillespie et al. 2024.",
+    "text": "These are the accuracy metrics the for uniform train/test model, which is what I’m using to make predictions for deepflora.",
     "crumbs": [
-      "Cross validation metrics",
-      "Spatial cross validation"
+      "Applying Deepbiosphere",
+      "Uniform train-test"
     ]
   },
   {
-    "objectID": "1.2_accuracy_spatcv.html#binary-classification-metrics",
-    "href": "1.2_accuracy_spatcv.html#binary-classification-metrics",
-    "title": "Accuracy metrics – spatial cross-validation",
+    "objectID": "1.1_accuracy_unif.html#species-support",
+    "href": "1.1_accuracy_unif.html#species-support",
+    "title": "Accuracy metrics – uniform train-test",
+    "section": "Species support",
+    "text": "Species support\nThe distribution of support across species. Columns of panels in the figure separate data by the two states, and rows of panel show either just bee floral resource species (“floralres”) or the full species list (“full”).\n\n\nWarning: package 'ggplot2' was built under R version 4.5.2\n\n\nWarning: package 'tibble' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.6.0\n✔ ggplot2   4.0.2     ✔ tibble    3.3.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\n\n\nDistribution of species support (number of observations)\n\n\n\n\nBelow are the accuracy metrics reported by deepbiosphere along with explanations from the supplement of Gillespie et al. 2024. In the plots below I am showing the per-species metrics for the full species list and for bee floral resources. Significance comparisons are made between deepbiosphere and four other modeling approaches available in the deepbiosphere repository: BioclimMLP, a multilayer perceptron trained only on the Bioclim data; TResNet, a deep neural net model trained only on the NAIP imagery; Maxent, a maximum entropy modeling approach trained on bioclimatic data; and a random forest model trained on bioclimatic data.",
+    "crumbs": [
+      "Applying Deepbiosphere",
+      "Uniform train-test"
+    ]
+  },
+  {
+    "objectID": "1.1_accuracy_unif.html#binary-classification-metrics",
+    "href": "1.1_accuracy_unif.html#binary-classification-metrics",
+    "title": "Accuracy metrics – uniform train-test",
     "section": "Binary classification metrics",
-    "text": "Binary classification metrics\nThreshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\n\nPresence accuracy\n(Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nPrecision score\nPrecision Measures how many species predicted to be present were actually present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nRecall score\nRecall Measures how many of the true species present are predicted as present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nF1 score\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
+    "text": "Binary classification metrics\nThese metrics threshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\n\nPresence accuracy\nThe fraction of examples where the correct species observed at a location was predicted as present. This is “zero-one accuracy” in the deepbiosphere code.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nPrecision score\nPrecision Measures how many species predicted to be present were actually present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nRecall score\nRecall Measures how many of the true species present are predicted as present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nF1 score\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
     "crumbs": [
-      "Cross validation metrics",
-      "Spatial cross validation"
+      "Applying Deepbiosphere",
+      "Uniform train-test"
     ]
   },
   {
-    "objectID": "1.2_accuracy_spatcv.html#discrimination-metrics",
-    "href": "1.2_accuracy_spatcv.html#discrimination-metrics",
-    "title": "Accuracy metrics – spatial cross-validation",
+    "objectID": "1.1_accuracy_unif.html#discrimination-metrics",
+    "href": "1.1_accuracy_unif.html#discrimination-metrics",
+    "title": "Accuracy metrics – uniform train-test",
     "section": "Discrimination metrics",
     "text": "Discrimination metrics\nIn order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.\n\nArea under curve [ROC] – uncalibrated\nAUC ROC Area under the receiver operating characteristic curve averaged across species\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nArea under curve [PRC] – uncalibrated\nAUC PRC Average area under the precision-recall curve averaged across species\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nCalibrated area under curves\nA model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.\n\nThis means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.\nTo correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.\n\n\nCalibrated AUC [ROC]\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nCalibrated AUC [PRC]\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
     "crumbs": [
-      "Cross validation metrics",
-      "Spatial cross validation"
+      "Applying Deepbiosphere",
+      "Uniform train-test"
     ]
   },
   {
-    "objectID": "1.2_accuracy_spatcv.html#ranking-metrics",
-    "href": "1.2_accuracy_spatcv.html#ranking-metrics",
-    "title": "Accuracy metrics – spatial cross-validation",
+    "objectID": "1.1_accuracy_unif.html#ranking-metrics",
+    "href": "1.1_accuracy_unif.html#ranking-metrics",
+    "title": "Accuracy metrics – uniform train-test",
     "section": "Ranking metrics",
     "text": "Ranking metrics\nTop-K (top 1, 5, 30, 100) These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence).\n\nSpecies top 1\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 5\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 30\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 100\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
     "crumbs": [
-      "Cross validation metrics",
-      "Spatial cross validation"
+      "Applying Deepbiosphere",
+      "Uniform train-test"
     ]
   },
   {
@@ -92,9 +92,9 @@
     "href": "2.2_examine_phenology_thin.html",
     "title": "Phenology curves - thinned",
     "section": "",
-    "text": "Fitted using mixture models",
+    "text": "I experimented with thinning the observations to retain only one entry per PRISM grid and week combination, in order to down-weight densely populated areas, shown in green. I also thinned the dataset of records that expressly included flowering, though these were already less redundant. The thinned flowering distribution is shown in blue, while the original dataset is shown in orange.",
     "crumbs": [
-      "Phenology",
+      "Modeling bloom phenology",
       "Phenology mixture models (with thinning)"
     ]
   },
@@ -102,10 +102,10 @@
     "objectID": "2.2_examine_phenology_thin.html#top-50-reported-flowering-species",
     "href": "2.2_examine_phenology_thin.html#top-50-reported-flowering-species",
     "title": "Phenology curves - thinned",
-    "section": "",
-    "text": "Fitted using mixture models",
+    "section": "Top 50 reported flowering species",
+    "text": "Top 50 reported flowering species\nOrdered by total number of observations, indicated in the upper right corner of each panel.",
     "crumbs": [
-      "Phenology",
+      "Modeling bloom phenology",
       "Phenology mixture models (with thinning)"
     ]
   },
@@ -116,74 +116,107 @@
     "section": "Next 50 most reported plant groups",
     "text": "Next 50 most reported plant groups",
     "crumbs": [
-      "Phenology",
+      "Modeling bloom phenology",
       "Phenology mixture models (with thinning)"
     ]
   },
   {
-    "objectID": "1.2_sp_list.html",
-    "href": "1.2_sp_list.html",
-    "title": "Species list",
+    "objectID": "1.2_accuracy_spatcv.html",
+    "href": "1.2_accuracy_spatcv.html",
+    "title": "Accuracy metrics – spatial cross-validation",
     "section": "",
-    "text": "Distribution of species support (number of observations)",
+    "text": "These are the results from conducting spatial cross validation. Because of the shapes of Pennsylvania and New York, I used 10 bands running North-South across these states as the test bands for 10-fold cross validation. Below I show the distributions for the overall model metrics for PA and NY. Significance comparisons are made between the cross-validation accuracy metrics of deepbiosphere and two conventional modeling approaches: Maxent trained on bioclimatic data and random forest trained on bioclimatic data.",
     "crumbs": [
-      "Cross validation metrics",
-      "Species lists"
+      "Applying Deepbiosphere",
+      "Spatial cross validation"
     ]
   },
   {
-    "objectID": "1.2_sp_list.html#list-of-floral-resource-species",
-    "href": "1.2_sp_list.html#list-of-floral-resource-species",
-    "title": "Species list",
-    "section": "",
-    "text": "Distribution of species support (number of observations)",
-    "crumbs": [
-      "Cross validation metrics",
-      "Species lists"
-    ]
-  },
-  {
-    "objectID": "1_accuracy_unif.html",
-    "href": "1_accuracy_unif.html",
-    "title": "Accuracy metrics – uniform train-test",
-    "section": "",
-    "text": "Explanation text based on supplemental material of Gillespie et al. 2024.",
-    "crumbs": [
-      "Cross validation metrics",
-      "Uniform train-test"
-    ]
-  },
-  {
-    "objectID": "1_accuracy_unif.html#binary-classification-metrics",
-    "href": "1_accuracy_unif.html#binary-classification-metrics",
-    "title": "Accuracy metrics – uniform train-test",
+    "objectID": "1.2_accuracy_spatcv.html#binary-classification-metrics",
+    "href": "1.2_accuracy_spatcv.html#binary-classification-metrics",
+    "title": "Accuracy metrics – spatial cross-validation",
     "section": "Binary classification metrics",
-    "text": "Binary classification metrics\nThreshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\n\nPresence accuracy\n(Zero one accuracy?) The fraction of examples where the correct species observed at that location was predicted as present\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nPrecision score\nPrecision Measures how many species predicted to be present were actually present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nRecall score\nRecall Measures how many of the true species present are predicted as present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nF1 score\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
+    "text": "Binary classification metrics\nThese metrics threshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\n\nPresence accuracy\nThe fraction of examples where the correct species observed at that location was predicted as present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nPrecision score\nPrecision Measures how many species predicted to be present were actually present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nRecall score\nRecall Measures how many of the true species present are predicted as present.\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nF1 score\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
     "crumbs": [
-      "Cross validation metrics",
-      "Uniform train-test"
+      "Applying Deepbiosphere",
+      "Spatial cross validation"
     ]
   },
   {
-    "objectID": "1_accuracy_unif.html#discrimination-metrics",
-    "href": "1_accuracy_unif.html#discrimination-metrics",
-    "title": "Accuracy metrics – uniform train-test",
+    "objectID": "1.2_accuracy_spatcv.html#discrimination-metrics",
+    "href": "1.2_accuracy_spatcv.html#discrimination-metrics",
+    "title": "Accuracy metrics – spatial cross-validation",
     "section": "Discrimination metrics",
     "text": "Discrimination metrics\nIn order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of thresholds in order to calculate an SDM’s performance across a wide range of presence thresholds and describe the relationship between threshold change and performance change.\n\nArea under curve [ROC] – uncalibrated\nAUC ROC Area under the receiver operating characteristic curve averaged across species\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nArea under curve [PRC] – uncalibrated\nAUC PRC Average area under the precision-recall curve averaged across species\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nCalibrated area under curves\nA model which has extremely low predicted probabilities can still nevertheless have a high AUCROC if within its range of predicted probabilities said model has good sensitivity and specificity for that class.\n\nThis means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.\nTo correct for this, we also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.\n\n\nCalibrated AUC [ROC]\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nCalibrated AUC [PRC]\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
     "crumbs": [
-      "Cross validation metrics",
-      "Uniform train-test"
+      "Applying Deepbiosphere",
+      "Spatial cross validation"
     ]
   },
   {
-    "objectID": "1_accuracy_unif.html#ranking-metrics",
-    "href": "1_accuracy_unif.html#ranking-metrics",
-    "title": "Accuracy metrics – uniform train-test",
+    "objectID": "1.2_accuracy_spatcv.html#ranking-metrics",
+    "href": "1.2_accuracy_spatcv.html#ranking-metrics",
+    "title": "Accuracy metrics – spatial cross-validation",
     "section": "Ranking metrics",
     "text": "Ranking metrics\nTop-K (top 1, 5, 30, 100) These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence).\n\nSpecies top 1\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 5\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 30\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)\n\n\n\n\nSpecies top 100\n\n\n\nComparing uniform train-test split for bee flowers (left) and full dataset (right) for the two states (rows)",
     "crumbs": [
-      "Cross validation metrics",
-      "Uniform train-test"
+      "Applying Deepbiosphere",
+      "Spatial cross validation"
+    ]
+  },
+  {
+    "objectID": "2.1_examine_phenology.html",
+    "href": "2.1_examine_phenology.html",
+    "title": "Phenology",
+    "section": "",
+    "text": "Using rgbif, I searched for all research-grade observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee’s past work. Then I fit finite mixture models to these distributions, using the mixtools R package.\nData from GBIF includes occasional information on plant reproductive stage, if it was available from the observation. I added this in these plots to provide some reference for the finite mixture model predictions, in orange.",
+    "crumbs": [
+      "Modeling bloom phenology",
+      "Phenology mixture models"
+    ]
+  },
+  {
+    "objectID": "2.1_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
+    "href": "2.1_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
+    "title": "Phenology",
+    "section": "Top 50 reported flowering species phenology curves",
+    "text": "Top 50 reported flowering species phenology curves\nOrdered by total number of observations, indicated in the upper right corner of each panel.",
+    "crumbs": [
+      "Modeling bloom phenology",
+      "Phenology mixture models"
+    ]
+  },
+  {
+    "objectID": "2.1_examine_phenology.html#next-50-most-reported-plant-groups",
+    "href": "2.1_examine_phenology.html#next-50-most-reported-plant-groups",
+    "title": "Phenology",
+    "section": "Next 50 most reported plant groups",
+    "text": "Next 50 most reported plant groups",
+    "crumbs": [
+      "Modeling bloom phenology",
+      "Phenology mixture models"
+    ]
+  },
+  {
+    "objectID": "3_curvemaps.html",
+    "href": "3_curvemaps.html",
+    "title": "Build spatiotemporal flowering maps",
+    "section": "",
+    "text": "Warning: package 'ggplot2' was built under R version 4.5.2\n\n\nWarning: package 'tibble' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2\n\n\nWarning: package 'tidyterra' was built under R version 4.5.2\n\n\n\n\n\n\n\n\n\n\n\n\nComparing the finite mixture model distributions to the flowering records distribution, I can guess that the first distribution (dist = 1) corresponds with flowering.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnimation of growing degree days in PA\n\n\n\n\n\n# use distribution 1\ncc.d &lt;- 1\n\ncc.mu &lt;- cc.mix$mu[cc.d]\ncc.sigma &lt;- cc.mix$sigma[cc.d]\n\npa_gdd &lt;- rast(\"data-raw/big/pa_gdd2017_256m.tif\")\n\n# apply pnorm function to stack of gdd rasters\npa_gdd_cdf &lt;- terra::app(pa_gdd, pnorm, mean = cc.mu, sd = cc.sigma)\n\n# add a 0 raster at the beginning of the gdd time series to substract from\npa_gdd_0 &lt;- pa_gdd[[1]]*0\npa_gdd_0cdf &lt;- c(pa_gdd_0, pa_gdd_cdf)\n\n# find difference in cumulative probability between weeks\npa_bloompb &lt;- terra::diff(pa_gdd_0cdf, filename = \"data-raw/big/CCanadensis_bpb.tif\")\n\n\n\n\nAnimation of Cercis canadensis bloom probability in PA\n\n\n\n\n\nMultiply species distribution with gdd-based bloom probability\n\ncc_stbp &lt;- cc_flrpb * ccdf\n\n\n\n\nAnimation of C. canadensis spatiotemporal bloom occurence probability",
+    "crumbs": [
+      "Deepflora predictions",
+      "Cercis canadensis example"
+    ]
+  },
+  {
+    "objectID": "3_curvemaps.html#example-cercis-canadensis",
+    "href": "3_curvemaps.html#example-cercis-canadensis",
+    "title": "Build spatiotemporal flowering maps",
+    "section": "",
+    "text": "Warning: package 'ggplot2' was built under R version 4.5.2\n\n\nWarning: package 'tibble' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2\n\n\nWarning: package 'tidyterra' was built under R version 4.5.2\n\n\n\n\n\n\n\n\n\n\n\n\nComparing the finite mixture model distributions to the flowering records distribution, I can guess that the first distribution (dist = 1) corresponds with flowering.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnimation of growing degree days in PA\n\n\n\n\n\n# use distribution 1\ncc.d &lt;- 1\n\ncc.mu &lt;- cc.mix$mu[cc.d]\ncc.sigma &lt;- cc.mix$sigma[cc.d]\n\npa_gdd &lt;- rast(\"data-raw/big/pa_gdd2017_256m.tif\")\n\n# apply pnorm function to stack of gdd rasters\npa_gdd_cdf &lt;- terra::app(pa_gdd, pnorm, mean = cc.mu, sd = cc.sigma)\n\n# add a 0 raster at the beginning of the gdd time series to substract from\npa_gdd_0 &lt;- pa_gdd[[1]]*0\npa_gdd_0cdf &lt;- c(pa_gdd_0, pa_gdd_cdf)\n\n# find difference in cumulative probability between weeks\npa_bloompb &lt;- terra::diff(pa_gdd_0cdf, filename = \"data-raw/big/CCanadensis_bpb.tif\")\n\n\n\n\nAnimation of Cercis canadensis bloom probability in PA\n\n\n\n\n\nMultiply species distribution with gdd-based bloom probability\n\ncc_stbp &lt;- cc_flrpb * ccdf\n\n\n\n\nAnimation of C. canadensis spatiotemporal bloom occurence probability",
+    "crumbs": [
+      "Deepflora predictions",
+      "Cercis canadensis example"
     ]
   }
 ]

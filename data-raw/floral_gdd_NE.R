@@ -34,6 +34,8 @@ top100_sp_flr <- combined_sp_flr |> mutate(evenness = (50-abs(50-pa.pc))/50) |>
   filter(pa>=10 & ny>=10) |>
   slice_max(n=100, order_by = total)
 
+# write.csv(top100_sp_flr, "data/top100_sp_flr.csv", row.names = FALSE)
+
 # gbif search only needs to to happen once
 top100_gbif <- get_NEgbif(top100_sp_flr$species)
 

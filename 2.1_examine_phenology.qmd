@@ -1,0 +1,21 @@
+---
+title: "Phenology"
+format: html
+editor: visual
+execute: 
+  echo: false
+---
+
+Using `rgbif`, I searched for all research-grade observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee's past work. Then I fit finite mixture models to these distributions, using the `mixtools` R package.
+
+Data from GBIF includes occasional information on plant reproductive stage, if it was available from the observation. I added this in these plots to provide some reference for the finite mixture model predictions, in orange.
+
+## Top 50 reported flowering species phenology curves
+
+Ordered by total number of observations, indicated in the upper right corner of each panel.
+
+![](plots/mixture_NE0-50.png)
+
+## Next 50 most reported plant groups
+
+![](plots/mixture_NE50-100.png)

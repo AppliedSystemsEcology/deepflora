@@ -1,5 +1,5 @@
 ---
-title: "Species list"
+title: "Accuracy metrics for individual bee floral resources species"
 editor: visual
 execute:
   echo: false
@@ -18,26 +18,28 @@ source("R/plot_standards.R")
 
 ```
 
-## List of floral resource species
+These are the individual accuracy metrics for bee floral resources species in each state.
 
 ```{r}
-plot_persp <- read.csv("data/results/per-sp-accuracy.csv")
+plot_persp <- read.csv("data/results/per-sp-accuracy.csv") %>%
+  pivot_wider(names_from = metric, values_from = value) %>% 
+  filter(subset == "floralres" & model=="db" & band == "band-1")
 
-floralsp_pa <- plot_persp %>% ungroup() %>%
-  pivot_wider(names_from = metric, values_from = value) %>%
-  filter(subset == "floralres" & model == "db" & band == "band-1" & state == "pa") %>%
+floralsp_pa <- plot_persp %>% 
+  filter(state == "pa") %>%
   dplyr::select(-model, -subset, -band, -state) %>%
   relocate(support, .before = species_top1) %>%
   distinct() %>% arrange(desc(support))
 
-floralsp_ny <- plot_persp %>% ungroup() %>%
-  pivot_wider(names_from = metric, values_from = value) %>%
-  filter(subset == "floralres" & model == "db" & band == "band-1" & state == "ny") %>%
+floralsp_ny <- plot_persp %>% 
+  filter(state == "ny") %>%
   dplyr::select(-model, -subset, -band, -state) %>%
   relocate(support, .before = species_top1) %>%
   distinct() %>% arrange(desc(support))
 
 ```
+
+## Accuracy metrics of floral resource species
 
 ### Pennsylvania species
 
@@ -57,13 +59,4 @@ DT::datatable(floralsp_ny %>%
 
 ```
 
-### Species support
 
-```{r}
-#| fig-cap: Distribution of species support (number of observations)
-
-ggplot(bind_rows(list("PA" = floralsp_pa, "NY" = floralsp_ny), .id = "State"), 
-       aes(support, fill = State)) +
-  geom_histogram(bins=20, alpha=0.2, position="identity") + egg::theme_article()
-
-```

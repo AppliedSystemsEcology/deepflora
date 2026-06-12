@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Cross validation metrics</span></a>
+ <span class="menu-text">Applying Deepbiosphere</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -155,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1_accuracy_unif.html" class="sidebar-item-text sidebar-link">
+  <a href="./1.1_accuracy_unif.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Uniform train-test</span></a>
   </div>
 </li>
@@ -167,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1.2_sp_list.html" class="sidebar-item-text sidebar-link">
+  <a href="./1.3_sp_list.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Species lists</span></a>
   </div>
 </li>
@@ -176,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Phenology</span></a>
+ <span class="menu-text">Modeling bloom phenology</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -184,7 +184,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_examine_phenology.html" class="sidebar-item-text sidebar-link">
+  <a href="./2.0_Phenology_sp_list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Top 100 floral resource species</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2.1_examine_phenology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Phenology mixture models</span></a>
   </div>
 </li>
@@ -223,10 +229,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#example-cercis-canadensis" id="toc-example-cercis-canadensis" class="nav-link active" data-scroll-target="#example-cercis-canadensis">Example: <em>Cercis canadensis</em></a></li>
-  <li><a href="#phenology-curve-thinned" id="toc-phenology-curve-thinned" class="nav-link" data-scroll-target="#phenology-curve-thinned">Phenology curve (thinned)</a>
+  <li><a href="#example-cercis-canadensis" id="toc-example-cercis-canadensis" class="nav-link active" data-scroll-target="#example-cercis-canadensis">Example: <em>Cercis canadensis</em></a>
   <ul class="collapse">
   <li><a href="#deepbiosphere-prediction" id="toc-deepbiosphere-prediction" class="nav-link" data-scroll-target="#deepbiosphere-prediction">Deepbiosphere prediction</a></li>
+  <li><a href="#phenology-curve-thinned" id="toc-phenology-curve-thinned" class="nav-link" data-scroll-target="#phenology-curve-thinned">Phenology curve (thinned)</a></li>
   <li><a href="#growing-degree-days-in-pa" id="toc-growing-degree-days-in-pa" class="nav-link" data-scroll-target="#growing-degree-days-in-pa">Growing degree days in PA</a></li>
   </ul></li>
   </ul>
@@ -256,11 +262,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="example-cercis-canadensis" class="level2">
 <h2 class="anchored" data-anchor-id="example-cercis-canadensis">Example: <em>Cercis canadensis</em></h2>
-</section>
-<section id="phenology-curve-thinned" class="level2">
-<h2 class="anchored" data-anchor-id="phenology-curve-thinned">Phenology curve (thinned)</h2>
-<p>Comparing the finite mixture model distributions to the flowering records distribution, I can guess that the first distribution (<code>dist = 1</code>) corresponds with flowering.</p>
+<section id="deepbiosphere-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="deepbiosphere-prediction">Deepbiosphere prediction</h3>
 <div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tibble' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyterra' was built under R version 4.5.2</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -269,8 +285,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="deepbiosphere-prediction" class="level3">
-<h3 class="anchored" data-anchor-id="deepbiosphere-prediction">Deepbiosphere prediction</h3>
+</section>
+<section id="phenology-curve-thinned" class="level3">
+<h3 class="anchored" data-anchor-id="phenology-curve-thinned">Phenology curve (thinned)</h3>
+<p>Comparing the finite mixture model distributions to the flowering records distribution, I can guess that the first distribution (<code>dist = 1</code>) corresponds with flowering.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -292,23 +310,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="use-the-matching-mixture-model-to-predict-probability-from-growing-degree-days" class="level4">
 <h4 class="anchored" data-anchor-id="use-the-matching-mixture-model-to-predict-probability-from-growing-degree-days">Use the matching mixture model to predict probability from growing degree days</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use distribution 1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cc.d <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>cc.mu <span class="ot">&lt;-</span> cc.mix<span class="sc">$</span>mu[cc.d]</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>cc.sigma <span class="ot">&lt;-</span> cc.mix<span class="sc">$</span>sigma[cc.d]</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>pa_gdd <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data-raw/big/pa_gdd2017_256m.tif"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># apply pnorm function to stack of gdd rasters</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pa_gdd_cdf <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">app</span>(pa_gdd, pnorm, <span class="at">mean =</span> cc.mu, <span class="at">sd =</span> cc.sigma)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># add a 0 raster at the beginning of the gdd time series to substract from</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>pa_gdd_0 <span class="ot">&lt;-</span> pa_gdd[[<span class="dv">1</span>]]<span class="sc">*</span><span class="dv">0</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>pa_gdd_0cdf <span class="ot">&lt;-</span> <span class="fu">c</span>(pa_gdd_0, pa_gdd_cdf)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># find difference in cumulative probability between weeks</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>pa_bloompb <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">diff</span>(pa_gdd_0cdf, <span class="at">filename =</span> <span class="st">"data-raw/big/CCanadensis_bpb.tif"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use distribution 1</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cc.d <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>cc.mu <span class="ot">&lt;-</span> cc.mix<span class="sc">$</span>mu[cc.d]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>cc.sigma <span class="ot">&lt;-</span> cc.mix<span class="sc">$</span>sigma[cc.d]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>pa_gdd <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"data-raw/big/pa_gdd2017_256m.tif"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># apply pnorm function to stack of gdd rasters</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>pa_gdd_cdf <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">app</span>(pa_gdd, pnorm, <span class="at">mean =</span> cc.mu, <span class="at">sd =</span> cc.sigma)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># add a 0 raster at the beginning of the gdd time series to substract from</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>pa_gdd_0 <span class="ot">&lt;-</span> pa_gdd[[<span class="dv">1</span>]]<span class="sc">*</span><span class="dv">0</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>pa_gdd_0cdf <span class="ot">&lt;-</span> <span class="fu">c</span>(pa_gdd_0, pa_gdd_cdf)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># find difference in cumulative probability between weeks</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>pa_bloompb <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">diff</span>(pa_gdd_0cdf, <span class="at">filename =</span> <span class="st">"data-raw/big/CCanadensis_bpb.tif"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -321,7 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="c.-canadensis-bloom-occurence-probability-in-space-and-time"><em>C. canadensis</em> bloom occurence probability in space and time</h4>
 <p>Multiply species distribution with gdd-based bloom probability</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cc_stbp <span class="ot">&lt;-</span> cc_flrpb <span class="sc">*</span> ccdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cc_stbp <span class="ot">&lt;-</span> cc_flrpb <span class="sc">*</span> ccdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

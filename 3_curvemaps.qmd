@@ -4,48 +4,19 @@ title: "Build spatiotemporal flowering maps"
 
 ## Example: _Cercis canadensis_
 
-## Phenology curve (thinned)
 
-Comparing the finite mixture model distributions to the flowering records distribution, I can guess that the first distribution (`dist = 1`) corresponds with flowering.
 
+### Deepbiosphere prediction
 ```{r}
-#| echo: false
 #| message: false
-#| warning: false
+#| results: false
+#| echo: false
 
 library(tidyverse)
 library(tidyterra)
 library(sf)
 library(terra)
 source("R/mix_mods.R")
-
-cc <- readRDS("data/top100_gdd_thin.rds") |> filter(species == "Cercis canadensis")
-cc.mix <- readRDS("data/results/mixmods_flr100_thin.rds")[["Cercis canadensis"]]
-
-cc.dist <- make_dist_mix(cc.mix, 50)
-
-ggplot(cc, aes(gdd)) +
-  geom_histogram(binwidth = 50, fill = "yellowgreen") +
-  geom_histogram(data = cc %>% dplyr::filter(flowering),
-                 binwidth = 50, fill = "tan1") +
-  labs(x=NULL, y="Count") +
-  geom_line(data = cc.dist,
-            mapping = aes(x = x, y = y, color = dist)) +
-  geom_text(
-    data = cc |> summarize(Freq = n()),
-    mapping = aes(x = Inf, y = Inf, label = Freq),
-    hjust   = 1.1,
-    vjust   = 1.2) +
-  scale_color_manual(values = c("red3","turquoise4","burlywood4"))+
-  egg::theme_article() +
-  coord_cartesian(xlim=c(0,4000))
-
-```
-### Deepbiosphere prediction
-```{r}
-#| message: false
-#| results: false
-#| echo: false
 
 padf <- rast("data-raw/big/pa_2017_merge_block_mosaic.tif")
 
@@ -67,6 +38,38 @@ ggplot() + geom_spatraster(data=ccdf) +
     fill = ""
   )
 
+
+```
+
+### Phenology curve (thinned)
+
+Comparing the finite mixture model distributions to the flowering records distribution, I can guess that the first distribution (`dist = 1`) corresponds with flowering.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+cc <- readRDS("data/top100_gdd_thin.rds") |> filter(species == "Cercis canadensis")
+cc.mix <- readRDS("data/results/mixmods_flr100_thin.rds")[["Cercis canadensis"]]
+
+cc.dist <- make_dist_mix(cc.mix, 50)
+
+ggplot(cc, aes(gdd)) +
+  geom_histogram(binwidth = 50, fill = "yellowgreen") +
+  geom_histogram(data = cc %>% dplyr::filter(flowering),
+                 binwidth = 50, fill = "tan1") +
+  labs(x=NULL, y="Count") +
+  geom_line(data = cc.dist,
+            mapping = aes(x = x, y = y, color = dist)) +
+  geom_text(
+    data = cc |> summarize(Freq = n()),
+    mapping = aes(x = Inf, y = Inf, label = Freq),
+    hjust   = 1.1,
+    vjust   = 1.2) +
+  scale_color_manual(values = c("red3","turquoise4","burlywood4"))+
+  egg::theme_article() +
+  coord_cartesian(xlim=c(0,4000))
 
 ```
 

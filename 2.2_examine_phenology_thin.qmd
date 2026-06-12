@@ -6,9 +6,11 @@ execute:
   echo: false
 ---
 
+I experimented with thinning the observations to retain only one entry per PRISM grid and week combination, in order to down-weight densely populated areas, shown in green. I also thinned the dataset of records that expressly included flowering, though these were already less redundant. The thinned flowering distribution is shown in blue, while the original dataset is shown in orange.
+
 ## Top 50 reported flowering species
 
-Fitted using mixture models
+Ordered by total number of observations, indicated in the upper right corner of each panel.
 
 ![](plots/mixture_NE0-50_thinned.png)
 

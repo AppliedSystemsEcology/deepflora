@@ -6,17 +6,19 @@ website:
   title: "Deepflora results"
   sidebar:
     contents:
-      - section: "Cross validation metrics"
+      - section: "Applying Deepbiosphere"
         contents:
-          - href: 1_accuracy_unif.qmd
+          - href: 1.1_accuracy_unif.qmd
             text: Uniform train-test
           - href: 1.2_accuracy_spatcv.qmd
             text: Spatial cross validation
-          - href: 1.2_sp_list.qmd
+          - href: 1.3_sp_list.qmd
             text: Species lists
-      - section: "Phenology"
+      - section: "Modeling bloom phenology"
         contents:
-          - href: 2_examine_phenology.qmd
+          - href: 2.0_Phenology_sp_list.qmd
+            text: Top 100 floral resource species
+          - href: 2.1_examine_phenology.qmd
             text: Phenology mixture models
           - href: 2.2_examine_phenology_thin.qmd
             text: Phenology mixture models (with thinning)

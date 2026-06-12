@@ -1,0 +1,24 @@
+---
+title: "Making a species list of bee floral resources"
+---
+
+For phenology models I started out with the 100 most common species across both PA and NY. The table below shows counts for both states and rates evenness by percent representation across states. Species with fewer than 10 observations in either state have been excluded.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+
+splist <- read.csv("data/top100_sp_flr.csv") |>
+  rename(
+    `PA count`=pa,
+    `NY count`=ny,
+    `% PA` = pa.pc,
+    `% NY` = ny.pc
+  ) |>
+  select(-genus)
+
+knitr::kable(splist, digits = 2)
+```

@@ -1,6 +1,9 @@
+library(tidyverse)
+library(ggrepel)
+
 subset_labels <- c(
-  "full" = "All",
-  "floralres" = "Bee flowers"
+  "full" = "All species",
+  "floralres" = "Bee floral resources"
 )
 
 state_labels <- c(
@@ -47,11 +50,13 @@ plot_state_subset <- function(panel.metric, data, data.medians, stat.results){
     geom_jitter(width = 0.08, size = 0.6, alpha = 0.25, shape = 16) +
     geom_boxplot(width = 0.15, outlier.shape = NA, alpha = 0,
                  color = "black", linewidth = 0.4) +
-    geom_text(
+    ggrepel::geom_text_repel(
       data = data.medians %>% dplyr::filter(metric == panel.metric),
       aes(x = model, y = med, label = med),
       inherit.aes = FALSE,
-      size = 2.2, fontface = "bold", vjust = -0.5
+      size = 2.2, fontface = "bold", vjust = -0.5,
+      bg.color = "white",
+      bg.r = 0.25
     ) +
     # Use precomputed stats instead of computing inside geom_signif
     ggpubr::stat_pvalue_manual(
@@ -101,11 +106,13 @@ plot_state_spatcv <- function(panel.metric, data, data.medians, stat.results){
     geom_jitter(width = 0.08, size = 0.8, shape = 16) +
     geom_boxplot(width = 0.15, outlier.shape = NA, alpha = 0,linewidth = 0.4) +
     # geom_point(data=data %>% dplyr::filter(metric == panel.metric), color = "grey15", pch=1, size=2) +
-    geom_text(
+    ggrepel::geom_text_repel(
       data = data.medians %>% dplyr::filter(metric == panel.metric),
       aes(x = model.code, y = med, label = med),
       inherit.aes = FALSE,
-      size = 2.2, fontface = "bold", vjust = -0.5
+      size = 2.2, fontface = "bold", vjust = -0.5,
+      bg.color = "white",
+      bg.r = 0.25
     ) +
     # Use precomputed stats instead of computing inside geom_signif
     # ggpubr::stat_pvalue_manual(
