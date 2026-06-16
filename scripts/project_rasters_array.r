@@ -23,7 +23,7 @@ outdir <- file.path("/storage/home/kbl5733/gstorage/data/deepflora/maps",
                     paste0(state,"_2017_albers"), basename(thisarray))
 
 if(!exists(outdir)){
-  dir.create(outdir)
+  dir.create(outdir, recursive = TRUE)
 }
 
 for(i in seq_along(arraytifs)){
