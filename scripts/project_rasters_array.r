@@ -20,7 +20,7 @@ arraytifs <- list.files(thisarray, recursive = FALSE, full.names = TRUE, pattern
 temp.ras <- readRDS(paste0("data/template_", state, ".rds"))
 
 outdir <- file.path("/storage/home/kbl5733/gstorage/data/deepflora/maps",
-                    paste0(state,"_2017_albers"))
+                    paste0(state,"_2017_albers"), basename(thisarray))
 
 if(!exists(outdir)){
   dir.create(outdir)

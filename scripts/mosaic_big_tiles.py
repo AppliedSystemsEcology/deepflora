@@ -46,7 +46,7 @@ with rasterio.open(out_fname, 'w', **profile) as dst:
         dst.write(mean_arr.astype(np.float32), band_idx)
 
         if band_idx % 100 == 0:
-            print(f"Band {band_idx}/{srcs[0].count} done")
+            print(f"{os.path.basename(in_dir)} band {band_idx}/{srcs[0].count} done")
 
     # Set descriptions once after all bands are written
     dst.descriptions = band_descriptions
