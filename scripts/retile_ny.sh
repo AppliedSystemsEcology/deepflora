@@ -37,6 +37,8 @@ for TILE in "${IN_DIR}"/*.tif; do
     -co COMPRESS=LZW \
     -co BIGTIFF=YES \
     -co INTERLEAVE=BAND \
+    -co SPARSE_OK=YES \
+    -co NUM_THREADS=ALL_CPUS \
     "${TILE}" "${OUT_SUBDIR}/${BASENAME}"
 
   echo "Done: ${BASENAME}"

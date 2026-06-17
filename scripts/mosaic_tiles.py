@@ -28,7 +28,8 @@ profile.update(
     transform=out_transform, count=srcs[0].count,
     compress='lzw', bigtiff='YES',
     tiled=True, blockxsize=256, blockysize=256,
-    interleave='band', num_threads='ALL_CPUS'
+    interleave='band', num_threads='ALL_CPUS',
+    sparse_ok='YES', nodata=np.nan
 )
 
 with rasterio.open(out_fname, 'w', **profile) as dst:
