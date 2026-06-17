@@ -4,8 +4,8 @@
 #SBATCH --partition=standard
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=8G
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=128G
 #SBATCH --time=02:00:00
 #SBATCH --array=0
 #SBATCH --output=logs/retile_%A.out
@@ -28,18 +28,24 @@ mkdir -p "$OUT_SUBDIR"
 # Loop over tiles
 for TILE in "${IN_DIR}"/*.tif; do
   BASENAME=$(basename "$TILE")
-  echo "Retiling $BASENAME in $(basename "${IN_DIR}")"
 
-  gdal_translate \
-    -co TILED=YES \
-    -co BLOCKXSIZE=256 \
-    -co BLOCKYSIZE=256 \
-    -co COMPRESS=LZW \
-    -co BIGTIFF=YES \
-    -co INTERLEAVE=BAND \
-    -co SPARSE_OK=YES \
-    -co NUM_THREADS=ALL_CPUS \
-    "${TILE}" "${OUT_SUBDIR}/${BASENAME}"
+  if [[ -e "${OUT_SUBDIR}/${BASENAME}" ]]; then
+    echo "$BASENAME already exists"
+  else
+    echo "Retiling $BASENAME in $(basename "${IN_DIR}")"
 
-  echo "Done: ${BASENAME}"
+    gdal_translate \
+      -co TILED=YES \
+      -co BLOCKXSIZE=256 \
+      -co BLOCKYSIZE=256 \
+      -co COMPRESS=LZW \
+      -co BIGTIFF=YES \
+      -co INTERLEAVE=BAND \
+      -co SPARSE_OK=YES \
+      -co NUM_THREADS=ALL_CPUS \
+      "${TILE}" "${OUT_SUBDIR}/${BASENAME}"
+
+    echo "Done: ${BASENAME}"
+  fi
+
 done
