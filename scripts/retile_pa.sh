@@ -7,31 +7,37 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=8G
 #SBATCH --time=02:00:00
-#SBATCH --array=1-24
-#SBATCH --output=logs/retile_%A_%a.out
-#SBATCH --error=logs/retile_%A_%a.err
+#SBATCH --array=0
+#SBATCH --output=logs/retile_%A.out
+#SBATCH --error=logs/retile_%A.err
 
 module load anaconda
 conda activate py-geo
 
-IN_DIR=/storage/home/kbl5733/gstorage/data/deepflora/maps/pa_2017_merge
-OUT_DIR=/storage/home/kbl5733/gstorage/data/deepflora/maps/pa_2017_merge_block
+IN_DIRS=(/storage/home/kbl5733/gstorage/data/deepflora/maps/ny_2017_albers/*)
+OUT_DIR=/storage/home/kbl5733/gstorage/data/deepflora/maps/ny_2017_albers_block
 
-mkdir -p $OUT_DIR
+IN_DIR=${IN_DIRS[${SLURM_ARRAY_TASK_ID}]}
+OUT_SUBDIR="${OUT_DIR}/$(basename "${IN_DIR}")"
 
-# Get the Nth tile
-TILE=$(ls ${IN_DIR}/*.tif | sed -n "${SLURM_ARRAY_TASK_ID}p")
-BASENAME=$(basename $TILE)
+echo "Task ${SLURM_ARRAY_TASK_ID}: processing ${IN_DIR}"
 
-echo "Retiling $BASENAME"
+mkdir -p "$OUT_DIR"
+mkdir -p "$OUT_SUBDIR"
 
-gdal_translate \
-  -co TILED=YES \
-  -co BLOCKXSIZE=256 \
-  -co BLOCKYSIZE=256 \
-  -co COMPRESS=LZW \
-  -co BIGTIFF=YES \
-  -co INTERLEAVE=BAND \
-  ${TILE} ${OUT_DIR}/${BASENAME}
+# Loop over tiles
+for TILE in "${IN_DIR}"/*.tif; do
+  BASENAME=$(basename "$TILE")
+  echo "Retiling $BASENAME in $(basename "${IN_DIR}")"
 
-echo "Done: ${BASENAME}"
+  gdal_translate \
+    -co TILED=YES \
+    -co BLOCKXSIZE=256 \
+    -co BLOCKYSIZE=256 \
+    -co COMPRESS=LZW \
+    -co BIGTIFF=YES \
+    -co INTERLEAVE=BAND \
+    "${TILE}" "${OUT_SUBDIR}/${BASENAME}"
+
+  echo "Done: ${BASENAME}"
+done
