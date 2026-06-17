@@ -2,9 +2,9 @@
 set -euo pipefail
 
 # === Configuration — edit these for your setup ===
-SRC_DIR="/path/to/your/tif/files"      # where the unsorted files currently live
-DEST_DIR="/path/to/organized"          # where the per-code subfolders will be created
-MODE="move"                            # "move", "copy", or "link"
+SRC_DIR="/storage/home/kbl5733/gstorage/data/deepflora/maps/ny_2017_albers_old"      # where the unsorted files currently live
+DEST_DIR="/storage/home/kbl5733/gstorage/data/deepflora/maps/ny_2017_albers"          # where the per-code subfolders will be created
+MODE="copy"                            # "move", "copy", or "link"
 DRY_RUN=true                           # leave true until you've checked the output looks right
 
 mkdir -p "$DEST_DIR"
