@@ -14,7 +14,7 @@
 module load anaconda
 source activate py-geo
 
-IN_DIRS=(/storage/home/kbl5733/gstorage/data/deepflora/maps/ny_2017_albers/*)
+IN_DIRS=(/storage/home/kbl5733/gstorage/data/deepflora/maps/ny_2017_albers_block/*)
 OUT_DIR=/storage/home/kbl5733/gstorage/data/deepflora/maps/ny_2017_merge
 
 mkdir -p "$OUT_DIR"
