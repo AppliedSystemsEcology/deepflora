@@ -21,6 +21,6 @@ mkdir -p "$OUT_DIR"
 
 IN_DIR=${IN_DIRS[${SLURM_ARRAY_TASK_ID}]}
 
-python /storage/home/kbl5733/work/github/deepflora/scripts/mosaic_big.py \
+python /storage/home/kbl5733/work/github/deepflora/scripts/mosaic_tiles.py \
   "${IN_DIR}" \
   "${OUT_DIR}"
