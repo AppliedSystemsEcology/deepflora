@@ -71,6 +71,9 @@ ggplot(cc, aes(gdd)) +
   egg::theme_article() +
   coord_cartesian(xlim=c(0,4000))
 
+
+# ggsave("plots/C_canadensis_mixmod.png",bg="white",height=3,width=6)
+
 ```
 
 ### Growing degree days in PA

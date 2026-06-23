@@ -4,25 +4,29 @@ title: "Overview of deepflora project"
 
 ## Background
 
-A majority of crops and flowering plants rely on pollinators like bees, yet bee populations are declining globally from habitat loss, pesticide exposure, and land cover change in their landscapes. Understanding habitat and floral resource availability for bees is of critical importance for addressing these declines and requires models of fine-scale floral dynamics across foraging landscapes and over growing seasons. However, this information is not currently available at spatial and temporal resolutions relevant to bees, creating a gap that impedes both our ecological understanding and conservation management.
+A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is of critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.
 
 ## Methods
 
 ### Spatial predictions
 
-Using the Deepbiosphere model (Gillespie et al. 2024), we are modeling the joint distributions of bee floral resource plant species across Pennsylvania and New York, based on over 600,000 citizen science observations from iNaturalist, spanning 2012 to 2022. We use 1 m resolution NAIP aerial imagery from 2017 and 19 bioclimatic variables (BIOCLIM) to predict the spatial distributions of 100 bee floral resource species and over 2,000 other co-occurring plant species.
+Using [Deepbiosphere](https://doi.org/10.1073/pnas.2318296121) (Gillespie et al. 2024), we are modeling the joint distributions of bee floral resource plant species across Pennsylvania and New York, based on over 600,000 citizen science observations from iNaturalist, spanning 2012 to 2022. We use 1 m resolution NAIP aerial imagery from 2017 and 19 bioclimatic variables (BIOCLIM) to predict the spatial distributions of 100 bee floral resource species and over 2,000 other co-occurring plant species.
 
-![Deepbiosphere prediction for _Cercis canadensis_ in Pennsylvania](plots/C_canadensis_db.png)
+![Deepbiosphere prediction for *Cercis canadensis* in Pennsylvania](plots/C_canadensis_db.png)
 
 ### Temporal predictions
 
-To estimate bloom times from the data, we are modeling the curves of seasonal peaks in citizen science observations (iNaturalist) corresponding to flowering for the entire northeastern US, accounting for geographic variations in climate using thermal time (growing degree days). To do this, we are using a finite mixture modeling approach. This assumes the overall distribution of iNaturalist reports represents a mixture of normal distributions, of which observations of flowers blooming is one.
+To estimate bloom times, we are modeling the curves of seasonal peaks in citizen science observations (from iNaturalist) corresponding to flowering for the entire northeastern US, accounting for geographic variations in climate using thermal time (growing degree days).
 
-![Mixture model bloom prediction applied to growing degree day progression in Pennsylvania](plots/flrpb_Ccanadensis.gif)
+![Weekly growing degree day progression in Pennsylvania over 2017](plots/pa_gdd_256m.gif)
+
+We are applying a finite mixture modeling approach to approximate the distribution of bloom observations over growing degree day. Because we are using mostly unsorted citizen science data, all kinds of reproductive life stages are included in addition to blooming. By assuming that the overall distribution of iNaturalist reports for a species represents a mixture of multiple normal distributions, we can single out a curve that best fits the species' bloom phenology.
+
+![Distribution of observation frequency for _Cercis canadensis_ over growing degree days in 2017. Smaller orange distribution represents observations with annotations indicating that flowers were observed. In this case, distribution 1 matches blooming.](plots/C_canadensis_mixmod.png)
 
 ### Combined spatial and temporal predictions
 
-We can combine the Deepbiosphere spatial distribution model with the finite mixture model distribution over thermal time to estimate bloom over space and time.
+We can then combine the Deepbiosphere spatial distribution model with the finite mixture model-derived bloom curve over thermal time to estimate blooms over space and time.
 
 ![Probability of bloom based on deepbiosphere and bloom prediction](plots/stflrpb_Ccanadensis.gif)
 
@@ -48,10 +52,8 @@ Below are links to details about the preliminary results.
 
 **Applying Deepflora workflow**
 
-[Example: _Cercis canadensis_](3_curvemaps.qmd)
+[Example: *Cercis canadensis*](3_curvemaps.qmd)
 
 ## References
 
-Gillespie LE, Ruffley M, Exposito-Alonso M (2024) Deep learning models map rapid plant species changes from citizen science and remote sensing data. _Proceedings of the National Academy of Sciences_ 121:e2318296121. https://doi.org/10.1073/pnas.2318296121
-
-
+Gillespie LE, Ruffley M, Exposito-Alonso M (2024) Deep learning models map rapid plant species changes from citizen science and remote sensing data. *Proceedings of the National Academy of Sciences* 121:e2318296121. https://doi.org/10.1073/pnas.2318296121
