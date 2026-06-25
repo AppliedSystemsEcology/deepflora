@@ -4,7 +4,7 @@ title: "Overview of deepflora project"
 
 ## Background
 
-A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is of critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.
+A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.
 
 ## Methods
 
