@@ -30,7 +30,7 @@ for(i in seq_along(arraytifs)){
   fname <- paste0("albers_", basename(arraytifs[i]))
   fname.outpath <- file.path(outdir, fname)
 
-  if(file.exists(fname.outpath)){
+  if(file.exists(fname.outpath) & file.info(fname.outpath)$size > 0){
     cat("File", fname, "already exists at", outdir, "\n")
     next
   }
@@ -41,7 +41,7 @@ for(i in seq_along(arraytifs)){
 
   projtif <- project(arraytif.i, temp.ras)
 
-  writeRaster(projtif, fname.outpath,
+  writeRaster(projtif, fname.outpath, overwrite=TRUE,
               gdal = c("COMPRESS=LZW", "BIGTIFF=YES",
                        "TILED=YES", "BLOCKXSIZE=256", "BLOCKYSIZE=256",
                        "INTERLEAVE=BAND"))
