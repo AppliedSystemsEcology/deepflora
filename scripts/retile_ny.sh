@@ -7,7 +7,7 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
 #SBATCH --time=02:00:00
-#SBATCH --array=0
+#SBATCH --array=0-31
 #SBATCH --output=logs/retile_%A.out
 #SBATCH --error=logs/retile_%A.err
 
