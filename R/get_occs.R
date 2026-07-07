@@ -12,7 +12,11 @@ gddNEext <- readRDS("data/gddNEext.rds") %>%
 
 
 species2usagekey <- function(species){
-  name_backbone_checklist(species) %>% # match to backbone
+  name_backbone_checklist(species,
+                          bucket_size = 50,
+                          sleep = 2,
+                          curlopts = list(http_version = 2, timeout_ms = 60000)  # 60 second timeout
+                          ) %>% # match to backbone
     filter(!matchType == "NONE") %>% # get matched names
     pull(usageKey)
 }
