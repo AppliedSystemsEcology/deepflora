@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH --job-name=retile
 #SBATCH --account=hlc30_cr_default
-#SBATCH --partition=standard
+#SBATCH --partition=himem
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=16
-#SBATCH --mem=128G
-#SBATCH --time=02:00:00
-#SBATCH --array=0
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=20G
+#SBATCH --time=12:00:00
+#SBATCH --array=0-31
 #SBATCH --output=logs/retile_%A.out
 #SBATCH --error=logs/retile_%A.err
 
