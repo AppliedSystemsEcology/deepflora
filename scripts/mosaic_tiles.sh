@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=pymerge_ny
 #SBATCH --account=hlc30_cr_default
-#SBATCH --partition=standard
+#SBATCH --partition=himem
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=64G
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=40G
 #SBATCH --time=24:00:00
 #SBATCH --output=logs/pymerge_pa_%A.out
 #SBATCH --error=logs/pymerge_pa_%A.err
