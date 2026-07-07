@@ -29,9 +29,9 @@ mkdir -p "$OUT_SUBDIR"
 for TILE in "${IN_DIR}"/*.tif; do
   BASENAME=$(basename "$TILE")
 
-  # if [[ -e "${OUT_SUBDIR}/${BASENAME}" ]]; then
-  #   echo "$BASENAME already exists"
-  # else
+  if [[ -s "${OUT_SUBDIR}/${BASENAME}" ]]; then
+    echo "$BASENAME already exists"
+  else
     echo "Retiling $BASENAME in $(basename "${IN_DIR}")"
 
     gdal_translate \
