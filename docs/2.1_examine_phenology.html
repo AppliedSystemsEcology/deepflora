@@ -219,7 +219,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Using <code>rgbif</code>, I searched for all research-grade iNaturalist observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee’s data and work. Then I fit finite mixture models assuming normal distributions, using the <code>mixtools</code> R package. I tested fitting from 1 to 4 distributions and I’m showing the model with the lowest log-likelihood for each species in these results.</p>
+<p>Using <code>rgbif</code>, I searched for all research-grade iNaturalist observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee’s data and work. Data coverage is shown below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/gddpts.png" class="img-fluid figure-img"></p>
+<figcaption>Coverage of GBIF data used to fit finite mixture models. Cyan box shows extent of GDD data used, which covers 2016-2020.</figcaption>
+</figure>
+</div>
+<p>Then I fit finite mixture models assuming normal distributions, using the <code>mixtools</code> R package. I tested fitting from 1 to 4 distributions and I’m showing the model with the lowest log-likelihood for each species in these results.</p>
 <p>Data from GBIF includes occasional information on plant reproductive stage, if it was available from the observation. I’ve added this in these plots to provide some reference for the finite mixture model predictions, in orange.</p>
 <section id="top-50-reported-flowering-species-phenology-curves" class="level2">
 <h2 class="anchored" data-anchor-id="top-50-reported-flowering-species-phenology-curves">Top 50 reported flowering species phenology curves</h2>

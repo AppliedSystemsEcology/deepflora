@@ -44,6 +44,19 @@ top100_gbif <- get_NEgbif(top100_sp_flr$species)
 
 top100 <- occ_download_import(as.download("./data-raw/big/0049871-260519110011954.zip"))
 
+# plot
+# library(tidyverse)
+# usa <- readRDS("data/spatial/usa.rds")
+# gddext <- readRDS("data/gddNEext.rds")
+# gbifpts <- sf::st_as_sf(top100, coords = c("decimalLongitude", "decimalLatitude"), crs=crs(usa))
+#
+# gbifptsplot <- ggplot(st_as_sf(usa)) + geom_sf(fill="yellowgreen", color = "white") +
+#   geom_sf(data = sf::st_as_sf(gddext), color = "cyan", fill = NA) +
+#   geom_sf(data=gbifpts, size = 0.1, alpha = 0.3) +
+#   coord_sf(xlim = ext(gddext)[1:2], ylim = ext(gddext)[3:4])
+#
+# ggsave("plots/gddpts.png", gbifptsplot, bg="white", height=3, width=4, units="in")
+
 top100sp <- unique(top100$species)
 
 top100_wk <- top100 %>%

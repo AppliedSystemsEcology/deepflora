@@ -48,7 +48,7 @@
     "href": "2.1_examine_phenology.html",
     "title": "Phenology",
     "section": "",
-    "text": "Using rgbif, I searched for all research-grade iNaturalist observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee’s data and work. Then I fit finite mixture models assuming normal distributions, using the mixtools R package. I tested fitting from 1 to 4 distributions and I’m showing the model with the lowest log-likelihood for each species in these results.\nData from GBIF includes occasional information on plant reproductive stage, if it was available from the observation. I’ve added this in these plots to provide some reference for the finite mixture model predictions, in orange.",
+    "text": "Using rgbif, I searched for all research-grade iNaturalist observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee’s data and work. Data coverage is shown below.\nThen I fit finite mixture models assuming normal distributions, using the mixtools R package. I tested fitting from 1 to 4 distributions and I’m showing the model with the lowest log-likelihood for each species in these results.\nData from GBIF includes occasional information on plant reproductive stage, if it was available from the observation. I’ve added this in these plots to provide some reference for the finite mixture model predictions, in orange.",
     "crumbs": [
       "Modeling bloom phenology",
       "Phenology mixture models"
@@ -224,7 +224,7 @@
     "href": "index.html",
     "title": "Overview of deepflora project",
     "section": "",
-    "text": "A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is of critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.",
+    "text": "A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.",
     "crumbs": [
       "Overview"
     ]
@@ -234,7 +234,7 @@
     "href": "index.html#background",
     "title": "Overview of deepflora project",
     "section": "",
-    "text": "A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is of critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.",
+    "text": "A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.",
     "crumbs": [
       "Overview"
     ]
