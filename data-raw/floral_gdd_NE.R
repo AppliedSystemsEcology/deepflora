@@ -30,7 +30,7 @@ combined_sp_flr <- combined_sp |>
                            pull(scientificName)))
 
 # find 100 most common and evently distributed species
-top100_sp_flr <- combined_sp_flr |> mutate(evenness = (50-abs(50-pa.pc))/50) |>
+top100_sp_flr <- combined_sp_flr |> # mutate(evenness = (50-abs(50-pa.pc))/50) |>
   filter(pa>=10 & ny>=10) |>
   slice_max(n=100, order_by = total)
 

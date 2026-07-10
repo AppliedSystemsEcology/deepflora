@@ -7,8 +7,8 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=40G
 #SBATCH --time=24:00:00
-#SBATCH --output=logs/pymerge_pa_%A.out
-#SBATCH --error=logs/pymerge_pa_%A.err
+#SBATCH --output=logs/pymerge_ny_%A.out
+#SBATCH --error=logs/pymerge_ny_%A.err
 #SBATCH --array=0-31
 
 module load anaconda
