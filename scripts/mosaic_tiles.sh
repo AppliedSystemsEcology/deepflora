@@ -4,8 +4,8 @@
 #SBATCH --partition=himem
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=2
-#SBATCH --mem=40G
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=20G
 #SBATCH --time=72:00:00
 #SBATCH --output=logs/pymerge_ny_%A.out
 #SBATCH --error=logs/pymerge_ny_%A.err
