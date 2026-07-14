@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=40G
-#SBATCH --time=24:00:00
+#SBATCH --time=72:00:00
 #SBATCH --output=logs/pymerge_ny_%A.out
 #SBATCH --error=logs/pymerge_ny_%A.err
 #SBATCH --array=0-31
