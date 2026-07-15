@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=64G
+#SBATCH --mem=40G
 #SBATCH --time=48:00:00
 #SBATCH --output=logs/prjny_%A.out
 #SBATCH --error=logs/prjny_%A.err
