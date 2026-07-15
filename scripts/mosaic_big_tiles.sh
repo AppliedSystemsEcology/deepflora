@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=pymerge_pa
+#SBATCH --job-name=pymerge_ny
 #SBATCH --account=hlc30_cr_default
 #SBATCH --partition=standard
 #SBATCH --nodes=1
@@ -14,5 +14,5 @@ module load anaconda
 source activate py-geo
 
 python /storage/home/kbl5733/work/github/deepflora/scripts/mosaic_big_tiles.py \
-  /storage/home/kbl5733/gstorage/data/deepflora/maps/ny_2017_merge_block \
+  /storage/home/kbl5733/gstorage/data/deepflora/maps/ny_2017_merge \
   /storage/home/kbl5733/gstorage/data/deepflora/maps/out
