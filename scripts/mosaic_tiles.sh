@@ -9,7 +9,7 @@
 #SBATCH --time=72:00:00
 #SBATCH --output=logs/pymerge_ny_%A.out
 #SBATCH --error=logs/pymerge_ny_%A.err
-#SBATCH --array=0-31
+#SBATCH --array=0,16
 
 module load anaconda
 source activate py-geo
