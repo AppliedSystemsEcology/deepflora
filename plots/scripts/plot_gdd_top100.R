@@ -35,13 +35,21 @@ repstages <- unique(plants_gdd$reproductiveCondition)
 repstage_flr <- c("flowers", "flowers|fruits or seeds", "flower buds", "flowers|flower buds", "flowers|fruits or seeds|flower buds", "fruits or seeds|flower buds")
 flr_gdd <- plants_gdd |> dplyr::filter(reproductiveCondition %in% repstage_flr)
 
+# phenovision dataset
+phenovis <- read.csv("data/pheno_sp.csv") |> rename(species = scientific_name) |>
+  mutate(trait = fct_recode(trait, `Phenovision fruit` = "fruit", `Phenovision flower` = "flower"))
+
 # facet plot first 50
 
 mix_plot_50 <- ggplot(plants_mix %>% dplyr::filter(species %in% names(mixmods)[1:50]), aes(gdd)) +
-  geom_histogram(binwidth = 50, fill = "yellowgreen") +
+  geom_histogram(aes(fill = "All iNat"), binwidth = 50) +
+  geom_histogram(data = phenovis %>% dplyr::filter(species %in% names(mixmods)[1:50]) %>%
+                   mutate(species = fct_relevel(species, names(mixmods))),
+                 aes(fill = trait),
+                 binwidth = 50, position = "stack", alpha = 0.6) +
   geom_histogram(data = flr_gdd %>% dplyr::filter(species %in% names(mixmods)[1:50]) %>%
                    mutate(species = fct_relevel(species, names(mixmods))),
-                 binwidth = 50, fill = "tan1") +
+                 aes(fill = "Annotated iNat"), color = "black", binwidth = 50) +
   labs(x=NULL, y="Count") + xlim(c(0,3400)) +
   geom_line(data = mixdists %>% dplyr::filter(species %in% names(mixmods)[1:50]),
             mapping = aes(x = x, y = y, color = dist)) +
@@ -51,16 +59,36 @@ mix_plot_50 <- ggplot(plants_mix %>% dplyr::filter(species %in% names(mixmods)[1
     hjust   = 1.1,
     vjust   = 1.2) +
   facet_wrap(~ species, scales = "free_y", ncol = 2) +
-  scale_color_manual(values = c("red3","turquoise4","burlywood4"))+
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "All iNat" = "gray",
+      "Phenovision flower" = "orange",
+      "Phenovision fruit" = "purple",
+      "Annotated iNat" = NA
+    )
+  ) +
+  scale_color_manual(
+    name = "Mix mod distr.",
+    values = c(
+      "1" = "red3",
+      "2" = "turquoise4",
+      "3" = "burlywood4"
+      )
+    ) +
   egg::theme_article() +
-  theme(legend.position = "none")
+  theme(legend.position = "top")
 
 # next 50
 mix_plot_100 <- ggplot(plants_mix %>% dplyr::filter(species %in% names(mixmods)[51:100]), aes(gdd)) +
-  geom_histogram(binwidth = 50, fill = "yellowgreen") +
+  geom_histogram(aes(fill = "All iNat"), binwidth = 50) +
+  geom_histogram(data = phenovis %>% dplyr::filter(species %in% names(mixmods)[51:100]) %>%
+                   mutate(species = fct_relevel(species, names(mixmods))),
+                 aes(fill = trait),
+                 binwidth = 50, position = "stack", alpha = 0.6) +
   geom_histogram(data = flr_gdd %>% dplyr::filter(species %in% names(mixmods)[51:100]) %>%
                    mutate(species = fct_relevel(species, names(mixmods))),
-                 binwidth = 50, fill = "tan1") +
+                 aes(fill = "Annotated iNat"), color = "black", binwidth = 50) +
   labs(x=NULL, y="Count") + xlim(c(0,3400)) +
   geom_line(data = mixdists %>% dplyr::filter(species %in% names(mixmods)[51:100]),
             mapping = aes(x = x, y = y, color = dist)) +
@@ -70,12 +98,28 @@ mix_plot_100 <- ggplot(plants_mix %>% dplyr::filter(species %in% names(mixmods)[
     hjust   = 1.1,
     vjust   = 1.2) +
   facet_wrap(~ species, scales = "free_y", ncol = 2) +
-  scale_color_manual(values = c("red3","turquoise4","burlywood4"))+
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "All iNat" = "gray",
+      "Phenovision flower" = "orange",
+      "Phenovision fruit" = "purple",
+      "Annotated iNat" = NA
+    )
+  ) +
+  scale_color_manual(
+    name = "Mix mod distr.",
+    values = c(
+      "1" = "red3",
+      "2" = "turquoise4",
+      "3" = "burlywood4"
+    )
+  ) +
   egg::theme_article() +
-  theme(legend.position = "none")
+  theme(legend.position = "top")
 
-ggsave("plots/mixture_NE0-50.png", mix_plot_50, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
-ggsave("plots/mixture_NE50-100.png", mix_plot_100, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
+ggsave("plots/mixture_NE0-50v2.png", mix_plot_50, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
+ggsave("plots/mixture_NE50-100v2.png", mix_plot_100, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
 
 
 # THINNING
