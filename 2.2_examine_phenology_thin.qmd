@@ -1,7 +1,6 @@
 ---
 title: "Phenology curves - thinned"
 format: html
-editor: visual
 execute: 
   echo: false
 ---
@@ -12,8 +11,10 @@ I experimented with thinning the species observations to retain only one entry p
 
 Overall distributions are shown in green. I also thinned the dataset of records that explicitly reported flowering, though these appear to be less redundant already. The thinned flowering distribution is shown in blue, while the original dataset is shown in orange. The curves are the finite mixture model estimates. Color of curves don't mean anything except the order based on growing degree day. Ordered by total number of observations, indicated in the upper right corner of each panel.
 
-![](plots/mixture_NE0-50_thinned.png)
+Ordered by total number of observations, indicated in the upper right corner of each panel. Grey histogram bars represent the distribution of the overall dataset (thinned by prism grid cell and week), while empty bars with black outlines represent a subset of these records that explicitly report flowering. The curves are the finite mixture model estimates fit to the overall (thinned) dataset. Color of curves don't mean anything except the order based on growing degree day. **The color-coded bars are histograms of iNaturalist images that have been machine-assigned to phenological traits (orange=flower, purple=fruit) by the Phenovision project, also after thinning [(Dinnage et al. 2025)](https://doi.org/10.1111%2F2041-210X.70081).**
+
+![](plots/mixture_NE0-50_thinnedv2.png)
 
 ## Next 50 most reported flowering species
 
-![](plots/mixture_NE50-100_thinned.png)
+![](plots/mixture_NE50-100_thinnedv2.png)

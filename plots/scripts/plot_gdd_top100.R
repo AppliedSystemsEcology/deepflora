@@ -157,53 +157,135 @@ flr_gdd.thin <- flr_gdd %>% sf::st_drop_geometry() %>%
   group_by(species, year, week, prismid, gdd) %>%
   summarize(flowering = TRUE, n.flr=n(), .groups = "drop")
 
+# phenovision dataset thinned
+phenovis.thin <- phenovis %>%
+  group_by(species, year, week, trait, prismid, gdd) %>%
+  summarize(n=n(), .groups = "drop")
+
 # thinned facet plot first 50
 
 mix_plot_50.thin <- ggplot(plants_mix.thin %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]), aes(gdd)) +
-  geom_histogram(binwidth = 50, fill = "yellowgreen") +
-  geom_histogram(data = flr_gdd %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]) %>%
+  geom_histogram(aes(fill = "All iNat"), binwidth = 50) +
+  geom_histogram(data = phenovis.thin %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]) %>%
                    mutate(species = fct_relevel(species, names(mixmods.thin))),
-                 binwidth = 50, fill = "tan1") +
+                 aes(fill = trait),
+                 binwidth = 50, position = "stack", alpha = 0.6) +
   geom_histogram(data = flr_gdd.thin %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]) %>%
                    mutate(species = fct_relevel(species, names(mixmods.thin))),
-                 binwidth = 50, fill = "blue") +
+                 aes(fill = "Annotated iNat"), color = "black", binwidth = 50) +
   labs(x=NULL, y="Count") + xlim(c(0,3400)) +
   geom_line(data = mixdists.thin %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]),
             mapping = aes(x = x, y = y, color = dist)) +
   geom_text(
-    data = plants_obs_count.thin %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]),
+    data = plants_obs_count %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]),
     mapping = aes(x = Inf, y = Inf, label = Freq),
     hjust   = 1.1,
     vjust   = 1.2) +
   facet_wrap(~ species, scales = "free_y", ncol = 2) +
-  scale_color_manual(values = c("red3","turquoise4","burlywood4"))+
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "All iNat" = "gray",
+      "Phenovision flower" = "orange",
+      "Phenovision fruit" = "purple",
+      "Annotated iNat" = NA
+    )
+  ) +
+  scale_color_manual(
+    name = "Mix mod distr.",
+    values = c(
+      "1" = "red3",
+      "2" = "turquoise4",
+      "3" = "burlywood4"
+    )
+  ) +
   egg::theme_article() +
-  theme(legend.position = "none")
+  theme(legend.position = "top")
 
 # next 50
 mix_plot_100.thin <- ggplot(plants_mix.thin %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]), aes(gdd)) +
-  geom_histogram(binwidth = 50, fill = "yellowgreen") +
-  geom_histogram(data = flr_gdd %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]) %>%
+  geom_histogram(aes(fill = "All iNat"), binwidth = 50) +
+  geom_histogram(data = phenovis.thin %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]) %>%
                    mutate(species = fct_relevel(species, names(mixmods.thin))),
-                 binwidth = 50, fill = "tan1") +
+                 aes(fill = trait),
+                 binwidth = 50, position = "stack", alpha = 0.6) +
   geom_histogram(data = flr_gdd.thin %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]) %>%
                    mutate(species = fct_relevel(species, names(mixmods.thin))),
-                 binwidth = 50, fill = "blue") +
+                 aes(fill = "Annotated iNat"), color = "black", binwidth = 50) +
   labs(x=NULL, y="Count") + xlim(c(0,3400)) +
   geom_line(data = mixdists.thin %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]),
             mapping = aes(x = x, y = y, color = dist)) +
   geom_text(
-    data = plants_obs_count.thin %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]),
+    data = plants_obs_count %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]),
     mapping = aes(x = Inf, y = Inf, label = Freq),
     hjust   = 1.1,
     vjust   = 1.2) +
   facet_wrap(~ species, scales = "free_y", ncol = 2) +
-  scale_color_manual(values = c("red3","turquoise4","burlywood4"))+
+  scale_fill_manual(
+    name = NULL,
+    values = c(
+      "All iNat" = "gray",
+      "Phenovision flower" = "orange",
+      "Phenovision fruit" = "purple",
+      "Annotated iNat" = NA
+    )
+  ) +
+  scale_color_manual(
+    name = "Mix mod distr.",
+    values = c(
+      "1" = "red3",
+      "2" = "turquoise4",
+      "3" = "burlywood4"
+    )
+  ) +
   egg::theme_article() +
-  theme(legend.position = "none")
+  theme(legend.position = "top")
 
-ggsave("plots/mixture_NE0-50_thinned.png", mix_plot_50.thin, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
-ggsave("plots/mixture_NE50-100_thinned.png", mix_plot_100.thin, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
+# mix_plot_50.thin <- ggplot(plants_mix.thin %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]), aes(gdd)) +
+#   geom_histogram(binwidth = 50, fill = "yellowgreen") +
+#   geom_histogram(data = flr_gdd %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]) %>%
+#                    mutate(species = fct_relevel(species, names(mixmods.thin))),
+#                  binwidth = 50, fill = "tan1") +
+#   geom_histogram(data = flr_gdd.thin %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]) %>%
+#                    mutate(species = fct_relevel(species, names(mixmods.thin))),
+#                  binwidth = 50, fill = "blue") +
+#   labs(x=NULL, y="Count") + xlim(c(0,3400)) +
+#   geom_line(data = mixdists.thin %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]),
+#             mapping = aes(x = x, y = y, color = dist)) +
+#   geom_text(
+#     data = plants_obs_count.thin %>% dplyr::filter(species %in% names(mixmods.thin)[1:50]),
+#     mapping = aes(x = Inf, y = Inf, label = Freq),
+#     hjust   = 1.1,
+#     vjust   = 1.2) +
+#   facet_wrap(~ species, scales = "free_y", ncol = 2) +
+#   scale_color_manual(values = c("red3","turquoise4","burlywood4"))+
+#   egg::theme_article() +
+#   theme(legend.position = "none")
+#
+# # next 50
+# mix_plot_100.thin <- ggplot(plants_mix.thin %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]), aes(gdd)) +
+#   geom_histogram(binwidth = 50, fill = "yellowgreen") +
+#   geom_histogram(data = flr_gdd %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]) %>%
+#                    mutate(species = fct_relevel(species, names(mixmods.thin))),
+#                  binwidth = 50, fill = "tan1") +
+#   geom_histogram(data = flr_gdd.thin %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]) %>%
+#                    mutate(species = fct_relevel(species, names(mixmods.thin))),
+#                  binwidth = 50, fill = "blue") +
+#   labs(x=NULL, y="Count") + xlim(c(0,3400)) +
+#   geom_line(data = mixdists.thin %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]),
+#             mapping = aes(x = x, y = y, color = dist)) +
+#   geom_text(
+#     data = plants_obs_count.thin %>% dplyr::filter(species %in% names(mixmods.thin)[51:100]),
+#     mapping = aes(x = Inf, y = Inf, label = Freq),
+#     hjust   = 1.1,
+#     vjust   = 1.2) +
+#   facet_wrap(~ species, scales = "free_y", ncol = 2) +
+#   scale_color_manual(values = c("red3","turquoise4","burlywood4"))+
+#   egg::theme_article() +
+#   theme(legend.position = "none")
+
+ggsave("plots/mixture_NE0-50_thinnedv2.png", mix_plot_50.thin, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
+ggsave("plots/mixture_NE50-100_thinnedv2.png", mix_plot_100.thin, width = 8, height = 48, bg = "white", dpi = 300, limitsize = FALSE)
 
 
 # write out data

@@ -182,6 +182,23 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Rare plants</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4_rareplants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maps and growing degree days</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -223,11 +240,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="top-50-reported-flowering-species" class="level2">
 <h2 class="anchored" data-anchor-id="top-50-reported-flowering-species">Top 50 reported flowering species</h2>
 <p>Overall distributions are shown in green. I also thinned the dataset of records that explicitly reported flowering, though these appear to be less redundant already. The thinned flowering distribution is shown in blue, while the original dataset is shown in orange. The curves are the finite mixture model estimates. Color of curves don’t mean anything except the order based on growing degree day. Ordered by total number of observations, indicated in the upper right corner of each panel.</p>
-<p><img src="plots/mixture_NE0-50_thinned.png" class="img-fluid"></p>
+<p>Ordered by total number of observations, indicated in the upper right corner of each panel. Grey histogram bars represent the distribution of the overall dataset (thinned by prism grid cell and week), while empty bars with black outlines represent a subset of these records that explicitly report flowering. The curves are the finite mixture model estimates fit to the overall (thinned) dataset. Color of curves don’t mean anything except the order based on growing degree day. <strong>The color-coded bars are histograms of iNaturalist images that have been machine-assigned to phenological traits (orange=flower, purple=fruit) by the Phenovision project, also after thinning <a href="https://doi.org/10.1111%2F2041-210X.70081">(Dinnage et al.&nbsp;2025)</a>.</strong></p>
+<p><img src="plots/mixture_NE0-50_thinnedv2.png" class="img-fluid"></p>
 </section>
 <section id="next-50-most-reported-flowering-species" class="level2">
 <h2 class="anchored" data-anchor-id="next-50-most-reported-flowering-species">Next 50 most reported flowering species</h2>
-<p><img src="plots/mixture_NE50-100_thinned.png" class="img-fluid"></p>
+<p><img src="plots/mixture_NE50-100_thinnedv2.png" class="img-fluid"></p>
 
 
 </section>

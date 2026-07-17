@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Accuracy metrics – spatial cross-validation – Deepflora</title>
+<title>Rare plants – Deepflora</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1.1_accuracy_unif.html">Applying Deepbiosphere</a></li><li class="breadcrumb-item"><a href="./1.2_accuracy_spatcv.html">Accuracy: spatial cross validation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4_rareplants.html">Rare plants</a></li><li class="breadcrumb-item"><a href="./4_rareplants.html">Maps and growing degree days</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1.2_accuracy_spatcv.html" class="sidebar-item-text sidebar-link active">
+  <a href="./1.2_accuracy_spatcv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accuracy: spatial cross validation</span></a>
   </div>
 </li>
@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4_rareplants.html" class="sidebar-item-text sidebar-link">
+  <a href="./4_rareplants.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Maps and growing degree days</span></a>
   </div>
 </li>
@@ -209,25 +209,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#binary-classification-metrics" id="toc-binary-classification-metrics" class="nav-link active" data-scroll-target="#binary-classification-metrics">Binary classification metrics</a>
+  <li><a href="#rare" id="toc-rare" class="nav-link active" data-scroll-target="#rare">Rare</a>
   <ul class="collapse">
-  <li><a href="#presence-accuracy" id="toc-presence-accuracy" class="nav-link" data-scroll-target="#presence-accuracy">Presence accuracy</a></li>
-  <li><a href="#precision-score" id="toc-precision-score" class="nav-link" data-scroll-target="#precision-score">Precision score</a></li>
-  <li><a href="#recall-score" id="toc-recall-score" class="nav-link" data-scroll-target="#recall-score">Recall score</a></li>
-  <li><a href="#f1-score" id="toc-f1-score" class="nav-link" data-scroll-target="#f1-score">F1 score</a></li>
+  <li><a href="#asclepias-purpurascens" id="toc-asclepias-purpurascens" class="nav-link" data-scroll-target="#asclepias-purpurascens"><em>Asclepias purpurascens</em></a></li>
+  <li><a href="#asclepias-verticillata" id="toc-asclepias-verticillata" class="nav-link" data-scroll-target="#asclepias-verticillata"><em>Asclepias verticillata</em></a></li>
+  <li><a href="#solidago-speciosa" id="toc-solidago-speciosa" class="nav-link" data-scroll-target="#solidago-speciosa"><em>Solidago speciosa</em></a></li>
   </ul></li>
-  <li><a href="#discrimination-metrics" id="toc-discrimination-metrics" class="nav-link" data-scroll-target="#discrimination-metrics">Discrimination metrics</a>
+  <li><a href="#common" id="toc-common" class="nav-link" data-scroll-target="#common">Common</a>
   <ul class="collapse">
-  <li><a href="#area-under-curve-roc-uncalibrated" id="toc-area-under-curve-roc-uncalibrated" class="nav-link" data-scroll-target="#area-under-curve-roc-uncalibrated">Area under curve [ROC] – uncalibrated</a></li>
-  <li><a href="#area-under-curve-prc-uncalibrated" id="toc-area-under-curve-prc-uncalibrated" class="nav-link" data-scroll-target="#area-under-curve-prc-uncalibrated">Area under curve [PRC] – uncalibrated</a></li>
-  <li><a href="#calibrated-area-under-curves" id="toc-calibrated-area-under-curves" class="nav-link" data-scroll-target="#calibrated-area-under-curves">Calibrated area under curves</a></li>
-  </ul></li>
-  <li><a href="#ranking-metrics" id="toc-ranking-metrics" class="nav-link" data-scroll-target="#ranking-metrics">Ranking metrics</a>
-  <ul class="collapse">
-  <li><a href="#species-top-1" id="toc-species-top-1" class="nav-link" data-scroll-target="#species-top-1">Species top 1</a></li>
-  <li><a href="#species-top-5" id="toc-species-top-5" class="nav-link" data-scroll-target="#species-top-5">Species top 5</a></li>
-  <li><a href="#species-top-30" id="toc-species-top-30" class="nav-link" data-scroll-target="#species-top-30">Species top 30</a></li>
-  <li><a href="#species-top-100" id="toc-species-top-100" class="nav-link" data-scroll-target="#species-top-100">Species top 100</a></li>
+  <li><a href="#asclepias-syriaca" id="toc-asclepias-syriaca" class="nav-link" data-scroll-target="#asclepias-syriaca"><em>Asclepias syriaca</em></a></li>
+  <li><a href="#eupatorium-perfoliatum" id="toc-eupatorium-perfoliatum" class="nav-link" data-scroll-target="#eupatorium-perfoliatum"><em>Eupatorium perfoliatum</em></a></li>
+  <li><a href="#oenothera-biennis" id="toc-oenothera-biennis" class="nav-link" data-scroll-target="#oenothera-biennis"><em>Oenothera biennis</em></a></li>
+  <li><a href="#phlox-paniculata" id="toc-phlox-paniculata" class="nav-link" data-scroll-target="#phlox-paniculata"><em>Phlox paniculata</em></a></li>
+  <li><a href="#solidago-canadensis" id="toc-solidago-canadensis" class="nav-link" data-scroll-target="#solidago-canadensis"><em>Solidago canadensis</em></a></li>
+  <li><a href="#solidago-gigantea" id="toc-solidago-gigantea" class="nav-link" data-scroll-target="#solidago-gigantea"><em>Solidago gigantea</em></a></li>
+  <li><a href="#solidago-juncea" id="toc-solidago-juncea" class="nav-link" data-scroll-target="#solidago-juncea"><em>Solidago juncea</em></a></li>
+  <li><a href="#symphyotrichum-lateriflorum" id="toc-symphyotrichum-lateriflorum" class="nav-link" data-scroll-target="#symphyotrichum-lateriflorum"><em>Symphyotrichum lateriflorum</em></a></li>
+  <li><a href="#symphyotrichum-pilosum" id="toc-symphyotrichum-pilosum" class="nav-link" data-scroll-target="#symphyotrichum-pilosum"><em>Symphyotrichum pilosum</em></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -235,9 +233,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1.1_accuracy_unif.html">Applying Deepbiosphere</a></li><li class="breadcrumb-item"><a href="./1.2_accuracy_spatcv.html">Accuracy: spatial cross validation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4_rareplants.html">Rare plants</a></li><li class="breadcrumb-item"><a href="./4_rareplants.html">Maps and growing degree days</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Accuracy metrics – spatial cross-validation</h1>
+<h1 class="title">Rare plants</h1>
 </div>
 
 
@@ -254,139 +252,70 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>These are the results from conducting spatial cross validation. Because of the shapes of Pennsylvania and New York, I used 10 bands running North-South across these states as the test bands for 10-fold cross validation. Below I show the distributions for the overall model metrics for PA and NY. Significance comparisons are made between the cross-validation accuracy metrics of deepbiosphere and two conventional modeling approaches: Maxent trained on bioclimatic data and random forest trained on bioclimatic data.</p>
-<section id="binary-classification-metrics" class="level2">
-<h2 class="anchored" data-anchor-id="binary-classification-metrics">Binary classification metrics</h2>
-<p>These metrics threshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics</p>
-<section id="presence-accuracy" class="level3">
-<h3 class="anchored" data-anchor-id="presence-accuracy">Presence accuracy</h3>
-<p>The fraction of examples where the correct species observed at that location was predicted as present.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/zero_one_accuracy.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing presence accuracy from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
+<section id="rare" class="level1">
+<h1>Rare</h1>
+<section id="asclepias-purpurascens" class="level2">
+<h2 class="anchored" data-anchor-id="asclepias-purpurascens"><em>Asclepias purpurascens</em></h2>
+<p><img src="plots/rare_plants/map_Asclepias_purpurascens.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Asclepias_purpurascens.png" class="img-fluid"></p>
 </section>
-<section id="precision-score" class="level3">
-<h3 class="anchored" data-anchor-id="precision-score">Precision score</h3>
-<p><strong>Precision</strong> Measures how many species predicted to be present were actually present.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/precision_score.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing precision score from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
+<section id="asclepias-verticillata" class="level2">
+<h2 class="anchored" data-anchor-id="asclepias-verticillata"><em>Asclepias verticillata</em></h2>
+<p><img src="plots/rare_plants/map_Asclepias_verticillata.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Asclepias_verticillata.png" class="img-fluid"></p>
 </section>
-<section id="recall-score" class="level3">
-<h3 class="anchored" data-anchor-id="recall-score">Recall score</h3>
-<p><strong>Recall</strong> Measures how many of the true species present are predicted as present.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/recall_score.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing recall score from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
-</section>
-<section id="f1-score" class="level3">
-<h3 class="anchored" data-anchor-id="f1-score">F1 score</h3>
-<p><strong>F1 score</strong> The harmonic mean of precision and recall and represents a conservative mean of the two (i.e.&nbsp;is more affected by low values).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/f1_score.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing F1 score from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
+<section id="solidago-speciosa" class="level2">
+<h2 class="anchored" data-anchor-id="solidago-speciosa"><em>Solidago speciosa</em></h2>
+<p><img src="plots/rare_plants/map_Solidago_speciosa.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Solidago_speciosa.png" class="img-fluid"></p>
 </section>
 </section>
-<section id="discrimination-metrics" class="level2">
-<h2 class="anchored" data-anchor-id="discrimination-metrics">Discrimination metrics</h2>
-<p>In order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of presence thresholds and describe the relationship between threshold change and performance change.</p>
-<section id="area-under-curve-roc-uncalibrated" class="level3">
-<h3 class="anchored" data-anchor-id="area-under-curve-roc-uncalibrated">Area under curve [ROC] – uncalibrated</h3>
-<p><strong>AUC ROC</strong> Area under the receiver operating characteristic curve averaged across species</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/ROC_AUC.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing ROC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
+<section id="common" class="level1">
+<h1>Common</h1>
+<section id="asclepias-syriaca" class="level2">
+<h2 class="anchored" data-anchor-id="asclepias-syriaca"><em>Asclepias syriaca</em></h2>
+<p><img src="plots/rare_plants/map_Asclepias_syriaca.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Asclepias_syriaca.png" class="img-fluid"></p>
 </section>
-<section id="area-under-curve-prc-uncalibrated" class="level3">
-<h3 class="anchored" data-anchor-id="area-under-curve-prc-uncalibrated">Area under curve [PRC] – uncalibrated</h3>
-<p><strong>AUC PRC</strong> Average area under the precision-recall curve averaged across species</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/PRC_AUC.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing PRC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
+<section id="eupatorium-perfoliatum" class="level2">
+<h2 class="anchored" data-anchor-id="eupatorium-perfoliatum"><em>Eupatorium perfoliatum</em></h2>
+<p><img src="plots/rare_plants/map_Eupatorium_perfoliatum.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Eupatorium_perfoliatum.png" class="img-fluid"></p>
 </section>
-<section id="calibrated-area-under-curves" class="level3">
-<h3 class="anchored" data-anchor-id="calibrated-area-under-curves">Calibrated area under curves</h3>
-<p>A model which has extremely low predicted probabilities can still have a high AUCROC if within its range of predicted probabilities the model has good sensitivity and specificity for that class.</p>
-<ul>
-<li><p>This means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.</p></li>
-<li><p>To correct for this, Gillespie et al.&nbsp;(2024) also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.</p></li>
-</ul>
-<section id="calibrated-auc-roc" class="level4">
-<h4 class="anchored" data-anchor-id="calibrated-auc-roc">Calibrated AUC [ROC]</h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/calibrated_ROC_AUC.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing calibrated ROC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
+<section id="oenothera-biennis" class="level2">
+<h2 class="anchored" data-anchor-id="oenothera-biennis"><em>Oenothera biennis</em></h2>
+<p><img src="plots/rare_plants/map_Oenothera_biennis.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Oenothera_biennis.png" class="img-fluid"></p>
 </section>
-<section id="calibrated-auc-prc" class="level4">
-<h4 class="anchored" data-anchor-id="calibrated-auc-prc">Calibrated AUC [PRC]</h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/calibrated_PRC_AUC.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing calibrated PRC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
+<section id="phlox-paniculata" class="level2">
+<h2 class="anchored" data-anchor-id="phlox-paniculata"><em>Phlox paniculata</em></h2>
+<p><img src="plots/rare_plants/map_Phlox_paniculata.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Phlox_paniculata.png" class="img-fluid"></p>
 </section>
+<section id="solidago-canadensis" class="level2">
+<h2 class="anchored" data-anchor-id="solidago-canadensis"><em>Solidago canadensis</em></h2>
+<p><img src="plots/rare_plants/map_Solidago_canadensis.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Solidago_canadensis.png" class="img-fluid"></p>
 </section>
+<section id="solidago-gigantea" class="level2">
+<h2 class="anchored" data-anchor-id="solidago-gigantea"><em>Solidago gigantea</em></h2>
+<p><img src="plots/rare_plants/map_Solidago_gigantea.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Solidago_gigantea.png" class="img-fluid"></p>
 </section>
-<section id="ranking-metrics" class="level2">
-<h2 class="anchored" data-anchor-id="ranking-metrics">Ranking metrics</h2>
-<p><strong>Top-K (top 1, 5, 30, 100)</strong> These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence).</p>
-<section id="species-top-1" class="level3">
-<h3 class="anchored" data-anchor-id="species-top-1">Species top 1</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/species_top1.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing top 1 from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
+<section id="solidago-juncea" class="level2">
+<h2 class="anchored" data-anchor-id="solidago-juncea"><em>Solidago juncea</em></h2>
+<p><img src="plots/rare_plants/map_Solidago_juncea.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Solidago_juncea.png" class="img-fluid"></p>
 </section>
-<section id="species-top-5" class="level3">
-<h3 class="anchored" data-anchor-id="species-top-5">Species top 5</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/species_top5.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing top 5 from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
+<section id="symphyotrichum-lateriflorum" class="level2">
+<h2 class="anchored" data-anchor-id="symphyotrichum-lateriflorum"><em>Symphyotrichum lateriflorum</em></h2>
+<p><img src="plots/rare_plants/map_Symphyotrichum_lateriflorum.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Symphyotrichum_lateriflorum.png" class="img-fluid"></p>
 </section>
-<section id="species-top-30" class="level3">
-<h3 class="anchored" data-anchor-id="species-top-30">Species top 30</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/species_top30.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing top 30 from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
-</section>
-<section id="species-top-100" class="level3">
-<h3 class="anchored" data-anchor-id="species-top-100">Species top 100</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="plots/accuracy-metrics/spatcv/species_top100.png" class="img-fluid figure-img"></p>
-<figcaption>Comparing top 100 from spatial cross validation for Pennsylvania (left) and New York (right)</figcaption>
-</figure>
-</div>
+<section id="symphyotrichum-pilosum" class="level2">
+<h2 class="anchored" data-anchor-id="symphyotrichum-pilosum"><em>Symphyotrichum pilosum</em></h2>
+<p><img src="plots/rare_plants/map_Symphyotrichum_pilosum.png" class="img-fluid"></p>
+<p><img src="plots/rare_plants/pheno_Symphyotrichum_pilosum.png" class="img-fluid"></p>
 
 
 </section>

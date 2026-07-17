@@ -1,0 +1,82 @@
+---
+title: "Rare plants"
+format: html
+execute: 
+  echo: false
+---
+
+# Rare
+
+## *Asclepias purpurascens*
+
+![](plots/rare_plants/map_Asclepias_purpurascens.png)
+
+![](plots/rare_plants/pheno_Asclepias_purpurascens.png)
+
+## *Asclepias verticillata*
+
+![](plots/rare_plants/map_Asclepias_verticillata.png)
+
+![](plots/rare_plants/pheno_Asclepias_verticillata.png)
+
+## *Solidago speciosa*
+
+![](plots/rare_plants/map_Solidago_speciosa.png)
+
+![](plots/rare_plants/pheno_Solidago_speciosa.png)
+
+# Common
+
+## *Asclepias syriaca*
+
+![](plots/rare_plants/map_Asclepias_syriaca.png)
+
+![](plots/rare_plants/pheno_Asclepias_syriaca.png)
+
+## *Eupatorium perfoliatum*
+
+![](plots/rare_plants/map_Eupatorium_perfoliatum.png)
+
+![](plots/rare_plants/pheno_Eupatorium_perfoliatum.png)
+
+## *Oenothera biennis*
+
+![](plots/rare_plants/map_Oenothera_biennis.png)
+
+![](plots/rare_plants/pheno_Oenothera_biennis.png)
+
+## *Phlox paniculata*
+
+![](plots/rare_plants/map_Phlox_paniculata.png)
+
+![](plots/rare_plants/pheno_Phlox_paniculata.png)
+
+## *Solidago canadensis*
+
+![](plots/rare_plants/map_Solidago_canadensis.png)
+
+![](plots/rare_plants/pheno_Solidago_canadensis.png)
+
+## *Solidago gigantea*
+
+![](plots/rare_plants/map_Solidago_gigantea.png)
+
+![](plots/rare_plants/pheno_Solidago_gigantea.png)
+
+## *Solidago juncea*
+
+![](plots/rare_plants/map_Solidago_juncea.png)
+
+![](plots/rare_plants/pheno_Solidago_juncea.png)
+
+## *Symphyotrichum lateriflorum*
+
+![](plots/rare_plants/map_Symphyotrichum_lateriflorum.png)
+
+![](plots/rare_plants/pheno_Symphyotrichum_lateriflorum.png)
+
+## *Symphyotrichum pilosum*
+
+![](plots/rare_plants/map_Symphyotrichum_pilosum.png)
+
+![](plots/rare_plants/pheno_Symphyotrichum_pilosum.png)

@@ -22,135 +22,152 @@
     ]
   },
   {
-    "objectID": "1.1.1_sp_list.html",
-    "href": "1.1.1_sp_list.html",
-    "title": "Accuracy metrics for individual bee floral resources species",
+    "objectID": "4_rareplants.html#asclepias-syriaca",
+    "href": "4_rareplants.html#asclepias-syriaca",
+    "title": "Rare plants",
+    "section": "Asclepias syriaca",
+    "text": "Asclepias syriaca",
+    "crumbs": [
+      "Rare plants",
+      "Maps and growing degree days"
+    ]
+  },
+  {
+    "objectID": "4_rareplants.html#eupatorium-perfoliatum",
+    "href": "4_rareplants.html#eupatorium-perfoliatum",
+    "title": "Rare plants",
+    "section": "Eupatorium perfoliatum",
+    "text": "Eupatorium perfoliatum",
+    "crumbs": [
+      "Rare plants",
+      "Maps and growing degree days"
+    ]
+  },
+  {
+    "objectID": "4_rareplants.html#oenothera-biennis",
+    "href": "4_rareplants.html#oenothera-biennis",
+    "title": "Rare plants",
+    "section": "Oenothera biennis",
+    "text": "Oenothera biennis",
+    "crumbs": [
+      "Rare plants",
+      "Maps and growing degree days"
+    ]
+  },
+  {
+    "objectID": "4_rareplants.html#phlox-paniculata",
+    "href": "4_rareplants.html#phlox-paniculata",
+    "title": "Rare plants",
+    "section": "Phlox paniculata",
+    "text": "Phlox paniculata",
+    "crumbs": [
+      "Rare plants",
+      "Maps and growing degree days"
+    ]
+  },
+  {
+    "objectID": "4_rareplants.html#solidago-canadensis",
+    "href": "4_rareplants.html#solidago-canadensis",
+    "title": "Rare plants",
+    "section": "Solidago canadensis",
+    "text": "Solidago canadensis",
+    "crumbs": [
+      "Rare plants",
+      "Maps and growing degree days"
+    ]
+  },
+  {
+    "objectID": "4_rareplants.html#solidago-gigantea",
+    "href": "4_rareplants.html#solidago-gigantea",
+    "title": "Rare plants",
+    "section": "Solidago gigantea",
+    "text": "Solidago gigantea",
+    "crumbs": [
+      "Rare plants",
+      "Maps and growing degree days"
+    ]
+  },
+  {
+    "objectID": "4_rareplants.html#solidago-juncea",
+    "href": "4_rareplants.html#solidago-juncea",
+    "title": "Rare plants",
+    "section": "Solidago juncea",
+    "text": "Solidago juncea",
+    "crumbs": [
+      "Rare plants",
+      "Maps and growing degree days"
+    ]
+  },
+  {
+    "objectID": "4_rareplants.html#symphyotrichum-lateriflorum",
+    "href": "4_rareplants.html#symphyotrichum-lateriflorum",
+    "title": "Rare plants",
+    "section": "Symphyotrichum lateriflorum",
+    "text": "Symphyotrichum lateriflorum",
+    "crumbs": [
+      "Rare plants",
+      "Maps and growing degree days"
+    ]
+  },
+  {
+    "objectID": "4_rareplants.html#symphyotrichum-pilosum",
+    "href": "4_rareplants.html#symphyotrichum-pilosum",
+    "title": "Rare plants",
+    "section": "Symphyotrichum pilosum",
+    "text": "Symphyotrichum pilosum",
+    "crumbs": [
+      "Rare plants",
+      "Maps and growing degree days"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview of deepflora project",
     "section": "",
-    "text": "These are the individual accuracy metrics for bee floral resources species in each state.",
+    "text": "A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.",
     "crumbs": [
-      "Applying Deepbiosphere",
-      "Individual species accuracy"
+      "Overview"
     ]
   },
   {
-    "objectID": "1.1.1_sp_list.html#accuracy-metrics-of-floral-resource-species",
-    "href": "1.1.1_sp_list.html#accuracy-metrics-of-floral-resource-species",
-    "title": "Accuracy metrics for individual bee floral resources species",
-    "section": "Accuracy metrics of floral resource species",
-    "text": "Accuracy metrics of floral resource species\n\nPennsylvania species\n\n\n\n\n\n\n\n\nNew York Species",
-    "crumbs": [
-      "Applying Deepbiosphere",
-      "Individual species accuracy"
-    ]
-  },
-  {
-    "objectID": "2.1_examine_phenology.html",
-    "href": "2.1_examine_phenology.html",
-    "title": "Phenology",
+    "objectID": "index.html#background",
+    "href": "index.html#background",
+    "title": "Overview of deepflora project",
     "section": "",
-    "text": "Using rgbif, I searched for all research-grade iNaturalist observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee’s data and work. Data coverage is shown below.\nThen I fit finite mixture models assuming normal distributions, using the mixtools R package. I tested fitting from 1 to 4 distributions and I’m showing the model with the lowest log-likelihood for each species in these results.\nData from GBIF includes occasional information on plant reproductive stage, if it was available from the observation. I’ve added this in these plots to provide some reference for the finite mixture model predictions, in orange.",
+    "text": "A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.",
     "crumbs": [
-      "Modeling bloom phenology",
-      "Phenology mixture models"
+      "Overview"
     ]
   },
   {
-    "objectID": "2.1_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
-    "href": "2.1_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
-    "title": "Phenology",
-    "section": "Top 50 reported flowering species phenology curves",
-    "text": "Top 50 reported flowering species phenology curves\nOrdered by total number of observations, indicated in the upper right corner of each panel. Grey histogram bars represent the distribution of the overall dataset, while empty bars with black outlines represent just the records that explicitly report flowering. The curves are the finite mixture model estimates. Color of curves don’t mean anything except the order based on growing degree day. **The color-coded bars are histograms of iNaturalist images that have been assigned to phenological traits (orange=flower, purple=fruit) by the Phenovision project (Dinnage et al. 2025).",
+    "objectID": "index.html#methods",
+    "href": "index.html#methods",
+    "title": "Overview of deepflora project",
+    "section": "Methods",
+    "text": "Methods\n\nSpatial predictions\nUsing Deepbiosphere (Gillespie et al. 2024), we are modeling the joint distributions of bee floral resource plant species across Pennsylvania and New York, based on over 600,000 citizen science observations from iNaturalist, spanning 2012 to 2022. We use 1 m resolution NAIP aerial imagery from 2017 and 19 bioclimatic variables (BIOCLIM) to predict the spatial distributions of 100 bee floral resource species and over 2,000 other co-occurring plant species.\n\n\n\nDeepbiosphere prediction for Cercis canadensis in Pennsylvania\n\n\n\n\nTemporal predictions\nTo estimate bloom times, we are modeling the curves of seasonal peaks in citizen science observations (from iNaturalist) corresponding to flowering for the entire northeastern US, accounting for geographic variations in climate using thermal time (growing degree days).\n\n\n\nWeekly growing degree day progression in Pennsylvania over 2017\n\n\nWe are applying a finite mixture modeling approach to approximate the distribution of bloom observations over growing degree day. Because we are using mostly unsorted citizen science data, all kinds of reproductive life stages are included in addition to blooming. By assuming that the overall distribution of iNaturalist reports for a species represents a mixture of multiple normal distributions, we can single out a curve that best fits the species’ bloom phenology.\n\n\n\nDistribution of observation frequency for Cercis canadensis over growing degree days in 2017. Smaller orange distribution represents observations with annotations indicating that flowers were observed. In this case, distribution 1 matches blooming.\n\n\n\n\nCombined spatial and temporal predictions\nWe can then combine the Deepbiosphere spatial distribution model with the finite mixture model-derived bloom curve over thermal time to estimate blooms over space and time.\n\n\n\nProbability of bloom based on deepbiosphere and bloom prediction",
     "crumbs": [
-      "Modeling bloom phenology",
-      "Phenology mixture models"
+      "Overview"
     ]
   },
   {
-    "objectID": "2.1_examine_phenology.html#next-50-most-reported-flowering-species",
-    "href": "2.1_examine_phenology.html#next-50-most-reported-flowering-species",
-    "title": "Phenology",
-    "section": "Next 50 most reported flowering species",
-    "text": "Next 50 most reported flowering species",
+    "objectID": "index.html#preliminary-results",
+    "href": "index.html#preliminary-results",
+    "title": "Overview of deepflora project",
+    "section": "Preliminary results",
+    "text": "Preliminary results\nBelow are links to details about the preliminary results.\nApplying Deepbiosphere\nUniform train/test split cross-validation accuracy\nIndividual species accuracy (bee floral resources)\nSpatial cross-validation accuracy\nModeling bloom phenology\nFloral resource species list\nPhenology curves of floral resource species\nPhenology curves of floral resource species (thinned)\nApplying Deepflora workflow\nExample: Cercis canadensis",
     "crumbs": [
-      "Modeling bloom phenology",
-      "Phenology mixture models"
+      "Overview"
     ]
   },
   {
-    "objectID": "1.2_accuracy_spatcv.html",
-    "href": "1.2_accuracy_spatcv.html",
-    "title": "Accuracy metrics – spatial cross-validation",
-    "section": "",
-    "text": "These are the results from conducting spatial cross validation. Because of the shapes of Pennsylvania and New York, I used 10 bands running North-South across these states as the test bands for 10-fold cross validation. Below I show the distributions for the overall model metrics for PA and NY. Significance comparisons are made between the cross-validation accuracy metrics of deepbiosphere and two conventional modeling approaches: Maxent trained on bioclimatic data and random forest trained on bioclimatic data.",
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Overview of deepflora project",
+    "section": "References",
+    "text": "References\nGillespie LE, Ruffley M, Exposito-Alonso M (2024) Deep learning models map rapid plant species changes from citizen science and remote sensing data. Proceedings of the National Academy of Sciences 121:e2318296121. https://doi.org/10.1073/pnas.2318296121",
     "crumbs": [
-      "Applying Deepbiosphere",
-      "Accuracy: spatial cross validation"
-    ]
-  },
-  {
-    "objectID": "1.2_accuracy_spatcv.html#binary-classification-metrics",
-    "href": "1.2_accuracy_spatcv.html#binary-classification-metrics",
-    "title": "Accuracy metrics – spatial cross-validation",
-    "section": "Binary classification metrics",
-    "text": "Binary classification metrics\nThese metrics threshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\n\nPresence accuracy\nThe fraction of examples where the correct species observed at that location was predicted as present.\n\n\n\nComparing presence accuracy from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nPrecision score\nPrecision Measures how many species predicted to be present were actually present.\n\n\n\nComparing precision score from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nRecall score\nRecall Measures how many of the true species present are predicted as present.\n\n\n\nComparing recall score from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nF1 score\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\n\nComparing F1 score from spatial cross validation for Pennsylvania (left) and New York (right)",
-    "crumbs": [
-      "Applying Deepbiosphere",
-      "Accuracy: spatial cross validation"
-    ]
-  },
-  {
-    "objectID": "1.2_accuracy_spatcv.html#discrimination-metrics",
-    "href": "1.2_accuracy_spatcv.html#discrimination-metrics",
-    "title": "Accuracy metrics – spatial cross-validation",
-    "section": "Discrimination metrics",
-    "text": "Discrimination metrics\nIn order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of presence thresholds and describe the relationship between threshold change and performance change.\n\nArea under curve [ROC] – uncalibrated\nAUC ROC Area under the receiver operating characteristic curve averaged across species\n\n\n\nComparing ROC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nArea under curve [PRC] – uncalibrated\nAUC PRC Average area under the precision-recall curve averaged across species\n\n\n\nComparing PRC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nCalibrated area under curves\nA model which has extremely low predicted probabilities can still have a high AUCROC if within its range of predicted probabilities the model has good sensitivity and specificity for that class.\n\nThis means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.\nTo correct for this, Gillespie et al. (2024) also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.\n\n\nCalibrated AUC [ROC]\n\n\n\nComparing calibrated ROC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nCalibrated AUC [PRC]\n\n\n\nComparing calibrated PRC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)",
-    "crumbs": [
-      "Applying Deepbiosphere",
-      "Accuracy: spatial cross validation"
-    ]
-  },
-  {
-    "objectID": "1.2_accuracy_spatcv.html#ranking-metrics",
-    "href": "1.2_accuracy_spatcv.html#ranking-metrics",
-    "title": "Accuracy metrics – spatial cross-validation",
-    "section": "Ranking metrics",
-    "text": "Ranking metrics\nTop-K (top 1, 5, 30, 100) These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence).\n\nSpecies top 1\n\n\n\nComparing top 1 from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nSpecies top 5\n\n\n\nComparing top 5 from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nSpecies top 30\n\n\n\nComparing top 30 from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nSpecies top 100\n\n\n\nComparing top 100 from spatial cross validation for Pennsylvania (left) and New York (right)",
-    "crumbs": [
-      "Applying Deepbiosphere",
-      "Accuracy: spatial cross validation"
-    ]
-  },
-  {
-    "objectID": "2.2_examine_phenology_thin.html",
-    "href": "2.2_examine_phenology_thin.html",
-    "title": "Phenology curves - thinned",
-    "section": "",
-    "text": "I experimented with thinning the species observations to retain only one entry per PRISM grid and week combination, in order to down-weight densely populated areas. Once again, I tested fitting from 1 to 4 distributions and I’m showing the model with the lowest log-likelihood for each species.",
-    "crumbs": [
-      "Modeling bloom phenology",
-      "Phenology mixture models (with thinning)"
-    ]
-  },
-  {
-    "objectID": "2.2_examine_phenology_thin.html#top-50-reported-flowering-species",
-    "href": "2.2_examine_phenology_thin.html#top-50-reported-flowering-species",
-    "title": "Phenology curves - thinned",
-    "section": "Top 50 reported flowering species",
-    "text": "Top 50 reported flowering species\nOverall distributions are shown in green. I also thinned the dataset of records that explicitly reported flowering, though these appear to be less redundant already. The thinned flowering distribution is shown in blue, while the original dataset is shown in orange. The curves are the finite mixture model estimates. Color of curves don’t mean anything except the order based on growing degree day. Ordered by total number of observations, indicated in the upper right corner of each panel.",
-    "crumbs": [
-      "Modeling bloom phenology",
-      "Phenology mixture models (with thinning)"
-    ]
-  },
-  {
-    "objectID": "2.2_examine_phenology_thin.html#next-50-most-reported-flowering-species",
-    "href": "2.2_examine_phenology_thin.html#next-50-most-reported-flowering-species",
-    "title": "Phenology curves - thinned",
-    "section": "Next 50 most reported flowering species",
-    "text": "Next 50 most reported flowering species",
-    "crumbs": [
-      "Modeling bloom phenology",
-      "Phenology mixture models (with thinning)"
+      "Overview"
     ]
   },
   {
@@ -220,53 +237,135 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Overview of deepflora project",
+    "objectID": "2.2_examine_phenology_thin.html",
+    "href": "2.2_examine_phenology_thin.html",
+    "title": "Phenology curves - thinned",
     "section": "",
-    "text": "A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.",
+    "text": "I experimented with thinning the species observations to retain only one entry per PRISM grid and week combination, in order to down-weight densely populated areas. Once again, I tested fitting from 1 to 4 distributions and I’m showing the model with the lowest log-likelihood for each species.",
     "crumbs": [
-      "Overview"
+      "Modeling bloom phenology",
+      "Phenology mixture models (with thinning)"
     ]
   },
   {
-    "objectID": "index.html#background",
-    "href": "index.html#background",
-    "title": "Overview of deepflora project",
+    "objectID": "2.2_examine_phenology_thin.html#top-50-reported-flowering-species",
+    "href": "2.2_examine_phenology_thin.html#top-50-reported-flowering-species",
+    "title": "Phenology curves - thinned",
+    "section": "Top 50 reported flowering species",
+    "text": "Top 50 reported flowering species\nOverall distributions are shown in green. I also thinned the dataset of records that explicitly reported flowering, though these appear to be less redundant already. The thinned flowering distribution is shown in blue, while the original dataset is shown in orange. The curves are the finite mixture model estimates. Color of curves don’t mean anything except the order based on growing degree day. Ordered by total number of observations, indicated in the upper right corner of each panel.\nOrdered by total number of observations, indicated in the upper right corner of each panel. Grey histogram bars represent the distribution of the overall dataset (thinned by prism grid cell and week), while empty bars with black outlines represent a subset of these records that explicitly report flowering. The curves are the finite mixture model estimates fit to the overall (thinned) dataset. Color of curves don’t mean anything except the order based on growing degree day. The color-coded bars are histograms of iNaturalist images that have been machine-assigned to phenological traits (orange=flower, purple=fruit) by the Phenovision project, also after thinning (Dinnage et al. 2025).",
+    "crumbs": [
+      "Modeling bloom phenology",
+      "Phenology mixture models (with thinning)"
+    ]
+  },
+  {
+    "objectID": "2.2_examine_phenology_thin.html#next-50-most-reported-flowering-species",
+    "href": "2.2_examine_phenology_thin.html#next-50-most-reported-flowering-species",
+    "title": "Phenology curves - thinned",
+    "section": "Next 50 most reported flowering species",
+    "text": "Next 50 most reported flowering species",
+    "crumbs": [
+      "Modeling bloom phenology",
+      "Phenology mixture models (with thinning)"
+    ]
+  },
+  {
+    "objectID": "1.2_accuracy_spatcv.html",
+    "href": "1.2_accuracy_spatcv.html",
+    "title": "Accuracy metrics – spatial cross-validation",
     "section": "",
-    "text": "A majority of crops and flowering plants rely on pollinators like bees, but bee populations are declining globally from habitat loss, pesticide exposure, and land cover change. Understanding habitat and floral resource availability is critically important for addressing these declines, and requires models of fine-scale floral dynamics across bee foraging landscapes and over growing seasons. However, comprehensive information is not available at the spatial and temporal resolutions relevant to bees, creating a gap that impedes understanding and conservation management.",
+    "text": "These are the results from conducting spatial cross validation. Because of the shapes of Pennsylvania and New York, I used 10 bands running North-South across these states as the test bands for 10-fold cross validation. Below I show the distributions for the overall model metrics for PA and NY. Significance comparisons are made between the cross-validation accuracy metrics of deepbiosphere and two conventional modeling approaches: Maxent trained on bioclimatic data and random forest trained on bioclimatic data.",
     "crumbs": [
-      "Overview"
+      "Applying Deepbiosphere",
+      "Accuracy: spatial cross validation"
     ]
   },
   {
-    "objectID": "index.html#methods",
-    "href": "index.html#methods",
-    "title": "Overview of deepflora project",
-    "section": "Methods",
-    "text": "Methods\n\nSpatial predictions\nUsing Deepbiosphere (Gillespie et al. 2024), we are modeling the joint distributions of bee floral resource plant species across Pennsylvania and New York, based on over 600,000 citizen science observations from iNaturalist, spanning 2012 to 2022. We use 1 m resolution NAIP aerial imagery from 2017 and 19 bioclimatic variables (BIOCLIM) to predict the spatial distributions of 100 bee floral resource species and over 2,000 other co-occurring plant species.\n\n\n\nDeepbiosphere prediction for Cercis canadensis in Pennsylvania\n\n\n\n\nTemporal predictions\nTo estimate bloom times, we are modeling the curves of seasonal peaks in citizen science observations (from iNaturalist) corresponding to flowering for the entire northeastern US, accounting for geographic variations in climate using thermal time (growing degree days).\n\n\n\nWeekly growing degree day progression in Pennsylvania over 2017\n\n\nWe are applying a finite mixture modeling approach to approximate the distribution of bloom observations over growing degree day. Because we are using mostly unsorted citizen science data, all kinds of reproductive life stages are included in addition to blooming. By assuming that the overall distribution of iNaturalist reports for a species represents a mixture of multiple normal distributions, we can single out a curve that best fits the species’ bloom phenology.\n\n\n\nDistribution of observation frequency for Cercis canadensis over growing degree days in 2017. Smaller orange distribution represents observations with annotations indicating that flowers were observed. In this case, distribution 1 matches blooming.\n\n\n\n\nCombined spatial and temporal predictions\nWe can then combine the Deepbiosphere spatial distribution model with the finite mixture model-derived bloom curve over thermal time to estimate blooms over space and time.\n\n\n\nProbability of bloom based on deepbiosphere and bloom prediction",
+    "objectID": "1.2_accuracy_spatcv.html#binary-classification-metrics",
+    "href": "1.2_accuracy_spatcv.html#binary-classification-metrics",
+    "title": "Accuracy metrics – spatial cross-validation",
+    "section": "Binary classification metrics",
+    "text": "Binary classification metrics\nThese metrics threshold all probabilities ≥0.5 as present and &lt;0.5 as absent for these metrics\n\nPresence accuracy\nThe fraction of examples where the correct species observed at that location was predicted as present.\n\n\n\nComparing presence accuracy from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nPrecision score\nPrecision Measures how many species predicted to be present were actually present.\n\n\n\nComparing precision score from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nRecall score\nRecall Measures how many of the true species present are predicted as present.\n\n\n\nComparing recall score from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nF1 score\nF1 score The harmonic mean of precision and recall and represents a conservative mean of the two (i.e. is more affected by low values).\n\n\n\nComparing F1 score from spatial cross validation for Pennsylvania (left) and New York (right)",
     "crumbs": [
-      "Overview"
+      "Applying Deepbiosphere",
+      "Accuracy: spatial cross validation"
     ]
   },
   {
-    "objectID": "index.html#preliminary-results",
-    "href": "index.html#preliminary-results",
-    "title": "Overview of deepflora project",
-    "section": "Preliminary results",
-    "text": "Preliminary results\nBelow are links to details about the preliminary results.\nApplying Deepbiosphere\nUniform train/test split cross-validation accuracy\nIndividual species accuracy (bee floral resources)\nSpatial cross-validation accuracy\nModeling bloom phenology\nFloral resource species list\nPhenology curves of floral resource species\nPhenology curves of floral resource species (thinned)\nApplying Deepflora workflow\nExample: Cercis canadensis",
+    "objectID": "1.2_accuracy_spatcv.html#discrimination-metrics",
+    "href": "1.2_accuracy_spatcv.html#discrimination-metrics",
+    "title": "Accuracy metrics – spatial cross-validation",
+    "section": "Discrimination metrics",
+    "text": "Discrimination metrics\nIn order to take into account the effect of thresholds, discrimination metrics measure binary classification ability across a wide range of presence thresholds and describe the relationship between threshold change and performance change.\n\nArea under curve [ROC] – uncalibrated\nAUC ROC Area under the receiver operating characteristic curve averaged across species\n\n\n\nComparing ROC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nArea under curve [PRC] – uncalibrated\nAUC PRC Average area under the precision-recall curve averaged across species\n\n\n\nComparing PRC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nCalibrated area under curves\nA model which has extremely low predicted probabilities can still have a high AUCROC if within its range of predicted probabilities the model has good sensitivity and specificity for that class.\n\nThis means that it’s possible to have a model that never predicts a species as present with the standard presence/absence threshold of 0.5 yet still has a high average AUCROC.\nTo correct for this, Gillespie et al. (2024) also introduce a calibrated area under the curve score where the chosen thresholds are linearly interpolated values between 0 and 1.\n\n\nCalibrated AUC [ROC]\n\n\n\nComparing calibrated ROC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nCalibrated AUC [PRC]\n\n\n\nComparing calibrated PRC area under curve from spatial cross validation for Pennsylvania (left) and New York (right)",
     "crumbs": [
-      "Overview"
+      "Applying Deepbiosphere",
+      "Accuracy: spatial cross validation"
     ]
   },
   {
-    "objectID": "index.html#references",
-    "href": "index.html#references",
-    "title": "Overview of deepflora project",
-    "section": "References",
-    "text": "References\nGillespie LE, Ruffley M, Exposito-Alonso M (2024) Deep learning models map rapid plant species changes from citizen science and remote sensing data. Proceedings of the National Academy of Sciences 121:e2318296121. https://doi.org/10.1073/pnas.2318296121",
+    "objectID": "1.2_accuracy_spatcv.html#ranking-metrics",
+    "href": "1.2_accuracy_spatcv.html#ranking-metrics",
+    "title": "Accuracy metrics – spatial cross-validation",
+    "section": "Ranking metrics",
+    "text": "Ranking metrics\nTop-K (top 1, 5, 30, 100) These metrics measure how many times the correct species was correctly predicted within the top-K highest-ranked species within a given image (where, for example, K=5 would be the 5 species with the highest probability of presence).\n\nSpecies top 1\n\n\n\nComparing top 1 from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nSpecies top 5\n\n\n\nComparing top 5 from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nSpecies top 30\n\n\n\nComparing top 30 from spatial cross validation for Pennsylvania (left) and New York (right)\n\n\n\n\nSpecies top 100\n\n\n\nComparing top 100 from spatial cross validation for Pennsylvania (left) and New York (right)",
     "crumbs": [
-      "Overview"
+      "Applying Deepbiosphere",
+      "Accuracy: spatial cross validation"
+    ]
+  },
+  {
+    "objectID": "2.1_examine_phenology.html",
+    "href": "2.1_examine_phenology.html",
+    "title": "Phenology",
+    "section": "",
+    "text": "Using rgbif, I searched for all research-grade iNaturalist observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee’s data and work. Data coverage is shown below.\nThen I fit finite mixture models assuming normal distributions, using the mixtools R package. I tested fitting from 1 to 4 distributions and I’m showing the model with the lowest log-likelihood for each species in these results.\nData from GBIF includes occasional information on plant reproductive stage, if it was available from the observation. I’ve added this in these plots to provide some reference for the finite mixture model predictions, in orange.",
+    "crumbs": [
+      "Modeling bloom phenology",
+      "Phenology mixture models"
+    ]
+  },
+  {
+    "objectID": "2.1_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
+    "href": "2.1_examine_phenology.html#top-50-reported-flowering-species-phenology-curves",
+    "title": "Phenology",
+    "section": "Top 50 reported flowering species phenology curves",
+    "text": "Top 50 reported flowering species phenology curves\nOrdered by total number of observations, indicated in the upper right corner of each panel. Grey histogram bars represent the distribution of the overall dataset, while empty bars with black outlines represent just the records that explicitly report flowering. The curves are the finite mixture model estimates to the overall data. Color of curves don’t mean anything except the order based on growing degree day. The color-coded bars are histograms of iNaturalist images that have been machine-assigned to phenological traits (orange=flower, purple=fruit) by the Phenovision project (Dinnage et al. 2025).",
+    "crumbs": [
+      "Modeling bloom phenology",
+      "Phenology mixture models"
+    ]
+  },
+  {
+    "objectID": "2.1_examine_phenology.html#next-50-most-reported-flowering-species",
+    "href": "2.1_examine_phenology.html#next-50-most-reported-flowering-species",
+    "title": "Phenology",
+    "section": "Next 50 most reported flowering species",
+    "text": "Next 50 most reported flowering species",
+    "crumbs": [
+      "Modeling bloom phenology",
+      "Phenology mixture models"
+    ]
+  },
+  {
+    "objectID": "1.1.1_sp_list.html",
+    "href": "1.1.1_sp_list.html",
+    "title": "Accuracy metrics for individual bee floral resources species",
+    "section": "",
+    "text": "These are the individual accuracy metrics for bee floral resources species in each state.",
+    "crumbs": [
+      "Applying Deepbiosphere",
+      "Individual species accuracy"
+    ]
+  },
+  {
+    "objectID": "1.1.1_sp_list.html#accuracy-metrics-of-floral-resource-species",
+    "href": "1.1.1_sp_list.html#accuracy-metrics-of-floral-resource-species",
+    "title": "Accuracy metrics for individual bee floral resources species",
+    "section": "Accuracy metrics of floral resource species",
+    "text": "Accuracy metrics of floral resource species\n\nPennsylvania species\n\n\n\n\n\n\n\n\nNew York Species",
+    "crumbs": [
+      "Applying Deepbiosphere",
+      "Individual species accuracy"
     ]
   },
   {

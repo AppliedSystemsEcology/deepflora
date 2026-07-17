@@ -29,6 +29,10 @@ website:
         contents:
           - href: 3_curvemaps.qmd
             text: Cercis canadensis example
+      - section: "Rare plants"
+        contents:
+          - href: 4_rareplants.qmd
+            text: Maps and growing degree days
 
 format:
   html:
