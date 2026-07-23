@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Phenology – Deepflora</title>
+<title>Validation – Deepflora</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2.0_Phenology_sp_list.html">Modeling bloom phenology</a></li><li class="breadcrumb-item"><a href="./2.1_examine_phenology.html">Phenology mixture models</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./5_validation.html">Validation</a></li><li class="breadcrumb-item"><a href="./5_validation.html">Comparison to Aaron’s sites</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -153,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2.1_examine_phenology.html" class="sidebar-item-text sidebar-link active">
+  <a href="./2.1_examine_phenology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Phenology mixture models</span></a>
   </div>
 </li>
@@ -210,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./5_validation.html" class="sidebar-item-text sidebar-link">
+  <a href="./5_validation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Comparison to Aaron’s sites</span></a>
   </div>
 </li>
@@ -226,17 +226,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#top-50-reported-flowering-species-phenology-curves" id="toc-top-50-reported-flowering-species-phenology-curves" class="nav-link active" data-scroll-target="#top-50-reported-flowering-species-phenology-curves">Top 50 reported flowering species phenology curves</a></li>
-  <li><a href="#next-50-most-reported-flowering-species" id="toc-next-50-most-reported-flowering-species" class="nav-link" data-scroll-target="#next-50-most-reported-flowering-species">Next 50 most reported flowering species</a></li>
+  <li><a href="#aarons-data" id="toc-aarons-data" class="nav-link active" data-scroll-target="#aarons-data">Aaron’s data</a>
+  <ul class="collapse">
+  <li><a href="#estimated-species-richness" id="toc-estimated-species-richness" class="nav-link" data-scroll-target="#estimated-species-richness">Estimated species richness</a></li>
+  <li><a href="#accuracy-metrics" id="toc-accuracy-metrics" class="nav-link" data-scroll-target="#accuracy-metrics">Accuracy metrics</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2.0_Phenology_sp_list.html">Modeling bloom phenology</a></li><li class="breadcrumb-item"><a href="./2.1_examine_phenology.html">Phenology mixture models</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./5_validation.html">Validation</a></li><li class="breadcrumb-item"><a href="./5_validation.html">Comparison to Aaron’s sites</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Phenology</h1>
+<h1 class="title">Validation</h1>
 </div>
 
 
@@ -253,25 +256,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Using <code>rgbif</code>, I searched for all research-grade iNaturalist observations of the top 100 floral resource plants across PA and NY within the NE US from 2016-2020. I matched these reports by location and week to growing degree day, estimated from 4-km PRISM data based on Sarah Goslee’s data and work. Data coverage is shown below.</p>
+<section id="aarons-data" class="level2">
+<h2 class="anchored" data-anchor-id="aarons-data">Aaron’s data</h2>
+<p>I compared the predictions within 256 m cells of the statewide NY Deepbiosphere prediction to Aaron’s species list collected at 144 sites using the modified Whitaker species richness sampling method. <strong>These may not be the most relevant comparisons because I think Deepbiosphere is making its prediction for the centroid of the 256 m cell, while Aaron’s plots may fall anywhere within the cell and could represent a different habitat. I need to re-run these predictions for the exact location of each of Aaron’s sites.</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="plots/gddpts.png" class="img-fluid figure-img"></p>
-<figcaption>Coverage of GBIF data used to fit finite mixture models. Cyan box shows extent of GDD data used, which covers 2016-2020.</figcaption>
+<p><img src="plots/Aaron/map_plots.png" class="img-fluid figure-img"></p>
+<figcaption>Location of Aaron’s sampling sites in NY</figcaption>
 </figure>
 </div>
-<p>Then I fit finite mixture models assuming normal distributions, using the <code>mixtools</code> R package. I tested fitting from 1 to 4 distributions and I’m showing the model with the lowest log-likelihood for each species in these results.</p>
-<p>Data from GBIF includes occasional information on plant reproductive stage, if it was available from the observation. I’ve added this in these plots to provide some reference for the finite mixture model predictions, in orange.</p>
-<section id="top-50-reported-flowering-species-phenology-curves" class="level2">
-<h2 class="anchored" data-anchor-id="top-50-reported-flowering-species-phenology-curves">Top 50 reported flowering species phenology curves</h2>
-<p>Ordered by total number of observations, indicated in the upper right corner of each panel. Grey histogram bars represent the distribution of the overall dataset, while empty bars with black outlines represent just the records that explicitly report flowering. The curves are the finite mixture model estimates to the overall data. Color of curves don’t mean anything except the order based on growing degree day. <strong>The color-coded bars are histograms of iNaturalist images that have been machine-assigned to phenological traits (orange=flower, purple=fruit) by the Phenovision project <a href="https://doi.org/10.1111%2F2041-210X.70081">(Dinnage et al.&nbsp;2025)</a>.</strong></p>
-<p><img src="plots/mixture_NE0-50v2.png" class="img-fluid"></p>
+<section id="estimated-species-richness" class="level3">
+<h3 class="anchored" data-anchor-id="estimated-species-richness">Estimated species richness</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/Aaron/comparerich_scatter.png" class="img-fluid figure-img"></p>
+<figcaption>Scatter plot of Aaron’s collected species richness vs.&nbsp;Deepbiosphere</figcaption>
+</figure>
+</div>
+<section id="comparison-of-estimated-species-richness-by-habitat-group" class="level4">
+<h4 class="anchored" data-anchor-id="comparison-of-estimated-species-richness-by-habitat-group">Comparison of estimated species richness by habitat group</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/Aaron/comparerich_boxplot.png" class="img-fluid figure-img"></p>
+<figcaption>Box plots of estimated species richness from Aaron’s samples and Deepbiosphere</figcaption>
+</figure>
+</div>
 </section>
-<section id="next-50-most-reported-flowering-species" class="level2">
-<h2 class="anchored" data-anchor-id="next-50-most-reported-flowering-species">Next 50 most reported flowering species</h2>
-<p><img src="plots/mixture_NE50-100v2.png" class="img-fluid"></p>
+</section>
+<section id="accuracy-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="accuracy-metrics">Accuracy metrics</h3>
+<p>Comparing Deepbiosphere predictions against Aaron’s detected presences as ‘truth.’ These metrics are calculated across only the species detected in both Aaron’s and Deepbiopshere’s species lists (452 species).</p>
+<section id="precision-and-recall" class="level4">
+<h4 class="anchored" data-anchor-id="precision-and-recall">Precision and recall</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/Aaron/precrecall.png" class="img-fluid figure-img"></p>
+<figcaption>Precision and recall</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/500px-Precisionrecall.svg.png" class="img-fluid figure-img"></p>
+<figcaption>Explanation of precision and recall</figcaption>
+</figure>
+</div>
+</section>
+<section id="top-1-10-and-100-scores" class="level4">
+<h4 class="anchored" data-anchor-id="top-1-10-and-100-scores">Top 1, 10, and 100 scores</h4>
+<p>The proportion of times across the 144 sites that a predicted species was in the top 1, 10, or 100 most probable classes estimated by DeepBiosphere.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plots/Aaron/topscores.png" class="img-fluid figure-img"></p>
+<figcaption>Top 1, 10, and 100 scores</figcaption>
+</figure>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

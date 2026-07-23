@@ -33,6 +33,10 @@ website:
         contents:
           - href: 4_rareplants.qmd
             text: Maps and growing degree days
+      - section: "Validation"
+        contents:
+          - href: 5_validation.qmd
+            text: Comparison to Aaron's sites
 
 format:
   html:
