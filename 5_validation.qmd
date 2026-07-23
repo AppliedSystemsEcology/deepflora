@@ -7,9 +7,9 @@ execute:
 
 ## Aaron's data
 
-I compared the predictions within 256 m cells of the statewide NY Deepbiosphere prediction to Aaron's species list collected at 144 sites using the modified Whitaker species richness sampling method. **These may not be the most relevant comparisons because I think Deepbiosphere is making its prediction for the centroid of the 256 m cell, while Aaron's plots may fall anywhere within the cell and could represent a different habitat. I need to re-run these predictions for the exact location of each of Aaron's sites.**
+I compared the predictions within 256 m cells of the statewide NY Deepbiosphere projection to Aaron's species list collected at 144 sites using the modified Whitaker species richness sampling method. **These may not be the most relevant comparisons because I think Deepbiosphere is making its prediction for the centroid of the 256 m cell, while Aaron's plots may fall anywhere within the cell and could represent a different habitat. I need to re-run these predictions for the exact location of each of Aaron's sites.**
 
-![Location of Aaron's sampling sites in NY](plots/Aaron/map_plots.png)
+![Location of Aaron's sampling sites in NY and estimated species richness by DeepBiosphere](plots/Aaron/map_plots.png)
 
 ### Estimated species richness
 
