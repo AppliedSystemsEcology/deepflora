@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=deepflora_prediction
 #SBATCH --account=hlc30_cr_default
-#SBATCH --partition=sla-prio
+#SBATCH --partition=sla-standard
 #SBATCH --gres=gpu:p100:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
