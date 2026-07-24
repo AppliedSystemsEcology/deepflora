@@ -3,7 +3,7 @@ import rasterio
 import deepbiosphere.Run as run
 import deepbiosphere.NAIP_Utils  as naip
 
-raster_path = "gstorage/data/deepflora/SCRATCH/pa_100cm_2017/40075/m_4007560_se_18_1_20170609_20171207.tif"
+raster_path = "gstorage/data/deepflora/SCRATCH/pa_100cm_2017/40075/m_4007560_se_18_1_20170609.tif"
 exp_id = "db_pa_2017"
 band = -1
 loss = 'SAMPLE_AWARE_BCE'
