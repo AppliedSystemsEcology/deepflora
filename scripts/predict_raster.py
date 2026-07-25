@@ -10,7 +10,7 @@ loss = 'SAMPLE_AWARE_BCE'
 model = 'DEEPBIOSPHERE'
 epoch = 8
 save_dir = "/storage/home/kbl5733/gstorage/data/deepflora/maps/tiles/"
-save_name = "pa_50m_4007560"
+save_name = "pa_30m_4007560"
 
 raster = rasterio.open(raster_path)
 cfg = run.load_config(exp_id=exp_id, band=band, loss=loss, model=model)
@@ -25,6 +25,6 @@ files = naip.predict_raster(raster,
                 device=device,
                 batch_size=100,
                 pred_types = ['RAW'],
-                resolution = 50,
+                resolution = 30,
                 impute_climate=True, 
                 clim_rasters=None)
