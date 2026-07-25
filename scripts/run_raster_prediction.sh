@@ -14,4 +14,9 @@
 module load anaconda
 source activate deepflora
 
-python scripts/predict_raster.py
+declare -a files=("m_4007560_se_18_1_20170609_20171207.tif" "m_3907503_sw_18_1_20170609_20171207.tif" "m_3907623_ne_18_1_20170609_20171207.tif" "m_3907624_nw_18_1_20170519_20171207.tif" "m_3907624_ne_18_1_20170519_20171207.tif" "m_3907517_nw_18_1_20170519_20171207.tif" "m_3907517_ne_18_1_20170519_20171207.tif")
+
+for i in "${files[@]}"
+do
+  python scripts/predict_raster.py "$i"
+done
