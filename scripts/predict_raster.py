@@ -9,8 +9,8 @@ band = -1
 loss = 'SAMPLE_AWARE_BCE'
 model = 'DEEPBIOSPHERE'
 epoch = 8
-save_dir = "gstorage/data/deepflora_predictions/"
-save_name = "initial_state_college"
+save_dir = "gstorage/data/deepflora/tiles"
+save_name = "pa_50m_4007560"
 
 raster = rasterio.open(raster_path)
 cfg = run.load_config(exp_id=exp_id, band=band, loss=loss, model=model)

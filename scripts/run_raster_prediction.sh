@@ -6,7 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=224G
+#SBATCH --mem=8G
 #SBATCH --time=48:00:00
 #SBATCH --output=logs/prediction_%j.out
 #SBATCH --error=logs/prediction_%j.err
