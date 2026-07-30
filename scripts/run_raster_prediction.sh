@@ -18,5 +18,5 @@ declare -a files=("m_4007560_se_18_1_20170609.tif" "m_3907503_sw_18_1_20170609.t
 
 for i in "${files[@]}"
 do
-  python scripts/predict_raster.py "$i"
+  python scripts/predict_raster.py "$i" ny
 done
