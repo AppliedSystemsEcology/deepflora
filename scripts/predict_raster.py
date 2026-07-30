@@ -6,11 +6,12 @@ import deepbiosphere.Run as run
 import deepbiosphere.NAIP_Utils  as naip
 
 filename  = sys.argv[1]
+state  = sys.argv[2]
 
 subdir = filename.split("_")[1][:5]
 
 raster_path = os.path.join("/storage/home/kbl5733/gstorage/data/deepflora/SCRATCH/pa_100cm_2017",subdir,filename)
-exp_id = "db_pa_2017"
+exp_id = "db_"+state+"_2017"
 band = -1
 loss = 'SAMPLE_AWARE_BCE'
 model = 'DEEPBIOSPHERE'
