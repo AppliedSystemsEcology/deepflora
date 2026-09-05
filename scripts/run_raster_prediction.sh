@@ -7,7 +7,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=16G
-#SBATCH --time=48:00:00
+#SBATCH --time=72:00:00
 #SBATCH --output=logs/dfpredaaron_%j.out
 #SBATCH --error=logs/dfpredaaron_%j.err
 
