@@ -17,7 +17,7 @@ source activate deepflora
 mapfile -t files < scripts/aaron/filenames.txt
 total=${#files[@]}
 
-for i in "${files[@]}"
+for i in "${!files[@]}"
 do
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] Processing file $((i+1)) of $total: ${files[$i]}"
   python scripts/predict_raster.py "$i" ny
