@@ -38,7 +38,7 @@ pa_gdd <- rast("data-raw/big/pa_gdd2017_256m.tif")
 # apply pnorm function to stack of gdd rasters
 cc_gdd_cdf <- terra::app(pa_gdd, pnorm, mean = cc.mu, sd = cc.sigma)
 
-# add a 0 raster at the beginning of the gdd time series to substract from
+# add a 0 raster at the beginning of the gdd time series to subtract from
 cc_gdd_0 <- pa_gdd[[1]]*0
 cc_gdd_0cdf <- c(cc_gdd_0, cc_gdd_cdf)
 

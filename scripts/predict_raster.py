@@ -7,17 +7,17 @@ import deepbiosphere.NAIP_Utils  as naip
 
 filename  = sys.argv[1]
 state  = sys.argv[2]
-
+statedir = state+"_100cm_2017"
 subdir = filename.split("_")[1][:5]
 
-raster_path = os.path.join("/storage/home/kbl5733/gstorage/data/deepflora/SCRATCH/pa_100cm_2017",subdir,filename)
+raster_path = os.path.join("/storage/home/kbl5733/gstorage/data/deepflora/SCRATCH",statedir,subdir,filename)
 exp_id = "db_"+state+"_2017"
 band = -1
 loss = 'SAMPLE_AWARE_BCE'
 model = 'DEEPBIOSPHERE'
 epoch = 8
 save_dir = "/storage/home/kbl5733/gstorage/data/deepflora/maps/tiles/"
-save_name = "pa_30m_" + filename
+save_name = state + "_30m_" + filename
 
 raster = rasterio.open(raster_path)
 cfg = run.load_config(exp_id=exp_id, band=band, loss=loss, model=model)

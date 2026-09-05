@@ -6,7 +6,7 @@ plants <- read.csv("data-raw/rare-plants.csv")
 
 dfpa <- rast("data-raw/big/pa_2017_merge_block_mosaic.tif")
 dfny <- rast("data-raw/big/ny_2017_merge_mosaic.tif")
-gdd <- readRDS("data/top100_gdd_thin.rds")
+# gdd <- readRDS("data/top100_gdd_thin.rds")
 # mixm <- readRDS("data/results/mixmods_flr100_thin.rds")
 phenovis <- read.csv("data/pheno_sp.csv")
 
