@@ -10,7 +10,7 @@ tiles <- unique(pts$FileName)
 outlist <- list()
 
 for(i in seq_along(tiles)){
-  tile.i <- rast(file.path(nydir,paste0("ny_30m_",tiles[i])))
+  tile.i <- rast(file.path(nydir,paste0("ny_30m_",tiles[i],"_raw.tif")))
   pts.i <- pts |> dplyr::filter(FileName == tiles[i])
 
   extract.i <- terra::extract(tile.i, pts.i, ID = FALSE)
