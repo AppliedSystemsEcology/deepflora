@@ -11,6 +11,6 @@
 #SBATCH --error=logs/dfaextr_%j.err
 
 module load anaconda
-source activate deepflora
+source activate r-geo
 
 Rscript /storage/home/kbl5733/work/github/deepflora/scripts/aaron/extract30m.R
