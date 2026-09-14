@@ -13,4 +13,4 @@
 module load anaconda
 source activate r-geo
 
-Rscript /storage/home/kbl5733/work/github/deepflora/scripts/aaron/extract30m.R
+Rscript /storage/home/kbl5733/work/github/deepflora/scripts/aaron/make_richrast.R
