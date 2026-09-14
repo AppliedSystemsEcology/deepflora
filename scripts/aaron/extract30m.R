@@ -21,4 +21,4 @@ for(i in seq_along(tiles)){
 
 outdf <- dplyr::bind_rows(outlist, .id = "tile")
 
-write.csv(outdr, "data-raw/aaron_30m_extract.csv", row.names = FALSE)
+write.csv(outdf, "data-raw/aaron_30m_extract.csv", row.names = FALSE)

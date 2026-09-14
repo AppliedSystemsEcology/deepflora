@@ -18,6 +18,6 @@ for(i in seq_along(tiles)){
   pres.i <- tile.i > 0.5
   rich.i <- sum(pres.i)
 
-  writeRaster(rich.i, file.path("data/aaron",paste0("rich_",tile.i)))
+  writeRaster(rich.i, file.path("data/aaron",paste0("rich_",tiles[i])))
 
 }
